@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
  //components
  import Overview from './Overview/overview.component.js'
  import Ratings from './Ratings/ratings.component.js'
- import Questions from './Questions/questions.component.js'
+ import Questions from './Questions/Questions.jsx'
  import RelatedItems from './RelatedItems/relatedItems.component.js'
 
  //core css
