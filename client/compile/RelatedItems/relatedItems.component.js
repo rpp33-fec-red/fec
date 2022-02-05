@@ -2,6 +2,7 @@
 import React from 'react';
 import './relatedItems.scss';
 
+//Hello hello 
 
 var RelatedItems = function (props){
 
