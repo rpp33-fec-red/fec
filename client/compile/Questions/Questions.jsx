@@ -13,15 +13,32 @@ class Questions extends React.component {
       query: '',
       expanded: 0
     };
+
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch(event) {
+    event.preventDefault();
+    let query = event.target.value;
+
+    if (query.length > 2) {
+      this.setState({
+        query: query
+      });
+    } else if (this.state.query !== '') {
+      this.setState({
+        query: ''
+      });
+    }
   }
 
   render() {
     return (
       <div className="questionsWidget">
         <h6>QUESTIONS &amp; ANSWERS</h6>
-        <SearchBar />
+        <SearchBar search={this.handleSearch} />
         <div className="questionsList">
-          <QuestionsList expanded={this.state.expanded}/>
+          <QuestionsList expanded={this.state.expanded} />
         </div>
         <div className="questionButtons">
           <MoreQuestions />
