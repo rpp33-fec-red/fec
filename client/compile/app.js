@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
  import Overview from './Overview/overview.component.js'
  import Ratings from './Ratings/ratings.component.js'
  import Questions from './Questions/questions.component.js'
- import RelatedItems from './RelatedItems/relatedItems.component.js'
+ import RelatedProducs from './RelatedItems/RelatedProducts'
 
  //core css
  import './style.scss'
@@ -30,7 +30,7 @@ class Main extends React.Component {
 
       <Overview/>
 
-      <RelatedItems/>
+      <RelatedProducs/>
       <Questions/>
       <Ratings/>
   </div>)
