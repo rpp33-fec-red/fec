@@ -4,7 +4,12 @@ import React from 'react';
 function ReviewsSorting (props) {
   return (
     <div className ="reviews-sorting">
-      <h6>Sorted by:</h6>
+      <label for="sorting-option">238 reviews, sorted by </label>
+      <select name="sorting-option">
+        <option value="relevance">relevance</option>
+        <option value="helpful">helpful</option>
+        <option value="newest">newest</option>
+      </select>
     </div>
   )
 }
