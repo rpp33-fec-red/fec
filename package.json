@@ -6,7 +6,13 @@
   "scripts": {
     "test": "jest",
     "liveBuild": "webpack-dev-server",
+<<<<<<< HEAD
     "build": "webpack"
+=======
+    "build": "webpack",
+    "start": "nodemon server/server.js",
+    "updateArtifacts":"jest --updateSnapshot"
+>>>>>>> 35bf351... testing done for finding one component and added in package json update jest artifacts to restore snapshots
   },
   "repository": {
     "type": "git",
