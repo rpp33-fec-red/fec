@@ -5,12 +5,14 @@ import ReviewsList from './Reviews/ReviewsList.js';
 class RatingsReviews extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      reviewsDisplayed: [],
+    }
   }
 
   render () {
     return (
-      <div className="ratings">
-        ratings component
+      <div className="ratings-and-reviews">
         <ReviewsList/>
       </div>
     )

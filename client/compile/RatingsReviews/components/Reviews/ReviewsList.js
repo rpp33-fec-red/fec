@@ -6,6 +6,8 @@ function ReviewsList () {
     <div>
       <h1>ReviewsList</h1>
       <ReviewTile/>
+      <button>More Reviews</button>
+      <button>Add a Review</button>
     </div>
   )
 }
