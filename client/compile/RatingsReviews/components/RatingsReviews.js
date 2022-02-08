@@ -1,5 +1,5 @@
 import React from 'react';
-import './ratings.scss';
+import '../ratings.scss';
 
 
 class RatingsReviews extends React.Component {
