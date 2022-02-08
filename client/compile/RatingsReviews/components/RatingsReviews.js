@@ -1,6 +1,6 @@
 import React from 'react';
 import '../ratings.scss';
-
+import Reviews from './Reviews/Reviews.js';
 
 class RatingsReviews extends React.Component {
   constructor(props) {
@@ -9,7 +9,10 @@ class RatingsReviews extends React.Component {
 
   render () {
     return (
-      <div className="ratings"> ratings component</div>
+      <div className="ratings">
+        ratings component
+        <Reviews/>
+      </div>
     )
   }
 }
