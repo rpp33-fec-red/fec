@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ReviewTile () {
-  return <p>reviewTile</p>;
+  return <p>review tile</p>;
 }
 
 export default ReviewTile;

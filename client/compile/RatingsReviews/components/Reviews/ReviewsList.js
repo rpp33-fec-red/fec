@@ -1,13 +1,10 @@
 import React from 'react';
 import ReviewTile from './ReviewTile.js'
 
-function ReviewsList () {
+function ReviewsList (props) {
   return (
-    <div>
-      <h1>ReviewsList</h1>
+    <div className ="reviews-list">
       <ReviewTile/>
-      <button>More Reviews</button>
-      <button>Add a Review</button>
     </div>
   )
 }
