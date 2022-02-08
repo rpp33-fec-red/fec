@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ReviewTile () {
+function ReviewTile (props) {
   return (
     <div className="review=tile">
         <p className="star-rating">* * * * *</p>
