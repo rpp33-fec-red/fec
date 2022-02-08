@@ -1,0 +1,8 @@
+{
+  "testMatch": ["**/?(overview)+(.test.js?(x))"],
+  "collectCoverageFrom": [
+    "overview.test.js"
+
+  ],
+  "collectCoverage":true
+}
