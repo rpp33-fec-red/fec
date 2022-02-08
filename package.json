@@ -7,7 +7,8 @@
     "test": "jest",
     "liveBuild": "webpack-dev-server",
     "build": "webpack",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "updateArtifacts":"jest --updateSnapshot"
   },
   "repository": {
     "type": "git",

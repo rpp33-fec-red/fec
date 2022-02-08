@@ -1,4 +1,4 @@
-import TestRenderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import React from 'react';
 // const TestRenderer = require('react-test-renderer'); // ES5 with npm
 import testData from './testdata.js'
@@ -9,16 +9,19 @@ var model = new Model(false);
 
 
 describe('component should render',function(){
-var fakeData = testData;
+  var fakeData = testData;
 
 
-
+  var  getData = function (){
+    return model.getData;
+  }
 
   test('should have overview component in browser',function(){
 
-    const tree = TestRenderer.create(<Overview getProducts={model.getData}/>)
-    var reactObj = tree.toJSON()
-    expect(reactObj.type).toMatchSnapshot()
+    var tree = renderer.create(<Overview getProducts={getData}/>).toJSON()
+    console.log('treeee',tree)
+
+    expect(tree).toMatchSnapshot()
   })
 
 

@@ -30,7 +30,10 @@ class Model {
         cb(data)
       }
     }
-    $.ajax(options)
+    console.log(options)
+if (options){
+  $.ajax(options)
+}
   }
 
 
