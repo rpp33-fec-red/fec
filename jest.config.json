@@ -1,6 +1,9 @@
 {
   "testMatch": ["**/?(overview)+(.test.js?(x))"],
+<<<<<<< HEAD
   "testPathIgnorePatterns":["/node_modules/"],
+=======
+>>>>>>> added test file and react test renderer
   "collectCoverageFrom": [
     "overview.test.js"
 
