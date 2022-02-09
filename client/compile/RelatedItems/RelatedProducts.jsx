@@ -13,8 +13,8 @@ class RelatedProducts extends React.Component {
         super (props);
         this.state = {
             current: {},
-            relatedProducts: [],
-            productInfo: {},
+            relatedProducts: [], // to keep track of products on higher level
+            productInfo: {}, // to keep tract of product details, photo, styles
             outfitId: [],
             outfitInfo: {},
             outfitLoaded: false,
@@ -32,7 +32,6 @@ class RelatedProducts extends React.Component {
     componentDidMount () {
         this.getRelatedProducts(64620, (productInfo, relatedProducts) => {
             this.setState({ productInfo, relatedProducts })
-            console.log('this state', this.state);
         });
         // this.getOutfits();
     }
@@ -56,7 +55,6 @@ class RelatedProducts extends React.Component {
                 let relatedProductIds = res.data;
                 try {
                     for (let id of relatedProductIds) {
-                        relatedProducts.push(id);
                         await axios
                             .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rpp/products/${id}`, {
                                 headers: {
@@ -64,8 +62,16 @@ class RelatedProducts extends React.Component {
                                 }
                             })
                             .then((res) => {
-
-                                productInfo[res.data.id] = res.data;
+                                relatedProducts.push(res.data);
+                            });
+                        await axios
+                            .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rpp/products/${id}/styles`, {
+                                headers: {
+                                    'Authorization': `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`
+                                }
+                            })
+                            .then((res) => {
+                                productInfo[res.data.product_id] = res.data.results;
                             });
                     };
                 } catch (err) {

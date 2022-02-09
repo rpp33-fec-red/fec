@@ -30,7 +30,7 @@ class Main extends React.Component {
 
       <Overview/>
 
-      <RelatedProducs/>
+      <RelatedProducs />
       <Questions/>
       <Ratings/>
   </div>)

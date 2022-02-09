@@ -8,11 +8,12 @@ import ProductCard from '../Cards/ProductCard.jsx';
 const ProductCarousel = (props) => {
 
     let renderProduct = () => {
-        return props.relatedProducts.map((product) => {
+        return props.relatedProducts.map((product, i) => {
             return (
                 <ProductCard 
-                    key={product.id}
-                    productInfo={props.productInfo}
+                    key={i}
+                    index={i}
+                    productInfo={props.productInfo[product.id]}
                     product={product}
                 />
             )
@@ -22,7 +23,7 @@ const ProductCarousel = (props) => {
         <div className="relatedProductCarouselContainer">
             <div className="productCarousel">
                 <div style={({
-                    width: props.relatedProducts.length *300,
+                    width: props.relatedProducts.length *400,
                     display: 'flex',
                     justifyContent: 'left'
                 })}>
