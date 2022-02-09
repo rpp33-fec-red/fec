@@ -1,9 +1,11 @@
-//grab your functions to test  and import them to this file
+import TestRenderer from 'react-test-renderer';
+import React from 'react';
+import RelatedProducts from './RelatedProducts.jsx';
+import ComparisonModal from './ComparisonModal.jsx';
+import ProductCarousel from './Carousels/ProductCarousel.jsx';
 
-//https://jestjs.io/docs/getting-started
-
-const sum = require('./relatedItems.component').sum;
-
-test ('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+test ('Related Products Components', () => {
+    const testRenderer = TestRenderer.create(<RelatedProducts />);
+    const testInstance = testRenderer.root;
+    expect (testInstance.findByType(ProductCarousel).props.foo).toBe('bar');
 });
