@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
  import Overview from './Overview/overview.component.js'
  import Ratings from './Ratings/ratings.component.js'
  import Questions from './Questions/questions.component.js'
- import RelatedProducs from './RelatedItems/RelatedProducts'
+ import RelatedProducs from './Relateditems/RelatedProducts.jsx'
 
  //core css
  import './style.scss'
