@@ -4,35 +4,38 @@ import ReactDOM from 'react-dom';
 
  //components
  import Overview from './Overview/overview.component.js'
- import RatingsReviews from './RatingsReviews/components/RatingsReviews.js'
- import Questions from './Questions/questions.component.js'
+ import Ratings from './Ratings/ratings.component.js'
+ import QuestionsWidget from './Questions/Questions.jsx';
  import RelatedItems from './RelatedItems/relatedItems.component.js'
-
+import Model from './model.js';
+var model = new Model(false);
+console.log(model)
  //core css
+
  import './style.scss'
 class Main extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      //api data
+
     }
   }
 
-  getData() {
+  componentDidMount(){
 
-    //api request
-    // update state
   }
+
+
 
   render(){
     return (<div className="main">
 
-      <Overview/>
+      <Overview getProducts={model.getData}/>
 
       <RelatedItems/>
-      <Questions/>
-      <RatingsReviews/>
+      <QuestionsWidget />
+      <Ratings/>
   </div>)
   }
 
