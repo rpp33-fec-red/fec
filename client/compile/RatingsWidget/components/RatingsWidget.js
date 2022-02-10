@@ -7,14 +7,22 @@ class RatingsWidget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviewsDisplayed: [],
+      sortedBy: 'relevance',
+      filteredBy: {
+        oneStar: false,
+        twoStar: false,
+        threeStar: false,
+        fourStar: false,
+        fiveStar: false,
+      },
+      reviewsDisplayed: []
     }
   }
 
   render () {
     return (
       <div className="ratings-and-reviews">
-        <Reviews/>
+        <Reviews reviewsDisplayed={this.props.reviewsDisplayed}/>
         <Ratings/>
       </div>
     )
