@@ -4,9 +4,9 @@ import React from 'react';
 function ReviewsSorting (props) {
   return (
     <div className ="reviews-sorting">
-      Reviews Sorting
+      Reviews Sorting Placeholder
     </div>
-  )
+  );
 }
 
 export default ReviewsSorting;

@@ -5,7 +5,7 @@ function AddReview (props) {
     <div className ="reviews-add">
       Add Review Placeholder
     </div>
-  )
+  );
 }
 
 export default AddReview;

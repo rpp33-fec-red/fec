@@ -9,7 +9,7 @@ function ReviewsList (props) {
       <ReviewsSorting/>
       <ReviewTile/>
     </div>
-  )
+  );
 }
 
 export default ReviewsList;

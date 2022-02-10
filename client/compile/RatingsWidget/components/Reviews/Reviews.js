@@ -10,7 +10,7 @@ function Reviews () {
       <ReviewsList/>
       <AddReview/>
     </div>
-  )
+  );
 }
 
 export default Reviews;
