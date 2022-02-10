@@ -3,7 +3,7 @@ import '../ratings.scss';
 import Reviews from './Reviews/Reviews.js';
 import Ratings from './Ratings/Ratings.js';
 
-class RatingsReviews extends React.Component {
+class RatingsWidget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,4 +21,4 @@ class RatingsReviews extends React.Component {
   }
 }
 
-export default RatingsReviews;
+export default RatingsWidget;
