@@ -10,9 +10,9 @@ it('RatingsWidget component renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('Ratings component renders correctly', () => {
+it('Reviews component renders correctly', () => {
   const tree = renderer
-  .create(<Ratings/>)
+  .create(<Reviews/>)
   .toJSON();
   expect(tree).toMatchSnapshot();
 });
