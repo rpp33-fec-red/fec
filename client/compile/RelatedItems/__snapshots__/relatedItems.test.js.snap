@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Related Products Component renders initially 1`] = `
+<div
+  className="relatedProducts"
+>
+  <br />
+  <h2>
+    Related Products
+  </h2>
+  <div />
+  <div
+    className="relatedProductCarouselContainer"
+  >
+    <div
+      className="productCarousel"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "left",
+            "width": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <br />
+  <h2>
+    Your Outfit
+  </h2>
+  <div>
+    Outfit Carousel
+  </div>
+  <br />
+</div>
+`;
