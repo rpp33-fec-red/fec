@@ -52,3 +52,5 @@ function app(){
 }
 
 ReactDOM.render(app(),document.getElementById('app'))
+
+export default Main;
