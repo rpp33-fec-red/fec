@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
  //components
  import Overview from './Overview/overview.component.js'
  import Ratings from './Ratings/ratings.component.js'
- import Questions from './Questions/questions.component.js'
+ import QuestionsWidget from './Questions/Questions.jsx';
  import RelatedItems from './RelatedItems/relatedItems.component.js'
 import Model from './model.js';
 var model = new Model(false);
@@ -34,7 +34,7 @@ class Main extends React.Component {
       <Overview getProducts={model.getData}/>
 
       <RelatedItems/>
-      <Questions/>
+      <QuestionsWidget />
       <Ratings/>
   </div>)
   }
