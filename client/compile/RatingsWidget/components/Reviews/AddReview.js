@@ -3,7 +3,7 @@ import React from 'react';
 function AddReview (props) {
   return (
     <div className ="reviews-add">
-      Add Review Placeholder
+      <button>Add a Review</button>
     </div>
   );
 }

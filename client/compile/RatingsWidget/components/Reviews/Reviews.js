@@ -9,6 +9,7 @@ function Reviews () {
       <h1>Reviews</h1>
       <ReviewsList/>
       <AddReview/>
+      <button>More Reviews</button>
     </div>
   );
 }
