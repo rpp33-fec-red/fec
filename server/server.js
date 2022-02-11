@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var port = 8080;
 var path = require('path')
-app.use(express.static(path.join(__dirname,'client/public')));
+app.use(express.static(path.join(__dirname + '/../client/public')));
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
