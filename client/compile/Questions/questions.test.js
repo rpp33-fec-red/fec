@@ -11,3 +11,11 @@ describe('Questions widget component', () => {
     expect(questionsTree).toMatchSnapshot();
   });
 });
+
+describe('SearchBar component', () => {
+  test('loads and displays searcbBar comoponent', () => {
+    var searchBarTree = TestRenderer.create(<SearchBar />).toJSON();
+
+    expect(searchBarTree).toMatchSnapshot();
+  });
+});
