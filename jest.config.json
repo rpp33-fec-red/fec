@@ -1,0 +1,9 @@
+{
+  "testMatch": ["**/?(overview)+(.test.js?(x))"],
+  "testPathIgnorePatterns":["/node_modules/"],
+  "collectCoverageFrom": [
+    "overview.test.js"
+
+  ],
+  "collectCoverage":true
+}
