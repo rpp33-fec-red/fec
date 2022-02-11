@@ -1,14 +1,20 @@
 import React from 'react';
+<<<<<<< HEAD
 // import './overview.scss';
 
 import LeftContainer from './leftContainer/leftcontainer.component.js'
 import RightContainer from './rightContainer/rightcontainer.component.js'
+=======
+import './overview.scss';
+
+>>>>>>> 199c0a1f1b8df9e75dc634b6aa732ba6dae047fd
 
 class Overview extends React.Component{
 
   constructor(props){
     super(props)
     this.state = {
+<<<<<<< HEAD
       onProduct: {
         id: 64620,
         campus: 'hr-rpp',
@@ -20,6 +26,9 @@ class Overview extends React.Component{
         created_at: '2022-01-28T00:20:03.466Z',
         updated_at: '2022-01-28T00:20:03.466Z'
       }
+=======
+      onProduct:{}
+>>>>>>> 199c0a1f1b8df9e75dc634b6aa732ba6dae047fd
     }
     this.getData= this.getData.bind(this)
   }
@@ -39,12 +48,16 @@ class Overview extends React.Component{
 
 
   render (){
+<<<<<<< HEAD
     return (<div className="overview">
     <LeftContainer product={this.state.onProduct}/>
     <RightContainer/>
 
 
     </div>)
+=======
+    return (<div className="overview"> Overview component</div>)
+>>>>>>> 199c0a1f1b8df9e75dc634b6aa732ba6dae047fd
   }
 
 

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questions widget component loads and displays questions widget comoponent 1`] = `
+<div
+  className="questionsWidget"
+>
+  <h6>
+    QUESTIONS AND ANSWERS
+  </h6>
+  <p>
+    REPLACE WITH SEARCHBAR COMPONENT
+  </p>
+  <p>
+    REPLACE WITH QUESTIONSLIST COMPONENT
+  </p>
+  <div
+    className="questionButtons"
+  >
+    <p>
+      REPLACE WITH MOREQUESTIONS COMPONENT
+    </p>
+    <p>
+      REPLACE WITH ADDQUESTIONS COMPONENT
+    </p>
+  </div>
+</div>
+`;
