@@ -1,5 +1,5 @@
 import React from 'react';
-// import './imageholder.scss';
+import './imageholder.scss';
 import StyleSelector from '../../styleSelector.js';
 
 function ImageHolder(props){

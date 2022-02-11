@@ -1,5 +1,5 @@
 import React from 'react';
-// import './rightcontainer.scss';
+import './rightcontainer.scss';
 
 
 class RightContainer extends React.Component{

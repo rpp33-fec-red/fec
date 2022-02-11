@@ -1,5 +1,5 @@
 import React from 'react';
-// import './leftcontainer.scss';
+import './leftcontainer.scss';
 
 import ImageHolder from './imageholder/imageholder.component.js';
 class LeftContainer extends React.Component{

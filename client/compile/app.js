@@ -43,12 +43,4 @@ class Main extends React.Component {
 }
 
 
-function app(){
-
-  return (
-    <Main></Main>
-  )
-
-}
-
-ReactDOM.render(app(),document.getElementById('app'))
+ReactDOM.render(<Main></Main>,document.getElementById('app'))
