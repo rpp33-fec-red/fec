@@ -7,13 +7,9 @@
     "server": "nodemon ./server/server.js",
     "test": "jest",
     "liveBuild": "webpack-dev-server",
-<<<<<<< HEAD
-    "build": "webpack --watch"
-=======
-    "build": "webpack",
-    "start": "nodemon server/server.js",
+    "build": "webpack --watch",
     "updateArtifacts":"jest --updateSnapshot"
->>>>>>> origin/master
+
   },
   "repository": {
     "type": "git",
