@@ -2,17 +2,21 @@ var express = require('express');
 var app = express();
 var port = 8080;
 var path = require('path')
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname + '/../client/public')));
+=======
+>>>>>>> origin/master
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
 var axios = require('axios')
 var bp = require('body-parser')
-app.use(bp.json())
 var cors = require('cors');
 
 
 app.use(cors());
+app.use(express.static(path.join(__dirname,'../client/public')));
+app.use(bp.json())
 
 
 app.get('/getData',function(request, response) {
