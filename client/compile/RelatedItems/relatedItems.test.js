@@ -4,14 +4,13 @@ import RelatedProducts from './RelatedProducts.jsx';
 import ComparisonModal from './ComparisonModal.jsx';
 import ProductCarousel from './Carousels/ProductCarousel.jsx';
 
+import Model from '../model.js';
+var model = new Model(false);
+var getData = () => {model.getData};
+
 test ('Related Products Component renders initially', () => {
-    const testRenderer = TestRenderer.create(<RelatedProducts />);
+    const testRenderer = TestRenderer.create(<RelatedProducts getData={getData}/>);
     expect (testRenderer.toJSON()).toMatchSnapshot();
 });
 
-test ('Related Products Component should have a child Product Coarousel with an object prop', () => {
-    const testRenderer = TestRenderer.create(<RelatedProducts />);
-    const testInstance = testRenderer.root;
 
-    expect (typeof testInstance.findByType(ProductCarousel).props.productInfo).toBe('object');
-});
