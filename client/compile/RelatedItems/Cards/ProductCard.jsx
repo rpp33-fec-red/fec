@@ -52,44 +52,4 @@ class ProductCard extends React.Component {
     }
 }
 
-
-
-
-// const ProductCard = (props) => {
-    
-//     console.log('props@Productcard', props);
-//     let photo, category, product_name, default_price;
-
-//     props.getData(`products/${props.product_id}`, {}, (data) => {
-//         category = data.results.category;
-//         product_name = data.results.name;
-//         default_price = data.results.default_price;
-//     });
-    
-//     props.getData(`products/${props.product_id}/styles`, {}, (data) => {
-//         console.log('data@style', data.results);
-//         data.results.results.length === 0 
-//         ?
-//         photo = `https://i.pinimg.com/originals/2d/38/62/2d3862abf214ecdb6a1c231e035c1796.jpg`
-//         :
-//         photo = data.results.results[0]['photos'][0]['thumbnail_url'] ;
-//     });
-    
-//     return (
-//         <div className="productCard" style={{
-//             boxShadow : `0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
-//             img: { display: 'block' },
-//             width: '15rem',
-//             height: '26rem',
-//             marginRight: '2rem'
-//         }}>
-//             <img src={photo} style={{ width: '13rem', height:'16rem', padding: '1rem'}}/>
-//             <p className="category" style={{paddingLeft: '1rem'}}>{category}</p>
-//             <h4 className="name" style={{paddingLeft: '1rem'}}><b>{product_name}</b></h4>
-//             <p className="default-price" style={{paddingLeft: '1rem'}}>$ {default_price}</p>
-       
-//         </div>
-//     )
-// }
-
 export default ProductCard;
