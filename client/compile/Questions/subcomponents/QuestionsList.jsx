@@ -1,4 +1,6 @@
 import React from 'react';
+import Question from './Question.jsx';
+
 
 class QuestionsList extends React.Component {
   constructor(props) {
@@ -18,17 +20,7 @@ class QuestionsList extends React.Component {
       return(
         <div className="questionList" >
           {questions.map((question) =>
-            <div className="question" key={question.question_id}>
-              <div className="questionTitle">
-                <p>Q: {question.question_body}</p>
-                <div className="questionLinks">
-                  <p>Helpful? <a>Yes</a> ({question.question_helpfulness}) | <a>Add Answer</a></p>
-                </div>
-              </div>
-              <div className="answerList">
-                <p>A: INSERT ANSWER LIST COMPONENT HERE</p>
-              </div>
-            </div>
+            <Question key={question.question_id} question={question} />
           )}
         </div>
       );
