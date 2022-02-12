@@ -1,3 +1,4 @@
 /node_modules
 coverage
 *.orig
+client/public/bundle.js
