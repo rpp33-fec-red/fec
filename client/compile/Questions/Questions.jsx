@@ -17,8 +17,8 @@ class QuestionsWidget extends React.Component {
   render() {
     return (
       <div className="questionsWidget">
-        <h6>QUESTIONS AND ANSWERS</h6>
-        <p>REPLACE WITH SEARCHBAR COMPONENT</p>
+        <h6>QUESTIONS &amp; ANSWERS</h6>
+        <SearchBar search={this.handleSearch}/>
         <p>REPLACE WITH QUESTIONSLIST COMPONENT</p>
 
         <div className="questionButtons">
