@@ -35,7 +35,7 @@ class Main extends React.Component {
 
       <RelatedItems/>
       <QuestionsWidget />
-      <Ratings/>
+      {/* <Ratings/> */}
   </div>)
   }
 
