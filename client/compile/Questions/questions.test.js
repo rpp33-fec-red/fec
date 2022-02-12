@@ -37,3 +37,19 @@ describe('Question component', () => {
     expect(questionTree).toMatchSnapshot();
   });
 });
+
+describe('AnswerList component', () => {
+  test('loads and displays AnswerList component', () => {
+    var answerListTree = TestRenderer.create(<AnswerList />).toJSON();
+
+    expect(answerListTree).toMatchSnapshot();
+  });
+});
+
+describe('Answer component', () => {
+  test('loads and displays Answer component', () => {
+    var answerTree = TestRenderer.create(<Answer />).toJSON();
+
+    expect(answerTree).toMatchSnapshot();
+  });
+});

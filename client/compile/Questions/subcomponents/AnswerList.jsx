@@ -8,26 +8,40 @@ class AnswerList extends React.Component {
       displayAllAnswers: false,
       answerData: this.props.answers
     }
+
+    this.createAnswerDataArray = this.createAnswerDataArray.bind(this);
   }
 
-  render() {
+  createAnswerDataArray(objectData) {
     let answers = [];
     for (const answer in this.state.answerData) {
       answers.push(this.state.answerData[answer]);
     }
+    return answers;
+  }
 
-    if (!answers.length) {
+  componentDidMount() {
+    this.setState({
+      answerData: this.createAnswerDataArray(this.state.answerData)
+    })
+  }
+
+  render() {
+    if (!this.state.answerData.length) {
       return null;
     } else {
       if (!this.state.displayAllAnswers) {
-        answers = answers.slice(0, 2);
+        this.state.answerData = this.state.answerData.slice(0, 2);
       }
 
       return(
         <div className="answerList" >
-          {answers.map((answer) =>
+          {this.state.answerData.map((answer) =>
             <Answer key={answer.id} answer={answer} />
           )}
+          {this.state.answerData.length > 2 &&
+            <a>See more answers</a>
+          }
         </div>
       );
     }
