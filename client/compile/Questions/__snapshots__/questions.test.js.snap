@@ -5,11 +5,15 @@ exports[`Questions widget component loads and displays questions widget comopone
   className="questionsWidget"
 >
   <h6>
-    QUESTIONS AND ANSWERS
+    QUESTIONS & ANSWERS
   </h6>
-  <p>
-    REPLACE WITH SEARCHBAR COMPONENT
-  </p>
+  <div>
+    <input
+      id="questionsSearchBar"
+      placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+      type="search"
+    />
+  </div>
   <p>
     REPLACE WITH QUESTIONSLIST COMPONENT
   </p>
