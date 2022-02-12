@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ComparisonModal from './ComparisonModal.jsx';
 import ProductCarousel from './Carousels/ProductCarousel.jsx';
 import OutfitCarousel from './Carousels/OutfitCarousel.jsx';
@@ -11,43 +10,23 @@ class RelatedProducts extends React.Component {
     constructor (props) {
         super (props);
         this.state = {
-            current: {},
-            relatedProducts: [], // to keep track of products on higher level
-            productInfo: {}, // to keep tract of product details, photo, styles
-            outfitId: [],
-            outfitInfo: {},
-            outfitLoaded: false,
-            showComparison: false,
-            addedOutfit: false
+            relatedProducts: [] // to keep track of products on higher level
         }
         this.getRelatedProducts = this.getRelatedProducts.bind(this);
     
     }
 
-
-
     componentDidMount () {
-        this.getRelatedProducts (64620);
+        this.getRelatedProducts (64621, (relatedProducts) => {
+            this.setState({ relatedProducts }); 
+        });
         // this.getOutfits();
     }
 
-    getRelatedProducts (id) {
-        
-        let productInfo = {};
-        let relatedProducts = [];
-        this.props.getData(`products/${id}/related`, {}, async (data) => {
-            let relatedProductIDs = data.results;
-            for await (let id of relatedProductIDs) {
-                this.props.getData(`products/${id}`, {}, (data) => {
-                    relatedProducts.push(data.results);
-                });
-                this.props.getData(`products/${id}/styles`, {}, (data) => {
-                    productInfo[data.results.product_id] = data.results.results;
-                });
-            };
-            this.setState({ productInfo, relatedProducts });      
-        })
-        
+    getRelatedProducts (id, callback) {     
+        this.props.getData(`products/${id}/related`, {}, (data) => {
+            callback(data.results);
+        });
     }   
 
     render () {
@@ -60,8 +39,8 @@ class RelatedProducts extends React.Component {
                 : <div></div>
                 }
                 <ProductCarousel 
-                    productInfo={this.state.productInfo}
                     relatedProducts={this.state.relatedProducts}
+                    getData={this.props.getData}
                 />
                 <br></br>
                 <h2>Your Outfit</h2>
@@ -75,28 +54,3 @@ class RelatedProducts extends React.Component {
 
 export default RelatedProducts;
 
-    // this.getOutfits = this.getOutfits.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
-    // this.handleCompare = this.handleCompare.bind(this);
-    // this.handleAddOutfit = this.handleAddOutfit.bind(this);
-    // this.handleDeleteOutfit = this.handleDeleteOutfit.bind(this);
-
-    // getOutfits () {
-        
-    // }
-
-    // handleClick (e) {
-
-    // }
-
-    // handleCompare (e) {
-
-    // }
-
-    // handleAddOutfit () {
-
-    // }
-
-    // handleDeleteOutfit (e) {
-
-    // }

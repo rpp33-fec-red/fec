@@ -32,10 +32,10 @@ class Main extends React.Component {
   render(){
     return (<div className="main">
 
-      {/* <Overview getProducts={model.getData}/> */}
+      <Overview getProducts={model.getData}/>
       <RelatedProducs getData={model.getData}/>
-      {/* <QuestionsWidget />
-      <Ratings/> */}
+      <QuestionsWidget />
+      <Ratings/>
   </div>)
   }
 
