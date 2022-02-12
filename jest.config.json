@@ -1,8 +1,8 @@
 {
-  "testMatch": ["**/?(overview)+(.test.js?(x))"],
+  "testMatch": ["**/?(ratings)+(.test.js?(x))"],
   "testPathIgnorePatterns":["/node_modules/"],
   "collectCoverageFrom": [
-    "overview.test.js"
+    "ratings.test.js"
 
   ],
   "collectCoverage":true
