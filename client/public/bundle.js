@@ -82,7 +82,40 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction Ratings(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"ratings\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ratings);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/components/Ratings/Ratings.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _RatingsBreakdown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RatingsBreakdown.js */ \"./client/compile/RatingsWidget/components/Ratings/RatingsBreakdown.js\");\n/* harmony import */ var _RatingsProductBreakdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RatingsProductBreakdown.js */ \"./client/compile/RatingsWidget/components/Ratings/RatingsProductBreakdown.js\");\n/* harmony import */ var _RatingsSummary_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RatingsSummary.js */ \"./client/compile/RatingsWidget/components/Ratings/RatingsSummary.js\");\n\n\n\n\n\nfunction Ratings(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"ratings\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RatingsSummary_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RatingsBreakdown_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RatingsProductBreakdown_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ratings);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/components/Ratings/Ratings.js?");
+
+/***/ }),
+
+/***/ "./client/compile/RatingsWidget/components/Ratings/RatingsBreakdown.js":
+/*!*****************************************************************************!*\
+  !*** ./client/compile/RatingsWidget/components/Ratings/RatingsBreakdown.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction RatingsBreakdown(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"ratingsBreakdown\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsBreakdown);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/components/Ratings/RatingsBreakdown.js?");
+
+/***/ }),
+
+/***/ "./client/compile/RatingsWidget/components/Ratings/RatingsProductBreakdown.js":
+/*!************************************************************************************!*\
+  !*** ./client/compile/RatingsWidget/components/Ratings/RatingsProductBreakdown.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction RatingsProductBreakdown(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"RatingsProductBreakdown\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsProductBreakdown);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/components/Ratings/RatingsProductBreakdown.js?");
+
+/***/ }),
+
+/***/ "./client/compile/RatingsWidget/components/Ratings/RatingsSummary.js":
+/*!***************************************************************************!*\
+  !*** ./client/compile/RatingsWidget/components/Ratings/RatingsSummary.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction RatingsSummary(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"RatingsSummary\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsSummary);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/components/Ratings/RatingsSummary.js?");
 
 /***/ }),
 
