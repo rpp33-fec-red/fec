@@ -1,24 +1,26 @@
-// PROPS from RelatedProducts.jsx: 
-// pass down to product card: product info, id?, functions
-// should have functions: click, compare
-
 import React from 'react';
 import ProductCard from '../Cards/ProductCard.jsx';
+import '../relatedItems.scss';
 
 const ProductCarousel = (props) => {
 
     let renderProduct = () => {
-        return props.relatedProducts.map((product, i) => {
-            return (
-                <ProductCard 
-                    key={i}
-                    index={i}
-                    productInfo={props.productInfo[product.id]}
-                    product={product}
-                />
-            )
-        })
+        let productsList = props.relatedProducts;
+     
+        return (productsList.length === 0) ? (<div>Empty here</div>) : ( 
+            productsList.map((product, i) => {
+                console.log('product in render product map', product);
+                return (
+                    <ProductCard
+                        key={i}
+                        productInfo={props.productInfo[product.id]}
+                        product={product} />
+                );
+            })
+        ); 
+     
     }
+
     return (
         <div className="relatedProductCarouselContainer">
             <div className="productCarousel">
@@ -27,7 +29,7 @@ const ProductCarousel = (props) => {
                     display: 'flex',
                     justifyContent: 'left'
                 })}>
-                    {renderProduct()}
+                    { renderProduct() }
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 
 import Model from './model.js';
 var model = new Model(false);
-console.log(model)
+// console.log(model)
  //core css
 
  import './style.scss'
@@ -32,10 +32,10 @@ class Main extends React.Component {
   render(){
     return (<div className="main">
 
-      <Overview getProducts={model.getData}/>
-      <RelatedProducs />
-      <QuestionsWidget />
-      <Ratings/>
+      {/* <Overview getProducts={model.getData}/> */}
+      <RelatedProducs getData={model.getData}/>
+      {/* <QuestionsWidget />
+      <Ratings/> */}
   </div>)
   }
 

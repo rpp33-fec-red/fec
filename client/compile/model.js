@@ -15,7 +15,7 @@ class Model {
     this.getData = this.getData.bind(this)
   }
 
-  getData(route,params,cb){
+  getData(route, params, cb){
     var url = this.url + `getData?route=${route}`;
     Object.keys(params).forEach((param)=>{
       var value = params[param];
@@ -23,20 +23,18 @@ class Model {
         url+=`&${param}=${value}`;
       }
     });
-   var options = {
+    var options = {
       url:url,
       method: 'GET',
       success:function(data){
         cb(data)
       }
     }
-    console.log(options)
-if (options){
-  $.ajax(options)
-}
+    // console.log(options)
+    if (options){
+      $.ajax(options)
+    }
   }
-
-
 
 }
 export default Model

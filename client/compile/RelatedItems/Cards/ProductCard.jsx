@@ -1,10 +1,10 @@
-// PROPS from  ProductCarousel: 
-// render product view including: star button to compare, name, photo, price, stars from OVERVIEW
 import React from 'react';
 
 const ProductCard = (props) => {
     
-    let photo = props.productInfo[0]['photos'][0].thumbnail_url || null;
+    console.log('props@Productcard', props);
+
+    let photo = props.productInfo[0]['photos'][0].thumbnail_url;
  
     return (
         <div className="productCard" style={{
