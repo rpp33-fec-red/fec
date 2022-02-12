@@ -1,4 +1,7 @@
 import React from 'react';
+
+import LeftContainer from './leftContainer/leftcontainer.component.js'
+import RightContainer from './rightContainer/rightcontainer.component.js'
 import './overview.scss';
 
 
@@ -27,7 +30,11 @@ class Overview extends React.Component{
 
 
   render (){
-    return (<div className="overview"> Overview component</div>)
+    return (<div className="overview">
+    <LeftContainer product={this.state.onProduct}/>
+    <RightContainer/>
+
+    </div>)
   }
 
 
