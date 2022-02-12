@@ -10,7 +10,12 @@ class Answer extends React.Component {
 
   render() {
     return (
-      <p>ANSWER</p>
+      <div className="answer">
+        <p className="answerTitle">{this.props.answer.body}</p>
+        <div className="answerLinks">
+          <p>by {this.props.answer.answerer_name}, MONTH, DD, YEAR | Helpful? <a>Yes</a> ({this.props.answer.helpfulness}) | <a>Report</a></p>
+        </div>
+      </div>
     );
   }
 }

@@ -19,7 +19,8 @@ class Question extends React.Component {
           <p>Helpful? <a>Yes</a> ({this.props.question.question_helpfulness}) | <a>Add Answer</a></p>
         </div>
       </div>
-      <div className="answerList">
+      <div className="answers">
+        <p>A: </p>
         <AnswerList answers={this.props.question.answers} />
       </div>
     </div>

@@ -13,7 +13,7 @@ class AnswerList extends React.Component {
   render() {
     let answers = [];
     for (const answer in this.state.answerData) {
-      answers.push(answer);
+      answers.push(this.state.answerData[answer]);
     }
 
     if (!answers.length) {
