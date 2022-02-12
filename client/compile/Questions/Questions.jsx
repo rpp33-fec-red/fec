@@ -26,7 +26,7 @@ class QuestionsWidget extends React.Component {
           <p>REPLACE WITH ADDQUESTIONS COMPONENT</p>
         </div>
       </div>
-    )
+    );
   }
 }
 
