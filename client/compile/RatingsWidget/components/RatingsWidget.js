@@ -25,7 +25,7 @@ class RatingsWidget extends React.Component {
         <Reviews reviewsDisplayed={this.props.reviewsDisplayed}/>
         <Ratings/>
       </div>
-    )
+    );
   }
 }
 

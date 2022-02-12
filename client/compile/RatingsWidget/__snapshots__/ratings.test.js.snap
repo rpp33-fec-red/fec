@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ratings widget renders correctly 1`] = `
+<div
+  className="ratings-and-reviews"
+>
+  <div
+    className="reviews"
+  >
+    <h1>
+      Reviews
+    </h1>
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        Reviews Sorting Placeholder
+      </div>
+      <div
+        className="review=tile"
+      >
+        Review Tile Placeholder
+      </div>
+    </div>
+    <div
+      className="reviews-add"
+    >
+      Add Review Placeholder
+    </div>
+  </div>
+  <div
+    className="ratings"
+  >
+    <div
+      class="ratings-summary"
+    >
+      Ratings Summary Placeholder
+    </div>
+    <div
+      class="ratings-breakdown"
+    >
+      Ratings Breakdown
+    </div>
+    <div
+      class="ratings-breakdown"
+    >
+      Ratings Breakdown
+    </div>
+  </div>
+</div>
+`;

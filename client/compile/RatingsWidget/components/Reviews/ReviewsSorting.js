@@ -4,14 +4,9 @@ import React from 'react';
 function ReviewsSorting (props) {
   return (
     <div className ="reviews-sorting">
-      <label for="sorting-option">238 reviews, sorted by </label>
-      <select name="sorting-option">
-        <option value="relevance">relevance</option>
-        <option value="helpfulness">helpfuness</option>
-        <option value="newest">newest</option>
-      </select>
+      Reviews Sorting Placeholder
     </div>
-  )
+  );
 }
 
 export default ReviewsSorting;

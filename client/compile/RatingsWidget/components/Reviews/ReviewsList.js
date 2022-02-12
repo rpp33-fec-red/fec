@@ -8,9 +8,8 @@ function ReviewsList (props) {
     <div className ="reviews-list">
       <ReviewsSorting/>
       <ReviewTile/>
-      <button>More Reviews</button>
     </div>
-  )
+  );
 }
 
 export default ReviewsList;

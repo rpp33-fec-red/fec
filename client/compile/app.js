@@ -3,10 +3,10 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 
  //components
- import Overview from './Overview/overview.component.js'
- import RatingsWidget from './RatingsWidget/components/RatingsWidget.js'
+ import Overview from './Overview/overview.component.js';
+ import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
  import QuestionsWidget from './Questions/Questions.jsx';
- import RelatedItems from './RelatedItems/relatedItems.component.js'
+ import RelatedItems from './RelatedItems/relatedItems.component.js';
  import Model from './model.js';
  var model = new Model(false);
  //core css

@@ -3,9 +3,9 @@ import React from 'react';
 function AddReview (props) {
   return (
     <div className ="reviews-add">
-      <button>Add a Review</button>
+      Add Review Placeholder
     </div>
-  )
+  );
 }
 
 export default AddReview;
