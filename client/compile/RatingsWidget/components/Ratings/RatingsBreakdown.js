@@ -2,7 +2,7 @@ import React from 'react';
 
 function RatingsBreakdown(props) {
   return (
-    <div class="ratings-breakdown">
+    <div className="ratings-breakdown">
       Ratings Breakdown
     </div>
   );

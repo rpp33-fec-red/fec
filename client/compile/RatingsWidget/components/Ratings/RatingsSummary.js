@@ -2,7 +2,7 @@ import React from 'react';
 
 function RatingsSummary(props) {
   return (
-    <div class="ratings-summary">
+    <div className="ratings-summary">
       Ratings Summary Placeholder
     </div>
   );
