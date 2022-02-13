@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/compile/app.js',
+  entry: './client/compile/index.js',
   mode:'development',
   output: {
     path: path.resolve(__dirname, 'client/public'),

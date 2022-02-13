@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ReactDOM from 'react-dom';
 
@@ -25,22 +24,16 @@ class Main extends React.Component {
 
   }
 
-
-
   render(){
-    return (<div className="main">
-
+    return (
+    <div className="main">
       <Overview getProducts={model.getData}/>
-
       <RelatedItems/>
       <QuestionsWidget />
       <RatingsWidget/>
-  </div>)
+    </div>
+    );
   }
-
-
 }
 
 export default Main;
-
-ReactDOM.render(<Main></Main>,document.getElementById('app'))
