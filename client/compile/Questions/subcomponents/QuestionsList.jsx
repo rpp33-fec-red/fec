@@ -11,7 +11,6 @@ class QuestionsList extends React.Component {
   }
 
   render() {
-    console.log('questions!', this.props.questions)
     let questions = this.props.questions;
 
     if (questions.length) {

@@ -1,4 +1,4 @@
-sampleData =  {
+const sampleData = {
   "product_id": "5",
   "results": [{
     "question_id": 37,

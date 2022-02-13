@@ -4,7 +4,7 @@ class Question extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      helpful: false,
+      votedHelpful: false,
       helpfulness: 0
     }
   }
@@ -22,7 +22,7 @@ class Question extends React.Component {
         <p>A: INSERT ANSWER LIST COMPONENT HERE</p>
       </div>
     </div>
-    )
+    );
   }
 }
 

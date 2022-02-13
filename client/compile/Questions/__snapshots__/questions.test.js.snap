@@ -1,18 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Questions widget component loads and displays questions widget comoponent 1`] = `
+exports[`Questions widget component loads and displays questions widget component 1`] = `
 <div
   className="questionsWidget"
 >
   <h6>
-    QUESTIONS AND ANSWERS
+    QUESTIONS & ANSWERS
   </h6>
-  <p>
-    REPLACE WITH SEARCHBAR COMPONENT
-  </p>
-  <p>
-    REPLACE WITH QUESTIONSLIST COMPONENT
-  </p>
+  <div>
+    <input
+      id="questionsSearchBar"
+      onChange={[Function]}
+      placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+      type="search"
+    />
+  </div>
+  <div
+    className="questionList"
+  >
+    <div
+      className="question"
+    >
+      <div
+        className="questionTitle"
+      >
+        <p>
+          Q: 
+          Why is this product cheaper here than other sites?
+        </p>
+        <div
+          className="questionLinks"
+        >
+          <p>
+            Helpful? 
+            <a>
+              Yes
+            </a>
+             (
+            4
+            ) | 
+            <a>
+              Add Answer
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="answerList"
+      >
+        <p>
+          A: INSERT ANSWER LIST COMPONENT HERE
+        </p>
+      </div>
+    </div>
+    <div
+      className="question"
+    >
+      <div
+        className="questionTitle"
+      >
+        <p>
+          Q: 
+          How long does it last?
+        </p>
+        <div
+          className="questionLinks"
+        >
+          <p>
+            Helpful? 
+            <a>
+              Yes
+            </a>
+             (
+            2
+            ) | 
+            <a>
+              Add Answer
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="answerList"
+      >
+        <p>
+          A: INSERT ANSWER LIST COMPONENT HERE
+        </p>
+      </div>
+    </div>
+  </div>
   <div
     className="questionButtons"
   >

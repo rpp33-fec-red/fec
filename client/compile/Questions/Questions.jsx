@@ -12,7 +12,7 @@ class QuestionsWidget extends React.Component {
     super(props);
     this.state = {
       query: '',
-      questionData: sampleData.results
+      questionsData: sampleData.results
     };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -38,7 +38,7 @@ class QuestionsWidget extends React.Component {
       <div className="questionsWidget">
         <h6>QUESTIONS &amp; ANSWERS</h6>
         <SearchBar search={this.handleSearch}/>
-        <QuestionsList questions={this.state.questionData}/>
+        <QuestionsList questions={this.state.questionsData}/>
         <div className="questionButtons">
           <p>REPLACE WITH MOREQUESTIONS COMPONENT</p>
           <p>REPLACE WITH ADDQUESTIONS COMPONENT</p>
