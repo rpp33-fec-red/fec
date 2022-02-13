@@ -29,3 +29,13 @@ exports[`Questions widget component loads and displays questions widget comopone
   </div>
 </div>
 `;
+
+exports[`SearchBar component loads and displays SearchBar comoponent 1`] = `
+<div>
+  <input
+    id="questionsSearchBar"
+    placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+    type="search"
+  />
+</div>
+`;
