@@ -5,5 +5,8 @@
     "ratings.test.js"
 
   ],
-  "collectCoverage":true
+  "collectCoverage":true,
+   "moduleNameMapper": {
+    "^.+\\.(css|scss)$": "babel-jest"
+  }
 }
