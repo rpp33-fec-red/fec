@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component should render should have overview component in browser 1`] = `
+<div
+  className="overview"
+>
+  <div
+    className="leftCt"
+  >
+    <div
+      className="image-holder"
+    >
+      <div
+        className="fixed-selector"
+      >
+        <div
+          className="styleSelector"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="rightCt"
+  >
+     right container
+  </div>
+</div>
+`;
