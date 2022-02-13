@@ -41,5 +41,6 @@ class Main extends React.Component {
 
 }
 
+export default Main;
 
 ReactDOM.render(<Main></Main>,document.getElementById('app'))
