@@ -1,4 +1,4 @@
-{
+var data = {
   "product": "2",
   "page": 0,
   "count": 5,
@@ -39,3 +39,5 @@
     // ...
   ]
 }
+
+export default data;
