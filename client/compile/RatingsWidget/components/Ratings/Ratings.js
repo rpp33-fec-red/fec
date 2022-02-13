@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingsSummary from './RatingsSummary.js';
 import RatingsBreakdown from './RatingsBreakdown.js';
-import RatingsProductBreakdown from './RatingsBreakdown.js';
+import RatingsProductBreakdown from './RatingsProductBreakdown.js';
 
 function Ratings(props) {
   return (

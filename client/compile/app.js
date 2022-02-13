@@ -9,7 +9,6 @@ import ReactDOM from 'react-dom';
  import RelatedItems from './RelatedItems/relatedItems.component.js';
  import Model from './model.js';
  var model = new Model(false);
- console.log(model)
  //core css
 
  import './style.scss'
