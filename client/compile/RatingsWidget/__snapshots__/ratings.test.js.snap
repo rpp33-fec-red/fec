@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="ratings-and-reviews"
+>
+  <div>
+    <h1>
+      Reviews
+    </h1>
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        <label
+          htmlFor="sorting-option"
+        >
+          238 reviews, sorted by 
+        </label>
+        <select
+          name="sorting-option"
+        >
+          <option
+            value="relevance"
+          >
+            relevance
+          </option>
+          <option
+            value="helpfulness"
+          >
+            helpfuness
+          </option>
+          <option
+            value="newest"
+          >
+            newest
+          </option>
+        </select>
+      </div>
+      <div
+        className="review=tile"
+      >
+        <p
+          className="star-rating"
+        >
+          * * * * *
+        </p>
+        <h3>
+          Review Title...
+        </h3>
+        <h4
+          className="date-of-review"
+        >
+          Month DD, YYYY
+        </h4>
+        <h4
+          className="review-summary"
+        >
+          This is where the review summary would go
+        </h4>
+        <p
+          className="review-body"
+        >
+          This is where the review body would go
+        </p>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a>
+               Yes
+            </a>
+             (#)
+          </p>
+        </div>
+      </div>
+      <button>
+        More Reviews
+      </button>
+    </div>
+    <div
+      className="reviews-add"
+    >
+      <button>
+        Add a Review
+      </button>
+    </div>
+  </div>
+  <div
+    className="ratings"
+  >
+    <div
+      className="ratings-summary"
+    >
+      <h2>
+        3.5
+      </h2>
+      <p
+        className="star-rating"
+      >
+        * * * * *
+      </p>
+      <p>
+        100% of the reviews recommend this product
+      </p>
+    </div>
+    <div
+      className="ratings-breakdown"
+    >
+      <div>
+        5 stars ------------
+      </div>
+      <div>
+        4 stars ------------
+      </div>
+      <div>
+        3 stars ------------
+      </div>
+      <div>
+        2 stars ------------
+      </div>
+      <div>
+        1 stars ------------
+      </div>
+    </div>
+    <div
+      className="ratings-product-breakdown"
+    >
+      Ratings Product Breakdown Placeholder
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components render correctly main ratings and reviews widget renders correctly 1`] = `
+<div
+  className="ratings-and-reviews"
+>
+  <div>
+    <h1>
+      Reviews
+    </h1>
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        <label
+          htmlFor="sorting-option"
+        >
+          238 reviews, sorted by 
+        </label>
+        <select
+          name="sorting-option"
+        >
+          <option
+            value="relevance"
+          >
+            relevance
+          </option>
+          <option
+            value="helpfulness"
+          >
+            helpfuness
+          </option>
+          <option
+            value="newest"
+          >
+            newest
+          </option>
+        </select>
+      </div>
+      <div
+        className="review=tile"
+      >
+        <p
+          className="star-rating"
+        >
+          * * * * *
+        </p>
+        <h3>
+          Review Title...
+        </h3>
+        <h4
+          className="date-of-review"
+        >
+          Month DD, YYYY
+        </h4>
+        <h4
+          className="review-summary"
+        >
+          This is where the review summary would go
+        </h4>
+        <p
+          className="review-body"
+        >
+          This is where the review body would go
+        </p>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a>
+               Yes
+            </a>
+             (#)
+          </p>
+        </div>
+      </div>
+      <button>
+        More Reviews
+      </button>
+    </div>
+    <div
+      className="reviews-add"
+    >
+      <button>
+        Add a Review
+      </button>
+    </div>
+  </div>
+  <div
+    className="ratings"
+  >
+    <div
+      className="ratings-summary"
+    >
+      <h2>
+        3.5
+      </h2>
+      <p
+        className="star-rating"
+      >
+        * * * * *
+      </p>
+      <p>
+        100% of the reviews recommend this product
+      </p>
+    </div>
+    <div
+      className="ratings-breakdown"
+    >
+      <div>
+        5 stars ------------
+      </div>
+      <div>
+        4 stars ------------
+      </div>
+      <div>
+        3 stars ------------
+      </div>
+      <div>
+        2 stars ------------
+      </div>
+      <div>
+        1 stars ------------
+      </div>
+    </div>
+    <div
+      className="ratings-product-breakdown"
+    >
+      Ratings Product Breakdown Placeholder
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components render correctly main ratings widget renders correctly 1`] = `
+<div
+  className="ratings"
+>
+  <div
+    className="ratings-summary"
+  >
+    <h2>
+      3.5
+    </h2>
+    <p
+      className="star-rating"
+    >
+      * * * * *
+    </p>
+    <p>
+      100% of the reviews recommend this product
+    </p>
+  </div>
+  <div
+    className="ratings-breakdown"
+  >
+    <div>
+      5 stars ------------
+    </div>
+    <div>
+      4 stars ------------
+    </div>
+    <div>
+      3 stars ------------
+    </div>
+    <div>
+      2 stars ------------
+    </div>
+    <div>
+      1 stars ------------
+    </div>
+  </div>
+  <div
+    className="ratings-product-breakdown"
+  >
+    Ratings Product Breakdown Placeholder
+  </div>
+</div>
+`;
+
+exports[`Components render correctly main reviews widget renders correctly 1`] = `
+<div>
+  <h1>
+    Reviews
+  </h1>
+  <div
+    className="reviews-list"
+  >
+    <div
+      className="reviews-sorting"
+    >
+      <label
+        htmlFor="sorting-option"
+      >
+        238 reviews, sorted by 
+      </label>
+      <select
+        name="sorting-option"
+      >
+        <option
+          value="relevance"
+        >
+          relevance
+        </option>
+        <option
+          value="helpfulness"
+        >
+          helpfuness
+        </option>
+        <option
+          value="newest"
+        >
+          newest
+        </option>
+      </select>
+    </div>
+    <div
+      className="review=tile"
+    >
+      <p
+        className="star-rating"
+      >
+        * * * * *
+      </p>
+      <h3>
+        Review Title...
+      </h3>
+      <h4
+        className="date-of-review"
+      >
+        Month DD, YYYY
+      </h4>
+      <h4
+        className="review-summary"
+      >
+        This is where the review summary would go
+      </h4>
+      <p
+        className="review-body"
+      >
+        This is where the review body would go
+      </p>
+      <div
+        className="review-helpfulness-voting"
+      >
+        <p>
+          Helpful? 
+          <a>
+             Yes
+          </a>
+           (#)
+        </p>
+      </div>
+    </div>
+    <button>
+      More Reviews
+    </button>
+  </div>
+  <div
+    className="reviews-add"
+  >
+    <button>
+      Add a Review
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Ratings widget renders correctly 1`] = `
+<div
+  className="ratings-and-reviews"
+>
+  <div
+    className="reviews"
+  >
+    <h1>
+      Reviews
+    </h1>
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        Reviews Sorting Placeholder
+      </div>
+      <div
+        className="review=tile"
+      >
+        Review Tile Placeholder
+      </div>
+    </div>
+    <div
+      className="reviews-add"
+    >
+      Add Review Placeholder
+    </div>
+  </div>
+  <div
+    className="ratings"
+  >
+    <div
+      class="ratings-summary"
+    >
+      Ratings Summary Placeholder
+    </div>
+    <div
+      class="ratings-breakdown"
+    >
+      Ratings Breakdown
+    </div>
+    <div
+      class="ratings-breakdown"
+    >
+      Ratings Breakdown
+    </div>
+  </div>
+</div>
+`;
