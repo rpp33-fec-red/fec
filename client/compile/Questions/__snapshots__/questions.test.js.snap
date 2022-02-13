@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`QuestionButtons component loads and displays Question Buttons comoponent 1`] = `
+<div
+  className="question-buttons"
+>
+  <button>
+    MORE ANSWERED QUESTIONS
+  </button>
+  <button>
+    ADD A QUESTION +
+  </button>
+</div>
+`;
+
 exports[`Questions widget component loads and displays questions widget comoponent 1`] = `
 <div
   className="questionsWidget"
@@ -18,14 +31,14 @@ exports[`Questions widget component loads and displays questions widget comopone
     REPLACE WITH QUESTIONSLIST COMPONENT
   </p>
   <div
-    className="questionButtons"
+    className="question-buttons"
   >
-    <p>
-      REPLACE WITH MOREQUESTIONS COMPONENT
-    </p>
-    <p>
-      REPLACE WITH ADDQUESTIONS COMPONENT
-    </p>
+    <button>
+      MORE ANSWERED QUESTIONS
+    </button>
+    <button>
+      ADD A QUESTION +
+    </button>
   </div>
 </div>
 `;
