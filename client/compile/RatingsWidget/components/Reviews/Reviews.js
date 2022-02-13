@@ -6,7 +6,6 @@ import AddReview from './AddReview.js';
 function Reviews (props) {
   return (
     <div>
-      <h1>Reviews</h1>
       <ReviewsList reviews={props.reviews}/>
       <AddReview/>
     </div>
