@@ -9,6 +9,7 @@ class ReviewTile extends React.Component {
     this.convertDate = this.convertDate.bind(this);
   }
 
+  // formats date from API
   convertDate (date) {
     let dateObject = new Date (date);
     var options = { month: 'long'};
@@ -19,7 +20,7 @@ class ReviewTile extends React.Component {
   }
 
   render () {
-    let formattedDate = this.convertDate(this.props.review.date);
+    const formattedDate = this.convertDate(this.props.review.date);
     return (
       <div className="review=tile">
         <p className="star-rating">* * * * *</p>
