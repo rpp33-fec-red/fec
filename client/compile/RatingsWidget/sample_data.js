@@ -1,4 +1,4 @@
-var data = {
+var reviewsData = {
   "product": "2",
   "page": 0,
   "count": 5,
@@ -40,4 +40,4 @@ var data = {
   ]
 }
 
-export default data;
+export default reviewsData;

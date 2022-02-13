@@ -4,12 +4,12 @@ function ReviewTile (props) {
   return (
     <div className="review=tile">
         <p className="star-rating">* * * * *</p>
-        <h3>Review Title...</h3>
-        <h4 className="date-of-review">Month DD, YYYY</h4>
-        <h4 className="review-summary">This is where the review summary would go</h4>
-        <p className="review-body">This is where the review body would go</p>
+        <h4 className="review-summary">{props.review.summary}</h4>
+        <h4 className="date-of-review">{props.review.date}</h4>
+        <h4 className="reviewer-name">{props.review.reviewer_name}</h4>
+        <p className="review-body">{props.review.body}</p>
         <div className="review-helpfulness-voting">
-          <p>Helpful? <a> Yes</a> (#)</p>
+          <p>Helpful? <a> Yes</a> ({props.review.helpfulness})</p>
         </div>
     </div>
   );
