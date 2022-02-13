@@ -1,8 +1,8 @@
 import React from 'react';
 import SearchBar from './subcomponents/SearchBar.jsx';
 //import QuestionsList from './subcomponents/QuestionsList.jsx';
-//import MoreQuestions from './subcomponents/MoreQuestions.jsx';
-//import AddQuestion from './subcomponents/AddQuestion.jsx';
+import QuestionButtons from './subcomponents/QuestionButtons.jsx';
+
 
 
 class QuestionsWidget extends React.Component {
@@ -10,7 +10,8 @@ class QuestionsWidget extends React.Component {
     super(props);
     this.state = {
       query: '',
-      maxQuestionsDisplayed: 2
+      maxQuestionsDisplayed: 2,
+      allQuestionsDisplayed: false
     };
   }
 
@@ -21,10 +22,7 @@ class QuestionsWidget extends React.Component {
         <SearchBar search={this.handleSearch}/>
         <p>REPLACE WITH QUESTIONSLIST COMPONENT</p>
 
-        <div className="questionButtons">
-          <p>REPLACE WITH MOREQUESTIONS COMPONENT</p>
-          <p>REPLACE WITH ADDQUESTIONS COMPONENT</p>
-        </div>
+        <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} />
       </div>
     );
   }
