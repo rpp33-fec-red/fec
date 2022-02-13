@@ -35,6 +35,8 @@ class AnswerList extends React.Component {
       }
 
       return(
+        <div className="answers">
+        <p>A: </p>
         <div className="answerList" >
           {this.state.answerData.map((answer) =>
             <Answer key={answer.id} answer={answer} />
@@ -43,6 +45,7 @@ class AnswerList extends React.Component {
             <a>See more answers</a>
           }
         </div>
+      </div>
       );
     }
   }
