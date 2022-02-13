@@ -1,8 +1,12 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import Questions from './Questions.jsx';
-import searchBarTree from './subcomponents/SearchBar.jsx';
+import SearchBar from './subcomponents/SearchBar.jsx';
+import Question from './subcomponents/Question.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
+import Answer from './subcomponents/Answer.jsx';
+import AnswerList from './subcomponents/AnswerList.jsx';
+import { sampleData, answer } from './sampleData.js';
 
 //https://jestjs.io/docs/getting-started
 
@@ -24,7 +28,7 @@ describe('SearchBar component', () => {
 
 describe('QuestionsList component', () => {
   test('loads and displays QuestionsList component', () => {
-    var questionsListTree = TestRenderer.create(<QuestionsList />).toJSON();
+    var questionsListTree = TestRenderer.create(<QuestionsList questions={sampleData}/>).toJSON();
 
     expect(questionsListTree).toMatchSnapshot();
   });
@@ -32,7 +36,7 @@ describe('QuestionsList component', () => {
 
 describe('Question component', () => {
   test('loads and displays Question component', () => {
-    var questionTree = TestRenderer.create(<Question />).toJSON();
+    var questionTree = TestRenderer.create(<Question question={sampleData.results[0]}/>).toJSON();
 
     expect(questionTree).toMatchSnapshot();
   });
@@ -40,7 +44,7 @@ describe('Question component', () => {
 
 describe('AnswerList component', () => {
   test('loads and displays AnswerList component', () => {
-    var answerListTree = TestRenderer.create(<AnswerList />).toJSON();
+    var answerListTree = TestRenderer.create(<AnswerList answers={sampleData.results[0].answers}/>).toJSON();
 
     expect(answerListTree).toMatchSnapshot();
   });
@@ -48,7 +52,7 @@ describe('AnswerList component', () => {
 
 describe('Answer component', () => {
   test('loads and displays Answer component', () => {
-    var answerTree = TestRenderer.create(<Answer />).toJSON();
+    var answerTree = TestRenderer.create(<Answer answer={answer}/>).toJSON();
 
     expect(answerTree).toMatchSnapshot();
   });

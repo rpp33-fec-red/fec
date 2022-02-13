@@ -27,16 +27,14 @@ class AnswerList extends React.Component {
   }
 
   render() {
-    if (!this.state.answerData.length) {
-      return null;
-    } else {
+    if (this.state.answerData.length) {
       if (!this.state.displayAllAnswers) {
         this.state.answerData = this.state.answerData.slice(0, 2);
       }
 
       return(
         <div className="answers">
-        <p>A: </p>
+        <p>A:&nbsp;</p>
         <div className="answerList" >
           {this.state.answerData.map((answer) =>
             <Answer key={answer.id} answer={answer} />
@@ -47,6 +45,8 @@ class AnswerList extends React.Component {
         </div>
       </div>
       );
+    } else {
+      return null;
     }
   }
 }

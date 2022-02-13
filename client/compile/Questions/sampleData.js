@@ -1,4 +1,4 @@
-sampleData =  {
+const sampleData =  {
   "product_id": "5",
   "results": [{
     "question_id": 37,
@@ -47,4 +47,16 @@ sampleData =  {
   ]
 }
 
-module.exports.sampleData = sampleData;
+const answer = {
+  "id": 68,
+  "body": "We are selling it here without any markup from the middleman!",
+  "date": "2018-08-18T00:00:00.000Z",
+  "answerer_name": "Seller",
+  "helpfulness": 4,
+  "photos": []
+}
+
+module.exports = {
+  sampleData: sampleData,
+  answer: answer
+}
