@@ -53,6 +53,12 @@ class ReviewTile extends React.Component {
       reviewBody = lessBody;
     }
 
+    // show "I recommend this product" if product is recommended by reviewer
+    let recommend;
+    if (this.props.review.recommend) {
+      recommend = <div className="recommend">☑ I recommend this product</div>
+    }
+
     return (
       <div className="review=tile">
         <p className="star-rating">* * * * *</p>
@@ -60,6 +66,7 @@ class ReviewTile extends React.Component {
         <h4 className="date-of-review">{formattedDate}</h4>
         <h4 className="reviewer-name">{this.props.review.reviewer_name}</h4>
         {reviewBody}
+        {recommend}
         <div className="review-helpfulness-voting">
           <p>Helpful? <a> Yes</a> ({this.props.review.helpfulness})</p>
         </div>
