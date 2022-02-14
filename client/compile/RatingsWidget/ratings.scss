@@ -1,0 +1,13 @@
+.ratings-and-reviews {
+  display: flex;
+
+  .reviews{
+    background-color: blue;
+    flex: 1;
+  }
+
+  .ratings {
+    background-color: green;
+    width: 25%;
+  }
+}

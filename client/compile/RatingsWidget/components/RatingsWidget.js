@@ -28,9 +28,8 @@ class RatingsWidget extends React.Component {
   render () {
     return (
       <div className="ratings-and-reviews">
-        <h4>Ratings &#38; Reviews</h4>
-        <Reviews reviews={reviewsData.results} />
         <Ratings/>
+        <Reviews reviews={reviewsData.results} />
       </div>
     );
   }
