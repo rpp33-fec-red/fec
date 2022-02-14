@@ -5,10 +5,20 @@ class ReviewTile extends React.Component {
     super(props)
     this.state = {
       recommended: false,
-      showFullReview: false
+      showFullReview: false,
+      helpfulnessVoteCount: 0,
+      helpfulnessVoted: false
+
     }
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
+    this.updateHelpfulnessVoteCount = this.updateHelpfulnessVoteCount.bind(this);
+  }
+
+  componentDidMount () {
+    this.setState({
+      helpfulnessVoteCount: this.props.review.helpfulness
+    });
   }
 
   // formats date from API into Month DD, YYYY
@@ -25,6 +35,20 @@ class ReviewTile extends React.Component {
     this.setState({
       showFullReview: !this.state.showFullReview
     });
+  }
+
+  updateHelpfulnessVoteCount () {
+    if (this.state.helpfulnessVoted) {
+      this.setState({
+        helpfulnessVoteCount: this.state.helpfulnessVoteCount - 1,
+        helpfulnessVoted: false
+      });
+    } else {
+      this.setState({
+        helpfulnessVoteCount: this.state.helpfulnessVoteCount + 1,
+        helpfulnessVoted: true
+      });
+    }
   }
 
   render () {
@@ -68,7 +92,7 @@ class ReviewTile extends React.Component {
         {reviewBody}
         {recommend}
         <div className="review-helpfulness-voting">
-          <p>Helpful? <a> Yes</a> ({this.props.review.helpfulness})</p>
+          <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
         </div>
       </div>
     );
