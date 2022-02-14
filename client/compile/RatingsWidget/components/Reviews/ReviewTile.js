@@ -36,19 +36,27 @@ class ReviewTile extends React.Component {
     // showing only the first 250 characters of the review by default
     let reviewBody;
     const body = this.props.review.body || null;
-    if (body.length > 250) {
+    if (body.length < 250) {
       reviewBody = (
         <div className="review-body">
           <p>{body}</p>
         </div>
       );
     } else {
-      reviewBody = (
-        <div className="review-body">
-          <p>{body}</p>
-          <a onClick={this.showFullReview}>Show More</a>
-        </div>
-      );
+      if (this.state.showFullReview) {
+        reviewBody = (
+          <div className="review-body">
+            <p>{body}</p>
+          </div>
+        );
+      } else {
+        reviewBody = (
+          <div className="review-body">
+            <p>{body}</p>
+            <a onClick={this.showFullReview}>Show More</a>
+          </div>
+        );
+      }
     }
 
     return (
