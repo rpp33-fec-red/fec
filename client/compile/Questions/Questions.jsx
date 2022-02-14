@@ -2,7 +2,7 @@ import React from 'react';
 import SearchBar from './subcomponents/SearchBar.jsx';
 //import QuestionsList from './subcomponents/QuestionsList.jsx';
 import QuestionButtons from './subcomponents/QuestionButtons.jsx';
-
+import './questionsStyles.scss';
 
 
 class QuestionsWidget extends React.Component {
