@@ -39,7 +39,7 @@ class ReviewTile extends React.Component {
 
   updateHelpfulnessVoteCount () {
     if (this.state.helpfulnessVoted) {
-      this.setStte({
+      this.setState({
         helpfulnessVoteCount: this.state.helpfulnessVoteCount - 1,
         helpfulnessVoted: false
       });
@@ -89,13 +89,13 @@ class ReviewTile extends React.Component {
           <div className="star-rating">* * * * *</div>
           <div className="right-corner">{this.props.review.reviewer_name + ', ' + formattedDate}</div>
         </div>
-
-        <h4 className="review-summary">{reviewSummary}</h4>
-
-        {reviewBody}
-        {recommend}
-        <div className="review-helpfulness-voting">
-          <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
+        <h3 className="review-summary">{reviewSummary}</h3>
+        <div className="review-main">
+          {reviewBody}
+          {recommend}
+          <div className="review-helpfulness-voting">
+            <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
+          </div>
         </div>
       </div>
     );
