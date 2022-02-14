@@ -1,13 +1,37 @@
 .ratings-and-reviews {
   display: flex;
 
-  .reviews{
-    background-color: blue;
+  .reviews {
     flex: 1;
+    background-color: green;
+    .reviews-list {
+      background-color: red;
+      .review-tile {
+        background-color: blue;
+        .review-header {
+          background-color: pink;
+          display: flex;
+          flex-direction: row;
+          .star-rating {
+            background-color: yellow;
+            width: 50%;
+          }
+          .right-corner {
+            text-align: right;
+            background-color: orange;
+            flex: 1;
+          }
+        }
+      }
+      .reviews-sorting {
+        background-color: yellow;
+      }
+    }
   }
 
   .ratings {
-    background-color: green;
     width: 25%;
   }
 }
+
+
