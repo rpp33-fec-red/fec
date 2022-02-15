@@ -187,6 +187,60 @@ exports[`Components render correctly main ratings and reviews widget renders cor
           </div>
         </div>
       </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            alyshagilliard, July 24, 2020
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I'm enjoying wearing these shades because they block the sun
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              Comfortable and practical.
+            </p>
+          </div>
+          <div
+            className="recommend"
+          >
+            ☑ I recommend this product
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              8
+              )
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       className="reviews-buttons"
@@ -389,6 +443,60 @@ exports[`Components render correctly main reviews component renders correctly 1`
         </div>
       </div>
     </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          alyshagilliard, July 24, 2020
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I'm enjoying wearing these shades because they block the sun
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            Comfortable and practical.
+          </p>
+        </div>
+        <div
+          className="recommend"
+        >
+          ☑ I recommend this product
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            8
+            )
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="reviews-buttons"
@@ -424,7 +532,7 @@ exports[`ReviewTile component renders correctly 1`] = `
   <h3
     className="review-summary"
   >
-    I'm enjoying wearing these shades because they go well with 
+    I'm enjoying wearing these shades
   </h3>
   <div
     className="review-main"

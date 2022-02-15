@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {render} from '@testing-library/react'
@@ -5,7 +9,8 @@ import RatingsWidget from './components/RatingsWidget.js';
 import Ratings from './components/Ratings/Ratings.js';
 import Reviews from './components/Reviews/Reviews.js';
 import ReviewTile from './components/Reviews/ReviewTile.js';
-import reviewsData from './sample_data.js'
+import reviewsData from './sample_data.js';
+import '@testing-library/jest-dom';
 
 describe('Components render correctly', () => {
 
@@ -34,39 +39,26 @@ describe('Components render correctly', () => {
 
 describe('ReviewTile component', () => {
 
-  var testReview = {
-    "review_id": 5,
-    "rating": 3,
-    "summary": "I'm enjoying wearing these shades because they go well with alot of outfits and block the sun from my eyes",
-    "recommend": true,
-    "response": null,
-    "body": "Comfortable and practical.",
-    "date": "2019-04-14T00:00:00.000Z",
-    "reviewer_name": "shortandsweeet",
-    "helpfulness": 5,
-    "photos": [{
-        "id": 1,
-        "url": "urlplaceholder/review_5_photo_number_1.jpg"
-      },
-      {
-        "id": 2,
-        "url": "urlplaceholder/review_5_photo_number_2.jpg"
-      },
-      // ...
-    ]
-  }
-
   test('renders correctly', () => {
     const tree = renderer
-    .create(<ReviewTile review={testReview}/>)
+    .create(<ReviewTile review={reviewsData.results[0]}/>)
     .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   // test for convert date function
   test('converts date into Month DD, YYYY format', () => {
-    const {getByText} = render(<ReviewTile review={testReview}/>);
-    expect(getByText('April 14, 2019')).toBeInTheDocument();
+    let testReview = reviewsData.results[0];
+    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
+    expect(getByText(`${testReview.reviewer_name}, April 13, 2019`)).toBeInTheDocument();
+
+    testReview = reviewsData.results[1];
+    rerender(<ReviewTile review={testReview}/>);
+    expect(getByText(`${testReview.reviewer_name}, June 22, 2019`)).toBeInTheDocument();
+
+    testReview = reviewsData.results[2];
+    rerender(<ReviewTile review={testReview}/>);
+    expect(getByText(`${testReview.reviewer_name}, July 24, 2020`)).toBeInTheDocument();
   });
 
   // check that review summary is capped at 60 characters

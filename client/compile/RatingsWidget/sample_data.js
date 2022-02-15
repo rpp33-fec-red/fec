@@ -36,7 +36,27 @@ var reviewsData = {
       "helpfulness": 5,
       "photos": [],
     },
-    // ...
+    {
+      "review_id": 4,
+      "rating": 3,
+      "summary": "I'm enjoying wearing these shades because they block the sun from my eyes and they are stylish.",
+      "recommend": true,
+      "response": null,
+      "body": "Comfortable and practical.",
+      "date": "2020-07-24T05:00:00.000Z",
+      "reviewer_name": "alyshagilliard",
+      "helpfulness": 8,
+      "photos": [{
+          "id": 1,
+          "url": "urlplaceholder/review_5_photo_number_1.jpg"
+        },
+        {
+          "id": 2,
+          "url": "urlplaceholder/review_5_photo_number_2.jpg"
+        },
+
+      ]
+    }
   ]
 }
 

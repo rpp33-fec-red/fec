@@ -24,11 +24,9 @@ class ReviewTile extends React.Component {
   // formats date from API into Month DD, YYYY
   convertDate (date) {
     let dateObject = new Date (date);
-    var options = { month: 'long'};
-    const month = new Intl.DateTimeFormat('en-US', options).format(dateObject);
-    const day = dateObject.getDate();
-    const year = dateObject.getFullYear();
-    return month + ' ' + day + ', ' + year;
+    const options = { dateStyle: 'long'};
+    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(dateObject);
+    return formattedDate;
   }
 
   showFullReview () {
