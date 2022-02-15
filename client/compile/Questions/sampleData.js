@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const sampleData = {
-=======
 const sampleData =  {
->>>>>>> 24a7ce624f601bebc077e3e573cd691fa465ca69
   "product_id": "5",
   "results": [{
     "question_id": 37,
