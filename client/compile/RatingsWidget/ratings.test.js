@@ -38,7 +38,7 @@ describe('Components render correctly', () => {
 });
 
 describe('ReviewTile component', () => {
-
+  let testReview = reviewsData.results[0];
   test('renders correctly', () => {
     const tree = renderer
     .create(<ReviewTile review={reviewsData.results[0]}/>)
@@ -46,7 +46,7 @@ describe('ReviewTile component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  // test for convert date function
+
   test('converts date into Month DD, YYYY format', () => {
     let testReview = reviewsData.results[0];
     const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
@@ -62,6 +62,12 @@ describe('ReviewTile component', () => {
   });
 
   // check that review summary is capped at 60 characters
+  test('caps review summary at 60 characters', () => {
+    let testReview = reviewsData.results[2];
+    const {getByText} = render(<ReviewTile review={testReview}/>);
+    const reviewSummary = getByText('I\'m enjoying wearing these shades because they block the sun...');
+    expect(reviewSummary).toBeDefined();
+  });
 
   // test for show more button
   // test to make sure only 250 characters show by default
