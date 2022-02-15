@@ -1,4 +1,5 @@
 import React from 'react';
+import AnswerList from './AnswerList.jsx';
 
 class Question extends React.Component {
   constructor(props) {
@@ -18,9 +19,7 @@ class Question extends React.Component {
           <p>Helpful? <a>Yes</a> ({this.props.question.question_helpfulness}) | <a>Add Answer</a></p>
         </div>
       </div>
-      <div className="answerList">
-        <p>A: INSERT ANSWER LIST COMPONENT HERE</p>
-      </div>
+        <AnswerList answers={this.props.question.answers} />
     </div>
     );
   }

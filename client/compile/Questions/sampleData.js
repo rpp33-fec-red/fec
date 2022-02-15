@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const sampleData = {
+=======
+const sampleData =  {
+>>>>>>> 24a7ce624f601bebc077e3e573cd691fa465ca69
   "product_id": "5",
   "results": [{
     "question_id": 37,
@@ -47,4 +51,16 @@ const sampleData = {
   ]
 }
 
-module.exports.sampleData = sampleData;
+const answer = {
+  "id": 68,
+  "body": "We are selling it here without any markup from the middleman!",
+  "date": "2018-08-18T00:00:00.000Z",
+  "answerer_name": "Seller",
+  "helpfulness": 4,
+  "photos": []
+}
+
+module.exports = {
+  sampleData: sampleData,
+  answer: answer
+}
