@@ -53,7 +53,13 @@ class ReviewTile extends React.Component {
     const formattedDate = this.convertDate(this.props.review.date);
 
     // caps review summary string size to 60 characters
-    const reviewSummary = this.props.review.summary.substring(0, 60);
+    let reviewSummary;
+    if (this.props.review.summary.length > 60) {
+      reviewSummary = this.props.review.summary.substring(0, 60) + '...';
+    } else {
+      reviewSummary = this.props.review.summary;
+    }
+
 
     // showing only the first 250 characters of the review by default
     let reviewBody;
