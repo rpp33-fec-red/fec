@@ -1,3 +1,7 @@
+/*-----------------------------------
+MODAL WINDOW
+-----------------------------------*/
+
 .modal {
   position: fixed;
   left: 0;
@@ -13,4 +17,28 @@
 .modal-content {
   width: 500px;
   background-color: white;
+}
+
+/*-----------------------------------
+QUESTIONS
+-----------------------------------*/
+
+.questionTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*-----------------------------------
+ANSWERS
+-----------------------------------*/
+
+.answers {
+  display: flex;
+  flex-direction: row;
+}
+
+.answerList {
+  display: flex;
+  flex-direction: column;
 }
