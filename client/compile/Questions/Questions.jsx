@@ -41,7 +41,14 @@ class QuestionsWidget extends React.Component {
         <h6>QUESTIONS &amp; ANSWERS</h6>
         <SearchBar search={this.handleSearch}/>
         <QuestionsList questions={this.state.questionsData}/>
+<<<<<<< HEAD
         <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} />
+=======
+        <div className="questionButtons">
+          <p>REPLACE WITH MOREQUESTIONS COMPONENT</p>
+          <p>REPLACE WITH ADDQUESTIONS COMPONENT</p>
+        </div>
+>>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
       </div>
     );
   }
