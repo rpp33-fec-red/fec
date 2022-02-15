@@ -4,13 +4,9 @@ import Questions from './Questions.jsx';
 import SearchBar from './subcomponents/SearchBar.jsx';
 import Question from './subcomponents/Question.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
-<<<<<<< HEAD
-import { sampleData } from './sampleData.js';
-=======
 import Answer from './subcomponents/Answer.jsx';
 import AnswerList from './subcomponents/AnswerList.jsx';
 import { sampleData, answer } from './sampleData.js';
->>>>>>> 24a7ce624f601bebc077e3e573cd691fa465ca69
 
 //https://jestjs.io/docs/getting-started
 
@@ -23,11 +19,7 @@ describe('Questions widget component', () => {
 });
 
 describe('SearchBar component', () => {
-<<<<<<< HEAD
-  test('loads and displays SearcbBar component', () => {
-=======
-  test('loads and displays searcbBar component', () => {
->>>>>>> 24a7ce624f601bebc077e3e573cd691fa465ca69
+  test('loads and displays SearchBar component', () => {
     var searchBarTree = TestRenderer.create(<SearchBar />).toJSON();
 
     expect(searchBarTree).toMatchSnapshot();
@@ -44,17 +36,11 @@ describe('QuestionsList component', () => {
 
 describe('Question component', () => {
   test('loads and displays Question component', () => {
-<<<<<<< HEAD
-    var questionTree = TestRenderer.create(<Question question={sampleData.results[0]} />).toJSON();
-=======
     var questionTree = TestRenderer.create(<Question question={sampleData.results[0]}/>).toJSON();
->>>>>>> 24a7ce624f601bebc077e3e573cd691fa465ca69
 
     expect(questionTree).toMatchSnapshot();
   });
 });
-<<<<<<< HEAD
-=======
 
 describe('AnswerList component', () => {
   test('loads and displays AnswerList component', () => {
@@ -71,4 +57,3 @@ describe('Answer component', () => {
     expect(answerTree).toMatchSnapshot();
   });
 });
->>>>>>> 24a7ce624f601bebc077e3e573cd691fa465ca69

@@ -1,5 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Answer component loads and displays Answer component 1`] = `
+<div
+  className="answer"
+>
+  <p
+    className="answerTitle"
+  >
+    We are selling it here without any markup from the middleman!
+  </p>
+  <div
+    className="answerLinks"
+  >
+    <p>
+      by 
+      Seller
+      , MONTH, DD, YEAR | Helpful? 
+      <a>
+        Yes
+      </a>
+       (
+      4
+      ) | 
+      <a>
+        Report
+      </a>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`AnswerList component loads and displays AnswerList component 1`] = `
+<div
+  className="answers"
+>
+  <p>
+    A: 
+  </p>
+  <div
+    className="answerList"
+  >
+    <div
+      className="answer"
+    >
+      <p
+        className="answerTitle"
+      >
+        We are selling it here without any markup from the middleman!
+      </p>
+      <div
+        className="answerLinks"
+      >
+        <p>
+          by 
+          Seller
+          , MONTH, DD, YEAR | Helpful? 
+          <a>
+            Yes
+          </a>
+           (
+          4
+          ) | 
+          <a>
+            Report
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Question component loads and displays Question component 1`] = `
 <div
   className="question"
@@ -29,11 +100,42 @@ exports[`Question component loads and displays Question component 1`] = `
     </div>
   </div>
   <div
-    className="answerList"
+    className="answers"
   >
     <p>
-      A: INSERT ANSWER LIST COMPONENT HERE
+      A: 
     </p>
+    <div
+      className="answerList"
+    >
+      <div
+        className="answer"
+      >
+        <p
+          className="answerTitle"
+        >
+          We are selling it here without any markup from the middleman!
+        </p>
+        <div
+          className="answerLinks"
+        >
+          <p>
+            by 
+            Seller
+            , MONTH, DD, YEAR | Helpful? 
+            <a>
+              Yes
+            </a>
+             (
+            4
+            ) | 
+            <a>
+              Report
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -84,11 +186,42 @@ exports[`Questions widget component loads and displays questions widget componen
         </div>
       </div>
       <div
-        className="answerList"
+        className="answers"
       >
         <p>
-          A: INSERT ANSWER LIST COMPONENT HERE
+          A: 
         </p>
+        <div
+          className="answerList"
+        >
+          <div
+            className="answer"
+          >
+            <p
+              className="answerTitle"
+            >
+              We are selling it here without any markup from the middleman!
+            </p>
+            <div
+              className="answerLinks"
+            >
+              <p>
+                by 
+                Seller
+                , MONTH, DD, YEAR | Helpful? 
+                <a>
+                  Yes
+                </a>
+                 (
+                4
+                ) | 
+                <a>
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -119,11 +252,69 @@ exports[`Questions widget component loads and displays questions widget componen
         </div>
       </div>
       <div
-        className="answerList"
+        className="answers"
       >
         <p>
-          A: INSERT ANSWER LIST COMPONENT HERE
+          A: 
         </p>
+        <div
+          className="answerList"
+        >
+          <div
+            className="answer"
+          >
+            <p
+              className="answerTitle"
+            >
+              Some of the seams started splitting the first time I wore it!
+            </p>
+            <div
+              className="answerLinks"
+            >
+              <p>
+                by 
+                sillyguy
+                , MONTH, DD, YEAR | Helpful? 
+                <a>
+                  Yes
+                </a>
+                 (
+                6
+                ) | 
+                <a>
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
+          <div
+            className="answer"
+          >
+            <p
+              className="answerTitle"
+            >
+              9 lives
+            </p>
+            <div
+              className="answerLinks"
+            >
+              <p>
+                by 
+                iluvdogz
+                , MONTH, DD, YEAR | Helpful? 
+                <a>
+                  Yes
+                </a>
+                 (
+                31
+                ) | 
+                <a>
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -142,7 +333,7 @@ exports[`Questions widget component loads and displays questions widget componen
 
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
-exports[`SearchBar component loads and displays SearcbBar component 1`] = `
+exports[`SearchBar component loads and displays SearchBar component 1`] = `
 <div>
   <input
     id="questionsSearchBar"
