@@ -1,5 +1,5 @@
 import React from 'react';
-//import SearchBar from './subcomponents/SearchBar.jsx';
+import SearchBar from './subcomponents/SearchBar.jsx';
 //import QuestionsList from './subcomponents/QuestionsList.jsx';
 //import MoreQuestions from './subcomponents/MoreQuestions.jsx';
 //import AddQuestion from './subcomponents/AddQuestion.jsx';
@@ -17,8 +17,8 @@ class QuestionsWidget extends React.Component {
   render() {
     return (
       <div className="questionsWidget">
-        <h6>QUESTIONS AND ANSWERS</h6>
-        <p>REPLACE WITH SEARCHBAR COMPONENT</p>
+        <h6>QUESTIONS &amp; ANSWERS</h6>
+        <SearchBar search={this.handleSearch}/>
         <p>REPLACE WITH QUESTIONSLIST COMPONENT</p>
 
         <div className="questionButtons">
@@ -26,7 +26,7 @@ class QuestionsWidget extends React.Component {
           <p>REPLACE WITH ADDQUESTIONS COMPONENT</p>
         </div>
       </div>
-    )
+    );
   }
 }
 
