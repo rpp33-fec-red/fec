@@ -6,7 +6,7 @@ class Question extends React.Component {
     super(props);
     this.state = {
       helpful: false,
-      helpfulness: 0
+      helpfulnessVoteCount: 0
     }
   }
 
@@ -21,7 +21,7 @@ class Question extends React.Component {
       </div>
         <AnswerList answers={this.props.question.answers} />
     </div>
-    )
+    );
   }
 }
 

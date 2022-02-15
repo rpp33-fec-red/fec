@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`Answer component loads and displays Answer component 1`] = `
 <div
   className="answer"
@@ -71,6 +72,8 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
 </div>
 `;
 
+=======
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
 exports[`Question component loads and displays Question component 1`] = `
 <div
   className="question"
@@ -100,6 +103,7 @@ exports[`Question component loads and displays Question component 1`] = `
     </div>
   </div>
   <div
+<<<<<<< HEAD
     className="answers"
   >
     <p>
@@ -136,10 +140,18 @@ exports[`Question component loads and displays Question component 1`] = `
         </div>
       </div>
     </div>
+=======
+    className="answerList"
+  >
+    <p>
+      A: INSERT ANSWER LIST COMPONENT HERE
+    </p>
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
   </div>
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`QuestionButtons component loads and displays Question Buttons comoponent 1`] = `
 <div
   className="question-buttons"
@@ -155,6 +167,8 @@ exports[`QuestionButtons component loads and displays Question Buttons comoponen
 </div>
 `;
 
+=======
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
 exports[`Questions widget component loads and displays questions widget component 1`] = `
 <div
   className="questionsWidget"
@@ -201,6 +215,7 @@ exports[`Questions widget component loads and displays questions widget componen
         </div>
       </div>
       <div
+<<<<<<< HEAD
         className="answers"
       >
         <p>
@@ -237,6 +252,13 @@ exports[`Questions widget component loads and displays questions widget componen
             </div>
           </div>
         </div>
+=======
+        className="answerList"
+      >
+        <p>
+          A: INSERT ANSWER LIST COMPONENT HERE
+        </p>
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
       </div>
     </div>
     <div
@@ -267,6 +289,7 @@ exports[`Questions widget component loads and displays questions widget componen
         </div>
       </div>
       <div
+<<<<<<< HEAD
         className="answers"
       >
         <p>
@@ -330,10 +353,18 @@ exports[`Questions widget component loads and displays questions widget componen
             </div>
           </div>
         </div>
+=======
+        className="answerList"
+      >
+        <p>
+          A: INSERT ANSWER LIST COMPONENT HERE
+        </p>
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
       </div>
     </div>
   </div>
   <div
+<<<<<<< HEAD
     className="question-buttons"
   >
     <button>
@@ -344,13 +375,27 @@ exports[`Questions widget component loads and displays questions widget componen
     >
       ADD A QUESTION +
     </button>
+=======
+    className="questionButtons"
+  >
+    <p>
+      REPLACE WITH MOREQUESTIONS COMPONENT
+    </p>
+    <p>
+      REPLACE WITH ADDQUESTIONS COMPONENT
+    </p>
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
   </div>
 </div>
 `;
 
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
+<<<<<<< HEAD
 exports[`SearchBar component loads and displays searcbBar component 1`] = `
+=======
+exports[`SearchBar component loads and displays SearcbBar component 1`] = `
+>>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
 <div>
   <input
     id="questionsSearchBar"
