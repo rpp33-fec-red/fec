@@ -1,8 +1,8 @@
 {
-  "testMatch": ["**/?(questions)+(.test.js?(x))"],
+  "testMatch": ["**/?(relatedItems)+(.test.js?(x))"],
   "testPathIgnorePatterns":["/node_modules/"],
   "collectCoverageFrom": [
-    "questions.test.js"
+    "relatedItems.test.js"
 
   ],
   "collectCoverage":true,
