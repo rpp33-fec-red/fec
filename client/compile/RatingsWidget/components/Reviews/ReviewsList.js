@@ -10,7 +10,6 @@ function ReviewsList (props) {
       {props.reviews.map((review) => {
         return <ReviewTile key={review.review_id} review={review}/>
       })}
-      <button>More Reviews</button>
     </div>
   );
 }
