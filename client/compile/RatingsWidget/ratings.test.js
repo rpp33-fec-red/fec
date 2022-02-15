@@ -66,14 +66,35 @@ describe('ReviewTile component', () => {
     let testReview = reviewsData.results[2];
     const {getByText} = render(<ReviewTile review={testReview}/>);
     const reviewSummary = getByText('I\'m enjoying wearing these shades because they block the sun...');
-    expect(reviewSummary).toBeDefined();
+    expect(reviewSummary).toBeInTheDocument();
   });
 
-  // test for show more button
   // test to make sure only 250 characters show by default
 
-  // test to check if "I recommend this product shows if product is recommended"
+  // test for show more button
+  test('displays show more button only appears when there are more than 250 characters in the review body', () => {
+    let testReview = reviewsData.results[2];
+    const {getByText} = render(<ReviewTile review={testReview}/>);
 
-  // test for rating helpfulness
+  });
+
+  test('shows full review body when show more is clicked', () => {
+    let testReview = reviewsData.results[2];
+    const {getByText} = render(<ReviewTile review={testReview}/>);
+    expect(getByText('☑ I recommend this product')).toBeInTheDocument();
+  });
+
+  test('shows "I recommend this product" when product is recommended', () => {
+    let testReview = reviewsData.results[0];
+    const {getByText} = render(<ReviewTile review={testReview}/>);
+
+  });
+
+  test('increments helpfulness count when "Yes" is clicked', () => {
+    let testReview = reviewsData.results[2];
+    const {getByText} = render(<ReviewTile review={testReview}/>);
+
+  });
+
 });
 

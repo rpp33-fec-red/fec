@@ -207,7 +207,7 @@ exports[`Components render correctly main ratings and reviews widget renders cor
         <h3
           className="review-summary"
         >
-          I'm enjoying wearing these shades because they block the sun
+          I'm enjoying wearing these shades because they block the sun...
         </h3>
         <div
           className="review-main"
@@ -463,7 +463,7 @@ exports[`Components render correctly main reviews component renders correctly 1`
       <h3
         className="review-summary"
       >
-        I'm enjoying wearing these shades because they block the sun
+        I'm enjoying wearing these shades because they block the sun...
       </h3>
       <div
         className="review-main"
