@@ -8,7 +8,7 @@ function Reviews (props) {
       <ReviewsList reviews={props.reviews}/>
       <div className ="reviews-buttons">
         <button>MORE REVIEWS</button>
-        <button>ADD A REVIEW</button>
+        <button>ADD A REVIEW +</button>
       </div>
     </div>
   );
