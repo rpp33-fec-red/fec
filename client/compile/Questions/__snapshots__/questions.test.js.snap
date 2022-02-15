@@ -1,5 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Answer component loads and displays Answer component 1`] = `
+<div
+  className="answer"
+>
+  <p
+    className="answerTitle"
+  >
+    We are selling it here without any markup from the middleman!
+  </p>
+  <div
+    className="answerLinks"
+  >
+    <p>
+      by 
+      Seller
+      , MONTH, DD, YEAR | Helpful? 
+      <a>
+        Yes
+      </a>
+       (
+      4
+      ) | 
+      <a>
+        Report
+      </a>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`AnswerList component loads and displays AnswerList component 1`] = `
+<div
+  className="answers"
+>
+  <p>
+    A: 
+  </p>
+  <div
+    className="answerList"
+  >
+    <div
+      className="answer"
+    >
+      <p
+        className="answerTitle"
+      >
+        We are selling it here without any markup from the middleman!
+      </p>
+      <div
+        className="answerLinks"
+      >
+        <p>
+          by 
+          Seller
+          , MONTH, DD, YEAR | Helpful? 
+          <a>
+            Yes
+          </a>
+           (
+          4
+          ) | 
+          <a>
+            Report
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Question component loads and displays Question component 1`] = `
 <div
   className="question"
@@ -143,6 +214,16 @@ exports[`Questions widget component loads and displays questions widget componen
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
 exports[`SearchBar component loads and displays SearcbBar component 1`] = `
+<div>
+  <input
+    id="questionsSearchBar"
+    placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+    type="search"
+  />
+</div>
+`;
+
+exports[`SearchBar component loads and displays searcbBar component 1`] = `
 <div>
   <input
     id="questionsSearchBar"

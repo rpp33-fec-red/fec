@@ -1,232 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-<div
-  className="ratings-and-reviews"
->
-  <div>
-    <h1>
-      Reviews
-    </h1>
-    <div
-      className="reviews-list"
-    >
-      <div
-        className="reviews-sorting"
-      >
-        <label
-          htmlFor="sorting-option"
-        >
-          238 reviews, sorted by 
-        </label>
-        <select
-          name="sorting-option"
-        >
-          <option
-            value="relevance"
-          >
-            relevance
-          </option>
-          <option
-            value="helpfulness"
-          >
-            helpfuness
-          </option>
-          <option
-            value="newest"
-          >
-            newest
-          </option>
-        </select>
-      </div>
-      <div
-        className="review=tile"
-      >
-        <p
-          className="star-rating"
-        >
-          * * * * *
-        </p>
-        <h3>
-          Review Title...
-        </h3>
-        <h4
-          className="date-of-review"
-        >
-          Month DD, YYYY
-        </h4>
-        <h4
-          className="review-summary"
-        >
-          This is where the review summary would go
-        </h4>
-        <p
-          className="review-body"
-        >
-          This is where the review body would go
-        </p>
-        <div
-          className="review-helpfulness-voting"
-        >
-          <p>
-            Helpful? 
-            <a>
-               Yes
-            </a>
-             (#)
-          </p>
-        </div>
-      </div>
-      <button>
-        More Reviews
-      </button>
-    </div>
-    <div
-      className="reviews-add"
-    >
-      <button>
-        Add a Review
-      </button>
-    </div>
-  </div>
-  <div
-    className="ratings"
-  >
-    <div
-      className="ratings-summary"
-    >
-      <h2>
-        3.5
-      </h2>
-      <p
-        className="star-rating"
-      >
-        * * * * *
-      </p>
-      <p>
-        100% of the reviews recommend this product
-      </p>
-    </div>
-    <div
-      className="ratings-breakdown"
-    >
-      <div>
-        5 stars ------------
-      </div>
-      <div>
-        4 stars ------------
-      </div>
-      <div>
-        3 stars ------------
-      </div>
-      <div>
-        2 stars ------------
-      </div>
-      <div>
-        1 stars ------------
-      </div>
-    </div>
-    <div
-      className="ratings-product-breakdown"
-    >
-      Ratings Product Breakdown Placeholder
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Components render correctly main ratings and reviews widget renders correctly 1`] = `
 <div
   className="ratings-and-reviews"
 >
-  <div>
-    <h1>
-      Reviews
-    </h1>
-    <div
-      className="reviews-list"
-    >
-      <div
-        className="reviews-sorting"
-      >
-        <label
-          htmlFor="sorting-option"
-        >
-          238 reviews, sorted by 
-        </label>
-        <select
-          name="sorting-option"
-        >
-          <option
-            value="relevance"
-          >
-            relevance
-          </option>
-          <option
-            value="helpfulness"
-          >
-            helpfuness
-          </option>
-          <option
-            value="newest"
-          >
-            newest
-          </option>
-        </select>
-      </div>
-      <div
-        className="review=tile"
-      >
-        <p
-          className="star-rating"
-        >
-          * * * * *
-        </p>
-        <h3>
-          Review Title...
-        </h3>
-        <h4
-          className="date-of-review"
-        >
-          Month DD, YYYY
-        </h4>
-        <h4
-          className="review-summary"
-        >
-          This is where the review summary would go
-        </h4>
-        <p
-          className="review-body"
-        >
-          This is where the review body would go
-        </p>
-        <div
-          className="review-helpfulness-voting"
-        >
-          <p>
-            Helpful? 
-            <a>
-               Yes
-            </a>
-             (#)
-          </p>
-        </div>
-      </div>
-      <button>
-        More Reviews
-      </button>
-    </div>
-    <div
-      className="reviews-add"
-    >
-      <button>
-        Add a Review
-      </button>
-    </div>
-  </div>
   <div
     className="ratings"
   >
+    <h4>
+      Ratings & Reviews
+    </h4>
     <div
       className="ratings-summary"
     >
@@ -267,13 +50,165 @@ exports[`Components render correctly main ratings and reviews widget renders cor
       Ratings Product Breakdown Placeholder
     </div>
   </div>
+  <div
+    className="reviews"
+  >
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        <label
+          htmlFor="sorting-option"
+        >
+          238 reviews, sorted by 
+        </label>
+        <select
+          name="sorting-option"
+        >
+          <option
+            value="relevance"
+          >
+            relevance
+          </option>
+          <option
+            value="helpfulness"
+          >
+            helpfuness
+          </option>
+          <option
+            value="newest"
+          >
+            newest
+          </option>
+        </select>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            shortandsweeet, April 13, 2019
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I'm enjoying wearing these shades
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              Comfortable and practical.
+            </p>
+          </div>
+          <div
+            className="recommend"
+          >
+            ☑ I recommend this product
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              5
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            bigbrotherbenjamin, June 22, 2019
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I am liking these glasses
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              They are very dark. But that's good because I'm in very sunny spots
+            </p>
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              5
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="reviews-buttons"
+    >
+      <button>
+        MORE REVIEWS
+      </button>
+      <button>
+        ADD A REVIEW +
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Components render correctly main ratings widget renders correctly 1`] = `
+exports[`Components render correctly main ratings component renders correctly 1`] = `
 <div
   className="ratings"
 >
+  <h4>
+    Ratings & Reviews
+  </h4>
   <div
     className="ratings-summary"
   >
@@ -316,11 +251,10 @@ exports[`Components render correctly main ratings widget renders correctly 1`] =
 </div>
 `;
 
-exports[`Components render correctly main reviews widget renders correctly 1`] = `
-<div>
-  <h1>
-    Reviews
-  </h1>
+exports[`Components render correctly main reviews component renders correctly 1`] = `
+<div
+  className="reviews"
+>
   <div
     className="reviews-list"
   >
@@ -353,104 +287,174 @@ exports[`Components render correctly main reviews widget renders correctly 1`] =
       </select>
     </div>
     <div
-      className="review=tile"
+      className="review-tile"
     >
-      <p
-        className="star-rating"
+      <div
+        className="review-header"
       >
-        * * * * *
-      </p>
-      <h3>
-        Review Title...
-      </h3>
-      <h4
-        className="date-of-review"
-      >
-        Month DD, YYYY
-      </h4>
-      <h4
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          shortandsweeet, April 13, 2019
+        </div>
+      </div>
+      <h3
         className="review-summary"
       >
-        This is where the review summary would go
-      </h4>
-      <p
-        className="review-body"
-      >
-        This is where the review body would go
-      </p>
+        I'm enjoying wearing these shades
+      </h3>
       <div
-        className="review-helpfulness-voting"
+        className="review-main"
       >
-        <p>
-          Helpful? 
-          <a>
-             Yes
-          </a>
-           (#)
-        </p>
+        <div
+          className="review-body"
+        >
+          <p>
+            Comfortable and practical.
+          </p>
+        </div>
+        <div
+          className="recommend"
+        >
+          ☑ I recommend this product
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
       </div>
     </div>
-    <button>
-      More Reviews
-    </button>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          bigbrotherbenjamin, June 22, 2019
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I am liking these glasses
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            They are very dark. But that's good because I'm in very sunny spots
+          </p>
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
   <div
-    className="reviews-add"
+    className="reviews-buttons"
   >
     <button>
-      Add a Review
+      MORE REVIEWS
+    </button>
+    <button>
+      ADD A REVIEW +
     </button>
   </div>
 </div>
 `;
 
-exports[`Ratings widget renders correctly 1`] = `
+exports[`ReviewTile component renders correctly 1`] = `
 <div
-  className="ratings-and-reviews"
+  className="review-tile"
 >
   <div
-    className="reviews"
+    className="review-header"
   >
-    <h1>
-      Reviews
-    </h1>
     <div
-      className="reviews-list"
+      className="star-rating"
     >
-      <div
-        className="reviews-sorting"
-      >
-        Reviews Sorting Placeholder
-      </div>
-      <div
-        className="review=tile"
-      >
-        Review Tile Placeholder
-      </div>
+      * * * * *
     </div>
     <div
-      className="reviews-add"
+      className="right-corner"
     >
-      Add Review Placeholder
+      shortandsweeet, April 13, 2019
     </div>
   </div>
+  <h3
+    className="review-summary"
+  >
+    I'm enjoying wearing these shades because they go well with 
+  </h3>
   <div
-    className="ratings"
+    className="review-main"
   >
     <div
-      class="ratings-summary"
+      className="review-body"
     >
-      Ratings Summary Placeholder
+      <p>
+        Comfortable and practical.
+      </p>
     </div>
     <div
-      class="ratings-breakdown"
+      className="recommend"
     >
-      Ratings Breakdown
+      ☑ I recommend this product
     </div>
     <div
-      class="ratings-breakdown"
+      className="review-helpfulness-voting"
     >
-      Ratings Breakdown
+      <p>
+        Helpful? 
+        <a
+          onClick={[Function]}
+        >
+           Yes
+        </a>
+         (
+        5
+        )
+      </p>
     </div>
   </div>
 </div>
