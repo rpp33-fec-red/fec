@@ -15,7 +15,7 @@ class Model {
     this.getData = this.getData.bind(this)
   }
 
-  getData(route, params, cb=()=>{}){
+  getData(route, params, cb){
     var url = this.url + `getData?route=${route}`;
     Object.keys(params).forEach((param)=>{
       var value = params[param];
