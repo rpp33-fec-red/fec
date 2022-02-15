@@ -4,8 +4,8 @@ class Question extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      votedHelpful: false,
-      helpfulness: 0
+      helpful: false,
+      helpfulnessVoteCount: 0
     }
   }
 
