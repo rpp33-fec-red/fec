@@ -8,9 +8,10 @@ const ProductCarousel = (props) => {
         <div className="relatedProductCarouselContainer">
             <div className="productCarousel">
                 <div style={({
-                    width: props.relatedProducts.length *400,
+                    width: props.relatedProducts.length *500,
                     display: 'flex',
-                    justifyContent: 'left'
+                    justifyContent: 'left',
+                    padding: '2rem'
                 })}>
                     { props.relatedProducts.map((id) => {
                         return (
@@ -18,7 +19,8 @@ const ProductCarousel = (props) => {
                                 key={id}
                                 product_id={id}
                                 getData={props.getData}
-                            />
+                                handleClick={props.handleClick}
+                            /> 
                         )
                     })}
                 </div>
