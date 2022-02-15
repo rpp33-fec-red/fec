@@ -3,7 +3,7 @@ import SearchBar from './subcomponents/SearchBar.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
 //import MoreQuestions from './subcomponents/MoreQuestions.jsx';
 //import AddQuestion from './subcomponents/AddQuestion.jsx';
-//import './questionsStyles.scss';
+import './questionsStyles.scss';
 import { sampleData } from './sampleData.js';
 
 
