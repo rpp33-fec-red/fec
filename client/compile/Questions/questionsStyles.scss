@@ -1,0 +1,15 @@
+.questionTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+}
+
+.answerList {
+  display: flex;
+  flex-direction: column;
+}
