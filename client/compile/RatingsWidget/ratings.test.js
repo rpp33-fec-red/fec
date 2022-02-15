@@ -4,7 +4,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render} from '@testing-library/react'
+import {render, fireEvent} from '@testing-library/react'
 import RatingsWidget from './components/RatingsWidget.js';
 import Ratings from './components/Ratings/Ratings.js';
 import Reviews from './components/Reviews/Reviews.js';
@@ -75,25 +75,29 @@ describe('ReviewTile component', () => {
   test('displays show more button only appears when there are more than 250 characters in the review body', () => {
     let testReview = reviewsData.results[2];
     const {getByText} = render(<ReviewTile review={testReview}/>);
-
+    expect(getByText('Show More')).toBeInTheDocument();
   });
 
   test('shows full review body when show more is clicked', () => {
     let testReview = reviewsData.results[2];
     const {getByText} = render(<ReviewTile review={testReview}/>);
-    expect(getByText('☑ I recommend this product')).toBeInTheDocument();
+    fireEvent.click(getByText('Show More'));
+    expect(getByText(testReview.body)).toBeInTheDocument();
   });
 
   test('shows "I recommend this product" when product is recommended', () => {
     let testReview = reviewsData.results[0];
     const {getByText} = render(<ReviewTile review={testReview}/>);
-
+    expect(getByText('☑ I recommend this product')).toBeInTheDocument();
   });
 
-  test('increments helpfulness count when "Yes" is clicked', () => {
+  test('increments helpfulness count when "Yes" is clicked and decrements when clicked again', () => {
     let testReview = reviewsData.results[2];
     const {getByText} = render(<ReviewTile review={testReview}/>);
-
+    fireEvent.click(getByText('Yes'));
+    expect(getByText(/9/)).toBeInTheDocument();
+    fireEvent.click(getByText('Yes'));
+    expect(getByText(/8/)).toBeInTheDocument();
   });
 
 });

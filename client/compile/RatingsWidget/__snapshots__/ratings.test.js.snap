@@ -216,8 +216,13 @@ exports[`Components render correctly main ratings and reviews widget renders cor
             className="review-body"
           >
             <p>
-              Comfortable and practical.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
             </p>
+            <a
+              onClick={[Function]}
+            >
+              Show More
+            </a>
           </div>
           <div
             className="recommend"
@@ -472,8 +477,13 @@ exports[`Components render correctly main reviews component renders correctly 1`
           className="review-body"
         >
           <p>
-            Comfortable and practical.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
           </p>
+          <a
+            onClick={[Function]}
+          >
+            Show More
+          </a>
         </div>
         <div
           className="recommend"
