@@ -21,16 +21,23 @@ class RelatedProducts extends React.Component {
 
     }
 
+    //all 64621 needs to be change to props.productId once params.id is passed to component
     componentDidMount () {
-        this.getRelatedProducts (64621, (relatedProducts) => {
+        this.getRelatedProducts (64620, (relatedProducts) => {
             this.setState({ relatedProducts }); 
         });
+        // this.props.getData(`products/64621`, {}, (data) => {
+        //     this.setState ({ current: data.results });
+        //     console.log('current', this.state.current);
+        // });
         this.getOutfits();
     }
 
     handleClick (e) {
         let id = e.currentTarget.className.split(' ')[1];
-        //get clicked product id
+        this.getRelatedProducts (id, (relatedProducts) => {
+            this.setState({ relatedProducts }); 
+        });
     }
 
     getRelatedProducts (id, callback) {     

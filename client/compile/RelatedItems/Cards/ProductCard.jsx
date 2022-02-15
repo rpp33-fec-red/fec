@@ -41,6 +41,8 @@ class ProductCard extends React.Component {
                 <h4 
                     className={`cardtitle ${this.props.product_id}`}
                     onClick={this.props.handleClick}
+                    // href={`/products/${this.props.product_id}`}
+                    //comment href out because page /products/:id doesn't exist yet
                 ><b>{this.state.product_name}</b></h4>
                 <p className="default-price" >$ {this.state.default_price}</p>
            

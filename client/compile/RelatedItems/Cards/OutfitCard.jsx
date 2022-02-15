@@ -43,7 +43,11 @@ class OutfitCard extends React.Component {
                     >X</button>
                 <img src={this.state.photo} />
                 <p className="category" ></p>
-                <h4 className="name" ><b>{this.state.product_name}</b></h4>
+                <a 
+                    className={`cardtitle ${this.props.product_id}`}
+                    onClick={this.props.handleClick}
+                    href={`/products/${this.props.product_id}`}
+                ><b>{this.state.product_name}</b></a>
                 <p className="default-price" >$ {this.state.default_price}</p>
            
             </div>
