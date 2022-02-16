@@ -4,7 +4,6 @@ class ReviewTile extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      recommended: false,
       showFullReview: false,
       helpfulnessVoteCount: 0,
       helpfulnessVoted: false
@@ -35,6 +34,7 @@ class ReviewTile extends React.Component {
     });
   }
 
+  // increments helpfulness vote count if helpfulness has been voted for
   updateHelpfulnessVoteCount () {
     if (this.state.helpfulnessVoted) {
       this.setState({
@@ -61,12 +61,13 @@ class ReviewTile extends React.Component {
     }
 
 
-    // showing only the first 250 characters of the review by default
+    // shows only the first 250 characters of the review by default
     let reviewBody;
     const body = this.props.review.body || null;
     const fullBody = (
       <div className="review-body">
         <p>{body}</p>
+        <a onClick={this.showFullReview}>Show Less</a>
       </div>
     );
     const lessBody = (
@@ -81,7 +82,7 @@ class ReviewTile extends React.Component {
       reviewBody = lessBody;
     }
 
-    // show "I recommend this product" if product is recommended by reviewer
+    // shows "I recommend this product" if product is recommended by reviewer
     let recommend;
     if (this.props.review.recommend) {
       recommend = <div className="recommend">☑ I recommend this product</div>
