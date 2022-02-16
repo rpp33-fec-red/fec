@@ -1,5 +1,7 @@
 import React from 'react';
-import ReviewImage from './ReviewImage.js'
+import ReviewImage from './ReviewImage.js';
+import $ from 'jquery';
+
 class ReviewTile extends React.Component {
   constructor (props) {
     super(props)
@@ -12,6 +14,7 @@ class ReviewTile extends React.Component {
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
     this.updateHelpfulnessVoteCount = this.updateHelpfulnessVoteCount.bind(this);
+    this.displayModal = this.displayModal.bind(this);
   }
 
   componentDidMount () {
@@ -47,6 +50,13 @@ class ReviewTile extends React.Component {
         helpfulnessVoted: true
       });
     }
+  }
+
+  displayModal (event) {
+    event.preventDefault();
+    const imageId = event.target.id;
+    const $image = $(`#${imageId}`);
+    $image.css('z-index', 1);
   }
 
   render () {
@@ -89,21 +99,29 @@ class ReviewTile extends React.Component {
 
     return (
       <div className="review-tile">
+
         <div className="review-header">
           <div className="star-rating">* * * * *</div>
           <div className="right-corner">{this.props.review.reviewer_name + ', ' + formattedDate}</div>
         </div>
+
         <h3 className="review-summary">{reviewSummary}</h3>
+
         <div className="review-main">
           {reviewBody}
-          {this.props.review.photos.map((photo) => {
-            return <ReviewImage key={photo.id} photo={photo}/>
-          })}
+          <div className="thumbnail-display">
+            {this.props.review.photos.map((photo) => {
+              return <ReviewImage key={photo.id} photo={photo} displayModal={this.displayModal} reviewerName={this.props.review.reviewer_name}/>
+            })}
+          </div>
+
           {recommend}
+
           <div className="review-helpfulness-voting">
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
           </div>
         </div>
+
       </div>
     );
   }
