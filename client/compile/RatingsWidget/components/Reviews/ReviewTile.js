@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ReviewImage from './ReviewImage.js'
 class ReviewTile extends React.Component {
   constructor (props) {
     super(props)
@@ -96,6 +96,9 @@ class ReviewTile extends React.Component {
         <h3 className="review-summary">{reviewSummary}</h3>
         <div className="review-main">
           {reviewBody}
+          {this.props.review.photos.map((photo) => {
+            <ReviewImage key={photo.id} photo={photo}/>
+          })}
           {recommend}
           <div className="review-helpfulness-voting">
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
