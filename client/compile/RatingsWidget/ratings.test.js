@@ -4,7 +4,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render, fireEvent} from '@testing-library/react'
+import {render, fireEvent, queryByText} from '@testing-library/react'
 import RatingsWidget from './components/RatingsWidget.js';
 import Ratings from './components/Ratings/Ratings.js';
 import Reviews from './components/Reviews/Reviews.js';
@@ -71,13 +71,17 @@ describe('ReviewTile component', () => {
 
   // test for show more button showing when there are only 250 characters
   test('displays show more button only appears when there are more than 250 characters in the review body', () => {
+    // testing if show more appears
     let testReview = reviewsData.results[2];
     const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
     expect(getByText('Show More')).toBeInTheDocument();
 
+    // testing if show more does not appear
     testReview = reviewsData.results[1];
     rerender(<ReviewTile review={testReview}/>)
-    expect(getByText('Show More')).toBeInTheDocument();
+    expect(() => {
+      getByText('Show More').toThrow();
+    });
   });
 
   test('shows full review body when show more is clicked', () => {
