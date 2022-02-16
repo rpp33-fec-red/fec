@@ -15,6 +15,14 @@ class Model {
     this.getData = this.getData.bind(this)
   }
 
+
+  //route  products|reviews|qa/questions|cart
+  // parms {
+  // product_id: 6665
+  // }
+  // callback function (data){}
+  //{results:[],Error:err}
+
   getData(route,params,cb){
     var url = this.url + `getData?route=${route}`;
     Object.keys(params).forEach((param)=>{

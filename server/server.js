@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var port = 8080;
 var path = require('path')
-app.use(express.static(path.join(__dirname,'client/public')));
+
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
@@ -13,7 +13,9 @@ var cors = require('cors');
 
 
 app.use(cors());
+app.use(express.static(path.join(__dirname,'../client/public')));
 
+console.log(path.join(__dirname,'client/public'))
 
 app.get('/getData',function(request, response) {
   var url = options.APIURL;
@@ -44,6 +46,7 @@ app.get('/getData',function(request, response) {
   });
 
 })
+
 
 app.listen(port,function(){
   console.log('listenening on ',port)

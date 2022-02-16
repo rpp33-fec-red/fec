@@ -9,7 +9,6 @@ import ReactDOM from 'react-dom';
  import RelatedItems from './RelatedItems/relatedItems.component.js'
 import Model from './model.js';
 var model = new Model(false);
-console.log(model)
  //core css
 
  import './style.scss'
@@ -18,7 +17,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      // ProductId: from url query param
     }
   }
 
@@ -26,20 +25,21 @@ class Main extends React.Component {
 
   }
 
+    renderStars(count){
 
+    }
 
   render(){
-    return (<div className="main">
+    return (
+    <div className="main">
 
-      <Overview getProducts={model.getData}/>
-
-      <RelatedItems/>
+      <Overview getProducts={model.getData} id={this.state.productID}/>
+      <RelatedItems getRelatedItems={model.getData} />
       <QuestionsWidget />
       <Ratings/>
-  </div>)
+  </div>
+  )
   }
-
-
 }
 
 
