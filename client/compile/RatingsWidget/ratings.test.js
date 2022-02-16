@@ -61,7 +61,7 @@ describe('ReviewTile component', () => {
     expect(getByText(`${testReview.reviewer_name}, July 24, 2020`)).toBeInTheDocument();
   });
 
-  // check that review summary is capped at 60 characters
+
   test('caps review summary at 60 characters', () => {
     let testReview = reviewsData.results[2];
     const {getByText} = render(<ReviewTile review={testReview}/>);
@@ -69,7 +69,7 @@ describe('ReviewTile component', () => {
     expect(reviewSummary).toBeInTheDocument();
   });
 
-  // test for show more button showing when there are only 250 characters
+
   test('displays show more button only appears when there are more than 250 characters in the review body', () => {
     // testing if show more appears
     let testReview = reviewsData.results[2];
@@ -84,6 +84,7 @@ describe('ReviewTile component', () => {
     });
   });
 
+
   test('shows full review body when show more is clicked', () => {
     let testReview = reviewsData.results[2];
     const {getByText} = render(<ReviewTile review={testReview}/>);
@@ -91,11 +92,13 @@ describe('ReviewTile component', () => {
     expect(getByText(testReview.body)).toBeInTheDocument();
   });
 
+
   test('shows "I recommend this product" when product is recommended', () => {
     let testReview = reviewsData.results[0];
     const {getByText} = render(<ReviewTile review={testReview}/>);
     expect(getByText('☑ I recommend this product')).toBeInTheDocument();
   });
+
 
   test('increments helpfulness count when "Yes" is clicked and decrements when clicked again', () => {
     let testReview = reviewsData.results[2];
