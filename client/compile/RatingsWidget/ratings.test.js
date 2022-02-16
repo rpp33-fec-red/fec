@@ -12,23 +12,32 @@ import ReviewTile from './components/Reviews/ReviewTile.js';
 import reviewsData from './sample_data.js';
 import '@testing-library/jest-dom';
 
-describe('Components render correctly', () => {
+describe('RatingsWidget component', () => {
 
-  test('main ratings and reviews widget renders correctly', () => {
+  test('renders correctly', () => {
     const tree = renderer
     .create(<RatingsWidget/>)
     .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  test('main reviews component renders correctly', () => {
+});
+
+describe('Reviews component', () => {
+
+  test('renders correctly', () => {
     const tree = renderer
     .create(<Reviews reviews={reviewsData.results}/>)
     .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  test('main ratings component renders correctly', () => {
+});
+
+
+describe('Ratings component', () => {
+
+  test('renders correctly', () => {
     const tree = renderer
     .create(<Ratings/>)
     .toJSON();
@@ -36,6 +45,7 @@ describe('Components render correctly', () => {
   });
 
 });
+
 
 describe('ReviewTile component', () => {
   let testReview = reviewsData.results[0];
