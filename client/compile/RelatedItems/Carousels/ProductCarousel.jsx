@@ -21,7 +21,7 @@ const ProductCarousel = (props) => {
                                 getData={props.getData}
                                 handleClick={props.handleClick}
                             /> 
-                        )
+                        );
                     })}
                 </div>
             </div>

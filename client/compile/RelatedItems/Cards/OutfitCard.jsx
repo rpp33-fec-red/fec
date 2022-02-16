@@ -11,6 +11,7 @@ class OutfitCard extends React.Component {
             product_name: '',
             default_price: '$$$', 
         }
+        this.getOutfitInfo = this.getOutfitInfo.bind(this);
     }
 
     componentDidMount () {
@@ -51,7 +52,7 @@ class OutfitCard extends React.Component {
                 <p className="default-price" >$ {this.state.default_price}</p>
            
             </div>
-        )
+        );
     }
 }
 

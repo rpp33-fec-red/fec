@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon ./server/server.js",
-    "test": "jest --coverage --watchAll",
+    "test": "jest --coverage",
     "liveBuild": "webpack-dev-server",
     "build": "webpack --watch",
     "start": "nodemon server/server.js",

@@ -29,7 +29,7 @@ class ProductCard extends React.Component {
         this.props.getData(`products/${id}/styles`, {}, (data) => {
             this.setState({
                 photo: data.results.results[0]['photos'][0]['thumbnail_url']
-            })
+            });
         });
     }
 

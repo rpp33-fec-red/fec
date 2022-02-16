@@ -27,7 +27,7 @@ const OutfitCarousel = (props) => {
                                 handleDelete={props.handleDelete}
                                 getData={props.getData}
                             />
-                        )
+                        );
                     })}
                 </div>
             </div>

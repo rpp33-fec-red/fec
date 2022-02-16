@@ -50,7 +50,9 @@ class RelatedProducts extends React.Component {
         // let outfitIds = JSON.parse(localStorage.getItem("outfit")); 
         let outfitIds = [64622]; //hardcode in to check for Outfitrender 
         if (!!outfitIds) {
-            this.setState({ outfitIds: outfitIds});
+            this.setState({ outfitIds: outfitIds}, ()=> {
+                this.setState({ outfitLoaded: true });
+            });
         }
 
     }
@@ -58,12 +60,14 @@ class RelatedProducts extends React.Component {
     handleAddToOutfit () {
         let currentOutfit = this.state.outfitIds.slice();
         if (currentOutfit.indexOf(this.state.current.id) === -1 && this.state.current.id !== null) {
-            this.setState({ outfitLoaded: false });
-            currentOutfit.unshift(this.state.current.id);
-            this.setState({ outfitIds: currentOutfit }, () => {
-                localStorage.setItem("outfit", JSON.stringify(currentOutfit));
-                this.getOutfits();
+            this.setState({ outfitLoaded: false }, () => {
+                currentOutfit.unshift(this.state.current.id);
+                this.setState({ outfitIds: currentOutfit }, () => {
+                    localStorage.setItem("outfit", JSON.stringify(currentOutfit));
+                    this.getOutfits();
+                });
             });
+            
         }
     }
 
