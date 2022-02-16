@@ -4,7 +4,6 @@
   "description": "our fec project",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon ./server/server.js",
     "test": "jest --coverage",
     "liveBuild": "webpack-dev-server",
     "build": "webpack --watch",

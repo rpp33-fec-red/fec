@@ -31,7 +31,7 @@ class Model {
         cb(data)
       }
       }
-      // console.log(options)
+      
     if (options){
       $.ajax(options)
     }
