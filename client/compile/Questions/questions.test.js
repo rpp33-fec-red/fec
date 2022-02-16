@@ -1,6 +1,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import Questions from './Questions.jsx';
+import QuestionButtons from './subcomponents/QuestionButtons.jsx';
 import SearchBar from './subcomponents/SearchBar.jsx';
 import Question from './subcomponents/Question.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
@@ -13,15 +14,20 @@ import { sampleData, answer } from './sampleData.js';
 describe('Questions widget component', () => {
   test('loads and displays questions widget component', () => {
     var questionsTree = TestRenderer.create(<Questions />).toJSON();
-
     expect(questionsTree).toMatchSnapshot();
   });
 });
 
-describe('SearchBar component', () => {
-  test('loads and displays searcbBar component', () => {
-    var searchBarTree = TestRenderer.create(<SearchBar />).toJSON();
+describe('QuestionButtons component', () => {
+  test('loads and displays Question Buttons comoponent', () => {
+    var questionButtonsTree = TestRenderer.create(<QuestionButtons allQuestionsDisplayed={false} />).toJSON();
+    expect(questionButtonsTree).toMatchSnapshot();
+  });
+});
 
+describe('SearchBar component', () => {
+  test('loads and displays SearchBar component', () => {
+    var searchBarTree = TestRenderer.create(<SearchBar />).toJSON();
     expect(searchBarTree).toMatchSnapshot();
   });
 });
@@ -29,7 +35,6 @@ describe('SearchBar component', () => {
 describe('QuestionsList component', () => {
   test('loads and displays QuestionsList component', () => {
     var questionsListTree = TestRenderer.create(<QuestionsList questions={sampleData}/>).toJSON();
-
     expect(questionsListTree).toMatchSnapshot();
   });
 });
@@ -37,7 +42,6 @@ describe('QuestionsList component', () => {
 describe('Question component', () => {
   test('loads and displays Question component', () => {
     var questionTree = TestRenderer.create(<Question question={sampleData.results[0]}/>).toJSON();
-
     expect(questionTree).toMatchSnapshot();
   });
 });
@@ -53,7 +57,6 @@ describe('AnswerList component', () => {
 describe('Answer component', () => {
   test('loads and displays Answer component', () => {
     var answerTree = TestRenderer.create(<Answer answer={answer}/>).toJSON();
-
     expect(answerTree).toMatchSnapshot();
   });
 });
