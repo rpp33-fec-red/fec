@@ -1,6 +1,6 @@
 /node_modules
 coverage
 *.orig
-/compile
 coverage
 jest.config.json
+bundle.js
