@@ -4,9 +4,9 @@
   "description": "our fec project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "liveBuild": "webpack-dev-server",
-    "build": "webpack",
+    "build": "webpack --watch",
     "start": "nodemon server/server.js",
     "updateArtifacts":"jest --updateSnapshot"
   },
@@ -40,7 +40,6 @@
     "babel-jest": "^27.5.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
-    "react-test-renderer": "^17.0.2",
     "sass": "^1.49.7",
     "react-test-renderer": "^17.0.2",
     "sass-loader": "^12.4.0",
