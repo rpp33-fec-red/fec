@@ -17,12 +17,23 @@ class RatingsWidget extends React.Component {
         fiveStar: false,
       }
     }
+    this.getData = this.getData.bind(this);
   }
+
 
   componentDidMount () {
-
+    this.getData();
   }
 
+
+  getData () {
+    var options = {
+      product_id: 64621
+    }
+    this.props.getReviews('reviews', options, (data) => {
+      console.log('these are the reviews:', data);
+    });
+  }
 
 
   render () {
