@@ -1,9 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
 exports[`Answer component loads and displays Answer component 1`] = `
 <div
   className="answer"
@@ -75,11 +71,6 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
 </div>
 `;
 
-<<<<<<< HEAD
-=======
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
-=======
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
 exports[`Question component loads and displays Question component 1`] = `
 <div
   className="question"
@@ -109,8 +100,6 @@ exports[`Question component loads and displays Question component 1`] = `
     </div>
   </div>
   <div
-<<<<<<< HEAD
-<<<<<<< HEAD
     className="answers"
   >
     <p>
@@ -147,55 +136,10 @@ exports[`Question component loads and displays Question component 1`] = `
         </div>
       </div>
     </div>
-=======
-    className="answerList"
-=======
-    className="answers"
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
-  >
-    <p>
-      A: 
-    </p>
-<<<<<<< HEAD
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
-=======
-    <div
-      className="answerList"
-    >
-      <div
-        className="answer"
-      >
-        <p
-          className="answerTitle"
-        >
-          We are selling it here without any markup from the middleman!
-        </p>
-        <div
-          className="answerLinks"
-        >
-          <p>
-            by 
-            Seller
-            , MONTH, DD, YEAR | Helpful? 
-            <a>
-              Yes
-            </a>
-             (
-            4
-            ) | 
-            <a>
-              Report
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
   </div>
 </div>
 `;
 
-<<<<<<< HEAD
 exports[`QuestionButtons component loads and displays Question Buttons comoponent 1`] = `
 <div
   className="question-buttons"
@@ -211,8 +155,6 @@ exports[`QuestionButtons component loads and displays Question Buttons comoponen
 </div>
 `;
 
-=======
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
 exports[`Questions widget component loads and displays questions widget component 1`] = `
 <div
   className="questionsWidget"
@@ -259,8 +201,6 @@ exports[`Questions widget component loads and displays questions widget componen
         </div>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
         className="answers"
       >
         <p>
@@ -297,50 +237,6 @@ exports[`Questions widget component loads and displays questions widget componen
             </div>
           </div>
         </div>
-=======
-        className="answerList"
-=======
-        className="answers"
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
-      >
-        <p>
-          A: 
-        </p>
-<<<<<<< HEAD
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
-=======
-        <div
-          className="answerList"
-        >
-          <div
-            className="answer"
-          >
-            <p
-              className="answerTitle"
-            >
-              We are selling it here without any markup from the middleman!
-            </p>
-            <div
-              className="answerLinks"
-            >
-              <p>
-                by 
-                Seller
-                , MONTH, DD, YEAR | Helpful? 
-                <a>
-                  Yes
-                </a>
-                 (
-                4
-                ) | 
-                <a>
-                  Report
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
       </div>
     </div>
     <div
@@ -371,8 +267,6 @@ exports[`Questions widget component loads and displays questions widget componen
         </div>
       </div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
         className="answers"
       >
         <p>
@@ -436,82 +330,10 @@ exports[`Questions widget component loads and displays questions widget componen
             </div>
           </div>
         </div>
-=======
-        className="answerList"
-=======
-        className="answers"
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
-      >
-        <p>
-          A: 
-        </p>
-<<<<<<< HEAD
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
-=======
-        <div
-          className="answerList"
-        >
-          <div
-            className="answer"
-          >
-            <p
-              className="answerTitle"
-            >
-              Some of the seams started splitting the first time I wore it!
-            </p>
-            <div
-              className="answerLinks"
-            >
-              <p>
-                by 
-                sillyguy
-                , MONTH, DD, YEAR | Helpful? 
-                <a>
-                  Yes
-                </a>
-                 (
-                6
-                ) | 
-                <a>
-                  Report
-                </a>
-              </p>
-            </div>
-          </div>
-          <div
-            className="answer"
-          >
-            <p
-              className="answerTitle"
-            >
-              9 lives
-            </p>
-            <div
-              className="answerLinks"
-            >
-              <p>
-                by 
-                iluvdogz
-                , MONTH, DD, YEAR | Helpful? 
-                <a>
-                  Yes
-                </a>
-                 (
-                31
-                ) | 
-                <a>
-                  Report
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
       </div>
     </div>
   </div>
   <div
-<<<<<<< HEAD
     className="question-buttons"
   >
     <button>
@@ -522,31 +344,13 @@ exports[`Questions widget component loads and displays questions widget componen
     >
       ADD A QUESTION +
     </button>
-=======
-    className="questionButtons"
-  >
-    <p>
-      REPLACE WITH MOREQUESTIONS COMPONENT
-    </p>
-    <p>
-      REPLACE WITH ADDQUESTIONS COMPONENT
-    </p>
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
   </div>
 </div>
 `;
 
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-exports[`SearchBar component loads and displays searcbBar component 1`] = `
-=======
-exports[`SearchBar component loads and displays SearcbBar component 1`] = `
->>>>>>> c320f6a90dc5e09a0d0358d7c4b4ebc7ac7b037d
-=======
 exports[`SearchBar component loads and displays SearchBar component 1`] = `
->>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
 <div>
   <input
     id="questionsSearchBar"
