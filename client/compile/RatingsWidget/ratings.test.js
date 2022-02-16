@@ -69,12 +69,14 @@ describe('ReviewTile component', () => {
     expect(reviewSummary).toBeInTheDocument();
   });
 
-  // test to make sure only 250 characters show by default
-
-  // test for show more button
+  // test for show more button showing when there are only 250 characters
   test('displays show more button only appears when there are more than 250 characters in the review body', () => {
     let testReview = reviewsData.results[2];
-    const {getByText} = render(<ReviewTile review={testReview}/>);
+    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
+    expect(getByText('Show More')).toBeInTheDocument();
+
+    testReview = reviewsData.results[1];
+    rerender(<ReviewTile review={testReview}/>)
     expect(getByText('Show More')).toBeInTheDocument();
   });
 

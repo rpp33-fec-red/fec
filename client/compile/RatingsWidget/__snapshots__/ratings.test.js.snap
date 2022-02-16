@@ -115,6 +115,11 @@ exports[`Components render correctly main ratings and reviews widget renders cor
             <p>
               Comfortable and practical.
             </p>
+            <a
+              onClick={[Function]}
+            >
+              Show Less
+            </a>
           </div>
           <div
             className="recommend"
@@ -169,6 +174,11 @@ exports[`Components render correctly main ratings and reviews widget renders cor
             <p>
               They are very dark. But that's good because I'm in very sunny spots
             </p>
+            <a
+              onClick={[Function]}
+            >
+              Show Less
+            </a>
           </div>
           <div
             className="review-helpfulness-voting"
@@ -376,6 +386,11 @@ exports[`Components render correctly main reviews component renders correctly 1`
           <p>
             Comfortable and practical.
           </p>
+          <a
+            onClick={[Function]}
+          >
+            Show Less
+          </a>
         </div>
         <div
           className="recommend"
@@ -430,6 +445,11 @@ exports[`Components render correctly main reviews component renders correctly 1`
           <p>
             They are very dark. But that's good because I'm in very sunny spots
           </p>
+          <a
+            onClick={[Function]}
+          >
+            Show Less
+          </a>
         </div>
         <div
           className="review-helpfulness-voting"
@@ -553,6 +573,11 @@ exports[`ReviewTile component renders correctly 1`] = `
       <p>
         Comfortable and practical.
       </p>
+      <a
+        onClick={[Function]}
+      >
+        Show Less
+      </a>
     </div>
     <div
       className="recommend"

@@ -67,7 +67,6 @@ class ReviewTile extends React.Component {
     const fullBody = (
       <div className="review-body">
         <p>{body}</p>
-        <a onClick={this.showFullReview}>Show Less</a>
       </div>
     );
     const lessBody = (
