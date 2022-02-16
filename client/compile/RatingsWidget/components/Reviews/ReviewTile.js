@@ -97,7 +97,7 @@ class ReviewTile extends React.Component {
         <div className="review-main">
           {reviewBody}
           {this.props.review.photos.map((photo) => {
-            <ReviewImage key={photo.id} photo={photo}/>
+            return <ReviewImage key={photo.id} photo={photo}/>
           })}
           {recommend}
           <div className="review-helpfulness-voting">
