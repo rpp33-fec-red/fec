@@ -19,10 +19,13 @@ class QuestionsWidget extends React.Component {
 
   componentDidMount() {
     this.props.getQuestions(`qa/questions/`, {product_id: this.props.product_id}, (data) => {
+      const sorted = data.results.results.sort((a, b) => {
+        return b.question_helpfulness - a.question_helpfulness;
+      });
       this.setState({
-        questionsData: data.results.results
+        questionsData: sorted
       }, () => {
-        console.log('questions', this.state.questionsData)
+        console.log('questions', this.state.questionsData);
       });
     });
   }
