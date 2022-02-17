@@ -6,7 +6,6 @@ class QuestionsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      maxQuestionsDisplayed: 2
     }
   }
 
@@ -14,10 +13,10 @@ class QuestionsList extends React.Component {
     let questions = this.props.questions;
 
     if (questions.length) {
-      questions = questions.slice(0, this.state.maxQuestionsDisplayed);
+      questions = questions.slice(0, this.props.displayed);
 
       return(
-        <div className="questionList" >
+        <div className={!this.props.scroll ? 'question-list' : 'questions-list-scroll'}>
           {questions.map((question) =>
             <Question key={question.question_id} question={question} />
           )}

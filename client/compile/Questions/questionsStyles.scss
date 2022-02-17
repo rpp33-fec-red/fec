@@ -29,6 +29,11 @@ QUESTIONS
   justify-content: space-between;
 }
 
+.questions-list-scroll {
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+
 /*-----------------------------------
 ANSWERS
 -----------------------------------*/
