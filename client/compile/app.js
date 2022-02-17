@@ -6,9 +6,11 @@ import ReactDOM from 'react-dom';
  import Overview from './Overview/overview.component.js';
  import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
  import QuestionsWidget from './Questions/Questions.jsx';
- import RelatedItems from './RelatedItems/relatedItems.component.js';
- import Model from './model.js';
- var model = new Model(false);
+ import RelatedProducs from './RelatedItems/RelatedProducts.jsx'
+
+import Model from './model.js';
+var model = new Model(false);
+// console.log(model)
  //core css
 
  import './style.scss'
@@ -31,8 +33,7 @@ class Main extends React.Component {
     return (<div className="main">
 
       <Overview getProducts={model.getData}/>
-
-      <RelatedItems/>
+      <RelatedProducs getData={model.getData}/>
       <QuestionsWidget />
       <RatingsWidget/>
   </div>)

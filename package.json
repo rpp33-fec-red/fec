@@ -4,11 +4,12 @@
   "description": "our fec project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "liveBuild": "webpack-dev-server",
     "build": "webpack --watch",
     "start": "nodemon server/server.js",
     "updateArtifacts":"jest --updateSnapshot"
+
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-jest": "^27.5.0",
