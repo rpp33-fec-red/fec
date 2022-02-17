@@ -10,13 +10,14 @@ class QuestionButtons extends React.Component {
 
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleSubmitQuestion = this.handleSubmitQuestion.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleAddQuestion(event) {
     event.preventDefault();
     this.setState({
       showAddQuestionModal: true,
-      missingFields: '',
+      missingFields: ''
     });
   }
 
@@ -28,7 +29,7 @@ class QuestionButtons extends React.Component {
     const fields = {
       question: question,
       nickname: nickname,
-      email: email,
+      email: email
     }
 
     if (question && nickname && email) {
@@ -41,7 +42,6 @@ class QuestionButtons extends React.Component {
         if (!fields[field]) {
           missingFields = missingFields + field + ' ';
         }
-        console.log('missing fields', missingFields)
         this.setState({
           missingFields: missingFields
         });
@@ -49,13 +49,17 @@ class QuestionButtons extends React.Component {
     }
   }
 
-
+  closeModal() {
+    this.setState({
+      showAddQuestionModal: false
+    })
+  }
 
   render() {
     return (
       <div className="question-buttons">
         {this.state.showAddQuestionModal &&
-          <AddQuestionModal missing={this.state.missingFields} submit={this.handleSubmitQuestion}/>
+          <AddQuestionModal missing={this.state.missingFields} submit={this.handleSubmitQuestion} close={this.closeModal}/>
         }
         {!this.props.allQuestionsDisplayed &&
           <button>MORE ANSWERED QUESTIONS</button>

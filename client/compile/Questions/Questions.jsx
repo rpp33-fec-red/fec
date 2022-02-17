@@ -4,9 +4,6 @@ import QuestionsList from './subcomponents/QuestionsList.jsx';
 import QuestionButtons from './subcomponents/QuestionButtons.jsx';
 import './questionsStyles.scss';
 
-import { sampleData } from './sampleData.js';
-
-
 class QuestionsWidget extends React.Component {
   constructor(props) {
     super(props);
@@ -14,10 +11,17 @@ class QuestionsWidget extends React.Component {
       query: '',
       maxQuestionsDisplayed: 2,
       allQuestionsDisplayed: false,
-      questionsData: sampleData.results
+      questionsData: []
     };
-
     this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.getQuestions(`qa/questions/`, {product_id: this.props.product_id}, (data) => {
+      this.setState({
+        questionsData: data.results.results
+      });
+    });
   }
 
   handleSearch(event) {

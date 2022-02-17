@@ -34,7 +34,7 @@ class Main extends React.Component {
 
       <Overview getProducts={model.getData}/>
       <RelatedProducs getData={model.getData}/>
-      <QuestionsWidget />
+      <QuestionsWidget getQuestions={model.getData} product_id="64620"/>
       <RatingsWidget/>
   </div>)
   }
