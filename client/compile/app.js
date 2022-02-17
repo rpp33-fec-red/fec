@@ -10,29 +10,28 @@ import ReactDOM from 'react-dom';
  import Model from './model.js';
  var model = new Model(false);
  //core css
+ import './style.scss';
 
- import './style.scss'
 class Main extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       // ProductId: from url query param
-    }
+    };
   }
 
   componentDidMount(){
 
   }
 
-    renderStars(count){
+  renderStars(count){
 
-    }
+  }
 
   render(){
     return (
     <div className="main">
-
       <Overview getProducts={model.getData} id={this.state.productID}/>
       <RelatedItems getRelatedItems={model.getData} />
       <QuestionsWidget />

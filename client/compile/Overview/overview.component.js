@@ -5,39 +5,39 @@ import RightContainer from './rightContainer/rightcontainer.component.js'
 import './overview.scss';
 
 
-class Overview extends React.Component{
+class Overview extends React.Component {
 
-  constructor(props){
-    super(props)
-    this.state = {
-      onProduct:{}
-    }
-    this.getData= this.getData.bind(this)
-  }
+        constructor(props) {
+            super(props);
+            this.state = {
+                onProduct: { results: [] },
+                onStyle: null
+            }
+            this.getData = this.getData.bind(this);
+        }
 
-  componentDidMount(){
-    this.getData();
-  }
+        componentDidMount() {
+            this.getData();
+        }
 
-  getData(){
-    var that = this;
-    this.props.getProducts('products',{},function(data){
-      console.log(data)
-      that.setState({onProduct:data.results[0]})
-      console.log(that.state)
-    })
-  }
-
-
-  render (){
-    return (<div className="overview">
-    <LeftContainer product={this.state.onProduct}/>
-    <RightContainer/>
-
-    </div>)
-  }
+        getData() {
+            var that = this;
+            this.props.getProducts(['products', 64620, 'styles'], function(data) {
+                that.setState({ onProduct: data.results });
+                that.setState({ onStyle: data.results.results[0] });
+            })
+        }
 
 
+        render() {
+            return (
+            < div className = "overview" >
+                <LeftContainer onStyle = { this.state.onStyle }/>
+                <RightContainer/>
+                </div>)
+            }
 
-}
-export default Overview;
+
+
+        }
+        export default Overview;
