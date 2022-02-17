@@ -55,8 +55,17 @@ class ReviewTile extends React.Component {
   displayModal (event) {
     event.preventDefault();
     const imageId = event.target.id;
+    const style = {
+      'z-index': '1',
+      'width': '100%',
+      'heigth': '100%',
+      'background-color': 'rgba(0,0,0,0.4)',
+      'left': '0',
+      'top': '0'
+    }
     const $image = $(`#${imageId}`);
-    $image.css('z-index', 1);
+    console.log($image);
+    $image.css(style);
   }
 
   render () {
