@@ -1,5 +1,602 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<coverage generated="1644983663498" clover="3.2.0">
+  <project timestamp="1644983663498" name="All files">
+    <metrics statements="412" coveredstatements="60" conditionals="379" coveredconditionals="5" methods="221" coveredmethods="34" elements="1012" coveredelements="99" complexity="0" loc="412" ncloc="412" packages="19" files="41" classes="41"/>
+    <package name="fec">
+      <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="config.js" path="/Users/thaonguyen/RPP33/fec/config.js">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="webpack.config.js" path="/Users/thaonguyen/RPP33/fec/webpack.config.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile">
+      <metrics statements="20" coveredstatements="6" conditionals="6" coveredconditionals="1" methods="7" coveredmethods="1"/>
+      <file name="app.js" path="/Users/thaonguyen/RPP33/fec/client/compile/app.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+      </file>
+      <file name="model.js" path="/Users/thaonguyen/RPP33/fec/client/compile/model.js">
+        <metrics statements="15" coveredstatements="6" conditionals="6" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview">
+      <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+      <file name="overview.component.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/overview.component.js">
+        <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+      <file name="styleSelector.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/styleSelector.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="testdata.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/testdata.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.leftContainer">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="leftcontainer.component.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/leftContainer/leftcontainer.component.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.leftContainer.description">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="description.component.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/leftContainer/description/description.component.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.leftContainer.imageholder">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="imageholder.component.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/leftContainer/imageholder/imageholder.component.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.rightContainer">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="rightcontainer.component.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/rightContainer/rightcontainer.component.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.rightContainer.productInfo">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="optionsselctor.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/rightContainer/productInfo/optionsselctor.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="textinfo.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Overview/rightContainer/productInfo/textinfo.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Questions">
+      <metrics statements="13" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="Questions.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/Questions.jsx">
+        <metrics statements="10" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="sampleData.js" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/sampleData.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Questions.subcomponents">
+      <metrics statements="29" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="13" coveredmethods="0"/>
+      <file name="Answer.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/subcomponents/Answer.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+      <file name="AnswerList.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/subcomponents/AnswerList.jsx">
+        <metrics statements="14" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+      </file>
+      <file name="Question.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/subcomponents/Question.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="QuestionsList.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/subcomponents/QuestionsList.jsx">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="SearchBar.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/Questions/subcomponents/SearchBar.jsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RatingsWidget.components">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="RatingsWidget.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/RatingsWidget.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RatingsWidget.components.Ratings">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="Ratings.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Ratings/Ratings.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="RatingsBreakdown.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Ratings/RatingsBreakdown.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="RatingsProductBreakdown.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Ratings/RatingsProductBreakdown.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="RatingsSummary.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Ratings/RatingsSummary.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RatingsWidget.components.Reviews">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <file name="AddReview.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Reviews/AddReview.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="ReviewTile.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Reviews/ReviewTile.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="Reviews.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Reviews/Reviews.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="ReviewsList.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Reviews/ReviewsList.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="ReviewsSorting.js" path="/Users/thaonguyen/RPP33/fec/client/compile/RatingsWidget/components/Reviews/ReviewsSorting.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RelatedItems">
+      <metrics statements="34" coveredstatements="15" conditionals="10" coveredconditionals="4" methods="13" coveredmethods="5"/>
+      <file name="ComparisonModal.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/RelatedItems/ComparisonModal.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="RelatedProducts.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/RelatedItems/RelatedProducts.jsx">
+        <metrics statements="32" coveredstatements="14" conditionals="10" coveredconditionals="4" methods="12" coveredmethods="5"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RelatedItems.Cards">
+      <metrics statements="17" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="4"/>
+      <file name="OutfitCard.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/RelatedItems/Cards/OutfitCard.jsx">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+      <file name="ProductCard.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/RelatedItems/Cards/ProductCard.jsx">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RelatedItems.Carousels">
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="OutfitCarousel.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/RelatedItems/Carousels/OutfitCarousel.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+      <file name="ProductCarousel.jsx" path="/Users/thaonguyen/RPP33/fec/client/compile/RelatedItems/Carousels/ProductCarousel.jsx">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.public">
+      <metrics statements="101" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="84" coveredmethods="0"/>
+      <file name="bundle.js" path="/Users/thaonguyen/RPP33/fec/client/public/bundle.js">
+        <metrics statements="101" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="84" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="161" count="0" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="194" count="0" type="stmt"/>
+        <line num="205" count="0" type="stmt"/>
+        <line num="216" count="0" type="stmt"/>
+        <line num="227" count="0" type="stmt"/>
+        <line num="238" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="260" count="0" type="stmt"/>
+        <line num="271" count="0" type="stmt"/>
+        <line num="282" count="0" type="stmt"/>
+        <line num="293" count="0" type="stmt"/>
+        <line num="304" count="0" type="stmt"/>
+        <line num="315" count="0" type="stmt"/>
+        <line num="326" count="0" type="stmt"/>
+        <line num="337" count="0" type="stmt"/>
+        <line num="348" count="0" type="stmt"/>
+        <line num="359" count="0" type="stmt"/>
+        <line num="370" count="0" type="stmt"/>
+        <line num="381" count="0" type="stmt"/>
+        <line num="392" count="0" type="stmt"/>
+        <line num="403" count="0" type="stmt"/>
+        <line num="414" count="0" type="stmt"/>
+        <line num="425" count="0" type="stmt"/>
+        <line num="436" count="0" type="stmt"/>
+        <line num="447" count="0" type="stmt"/>
+        <line num="457" count="0" type="stmt"/>
+        <line num="468" count="0" type="stmt"/>
+        <line num="479" count="0" type="stmt"/>
+        <line num="490" count="0" type="stmt"/>
+        <line num="501" count="0" type="stmt"/>
+        <line num="512" count="0" type="stmt"/>
+        <line num="523" count="0" type="stmt"/>
+        <line num="534" count="0" type="stmt"/>
+        <line num="545" count="0" type="stmt"/>
+        <line num="556" count="0" type="stmt"/>
+        <line num="567" count="0" type="stmt"/>
+        <line num="578" count="0" type="stmt"/>
+        <line num="589" count="0" type="stmt"/>
+        <line num="600" count="0" type="stmt"/>
+        <line num="611" count="0" type="stmt"/>
+        <line num="622" count="0" type="stmt"/>
+        <line num="633" count="0" type="stmt"/>
+        <line num="644" count="0" type="stmt"/>
+        <line num="655" count="0" type="stmt"/>
+        <line num="666" count="0" type="stmt"/>
+        <line num="677" count="0" type="stmt"/>
+        <line num="688" count="0" type="stmt"/>
+        <line num="699" count="0" type="stmt"/>
+        <line num="710" count="0" type="stmt"/>
+        <line num="721" count="0" type="stmt"/>
+        <line num="732" count="0" type="stmt"/>
+        <line num="743" count="0" type="stmt"/>
+        <line num="754" count="0" type="stmt"/>
+        <line num="765" count="0" type="stmt"/>
+        <line num="776" count="0" type="stmt"/>
+        <line num="787" count="0" type="stmt"/>
+        <line num="798" count="0" type="stmt"/>
+        <line num="805" count="0" type="stmt"/>
+        <line num="810" count="0" type="stmt"/>
+        <line num="811" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="812" count="0" type="stmt"/>
+        <line num="815" count="0" type="stmt"/>
+        <line num="822" count="0" type="stmt"/>
+        <line num="825" count="0" type="stmt"/>
+        <line num="830" count="0" type="stmt"/>
+        <line num="832" count="0" type="stmt"/>
+        <line num="833" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="834" count="0" type="stmt"/>
+        <line num="835" count="0" type="stmt"/>
+        <line num="836" count="0" type="stmt"/>
+        <line num="837" count="0" type="stmt"/>
+        <line num="842" count="0" type="stmt"/>
+        <line num="844" count="0" type="stmt"/>
+        <line num="845" count="0" type="stmt"/>
+        <line num="846" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="847" count="0" type="stmt"/>
+        <line num="854" count="0" type="stmt"/>
+        <line num="855" count="0" type="stmt"/>
+        <line num="859" count="0" type="stmt"/>
+        <line num="861" count="0" type="stmt"/>
+        <line num="862" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="863" count="0" type="stmt"/>
+        <line num="865" count="0" type="stmt"/>
+        <line num="874" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.coverage.lcov-report">
+      <metrics statements="120" coveredstatements="0" conditionals="329" coveredconditionals="0" methods="54" coveredmethods="0"/>
+      <file name="block-navigation.js" path="/Users/thaonguyen/RPP33/fec/coverage/lcov-report/block-navigation.js">
+        <metrics statements="30" coveredstatements="0" conditionals="19" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+      </file>
+      <file name="prettify.js" path="/Users/thaonguyen/RPP33/fec/coverage/lcov-report/prettify.js">
+        <metrics statements="1" coveredstatements="0" conditionals="286" coveredconditionals="0" methods="29" coveredmethods="0"/>
+        <line num="2" count="0" type="cond" truecount="0" falsecount="286"/>
+      </file>
+      <file name="sorter.js" path="/Users/thaonguyen/RPP33/fec/coverage/lcov-report/sorter.js">
+        <metrics statements="89" coveredstatements="0" conditionals="24" coveredconditionals="0" methods="19" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="111" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="119" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="146" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="154" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
+        <line num="160" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="161" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="165" count="0" type="stmt"/>
+        <line num="166" count="0" type="stmt"/>
+        <line num="167" count="0" type="stmt"/>
+        <line num="170" count="0" type="stmt"/>
+        <line num="171" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="174" count="0" type="stmt"/>
+        <line num="175" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="176" count="0" type="stmt"/>
+        <line num="178" count="0" type="stmt"/>
+        <line num="184" count="0" type="stmt"/>
+        <line num="185" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="186" count="0" type="stmt"/>
+        <line num="188" count="0" type="stmt"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="190" count="0" type="stmt"/>
+        <line num="191" count="0" type="stmt"/>
+        <line num="192" count="0" type="stmt"/>
+        <line num="196" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.server">
+      <metrics statements="29" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="server.js" path="/Users/thaonguyen/RPP33/fec/server/server.js">
+        <metrics statements="29" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+      </file>
+    </package>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <coverage generated="1644903087696" clover="3.2.0">
   <project timestamp="1644903087696" name="All files">
@@ -12,5 +609,6 @@
   <project timestamp="1644951522560" name="All files">
 >>>>>>> 345571cd303da81464c0bc4b73c6ddef7bd80d0c
     <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+>>>>>>> origin/master
   </project>
 </coverage>

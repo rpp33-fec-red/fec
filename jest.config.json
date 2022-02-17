@@ -1,12 +1,12 @@
-{
-  "testMatch": ["**/?(questions)+(.test.js?(x))"],
-  "testPathIgnorePatterns":["/node_modules/"],
+{ "testMatch": [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
+  "testPathIgnorePatterns" : ["/node_modules/"],
   "collectCoverageFrom": [
-    "questions.test.js"
-
+    "**/*.{js,jsx}",
+    "!**/node_modules/**"
   ],
   "collectCoverage":true,
    "moduleNameMapper": {
     "^.+\\.(css|scss)$": "babel-jest"
   }
 }
+
