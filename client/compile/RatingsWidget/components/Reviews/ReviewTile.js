@@ -15,7 +15,8 @@ class ReviewTile extends React.Component {
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
     this.updateHelpfulnessVoteCount = this.updateHelpfulnessVoteCount.bind(this);
-    this.updateReviewImageDisplayed = this.updateReviewImageDisplayed.bind(this);
+    this.showModalWindow = this.showModalWindow.bind(this);
+    this.closeModalWindow = this.closeModalWindow.bind(this);
   }
 
   componentDidMount () {
@@ -53,7 +54,7 @@ class ReviewTile extends React.Component {
     }
   }
 
-  updateReviewImageDisplayed (event) {
+  showModalWindow (event) {
     event.preventDefault();
     const imageId = event.target.id;
     const $image = $(`#${imageId}`);
@@ -62,7 +63,13 @@ class ReviewTile extends React.Component {
     const $modal = $('.modal-window');
     $modalContent.attr('src', url);
     $modal.css('display', 'block');
-    console.log(modal.attr('src'));
+  }
+
+  closeModalWindow (event) {
+    event.preventDefault();
+    const $modal = $('.modal-window');
+    console.log($modal)
+    $modal.css('display', 'none');
   }
 
   render () {
@@ -117,9 +124,9 @@ class ReviewTile extends React.Component {
           {reviewBody}
           <div className="thumbnail-display">
             {this.props.review.photos.map((photo) => {
-              return <ReviewImage key={photo.id} photo={photo} updateReviewImageDisplayed={this.updateReviewImageDisplayed} reviewerName={this.props.review.reviewer_name}/>
+              return <ReviewImage key={photo.id} photo={photo} showModalWindow={this.showModalWindow} reviewerName={this.props.review.reviewer_name}/>
             })}
-            <ReviewImageWindow />
+            <ReviewImageWindow closeModalWindow={this.closeModalWindow}/>
           </div>
 
           {recommend}
