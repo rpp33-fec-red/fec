@@ -1,9 +1,12 @@
 .ratings-and-reviews {
   display: flex;
+  margin: 30px;
   .reviews {
     flex: 1;
     .reviews-list {
       .review-tile {
+        margin: 30px;
+        border-bottom: 1px solid black;
         .review-header {
           display: flex;
           flex-direction: row;
