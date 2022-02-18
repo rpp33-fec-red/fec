@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var port = 8080;
 var path = require('path')
-app.use(express.static(path.join(__dirname + '/../client/public')));
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
@@ -13,7 +12,7 @@ var cors = require('cors');
 
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
-app.use(bp.json())
+app.use(bp.json());
 
 
 app.get('/getData',function(request, response) {
@@ -22,6 +21,8 @@ app.get('/getData',function(request, response) {
     url+=`/${request.query.route}?`;
   }
   Object.keys(request.query).forEach((param)=>{
+    console.log('url',url)
+    console.log(param)
     var value = request.query[param];
     if (param !== 'route'){
       url+=`&${param}=${value}`;
@@ -31,7 +32,8 @@ app.get('/getData',function(request, response) {
     method: 'get',
     url:url,
     headers:{'authorization':`${options.APIKEY}`,'Accept':'*'}
-  }).then(function(results){
+  }).then(function(results) {
+    console.log(results);
     if (results.data){
       response.json({results:results.data});
     } else {
@@ -46,4 +48,3 @@ app.get('/getData',function(request, response) {
 app.listen(port,function(){
   console.log('listenening on ',port)
 })
-

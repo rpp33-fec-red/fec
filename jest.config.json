@@ -1,12 +1,13 @@
-{ "testMatch": [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
-  "testPathIgnorePatterns" : ["/node_modules/"],
+{
+  "testMatch": ["**/?(ratings)+(.test.js?(x))"],
+  "testPathIgnorePatterns":["/node_modules/"],
   "collectCoverageFrom": [
-    "**/*.{js,jsx}",
-    "!**/node_modules/**"
+    "ratings.test.js"
+
   ],
+  "coverageDirectory": "./coverage",
   "collectCoverage":true,
    "moduleNameMapper": {
     "^.+\\.(css|scss)$": "babel-jest"
   }
 }
-

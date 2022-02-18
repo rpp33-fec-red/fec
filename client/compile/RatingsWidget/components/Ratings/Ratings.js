@@ -6,6 +6,7 @@ import RatingsProductBreakdown from './RatingsProductBreakdown.js';
 function Ratings(props) {
   return (
     <div className="ratings">
+      <h4>Ratings &#38; Reviews</h4>
       <RatingsSummary/>
       <RatingsBreakdown/>
       <RatingsProductBreakdown/>
