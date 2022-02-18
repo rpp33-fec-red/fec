@@ -42,7 +42,10 @@ describe('QuestionsList component', () => {
 describe('Question component', () => {
   test('loads and displays Question component', () => {
     var questionTree = TestRenderer.create(<Question question={sampleData.results[0]}/>).toJSON();
+<<<<<<< HEAD
+=======
 
+>>>>>>> d9c643e05bdea633ff8be31ce2b6cf9abfbf5bc8
     expect(questionTree).toMatchSnapshot();
   });
 });

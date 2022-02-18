@@ -2,7 +2,7 @@ import React from 'react';
 import OutfitCard from '../Cards/OutfitCard.jsx';
 
 const OutfitCarousel = (props) => {
-
+console.log(props)
     return (
         <div className="outfitCarouselContainer">
             <div className="productCarousel">
@@ -12,20 +12,20 @@ const OutfitCarousel = (props) => {
                     justifyContent: 'left'
                 })}>
                 <div className="productCard" >
-                    <button 
+                    <button
                         id="addButton"
                         varian="outline-primary"
                         onClick={props.handleAddToOutfit}
-                        > + </button> 
+                        > + </button>
                 </div>
                     { props.outfit_Ids.map((id, i) => {
                         return (
-                            <OutfitCard 
+                            <OutfitCard
                                 key={i}
                                 index={i}
                                 outfit_id={id}
                                 handleDelete={props.handleDelete}
-                                getData={props.getData}
+                                getRelatedItems={props.getRelatedItems}
                             />
                         );
                     })}
