@@ -13,15 +13,15 @@ exports[`Answer component loads and displays Answer component 1`] = `
     className="answerLinks"
   >
     <p>
-      by 
+      by
       Seller
-      , MONTH, DD, YEAR | Helpful? 
+      , MONTH, DD, YEAR | Helpful?
       <a>
         Yes
       </a>
        (
       4
-      ) | 
+      ) |
       <a>
         Report
       </a>
@@ -52,15 +52,15 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
         className="answerLinks"
       >
         <p>
-          by 
+          by
           Seller
-          , MONTH, DD, YEAR | Helpful? 
+          , MONTH, DD, YEAR | Helpful?
           <a>
             Yes
           </a>
            (
           4
-          ) | 
+          ) |
           <a>
             Report
           </a>
@@ -71,6 +71,7 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
 </div>
 `;
 
+
 exports[`Question component loads and displays Question component 1`] = `
 <div
   className="question"
@@ -79,20 +80,20 @@ exports[`Question component loads and displays Question component 1`] = `
     className="questionTitle"
   >
     <p>
-      Q: 
+      Q:
       Why is this product cheaper here than other sites?
     </p>
     <div
       className="questionLinks"
     >
       <p>
-        Helpful? 
+        Helpful?
         <a>
           Yes
         </a>
          (
         4
-        ) | 
+        ) |
         <a>
           Add Answer
         </a>
@@ -120,15 +121,15 @@ exports[`Question component loads and displays Question component 1`] = `
           className="answerLinks"
         >
           <p>
-            by 
+            by
             Seller
-            , MONTH, DD, YEAR | Helpful? 
+            , MONTH, DD, YEAR | Helpful?
             <a>
               Yes
             </a>
              (
             4
-            ) | 
+            ) |
             <a>
               Report
             </a>
@@ -180,20 +181,20 @@ exports[`Questions widget component loads and displays questions widget componen
         className="questionTitle"
       >
         <p>
-          Q: 
+          Q:
           Why is this product cheaper here than other sites?
         </p>
         <div
           className="questionLinks"
         >
           <p>
-            Helpful? 
+            Helpful?
             <a>
               Yes
             </a>
              (
             4
-            ) | 
+            ) |
             <a>
               Add Answer
             </a>
@@ -221,15 +222,15 @@ exports[`Questions widget component loads and displays questions widget componen
               className="answerLinks"
             >
               <p>
-                by 
+                by
                 Seller
-                , MONTH, DD, YEAR | Helpful? 
+                , MONTH, DD, YEAR | Helpful?
                 <a>
                   Yes
                 </a>
                  (
                 4
-                ) | 
+                ) |
                 <a>
                   Report
                 </a>
@@ -246,20 +247,20 @@ exports[`Questions widget component loads and displays questions widget componen
         className="questionTitle"
       >
         <p>
-          Q: 
+          Q:
           How long does it last?
         </p>
         <div
           className="questionLinks"
         >
           <p>
-            Helpful? 
+            Helpful?
             <a>
               Yes
             </a>
              (
             2
-            ) | 
+            ) |
             <a>
               Add Answer
             </a>
@@ -287,15 +288,15 @@ exports[`Questions widget component loads and displays questions widget componen
               className="answerLinks"
             >
               <p>
-                by 
+                by
                 sillyguy
-                , MONTH, DD, YEAR | Helpful? 
+                , MONTH, DD, YEAR | Helpful?
                 <a>
                   Yes
                 </a>
                  (
                 6
-                ) | 
+                ) |
                 <a>
                   Report
                 </a>
@@ -314,15 +315,15 @@ exports[`Questions widget component loads and displays questions widget componen
               className="answerLinks"
             >
               <p>
-                by 
+                by
                 iluvdogz
-                , MONTH, DD, YEAR | Helpful? 
+                , MONTH, DD, YEAR | Helpful?
                 <a>
                   Yes
                 </a>
                  (
                 31
-                ) | 
+                ) |
                 <a>
                   Report
                 </a>
@@ -351,6 +352,16 @@ exports[`Questions widget component loads and displays questions widget componen
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
 exports[`SearchBar component loads and displays SearchBar component 1`] = `
+<div>
+  <input
+    id="questionsSearchBar"
+    placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+    type="search"
+  />
+</div>
+`;
+
+exports[`SearchBar component loads and displays searcbBar component 1`] = `
 <div>
   <input
     id="questionsSearchBar"

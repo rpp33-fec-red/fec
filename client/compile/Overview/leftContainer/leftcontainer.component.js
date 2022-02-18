@@ -6,7 +6,7 @@ class LeftContainer extends React.Component{
 
   constructor(props){
     super(props)
-    console.log(this.props.onStyle)
+    console.log(this.props.onStyle);
 
   }
 
@@ -19,8 +19,5 @@ class LeftContainer extends React.Component{
 
     </div>)
   }
-
-
-
 }
 export default LeftContainer;

@@ -1,0 +1,27 @@
+.ratings-and-reviews {
+  display: flex;
+  .reviews {
+    flex: 1;
+    .reviews-list {
+      .review-tile {
+        .review-header {
+          display: flex;
+          flex-direction: row;
+          .star-rating {
+            width: 50%;
+          }
+          .right-corner {
+            text-align: right;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .ratings {
+    width: 25%;
+  }
+}
+
+
