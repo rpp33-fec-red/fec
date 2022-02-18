@@ -4,7 +4,7 @@
   "description": "our fec project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "liveBuild": "webpack-dev-server",
     "build": "webpack --watch",
     "start": "nodemon server/server.js",
@@ -33,8 +33,10 @@
     "react-test-renderer": "^17.0.2",
     "webpack-dev-server": "^4.7.4"
   },
+
   "devDependencies": {
     "@babel/core": "^7.17.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@testing-library/jest-dom": "^5.16.2",
@@ -42,8 +44,8 @@
     "babel-jest": "^27.5.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
-    "react-test-renderer": "^17.0.2",
     "sass": "^1.49.7",
+    "react-test-renderer": "^17.0.2",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.68.0",

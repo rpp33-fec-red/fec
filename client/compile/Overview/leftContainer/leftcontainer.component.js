@@ -6,6 +6,7 @@ class LeftContainer extends React.Component{
 
   constructor(props){
     super(props)
+    console.log(this.props.onStyle)
 
   }
 
@@ -13,7 +14,7 @@ class LeftContainer extends React.Component{
   render (){
     return (<div className="leftCt">
 
-    <ImageHolder product={this.props.product}/>
+    <ImageHolder product={this.props.onStyle}/>
 
 
     </div>)
