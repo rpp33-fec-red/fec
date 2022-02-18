@@ -2,7 +2,10 @@ import React from 'react';
 import OutfitCard from '../Cards/OutfitCard.jsx';
 
 const OutfitCarousel = (props) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba4e90337c0ba50fd15a4ad4c3f78dd7a463ab3f
     return (
         <div className="outfitCarouselContainer">
             <div className="productCarousel">

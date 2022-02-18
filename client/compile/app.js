@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
  import Overview from './Overview/overview.component.js';
  import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
  import QuestionsWidget from './Questions/Questions.jsx';
- import RelatedProducs from './RelatedItems/RelatedProducts.jsx'
+ import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
 
 import Model from './model.js';
 var model = new Model(false);
