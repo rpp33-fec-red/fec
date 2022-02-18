@@ -8,7 +8,11 @@
     "liveBuild": "webpack-dev-server",
     "build": "webpack --watch",
     "start": "nodemon server/server.js",
+<<<<<<< HEAD
     "updateArtifacts": "jest --updateSnapshot"
+=======
+    "updateArtifacts":"jest --updateSnapshot"
+>>>>>>> aa561d7f36cc9818605710ab05f328e4818c7e80
   },
   "repository": {
     "type": "git",
