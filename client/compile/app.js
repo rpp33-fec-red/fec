@@ -35,7 +35,7 @@ class Main extends React.Component {
     return (
     <div className="main">
       <Overview getProducts={model.getData} id={this.state.productID}/>
-      <RelatedProducs getRelatedItems={model.getData} />
+      <RelatedProducs getData={model.getData} />
       <QuestionsWidget />
       <RatingsWidget/>
   </div>)

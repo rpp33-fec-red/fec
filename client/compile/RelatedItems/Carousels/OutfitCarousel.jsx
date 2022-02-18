@@ -2,7 +2,7 @@ import React from 'react';
 import OutfitCard from '../Cards/OutfitCard.jsx';
 
 const OutfitCarousel = (props) => {
-console.log(props)
+
     return (
         <div className="outfitCarouselContainer">
             <div className="productCarousel">
@@ -25,7 +25,7 @@ console.log(props)
                                 index={i}
                                 outfit_id={id}
                                 handleDelete={props.handleDelete}
-                                getRelatedItems={props.getRelatedItems}
+                                getData={props.getData}
                             />
                         );
                     })}
