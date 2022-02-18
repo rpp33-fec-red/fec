@@ -9,11 +9,10 @@ class OutfitCard extends React.Component {
             photo: `https://i.pinimg.com/originals/2d/38/62/2d3862abf214ecdb6a1c231e035c1796.jpg`,
             category: 'Pug',
             product_name: '',
-            default_price: '$$$', 
+            default_price: '$$$',
         }
         this.getOutfitInfo = this.getOutfitInfo.bind(this);
     }
-
     componentDidMount () {
         this.getOutfitInfo(this.props.outfit_id);
     }
@@ -26,7 +25,7 @@ class OutfitCard extends React.Component {
                 default_price: data.results.default_price
             });
         });
-    
+
         this.props.getData(`products/${id}/styles`, {}, (data) => {
             this.setState({
                 photo: data.results.results[0]['photos'][0]['thumbnail_url']
@@ -44,13 +43,13 @@ class OutfitCard extends React.Component {
                     >X</button>
                 <img src={this.state.photo} />
                 <p className="category" ></p>
-                <a 
+                <a
                     className={`cardtitle ${this.props.product_id}`}
                     onClick={this.props.handleClick}
                     href={`/products/${this.props.product_id}`}
                 ><b>{this.state.product_name}</b></a>
                 <p className="default-price" >$ {this.state.default_price}</p>
-           
+
             </div>
         );
     }
