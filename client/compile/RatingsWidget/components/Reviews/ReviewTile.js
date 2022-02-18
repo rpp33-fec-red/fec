@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewImage from './ReviewImage.js';
+import ReviewImageWindow from './ReviewImageWindow.js';
 import $ from 'jquery';
 
 class ReviewTile extends React.Component {
@@ -8,13 +9,13 @@ class ReviewTile extends React.Component {
     this.state = {
       showFullReview: false,
       helpfulnessVoteCount: 0,
-      helpfulnessVoted: false
-
+      helpfulnessVoted: false,
+      reviewImageDisplayed: ''
     }
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
     this.updateHelpfulnessVoteCount = this.updateHelpfulnessVoteCount.bind(this);
-    this.displayModal = this.displayModal.bind(this);
+    this.updateReviewImageDisplayed = this.updateReviewImageDisplayed.bind(this);
   }
 
   componentDidMount () {
@@ -52,20 +53,17 @@ class ReviewTile extends React.Component {
     }
   }
 
-  displayModal (event) {
+  updateReviewImageDisplayed (event) {
     event.preventDefault();
     const imageId = event.target.id;
-    const style = {
-      'z-index': '1',
-      'width': '100%',
-      'heigth': '100%',
-      'background-color': 'rgba(0,0,0,0.4)',
-      'left': '0',
-      'top': '0'
-    }
     const $image = $(`#${imageId}`);
-    console.log($image);
-    $image.css(style);
+    const url = $image.attr('src');
+    this.setState({
+      reviewImageDisplayed: url
+    }, () => {
+      const modal = $('.modal-window');
+      modal.css({ 'display': 'block' });
+    });
   }
 
   render () {
@@ -120,7 +118,7 @@ class ReviewTile extends React.Component {
           {reviewBody}
           <div className="thumbnail-display">
             {this.props.review.photos.map((photo) => {
-              return <ReviewImage key={photo.id} photo={photo} displayModal={this.displayModal} reviewerName={this.props.review.reviewer_name}/>
+              return <ReviewImage key={photo.id} photo={photo} updateReviewImageDisplayed={this.updateReviewImageDisplayed} reviewerName={this.props.review.reviewer_name}/>
             })}
           </div>
 
@@ -130,7 +128,7 @@ class ReviewTile extends React.Component {
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
           </div>
         </div>
-
+        <ReviewImageWindow url={this.state.reviewImageDisplayed}/>
       </div>
     );
   }
