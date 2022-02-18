@@ -17,6 +17,15 @@ class AnswerList extends React.Component {
     for (const answer in this.state.answerData) {
       answers.push(this.state.answerData[answer]);
     }
+    const sellerSorted = answers.sort((a, b) => {
+      if ((a.answerer_name !== 'Seller') && (b.answerer_name === 'Seller')) {
+        return 1;
+      }
+      if ((a.answerer_name === 'Seller') && (b.answerer_name !== 'Seller')) {
+        return -1;
+      }
+      return b.helpfulness - a.helpfulness;
+    });
     return answers;
   }
 
