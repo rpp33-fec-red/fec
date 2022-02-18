@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-{
-=======
 var reviewsData = {
->>>>>>> 36c4c44a4740a74423f6e3d417d5e6fef80344ff
   "product": "2",
   "page": 0,
   "count": 5,
@@ -11,11 +7,7 @@ var reviewsData = {
       "review_id": 5,
       "rating": 3,
       "summary": "I'm enjoying wearing these shades",
-<<<<<<< HEAD
-      "recommend": false,
-=======
       "recommend": true,
->>>>>>> 36c4c44a4740a74423f6e3d417d5e6fef80344ff
       "response": null,
       "body": "Comfortable and practical.",
       "date": "2019-04-14T00:00:00.000Z",
@@ -44,11 +36,6 @@ var reviewsData = {
       "helpfulness": 5,
       "photos": [],
     },
-<<<<<<< HEAD
-    // ...
-  ]
-}
-=======
     {
       "review_id": 4,
       "rating": 3,
@@ -74,4 +61,3 @@ var reviewsData = {
 }
 
 export default reviewsData;
->>>>>>> 36c4c44a4740a74423f6e3d417d5e6fef80344ff
