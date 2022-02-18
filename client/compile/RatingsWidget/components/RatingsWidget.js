@@ -2,6 +2,7 @@ import React from 'react';
 import '../ratings.scss';
 import Reviews from './Reviews/Reviews.js';
 import Ratings from './Ratings/Ratings.js';
+import reviewsData from '../sample_data.js'
 
 class RatingsWidget extends React.Component {
   constructor(props) {
@@ -14,16 +15,21 @@ class RatingsWidget extends React.Component {
         threeStar: false,
         fourStar: false,
         fiveStar: false,
-      },
-      reviewsDisplayed: []
+      }
     }
   }
+
+  componentDidMount () {
+
+  }
+
+
 
   render () {
     return (
       <div className="ratings-and-reviews">
-        <Reviews reviewsDisplayed={this.props.reviewsDisplayed}/>
         <Ratings/>
+        <Reviews reviews={reviewsData.results} />
       </div>
     );
   }

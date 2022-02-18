@@ -44,8 +44,11 @@ describe('Question component', () => {
     var questionTree = TestRenderer.create(<Question question={sampleData.results[0]}/>).toJSON();
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> d9c643e05bdea633ff8be31ce2b6cf9abfbf5bc8
+>>>>>>> 1272cdcb3db7b29ece26c22d74cb0c249cf1c294
     expect(questionTree).toMatchSnapshot();
   });
 });
