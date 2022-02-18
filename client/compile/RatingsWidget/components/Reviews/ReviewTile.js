@@ -58,12 +58,11 @@ class ReviewTile extends React.Component {
     const imageId = event.target.id;
     const $image = $(`#${imageId}`);
     const url = $image.attr('src');
-    this.setState({
-      reviewImageDisplayed: url
-    }, () => {
-      const modal = $('.modal-window');
-      modal.css({ 'display': 'block' });
-    });
+    const $modalContent = $('.modal-content');
+    const $modal = $('.modal-window');
+    $modalContent.attr('src', url);
+    $modal.css('display', 'block');
+    console.log(modal.attr('src'));
   }
 
   render () {
@@ -120,6 +119,7 @@ class ReviewTile extends React.Component {
             {this.props.review.photos.map((photo) => {
               return <ReviewImage key={photo.id} photo={photo} updateReviewImageDisplayed={this.updateReviewImageDisplayed} reviewerName={this.props.review.reviewer_name}/>
             })}
+            <ReviewImageWindow />
           </div>
 
           {recommend}
@@ -128,7 +128,7 @@ class ReviewTile extends React.Component {
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
           </div>
         </div>
-        <ReviewImageWindow url={this.state.reviewImageDisplayed}/>
+
       </div>
     );
   }
