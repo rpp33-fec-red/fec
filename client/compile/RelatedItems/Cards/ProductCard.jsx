@@ -17,16 +17,17 @@ class ProductCard extends React.Component {
         this.getCardInfo(this.props.product_id);
     }
 
-    getCardInfo (id) {
-        this.props.getData(`products/${id}`, {}, (data) => {
+    getCardInfo (id) {  
+
+        this.props.getData(['products', id, ''], (data) => {
             this.setState ({
                 category: data.results.category,
                 product_name: data.results.name,
                 default_price: data.results.default_price
             });
         });
-    
-        this.props.getData(`products/${id}/styles`, {}, (data) => {
+
+        this.props.getData(['products', id, 'styles'], (data) => {
             this.setState({
                 photo: data.results.results[0]['photos'][0]['thumbnail_url']
             });
