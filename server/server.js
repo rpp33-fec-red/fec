@@ -48,6 +48,6 @@ app.get('/getData',function(request, response) {
 
 
 app.listen(port,function(){
-  console.log('listenening on ',port)
+  console.log('listenening on ',port);
 })
 
