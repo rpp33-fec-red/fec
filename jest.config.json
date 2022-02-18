@@ -1,9 +1,16 @@
 {
+<<<<<<< HEAD
   "testMatch": ["**/?(ratings)+(.test.js?(x))"],
   "testPathIgnorePatterns":["/node_modules/"],
   "collectCoverageFrom": [
     "ratings.test.js"
 
+=======
+  "testMatch": ["**/?(*questions|overview|ratings*)+(.test.js?(x))"],
+  "testPathIgnorePatterns":["/node_modules/"],
+  "coverageReporters": [
+      "html"
+>>>>>>> aa561d7f36cc9818605710ab05f328e4818c7e80
   ],
   "coverageDirectory": "./coverage",
   "collectCoverage":true,
