@@ -8,7 +8,7 @@ class AnswerList extends React.Component {
       displayAllAnswers: false,
       answerData: this.props.answers
     }
-
+    this.seeAllAnswers = this.seeAllAnswers.bind(this);
     this.createAnswerDataArray = this.createAnswerDataArray.bind(this);
   }
 
@@ -32,24 +32,31 @@ class AnswerList extends React.Component {
   componentDidMount() {
     this.setState({
       answerData: this.createAnswerDataArray(this.state.answerData)
-    })
+    });
+  }
+
+  seeAllAnswers(event) {
+    this.setState({
+      displayAllAnswers: true
+    });
   }
 
   render() {
     if (this.state.answerData.length) {
+      var answers = this.state.answerData;
       if (!this.state.displayAllAnswers) {
-        this.state.answerData = this.state.answerData.slice(0, 2);
+        answers = answers.slice(0, 2);
       }
 
       return(
         <div className="answers">
-        <p>A:&nbsp;</p>
-        <div className="answerList" >
-          {this.state.answerData.map((answer) =>
+        <p className="a">A:&nbsp;</p>
+        <div className='answer-list'>
+          {answers.map((answer) =>
             <Answer key={answer.id} answer={answer} />
           )}
-          {this.state.answerData.length > 2 &&
-            <a>See more answers</a>
+          {(this.state.answerData.length > 2 && !this.state.displayAllAnswers) &&
+            <a className="load-more-answers" onClick={this.seeAllAnswers}>SEE MORE ANSWERS</a>
           }
         </div>
       </div>

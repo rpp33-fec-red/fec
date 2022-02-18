@@ -76,9 +76,9 @@ class Question extends React.Component {
           <AddAnswerModal question={this.props.question.question_body} missing={this.state.missingFields} submit={this.handleSubmitAnswer} close={this.closeModal}/>
         }
         <div className="questionTitle">
-          <p>Q: {this.props.question.question_body}</p>
+          <p className="question-body">Q: {this.props.question.question_body}</p>
           <div className="questionLinks">
-            <p>Helpful? <a onClick={this.handleHelpfulnessVote}>Yes</a> ({this.state.helpfulnessVoteCount}) | <a onClick={this.handleAddAnswer}>Add Answer</a></p>
+            <p>Helpful? <a className="question-link" onClick={this.handleHelpfulnessVote}>Yes</a> ({this.state.helpfulnessVoteCount}) | <a className="question-link" onClick={this.handleAddAnswer}>Add Answer</a></p>
           </div>
         </div>
           <AnswerList answers={this.props.question.answers} />

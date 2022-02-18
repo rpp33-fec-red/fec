@@ -16,7 +16,7 @@ class QuestionsList extends React.Component {
       questions = questions.slice(0, this.props.displayed);
 
       return(
-        <div className={!this.props.scroll ? 'question-list' : 'questions-list-scroll'}>
+        <div className='questions-list'>
           {questions.map((question) =>
             <Question key={question.question_id} question={question} />
           )}

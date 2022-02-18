@@ -6,7 +6,7 @@ class Answer extends React.Component {
     this.state = {
       helpful: false,
       helpfulnessVoteCount: this.props.answer.helpfulness,
-      reported: false
+      reported: false,
     }
     this.handleHelpfulnessVote = this.handleHelpfulnessVote.bind(this);
     this.handleReport = this.handleReport.bind(this);
@@ -43,14 +43,14 @@ class Answer extends React.Component {
 
     return (
       <div className="answer">
-        <p className="answerTitle">{this.props.answer.body}</p>
-        <div className="answerLinks">
-          <p>by {this.props.answer.answerer_name}, {this.convertDate(this.props.answer.date)}&nbsp;|&nbsp;Helpful?
-            <a onClick={this.handleHelpfulnessVote}>Yes</a>
-            ({this.state.helpfulnessVoteCount})&nbsp;|&nbsp;
+        <p className="answer-title">{this.props.answer.body}</p>
+        <div className="answer-links">
+          <p>by <span className={(this.props.answer.answerer_name === 'Seller') ? 'answerer-seller' : 'answerer-other'}>{this.props.answer.answerer_name}</span>
+          , {this.convertDate(this.props.answer.date)}&nbsp; | &nbsp;Helpful?
+            <a className="answer-link" onClick={this.handleHelpfulnessVote}>Yes</a> ({this.state.helpfulnessVoteCount})&nbsp; | &nbsp;
             {!this.state.reported ?
-              <a onClick={this.handleReport}>Report</a> :
-              <a onClick={this.handleReport}>Reported</a>
+              <a className="answer-link" onClick={this.handleReport}>Report</a> :
+              <a className="answer-link" onClick={this.handleReport}>Reported</a>
             }
           </p>
         </div>

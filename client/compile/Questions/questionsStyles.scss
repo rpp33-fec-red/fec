@@ -1,4 +1,33 @@
 /*-----------------------------------
+ANSWERS
+-----------------------------------*/
+
+.answers {
+  display: flex;
+  flex-direction: row;
+}
+
+.answer-link{
+  text-decoration: underline;
+}
+
+.answer-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.answerer-seller {
+  font-weight: bold;
+}
+
+.load-more-answers {
+  font-weight: bold;
+}
+
+/*-----------------------------------
 MODAL WINDOW
 -----------------------------------*/
 
@@ -29,21 +58,42 @@ QUESTIONS
   justify-content: space-between;
 }
 
-.questions-list-scroll {
-  overflow-y: scroll;
-  max-height: 50vh;
+.question-link {
+  text-decoration: underline;
+}
+
+.questions.list {
+  overflow-y: auto;
+}
+
+.question-body {
+  font-weight: bold;
 }
 
 /*-----------------------------------
-ANSWERS
+QUESTION BUTTONS
 -----------------------------------*/
 
-.answers {
-  display: flex;
-  flex-direction: row;
+.question-buttons {
+ min-height: fit-content;
 }
 
-.answerList {
+/*-----------------------------------
+SEARCH BAR
+-----------------------------------*/
+.search-bar{
+  min-height: fit-content;
+}
+
+/*-----------------------------------
+WIDGET
+-----------------------------------*/
+
+.questions-widget {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
+  height: fit-content;
+  ;
+
 }

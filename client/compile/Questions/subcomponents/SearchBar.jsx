@@ -2,8 +2,8 @@ import React from 'react';
 
 function SearchBar(props) {
   return (
-    <div>
-      <input type="search" id="questionsSearchBar" placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..." onChange={props.search}></input>
+    <div className="search-bar">
+      <input type="search" id="questions-search-bar" placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..." onChange={props.search}></input>
     </div>
   );
 }
