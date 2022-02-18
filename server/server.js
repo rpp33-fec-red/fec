@@ -11,7 +11,6 @@ var bp = require('body-parser')
 app.use(bp.json())
 var cors = require('cors');
 
-
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
 
