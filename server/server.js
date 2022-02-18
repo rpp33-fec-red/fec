@@ -9,12 +9,9 @@ var axios = require('axios')
 var bp = require('body-parser')
 var cors = require('cors');
 
-
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use(bp.json());
-
-
 app.get('/getData',function(request, response) {
   var url = options.APIURL;
   if (request.query.route){
@@ -42,7 +39,6 @@ app.get('/getData',function(request, response) {
   }).catch(err=>{
     response.json({results:[],Error:err});
   });
-
 })
 
 app.listen(port,function(){
