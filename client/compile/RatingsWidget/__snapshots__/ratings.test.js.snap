@@ -1,0 +1,1100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components render correctly main ratings and reviews widget renders correctly 1`] = `
+<div
+  className="ratings-and-reviews"
+>
+  <div
+    className="ratings"
+  >
+    <h4>
+      Ratings & Reviews
+    </h4>
+    <div
+      className="ratings-summary"
+    >
+      <h2>
+        3.5
+      </h2>
+      <p
+        className="star-rating"
+      >
+        * * * * *
+      </p>
+      <p>
+        100% of the reviews recommend this product
+      </p>
+    </div>
+    <div
+      className="ratings-breakdown"
+    >
+      <div>
+        5 stars ------------
+      </div>
+      <div>
+        4 stars ------------
+      </div>
+      <div>
+        3 stars ------------
+      </div>
+      <div>
+        2 stars ------------
+      </div>
+      <div>
+        1 stars ------------
+      </div>
+    </div>
+    <div
+      className="ratings-product-breakdown"
+    >
+      Ratings Product Breakdown Placeholder
+    </div>
+  </div>
+  <div
+    className="reviews"
+  >
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        <label
+          htmlFor="sorting-option"
+        >
+          238 reviews, sorted by 
+        </label>
+        <select
+          name="sorting-option"
+        >
+          <option
+            value="relevance"
+          >
+            relevance
+          </option>
+          <option
+            value="helpfulness"
+          >
+            helpfuness
+          </option>
+          <option
+            value="newest"
+          >
+            newest
+          </option>
+        </select>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            shortandsweeet, April 13, 2019
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I'm enjoying wearing these shades
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              Comfortable and practical.
+            </p>
+          </div>
+          <div
+            className="recommend"
+          >
+            ☑ I recommend this product
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              5
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            bigbrotherbenjamin, June 22, 2019
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I am liking these glasses
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              They are very dark. But that's good because I'm in very sunny spots
+            </p>
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              5
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            alyshagilliard, July 24, 2020
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I'm enjoying wearing these shades because they block the sun...
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
+            </p>
+            <a
+              onClick={[Function]}
+            >
+              Show More
+            </a>
+          </div>
+          <div
+            className="recommend"
+          >
+            ☑ I recommend this product
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              8
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="reviews-buttons"
+    >
+      <button>
+        MORE REVIEWS
+      </button>
+      <button>
+        ADD A REVIEW +
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components render correctly main ratings component renders correctly 1`] = `
+<div
+  className="ratings"
+>
+  <h4>
+    Ratings & Reviews
+  </h4>
+  <div
+    className="ratings-summary"
+  >
+    <h2>
+      3.5
+    </h2>
+    <p
+      className="star-rating"
+    >
+      * * * * *
+    </p>
+    <p>
+      100% of the reviews recommend this product
+    </p>
+  </div>
+  <div
+    className="ratings-breakdown"
+  >
+    <div>
+      5 stars ------------
+    </div>
+    <div>
+      4 stars ------------
+    </div>
+    <div>
+      3 stars ------------
+    </div>
+    <div>
+      2 stars ------------
+    </div>
+    <div>
+      1 stars ------------
+    </div>
+  </div>
+  <div
+    className="ratings-product-breakdown"
+  >
+    Ratings Product Breakdown Placeholder
+  </div>
+</div>
+`;
+
+exports[`Components render correctly main reviews component renders correctly 1`] = `
+<div
+  className="reviews"
+>
+  <div
+    className="reviews-list"
+  >
+    <div
+      className="reviews-sorting"
+    >
+      <label
+        htmlFor="sorting-option"
+      >
+        238 reviews, sorted by 
+      </label>
+      <select
+        name="sorting-option"
+      >
+        <option
+          value="relevance"
+        >
+          relevance
+        </option>
+        <option
+          value="helpfulness"
+        >
+          helpfuness
+        </option>
+        <option
+          value="newest"
+        >
+          newest
+        </option>
+      </select>
+    </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          shortandsweeet, April 13, 2019
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I'm enjoying wearing these shades
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            Comfortable and practical.
+          </p>
+        </div>
+        <div
+          className="recommend"
+        >
+          ☑ I recommend this product
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          bigbrotherbenjamin, June 22, 2019
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I am liking these glasses
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            They are very dark. But that's good because I'm in very sunny spots
+          </p>
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          alyshagilliard, July 24, 2020
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I'm enjoying wearing these shades because they block the sun...
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
+          </p>
+          <a
+            onClick={[Function]}
+          >
+            Show More
+          </a>
+        </div>
+        <div
+          className="recommend"
+        >
+          ☑ I recommend this product
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            8
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="reviews-buttons"
+  >
+    <button>
+      MORE REVIEWS
+    </button>
+    <button>
+      ADD A REVIEW +
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Ratings component renders correctly 1`] = `
+<div
+  className="ratings"
+>
+  <h4>
+    Ratings & Reviews
+  </h4>
+  <div
+    className="ratings-summary"
+  >
+    <h2>
+      3.5
+    </h2>
+    <p
+      className="star-rating"
+    >
+      * * * * *
+    </p>
+    <p>
+      100% of the reviews recommend this product
+    </p>
+  </div>
+  <div
+    className="ratings-breakdown"
+  >
+    <div>
+      5 stars ------------
+    </div>
+    <div>
+      4 stars ------------
+    </div>
+    <div>
+      3 stars ------------
+    </div>
+    <div>
+      2 stars ------------
+    </div>
+    <div>
+      1 stars ------------
+    </div>
+  </div>
+  <div
+    className="ratings-product-breakdown"
+  >
+    Ratings Product Breakdown Placeholder
+  </div>
+</div>
+`;
+
+exports[`RatingsWidget component renders correctly 1`] = `
+<div
+  className="ratings-and-reviews"
+>
+  <div
+    className="ratings"
+  >
+    <h4>
+      Ratings & Reviews
+    </h4>
+    <div
+      className="ratings-summary"
+    >
+      <h2>
+        3.5
+      </h2>
+      <p
+        className="star-rating"
+      >
+        * * * * *
+      </p>
+      <p>
+        100% of the reviews recommend this product
+      </p>
+    </div>
+    <div
+      className="ratings-breakdown"
+    >
+      <div>
+        5 stars ------------
+      </div>
+      <div>
+        4 stars ------------
+      </div>
+      <div>
+        3 stars ------------
+      </div>
+      <div>
+        2 stars ------------
+      </div>
+      <div>
+        1 stars ------------
+      </div>
+    </div>
+    <div
+      className="ratings-product-breakdown"
+    >
+      Ratings Product Breakdown Placeholder
+    </div>
+  </div>
+  <div
+    className="reviews"
+  >
+    <div
+      className="reviews-list"
+    >
+      <div
+        className="reviews-sorting"
+      >
+        <label
+          htmlFor="sorting-option"
+        >
+          238 reviews, sorted by 
+        </label>
+        <select
+          name="sorting-option"
+        >
+          <option
+            value="relevance"
+          >
+            relevance
+          </option>
+          <option
+            value="helpfulness"
+          >
+            helpfuness
+          </option>
+          <option
+            value="newest"
+          >
+            newest
+          </option>
+        </select>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            shortandsweeet, April 13, 2019
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I'm enjoying wearing these shades
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              Comfortable and practical.
+            </p>
+          </div>
+          <div
+            className="recommend"
+          >
+            ☑ I recommend this product
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              5
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            bigbrotherbenjamin, June 22, 2019
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I am liking these glasses
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              They are very dark. But that's good because I'm in very sunny spots
+            </p>
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              5
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="review-tile"
+      >
+        <div
+          className="review-header"
+        >
+          <div
+            className="star-rating"
+          >
+            * * * * *
+          </div>
+          <div
+            className="right-corner"
+          >
+            alyshagilliard, July 24, 2020
+          </div>
+        </div>
+        <h3
+          className="review-summary"
+        >
+          I'm enjoying wearing these shades because they block the sun...
+        </h3>
+        <div
+          className="review-main"
+        >
+          <div
+            className="review-body"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
+            </p>
+            <a
+              onClick={[Function]}
+            >
+              Show More
+            </a>
+          </div>
+          <div
+            className="recommend"
+          >
+            ☑ I recommend this product
+          </div>
+          <div
+            className="review-helpfulness-voting"
+          >
+            <p>
+              Helpful? 
+              <a
+                onClick={[Function]}
+              >
+                 Yes
+              </a>
+               (
+              8
+              )
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="reviews-buttons"
+    >
+      <button>
+        MORE REVIEWS
+      </button>
+      <button>
+        ADD A REVIEW +
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReviewTile component renders correctly 1`] = `
+<div
+  className="review-tile"
+>
+  <div
+    className="review-header"
+  >
+    <div
+      className="star-rating"
+    >
+      * * * * *
+    </div>
+    <div
+      className="right-corner"
+    >
+      shortandsweeet, April 13, 2019
+    </div>
+  </div>
+  <h3
+    className="review-summary"
+  >
+    I'm enjoying wearing these shades
+  </h3>
+  <div
+    className="review-main"
+  >
+    <div
+      className="review-body"
+    >
+      <p>
+        Comfortable and practical.
+      </p>
+    </div>
+    <div
+      className="recommend"
+    >
+      ☑ I recommend this product
+    </div>
+    <div
+      className="review-helpfulness-voting"
+    >
+      <p>
+        Helpful? 
+        <a
+          onClick={[Function]}
+        >
+           Yes
+        </a>
+         (
+        5
+        )
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reviews component renders correctly 1`] = `
+<div
+  className="reviews"
+>
+  <div
+    className="reviews-list"
+  >
+    <div
+      className="reviews-sorting"
+    >
+      <label
+        htmlFor="sorting-option"
+      >
+        238 reviews, sorted by 
+      </label>
+      <select
+        name="sorting-option"
+      >
+        <option
+          value="relevance"
+        >
+          relevance
+        </option>
+        <option
+          value="helpfulness"
+        >
+          helpfuness
+        </option>
+        <option
+          value="newest"
+        >
+          newest
+        </option>
+      </select>
+    </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          shortandsweeet, April 13, 2019
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I'm enjoying wearing these shades
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            Comfortable and practical.
+          </p>
+        </div>
+        <div
+          className="recommend"
+        >
+          ☑ I recommend this product
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          bigbrotherbenjamin, June 22, 2019
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I am liking these glasses
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            They are very dark. But that's good because I'm in very sunny spots
+          </p>
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          alyshagilliard, July 24, 2020
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I'm enjoying wearing these shades because they block the sun...
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
+          </p>
+          <a
+            onClick={[Function]}
+          >
+            Show More
+          </a>
+        </div>
+        <div
+          className="recommend"
+        >
+          ☑ I recommend this product
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            8
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="reviews-buttons"
+  >
+    <button>
+      MORE REVIEWS
+    </button>
+    <button>
+      ADD A REVIEW +
+    </button>
+  </div>
+</div>
+`;

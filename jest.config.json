@@ -1,0 +1,13 @@
+{
+  "testMatch": ["**/?(ratings)+(.test.js?(x))"],
+  "testPathIgnorePatterns":["/node_modules/"],
+  "collectCoverageFrom": [
+    "ratings.test.js"
+
+  ],
+  "coverageDirectory": "./coverage",
+  "collectCoverage":true,
+   "moduleNameMapper": {
+    "^.+\\.(css|scss)$": "babel-jest"
+  }
+}
