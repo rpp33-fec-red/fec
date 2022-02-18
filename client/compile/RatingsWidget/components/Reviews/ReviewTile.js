@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewImage from './ReviewImage.js';
 import ReviewImageWindow from './ReviewImageWindow.js';
+import ReviewResponse from './ReviewResponse.js';
 import $ from 'jquery';
 
 class ReviewTile extends React.Component {
@@ -110,6 +111,12 @@ class ReviewTile extends React.Component {
       recommend = <div className="recommend">☑ I recommend this product</div>
     }
 
+    // show response from seller if there is a response
+    let reviewResponse;
+    if (this.props.review.response) {
+      reviewResponse = <ReviewResponse response={this.props.review.response}/>
+    }
+
     return (
       <div className="review-tile">
 
@@ -130,6 +137,7 @@ class ReviewTile extends React.Component {
           </div>
 
           {recommend}
+          {reviewResponse}
 
           <div className="review-helpfulness-voting">
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
