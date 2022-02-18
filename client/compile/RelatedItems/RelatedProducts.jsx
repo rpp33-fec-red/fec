@@ -23,33 +23,32 @@ class RelatedProducts extends React.Component {
 
     //all 64621 needs to be change to props.productId once params.id is passed to component
     componentDidMount () {
-        this.getRelatedProducts(['products','64621'], (relatedProducts) => {
-            this.setState({ relatedProducts });
+        this.getRelatedProducts (64620, (relatedProducts) => {
+            this.setState({ relatedProducts }); 
         });
-
-        this.props.getRelatedItems(['products','64621'], (data) => {
-            this.setState ({ current: data.results });
-            console.log('current', this.state.current);
-        });
+        // this.props.getData(`products/64621`, {}, (data) => {
+        //     this.setState ({ current: data.results });
+        //     console.log('current', this.state.current);
+        // });
         this.getOutfits();
     }
 
     handleClick (e) {
         let id = e.currentTarget.className.split(' ')[1];
         this.getRelatedProducts (id, (relatedProducts) => {
-            this.setState({ relatedProducts });
+            this.setState({ relatedProducts }); 
         });
     }
 
-    getRelatedProducts (array, callback) {
-        this.props.getRelatedItems(array, (data) => {
+    getRelatedProducts (id, callback) {     
+        this.props.getData(`products/${id}/related`, {}, (data) => {
             callback(data.results);
         });
-    }
+    }   
 
     getOutfits () {
-        // let outfitIds = JSON.parse(localStorage.getItem("outfit"));
-        let outfitIds = [64622]; //hardcode in to check for Outfitrender
+        // let outfitIds = JSON.parse(localStorage.getItem("outfit")); 
+        let outfitIds = [64622]; //hardcode in to check for Outfitrender 
         if (!!outfitIds) {
             this.setState({ outfitIds: outfitIds}, ()=> {
                 this.setState({ outfitLoaded: true });
@@ -68,7 +67,7 @@ class RelatedProducts extends React.Component {
                     this.getOutfits();
                 });
             });
-
+            
         }
     }
 
@@ -86,26 +85,26 @@ class RelatedProducts extends React.Component {
             <div className='relatedProducts'>
                 <br></br>
                 <h2>Related Products</h2>
-                {this.state.showComparison
+                {this.state.showComparison 
                 ? <ComparisonModal />
                 : <div></div>
                 }
-                <ProductCarousel
+                <ProductCarousel 
                     relatedProducts={this.state.relatedProducts}
-                    getRelatedItems={this.getRelatedProducts}
+                    getData={this.props.getData}
                     handleClick={this.handleClick}
                 />
                 <br></br>
                 <h2>Your Outfit</h2>
-                <OutfitCarousel
+                <OutfitCarousel 
                     outfit_Ids={this.state.outfitIds}
-                    getRelatedItems={this.getRelatedProducts}
+                    getData={this.props.getData}
                     outfitLoaded={this.state.outfitLoaded}
                     handleAddToOutfit={this.props.handleAddToOutfit}
                     handleDelete={this.props.handleDelete}
                 />
                 <br></br>
-
+          
             </div>
         );
     }
