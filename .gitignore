@@ -1,5 +1,9 @@
 /node_modules
 coverage
 *.orig
+<<<<<<< HEAD
 jest.config.json
 bundle.js
+=======
+client/public/bundle.js
+>>>>>>> d9c643e05bdea633ff8be31ce2b6cf9abfbf5bc8

@@ -10,8 +10,8 @@ class Overview extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
-                onProduct: { results: [] },
-                onStyle: null
+                onProduct: {},
+                onStyle: {}
             }
             this.getData = this.getData.bind(this);
         }
@@ -24,7 +24,11 @@ class Overview extends React.Component {
             var that = this;
             this.props.getProducts(['products', 64620, 'styles'], function(data) {
                 that.setState({ onProduct: data.results });
-                that.setState({ onStyle: data.results.results[0] });
+                if ( data){
+                    console.log(data.results)
+                    that.setState({ onStyle: data.results.results[0] });
+
+                }
             })
         }
 
@@ -34,7 +38,7 @@ class Overview extends React.Component {
             < div className = "overview" >
                 <LeftContainer onStyle = { this.state.onStyle }/>
                 <RightContainer/>
-                </div>)
+            </div>)
             }
 
 

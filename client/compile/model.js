@@ -18,6 +18,8 @@ class Model {
 
   getData(routes, cb) {
       if (Array.isArray(routes)) {
+        var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
+
         var options = {
           url:url,
           method: 'GET',
@@ -31,7 +33,6 @@ class Model {
       } else {
         throw new Error('ROUTES parameter passeed to getData must be an array in order for example ["products",128823,"styles"]; the product id is 128823');
       }
-     var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
   }
 
 }
