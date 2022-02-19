@@ -94,7 +94,7 @@ class Question extends React.Component {
     return (
       <div className="question">
         {this.state.showAddAnswerModal &&
-          <AddAnswerModal question={this.props.question.question_body} missing={this.state.missingFields} submit={this.handleSubmitAnswer} close={this.closeModal}/>
+          <AddAnswerModal product_name={this.props.product_name} question={this.props.question.question_body} missing={this.state.missingFields} submit={this.handleSubmitAnswer} close={this.closeModal}/>
         }
         <div className="questionTitle">
           <p className="question-body">Q: {this.props.question.question_body}</p>

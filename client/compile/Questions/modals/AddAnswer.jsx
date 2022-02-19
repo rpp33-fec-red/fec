@@ -23,13 +23,17 @@ class AddAnswerModal extends React.Component {
     })
   }
 
+  submitAnswer(event) {
+
+  }
+
   render() {
     return (
       <div className="modal" id="add-answer-modal">
         <div className="modal-content">
           <a className="close-modal" onClick={this.props.close}>X</a>
           <h2>Submit your Answer</h2>
-          <h3>PRODUCT NAME HERE: {this.props.question}</h3>
+          <h3>{this.props.product_name}: {this.props.question}</h3>
           <form className="add-answer-form" onSubmit={this.props.submit} >
             <div className="modal-form">
               <label>Your Answer*</label>

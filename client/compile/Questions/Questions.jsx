@@ -80,8 +80,8 @@ class QuestionsWidget extends React.Component {
       <div className="questions-widget">
         <h6>QUESTIONS &amp; ANSWERS</h6>
         <SearchBar search={this.handleSearch}/>
-        <QuestionsList questions={this.state.queriedQuestions} displayed={this.state.maxQuestionsDisplayed} scroll={this.state.allQuestionsDisplayed}/>
-        <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} displayMore={this.handleDisplayMoreQuestions} product_id={this.props.product_id}/>
+        <QuestionsList questions={this.state.queriedQuestions} displayed={this.state.maxQuestionsDisplayed} scroll={this.state.allQuestionsDisplayed} product_name={this.props.product_name}/>
+        <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} displayMore={this.handleDisplayMoreQuestions} product_id={this.props.product_id} product_name={this.props.product_name}/>
       </div>
     );
   }

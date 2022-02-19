@@ -6,16 +6,6 @@ class AddQuestionModal extends React.Component {
     this.state = {
 
     }
-    this.submitQuestion = this.submitQuestion.bind(this);
-  }
-
-  submitQuestion(event) {
-    let question = {
-      body: event.target.question.value,
-      name: event.target.nickname.value,
-      email: event.target.email.value,
-      product_id: this.props.product_id
-    }
   }
 
   render() {
@@ -24,7 +14,7 @@ class AddQuestionModal extends React.Component {
         <div className="modal-content">
           <a className="close-modal" onClick={this.props.close}>X</a>
           <h2>Ask Your Question</h2>
-          <h3>About the PRODUCT NAME HERE</h3>
+          <h3>About the {this.props.product_name}</h3>
           <form className="add-question-form" onSubmit={this.props.submit} >
             <div className="modal-form">
               <label>Your Question*</label>

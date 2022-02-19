@@ -70,7 +70,7 @@ class QuestionButtons extends React.Component {
     return (
       <div className="question-buttons">
         {this.state.showAddQuestionModal &&
-          <AddQuestionModal missing={this.state.missingFields} submit={this.handleSubmitQuestion} close={this.closeModal}/>
+          <AddQuestionModal product_name={this.props.product_name} missing={this.state.missingFields} submit={this.handleSubmitQuestion} close={this.closeModal}/>
         }
         {!this.props.allQuestionsDisplayed &&
           <button onClick={this.props.displayMore}>MORE ANSWERED QUESTIONS</button>

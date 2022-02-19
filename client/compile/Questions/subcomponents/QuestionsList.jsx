@@ -18,7 +18,7 @@ class QuestionsList extends React.Component {
       return(
         <div className='questions-list'>
           {questions.map((question) =>
-            <Question key={question.question_id} question={question} />
+            <Question key={question.question_id} question={question} product_name={this.props.product_name}/>
           )}
         </div>
       );
