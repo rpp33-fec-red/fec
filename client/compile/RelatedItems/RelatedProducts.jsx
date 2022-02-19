@@ -23,10 +23,11 @@ class RelatedProducts extends React.Component {
 
     //all 64621 needs to be change to props.productId once params.id is passed to component
     componentDidMount () {
-        this.getRelatedProducts (64620, (relatedProducts) => {
+        this.getRelatedProducts(['products','64621', 'related'], (relatedProducts) => {
             this.setState({ relatedProducts });
         });
-        // this.props.getData(`products/64621`, {}, (data) => {
+
+        // this.props.getData(['products','64621'], (data) => {
         //     this.setState ({ current: data.results });
         //     console.log('current', this.state.current);
         // });
@@ -35,13 +36,13 @@ class RelatedProducts extends React.Component {
 
     handleClick (e) {
         let id = e.currentTarget.className.split(' ')[1];
-        this.getRelatedProducts (id, (relatedProducts) => {
+        this.getRelatedProducts (['products', id, 'related'], (relatedProducts) => {
             this.setState({ relatedProducts });
         });
     }
 
-    getRelatedProducts (id, callback) {
-        this.props.getData(`products/${id}/related`, {}, (data) => {
+    getRelatedProducts (array, callback) {
+        this.props.getData(array, (data) => {
             callback(data.results);
         });
     }
@@ -100,8 +101,8 @@ class RelatedProducts extends React.Component {
                     outfit_Ids={this.state.outfitIds}
                     getData={this.props.getData}
                     outfitLoaded={this.state.outfitLoaded}
-                    handleAddToOutfit={this.props.handleAddToOutfit}
-                    handleDelete={this.props.handleDelete}
+                    handleAddToOutfit={this.handleAddToOutfit}
+                    handleDelete={this.handleDelete}
                 />
                 <br></br>
 

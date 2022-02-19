@@ -18,7 +18,12 @@ class OutfitCard extends React.Component {
     }
 
     getOutfitInfo (id) {
+<<<<<<< HEAD
         this.props.getData(`products/${id}`, {}, (data) => {
+=======
+    
+        this.props.getData(['products',id], (data) => {
+>>>>>>> 9fdfa201be2d25e145231b40f89f25fa67017fe0
             this.setState ({
                 category: data.results.category,
                 product_name: data.results.name,
@@ -26,7 +31,11 @@ class OutfitCard extends React.Component {
             });
         });
 
+<<<<<<< HEAD
         this.props.getData(`products/${id}/styles`, {}, (data) => {
+=======
+        this.props.getData(['products',id,'styles'],(data) => {
+>>>>>>> 9fdfa201be2d25e145231b40f89f25fa67017fe0
             this.setState({
                 photo: data.results.results[0]['photos'][0]['thumbnail_url']
             })

@@ -18,7 +18,7 @@ class Model {
   getData(routes, cb) {
       if (Array.isArray(routes)) {
         var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
-
+        
         var options = {
           url:url,
           method: 'GET',
