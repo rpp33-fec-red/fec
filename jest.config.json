@@ -1,8 +1,9 @@
 {
-  "testMatch": ["**/?(*questions|overview|ratings*)+(.test.js?(x))"],
+  "testMatch": ["**/?(ratings)+(.test.js?(x))"],
   "testPathIgnorePatterns":["/node_modules/"],
-  "coverageReporters": [
-      "html"
+  "collectCoverageFrom": [
+    "ratings.test.js"
+
   ],
   "coverageDirectory": "./coverage",
   "collectCoverage":true,

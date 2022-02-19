@@ -24,7 +24,7 @@ class Overview extends React.Component {
             var that = this;
             this.props.getProducts(['products', 64620, 'styles'], function(data) {
                 that.setState({ onProduct: data.results });
-                if ( data){
+                if ( data.results){
                     console.log(data.results)
                     that.setState({ onStyle: data.results.results[0] });
 

@@ -11,7 +11,6 @@ var bp = require('body-parser')
 app.use(bp.json())
 var cors = require('cors');
 
-
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
 
@@ -48,6 +47,6 @@ app.get('/getData',function(request, response) {
 
 
 app.listen(port,function(){
-  console.log('listenening on ',port)
+  console.log('listenening on ',port);
 })
 

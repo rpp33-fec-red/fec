@@ -24,7 +24,7 @@ const OutfitCarousel = (props) => {
                                 index={i}
                                 outfit_id={id}
                                 handleDelete={props.handleDelete}
-                                getRelatedItems={props.getRelatedItems}
+                                getData={props.getData}
                             />
                         );
                     })}
