@@ -62,8 +62,10 @@ QUESTIONS
   text-decoration: underline;
 }
 
-.questions.list {
-  overflow-y: auto;
+.questions-list {
+  overflow-y: scroll;
+  max-height: 100%;
+  position: relative;
 }
 
 .question-body {
@@ -92,7 +94,7 @@ WIDGET
 .questions-widget {
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  max-height: 100vh;
   ;
 
 }
