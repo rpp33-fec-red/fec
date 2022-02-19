@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 /**
  * @jest-environment jsdom
  */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render, fireEvent, queryByText} from '@testing-library/react'
+import {render, fireEvent} from '@testing-library/react';
 import RatingsWidget from './components/RatingsWidget.js';
 import Ratings from './components/Ratings/Ratings.js';
 import Reviews from './components/Reviews/Reviews.js';
@@ -16,8 +17,8 @@ describe('RatingsWidget component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-    .create(<RatingsWidget/>)
-    .toJSON();
+      .create(<RatingsWidget/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -27,8 +28,8 @@ describe('Reviews component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-    .create(<Reviews reviews={reviewsData.results}/>)
-    .toJSON();
+      .create(<Reviews reviews={reviewsData.results}/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -39,8 +40,8 @@ describe('Ratings component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-    .create(<Ratings/>)
-    .toJSON();
+      .create(<Ratings/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -51,8 +52,8 @@ describe('ReviewTile component', () => {
   let testReview = reviewsData.results[0];
   test('renders correctly', () => {
     const tree = renderer
-    .create(<ReviewTile review={reviewsData.results[0]}/>)
-    .toJSON();
+      .create(<ReviewTile review={testReview}/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -88,7 +89,7 @@ describe('ReviewTile component', () => {
 
     // testing if show more does not appear
     testReview = reviewsData.results[1];
-    rerender(<ReviewTile review={testReview}/>)
+    rerender(<ReviewTile review={testReview}/>);
     expect(() => {
       getByText('Show More').toThrow();
     });
@@ -126,23 +127,36 @@ describe('ReviewTile component', () => {
 
 
     // shows image when review image is included
-    let testReview = reviewsData.results[1];
+    testReview = reviewsData.results[1];
     rerender(<ReviewTile review={testReview}/>);
 
   });
 
   test('Shows a modal window when image is clicked', () => {
-
+    let testReview = reviewsData.results[0];
+    const {getByText} = render(<ReviewTile review={testReview}/>);
+    fireEvent.click(getByText('Yes'));
   });
 
   test('closes modal window when image is clicked out', () => {
+    let testReview = reviewsData.results[0];
+    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
 
+
+    // shows image when review image is included
+    testReview = reviewsData.results[1];
+    rerender(<ReviewTile review={testReview}/>);
   });
 
   test('closes modal window when image is clicked out', () => {
+    let testReview = reviewsData.results[0];
+    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
 
+
+    // shows image when review image is included
+    testReview = reviewsData.results[1];
+    rerender(<ReviewTile review={testReview}/>);
   });
-
 
 });
 

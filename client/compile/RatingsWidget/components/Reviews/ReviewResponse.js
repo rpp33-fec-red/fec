@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ReviewResponse (props) {
   return (
@@ -8,5 +9,9 @@ function ReviewResponse (props) {
     </div>
   );
 }
+
+ReviewResponse.propTypes = {
+  response: PropTypes.any
+};
 
 export default ReviewResponse;

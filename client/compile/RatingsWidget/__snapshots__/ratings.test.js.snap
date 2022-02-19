@@ -170,6 +170,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
           >
             <div>
               <img
+                alt="Review submitted by: shortandsweeet"
                 className="review-image"
                 id="shortandsweeet_1"
                 onClick={[Function]}
@@ -178,6 +179,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </div>
             <div>
               <img
+                alt="Review submitted by: shortandsweeet"
                 className="review-image"
                 id="shortandsweeet_2"
                 onClick={[Function]}
@@ -330,6 +332,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
           >
             <div>
               <img
+                alt="Review submitted by: alyshagilliard"
                 className="review-image"
                 id="alyshagilliard_1"
                 onClick={[Function]}
@@ -338,6 +341,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </div>
             <div>
               <img
+                alt="Review submitted by: alyshagilliard"
                 className="review-image"
                 id="alyshagilliard_2"
                 onClick={[Function]}
@@ -346,6 +350,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </div>
             <div>
               <img
+                alt="Review submitted by: alyshagilliard"
                 className="review-image"
                 id="alyshagilliard_3"
                 onClick={[Function]}
@@ -437,6 +442,7 @@ exports[`ReviewTile component renders correctly 1`] = `
     >
       <div>
         <img
+          alt="Review submitted by: shortandsweeet"
           className="review-image"
           id="shortandsweeet_1"
           onClick={[Function]}
@@ -445,6 +451,7 @@ exports[`ReviewTile component renders correctly 1`] = `
       </div>
       <div>
         <img
+          alt="Review submitted by: shortandsweeet"
           className="review-image"
           id="shortandsweeet_2"
           onClick={[Function]}
@@ -557,6 +564,7 @@ exports[`Reviews component renders correctly 1`] = `
         >
           <div>
             <img
+              alt="Review submitted by: shortandsweeet"
               className="review-image"
               id="shortandsweeet_1"
               onClick={[Function]}
@@ -565,6 +573,7 @@ exports[`Reviews component renders correctly 1`] = `
           </div>
           <div>
             <img
+              alt="Review submitted by: shortandsweeet"
               className="review-image"
               id="shortandsweeet_2"
               onClick={[Function]}
@@ -717,6 +726,7 @@ exports[`Reviews component renders correctly 1`] = `
         >
           <div>
             <img
+              alt="Review submitted by: alyshagilliard"
               className="review-image"
               id="alyshagilliard_1"
               onClick={[Function]}
@@ -725,6 +735,7 @@ exports[`Reviews component renders correctly 1`] = `
           </div>
           <div>
             <img
+              alt="Review submitted by: alyshagilliard"
               className="review-image"
               id="alyshagilliard_2"
               onClick={[Function]}
@@ -733,6 +744,7 @@ exports[`Reviews component renders correctly 1`] = `
           </div>
           <div>
             <img
+              alt="Review submitted by: alyshagilliard"
               className="review-image"
               id="alyshagilliard_3"
               onClick={[Function]}

@@ -2,17 +2,18 @@ import React from 'react';
 import ReviewImage from './ReviewImage.js';
 import ReviewImageWindow from './ReviewImageWindow.js';
 import ReviewResponse from './ReviewResponse.js';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 class ReviewTile extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       showFullReview: false,
       helpfulnessVoteCount: 0,
       helpfulnessVoted: false,
       reviewImageDisplayed: ''
-    }
+    };
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
     this.updateHelpfulnessVoteCount = this.updateHelpfulnessVoteCount.bind(this);
@@ -69,7 +70,6 @@ class ReviewTile extends React.Component {
   closeModalWindow (event) {
     event.preventDefault();
     const $modal = $('.modal-window');
-    console.log($modal)
     $modal.css('display', 'none');
   }
 
@@ -108,13 +108,13 @@ class ReviewTile extends React.Component {
     // shows "I recommend this product" if product is recommended by reviewer
     let recommend;
     if (this.props.review.recommend) {
-      recommend = <div className="recommend">☑ I recommend this product</div>
+      recommend = <div className="recommend">☑ I recommend this product</div>;
     }
 
     // show response from seller if there is a response
     let reviewResponse;
     if (this.props.review.response) {
-      reviewResponse = <ReviewResponse response={this.props.review.response}/>
+      reviewResponse = <ReviewResponse response={this.props.review.response}/>;
     }
 
     return (
@@ -131,7 +131,7 @@ class ReviewTile extends React.Component {
           {reviewBody}
           <div className="thumbnail-display">
             {this.props.review.photos.map((photo) => {
-              return <ReviewImage key={photo.id} photo={photo} showModalWindow={this.showModalWindow} reviewerName={this.props.review.reviewer_name}/>
+              return <ReviewImage key={photo.id} photo={photo} showModalWindow={this.showModalWindow} reviewerName={this.props.review.reviewer_name}/>;
             })}
             <ReviewImageWindow closeModalWindow={this.closeModalWindow}/>
           </div>
@@ -148,5 +148,9 @@ class ReviewTile extends React.Component {
     );
   }
 }
+
+ReviewTile.propTypes = {
+  review: PropTypes.any
+};
 
 export default ReviewTile;
