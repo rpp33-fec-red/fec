@@ -1,7 +1,7 @@
 import React from 'react';
 
 // the purpose of this component is to handle the sorting for the reviews
-function ReviewsSorting (props) {
+function ReviewsSorting () {
   return (
     <div className ="reviews-sorting">
       <label htmlFor="sorting-option">238 reviews, sorted by </label>

@@ -1,17 +1,24 @@
 import React from 'react';
+import ReviewImage from './ReviewImage.js';
+import ReviewImageWindow from './ReviewImageWindow.js';
+import ReviewResponse from './ReviewResponse.js';
+import PropTypes from 'prop-types';
+import $ from 'jquery';
 
 class ReviewTile extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       showFullReview: false,
       helpfulnessVoteCount: 0,
-      helpfulnessVoted: false
-
-    }
+      helpfulnessVoted: false,
+      reviewImageDisplayed: ''
+    };
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
     this.updateHelpfulnessVoteCount = this.updateHelpfulnessVoteCount.bind(this);
+    this.showModalWindow = this.showModalWindow.bind(this);
+    this.closeModalWindow = this.closeModalWindow.bind(this);
   }
 
   componentDidMount () {
@@ -49,6 +56,23 @@ class ReviewTile extends React.Component {
     }
   }
 
+  showModalWindow (event) {
+    event.preventDefault();
+    const imageId = event.target.id;
+    const $image = $(`#${imageId}`);
+    const url = $image.attr('src');
+    const $modalContent = $('.modal-content');
+    const $modal = $('.modal-window');
+    $modalContent.attr('src', url);
+    $modal.css('display', 'block');
+  }
+
+  closeModalWindow (event) {
+    event.preventDefault();
+    const $modal = $('.modal-window');
+    $modal.css('display', 'none');
+  }
+
   render () {
     const formattedDate = this.convertDate(this.props.review.date);
 
@@ -84,26 +108,54 @@ class ReviewTile extends React.Component {
     // shows "I recommend this product" if product is recommended by reviewer
     let recommend;
     if (this.props.review.recommend) {
-      recommend = <div className="recommend">☑ I recommend this product</div>
+      recommend = <div className="recommend">☑ I recommend this product</div>;
+    }
+
+    // shows response from seller if there is a response
+    let reviewResponse;
+    if (this.props.review.response) {
+      reviewResponse = <ReviewResponse response={this.props.review.response}/>;
     }
 
     return (
       <div className="review-tile">
+
         <div className="review-header">
           <div className="star-rating">* * * * *</div>
           <div className="right-corner">{this.props.review.reviewer_name + ', ' + formattedDate}</div>
         </div>
+
         <h3 className="review-summary">{reviewSummary}</h3>
+
         <div className="review-main">
+
           {reviewBody}
+
+          <div className="thumbnail-display">
+            {this.props.review.photos.map((photo) => {
+              return <ReviewImage key={photo.id} photo={photo} showModalWindow={this.showModalWindow} reviewerName={this.props.review.reviewer_name}/>;
+            })}
+
+            <ReviewImageWindow closeModalWindow={this.closeModalWindow}/>
+
+          </div>
+
           {recommend}
+          {reviewResponse}
+
           <div className="review-helpfulness-voting">
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
           </div>
+
         </div>
+
       </div>
     );
   }
 }
+
+ReviewTile.propTypes = {
+  review: PropTypes.any
+};
 
 export default ReviewTile;
