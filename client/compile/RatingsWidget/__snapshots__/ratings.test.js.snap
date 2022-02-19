@@ -170,7 +170,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
           >
             <div>
               <img
-                alt="Review submitted by: shortandsweeet"
+                alt="Review photo 1 submitted by: shortandsweeet"
                 className="review-image"
                 id="shortandsweeet_1"
                 onClick={[Function]}
@@ -179,7 +179,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </div>
             <div>
               <img
-                alt="Review submitted by: shortandsweeet"
+                alt="Review photo 2 submitted by: shortandsweeet"
                 className="review-image"
                 id="shortandsweeet_2"
                 onClick={[Function]}
@@ -332,7 +332,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
           >
             <div>
               <img
-                alt="Review submitted by: alyshagilliard"
+                alt="Review photo 1 submitted by: alyshagilliard"
                 className="review-image"
                 id="alyshagilliard_1"
                 onClick={[Function]}
@@ -341,7 +341,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </div>
             <div>
               <img
-                alt="Review submitted by: alyshagilliard"
+                alt="Review photo 2 submitted by: alyshagilliard"
                 className="review-image"
                 id="alyshagilliard_2"
                 onClick={[Function]}
@@ -350,7 +350,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </div>
             <div>
               <img
-                alt="Review submitted by: alyshagilliard"
+                alt="Review photo 3 submitted by: alyshagilliard"
                 className="review-image"
                 id="alyshagilliard_3"
                 onClick={[Function]}
@@ -442,7 +442,7 @@ exports[`ReviewTile component renders correctly 1`] = `
     >
       <div>
         <img
-          alt="Review submitted by: shortandsweeet"
+          alt="Review photo 1 submitted by: shortandsweeet"
           className="review-image"
           id="shortandsweeet_1"
           onClick={[Function]}
@@ -451,7 +451,7 @@ exports[`ReviewTile component renders correctly 1`] = `
       </div>
       <div>
         <img
-          alt="Review submitted by: shortandsweeet"
+          alt="Review photo 2 submitted by: shortandsweeet"
           className="review-image"
           id="shortandsweeet_2"
           onClick={[Function]}
@@ -564,7 +564,7 @@ exports[`Reviews component renders correctly 1`] = `
         >
           <div>
             <img
-              alt="Review submitted by: shortandsweeet"
+              alt="Review photo 1 submitted by: shortandsweeet"
               className="review-image"
               id="shortandsweeet_1"
               onClick={[Function]}
@@ -573,7 +573,7 @@ exports[`Reviews component renders correctly 1`] = `
           </div>
           <div>
             <img
-              alt="Review submitted by: shortandsweeet"
+              alt="Review photo 2 submitted by: shortandsweeet"
               className="review-image"
               id="shortandsweeet_2"
               onClick={[Function]}
@@ -726,7 +726,7 @@ exports[`Reviews component renders correctly 1`] = `
         >
           <div>
             <img
-              alt="Review submitted by: alyshagilliard"
+              alt="Review photo 1 submitted by: alyshagilliard"
               className="review-image"
               id="alyshagilliard_1"
               onClick={[Function]}
@@ -735,7 +735,7 @@ exports[`Reviews component renders correctly 1`] = `
           </div>
           <div>
             <img
-              alt="Review submitted by: alyshagilliard"
+              alt="Review photo 2 submitted by: alyshagilliard"
               className="review-image"
               id="alyshagilliard_2"
               onClick={[Function]}
@@ -744,7 +744,7 @@ exports[`Reviews component renders correctly 1`] = `
           </div>
           <div>
             <img
-              alt="Review submitted by: alyshagilliard"
+              alt="Review photo 3 submitted by: alyshagilliard"
               className="review-image"
               id="alyshagilliard_3"
               onClick={[Function]}

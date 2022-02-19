@@ -1,7 +1,8 @@
-/* eslint-disable no-undef */
 /**
  * @jest-environment jsdom
  */
+
+/* eslint-disable no-undef */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -120,43 +121,36 @@ describe('ReviewTile component', () => {
     expect(getByText(/8/)).toBeInTheDocument();
   });
 
+
   test('displays images when they are included in the review', () => {
     // shows image when review image is included
     let testReview = reviewsData.results[0];
-    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
+    const {getByAltText, rerender} = render(<ReviewTile review={testReview}/>);
+    expect(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`)).toBeInTheDocument();
 
-
-    // shows image when review image is included
+    // does not show image when review not submitted by reviewer
     testReview = reviewsData.results[1];
     rerender(<ReviewTile review={testReview}/>);
-
+    expect(() => {
+      getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`).toThrow();
+    });
   });
 
-  test('Shows a modal window when image is clicked', () => {
-    let testReview = reviewsData.results[0];
-    const {getByText} = render(<ReviewTile review={testReview}/>);
-    fireEvent.click(getByText('Yes'));
-  });
 
-  test('closes modal window when image is clicked out', () => {
-    let testReview = reviewsData.results[0];
-    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
+  // test('Shows a modal window when image is clicked', () => {
+  //   let testReview = reviewsData.results[0];
+  //   const {getByAltText} = render(<ReviewTile review={testReview}/>);
+  //   fireEvent.click(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`));
+  //   expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewerName}`));
+  // });
 
 
-    // shows image when review image is included
-    testReview = reviewsData.results[1];
-    rerender(<ReviewTile review={testReview}/>);
-  });
-
-  test('closes modal window when image is clicked out', () => {
-    let testReview = reviewsData.results[0];
-    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
-
-
-    // shows image when review image is included
-    testReview = reviewsData.results[1];
-    rerender(<ReviewTile review={testReview}/>);
-  });
+  // test('closes modal window when image is clicked out', () => {
+  //   let testReview = reviewsData.results[1];
+  //   const {getByAltText, rerender} = render(<ReviewTile review={testReview}/>);
+  //   fireEvent.click();
+  //   expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewerName}`)).toBeInTheDocument();
+  // });
 
 });
 

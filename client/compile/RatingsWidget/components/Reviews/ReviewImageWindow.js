@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ReviewImageWindow (props) {
   return (
@@ -7,5 +8,11 @@ function ReviewImageWindow (props) {
     </div>
   );
 }
+
+ReviewImageWindow.propTypes = {
+  photo: PropTypes.any,
+  reviewerName: PropTypes.any,
+  closeModalWindow: PropTypes.any,
+};
 
 export default ReviewImageWindow;
