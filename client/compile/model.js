@@ -15,7 +15,6 @@ class Model {
     this.getData = this.getData.bind(this);
   }
 
-<<<<<<< HEAD
   getData() {
     var type = 'GET';
     var params = {};
@@ -65,21 +64,6 @@ class Model {
       if (options) {
         $.ajax(options);
       }
-=======
-  getData(routes, cb) {
-    if (Array.isArray(routes)) {
-      var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
-      var options = {
-        url:url,
-        method: 'GET',
-        success:function(data) {
-          cb(data);
-        }
-      };
-      if (options) {
-        $.ajax(options);
-      }
->>>>>>> f5f872e29bda1330e5ebae66331c79d471c3583f
     } else {
       throw new Error('ROUTES parameter passeed to getData must be an array in order for example ["products",128823,"styles"]; the product id is 128823');
     }
