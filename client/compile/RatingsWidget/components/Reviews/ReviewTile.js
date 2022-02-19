@@ -111,7 +111,7 @@ class ReviewTile extends React.Component {
       recommend = <div className="recommend">☑ I recommend this product</div>;
     }
 
-    // show response from seller if there is a response
+    // shows response from seller if there is a response
     let reviewResponse;
     if (this.props.review.response) {
       reviewResponse = <ReviewResponse response={this.props.review.response}/>;
@@ -128,12 +128,16 @@ class ReviewTile extends React.Component {
         <h3 className="review-summary">{reviewSummary}</h3>
 
         <div className="review-main">
+
           {reviewBody}
+
           <div className="thumbnail-display">
             {this.props.review.photos.map((photo) => {
               return <ReviewImage key={photo.id} photo={photo} showModalWindow={this.showModalWindow} reviewerName={this.props.review.reviewer_name}/>;
             })}
+
             <ReviewImageWindow closeModalWindow={this.closeModalWindow}/>
+
           </div>
 
           {recommend}
@@ -142,6 +146,7 @@ class ReviewTile extends React.Component {
           <div className="review-helpfulness-voting">
             <p>Helpful? <a onClick={this.updateHelpfulnessVoteCount}> Yes</a> ({this.state.helpfulnessVoteCount})</p>
           </div>
+
         </div>
 
       </div>
