@@ -119,5 +119,30 @@ describe('ReviewTile component', () => {
     expect(getByText(/8/)).toBeInTheDocument();
   });
 
+  test('displays images when they are included in the review', () => {
+    // shows image when review image is included
+    let testReview = reviewsData.results[0];
+    const {getByText, rerender} = render(<ReviewTile review={testReview}/>);
+
+
+    // shows image when review image is included
+    let testReview = reviewsData.results[1];
+    rerender(<ReviewTile review={testReview}/>);
+
+  });
+
+  test('Shows a modal window when image is clicked', () => {
+
+  });
+
+  test('closes modal window when image is clicked out', () => {
+
+  });
+
+  test('closes modal window when image is clicked out', () => {
+
+  });
+
+
 });
 
