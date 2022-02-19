@@ -20,7 +20,7 @@ class UploadPhotosModal extends React.Component {
       <div className="modal" id="upload-photo-modal">
         <div className="modal-content">
           <a className="close-window" onClick={this.props.close}>X</a>
-          <h3>Upload Photos for INSERT PRODUCT NAME</h3>
+          <h3>Upload Photos for {this.props.product_name}</h3>
           <form>
             <div>
               <label htmlFor="photo-upload">Choose photo to upload</label>

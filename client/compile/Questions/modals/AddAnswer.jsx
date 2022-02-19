@@ -61,7 +61,7 @@ class AddAnswerModal extends React.Component {
             }
           </form>
           {this.state.showUploadPhotosModal &&
-            <UploadPhotosModal close={this.closeModal}/>
+            <UploadPhotosModal product_name={this.props.product_name} close={this.closeModal}/>
           }
         </div>
       </div>
