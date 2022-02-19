@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SearchBar from './subcomponents/SearchBar.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
 import QuestionButtons from './subcomponents/QuestionButtons.jsx';
@@ -25,13 +26,19 @@ class QuestionsWidget extends React.Component {
     console.log('array', array);
     this.props.getQuestions(['qa', 'questions', this.props.product_id], (data) => {
       console.log('data', data);
-      const sorted = data.results.results.sort((a, b) => {
-        return b.question_helpfulness - a.question_helpfulness;
-      });
-      this.setState({
-        questionsData: sorted,
-        queriedQuestions: sorted
-      });
+      if (data.results.results) {
+        const sorted = data.results.results.sort((a, b) => {
+          return b.question_helpfulness - a.question_helpfulness;
+        });
+        this.setState({
+          questionsData: sorted,
+          queriedQuestions: sorted
+        });
+      } else {
+        this.setState({
+          questionsData: []
+        });
+      }
     });
   }
 
@@ -67,9 +74,9 @@ class QuestionsWidget extends React.Component {
     }
   }
 
-  queryQuestions() {
+  queryQuestions(questionsData) {
     let queriedQuestions = [];
-    for (const question of this.state.questionsData) {
+    for (const question of questionsData) {
       if (question.question_body.indexOf(this.state.query) !== -1) {
         queriedQuestions.push(question);
       }
@@ -88,5 +95,11 @@ class QuestionsWidget extends React.Component {
     );
   }
 }
+
+QuestionsWidget.propTypes = {
+  getQuestions: PropTypes.function,
+  product_id: Number,
+  product_name: String
+};
 
 export default QuestionsWidget;
