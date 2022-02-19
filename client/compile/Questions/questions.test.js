@@ -10,13 +10,18 @@ import AnswerList from './subcomponents/AnswerList.jsx';
 import AddAnswerModal from './modals/AddAnswer.jsx';
 import AddQuestionModal from './modals/AddQuestion.jsx';
 import UploadPhotosModal from './modals/UploadPhotos';
+import Model from '../model.js';
+var model = new Model(false);
 import { sampleData, answer } from './sampleData.js';
 
 //https://jestjs.io/docs/getting-started
 
 describe('Questions widget component', () => {
+  var getData = function (){
+    return model.getData;
+  };
   test('loads and displays questions widget component', () => {
-    var questionsTree = TestRenderer.create(<Questions />).toJSON();
+    var questionsTree = TestRenderer.create(<Questions getQuestions={getData} product_id="64620" product_name="Camo Onesie"/>).toJSON();
     expect(questionsTree).toMatchSnapshot();
   });
 });
@@ -79,7 +84,7 @@ describe('AddQuestionModal component', () => {
 
 describe('UploadPhotosModal component', () => {
   test('loads and displays Answer component', () => {
-    var uploadPhotosModalTree = TestRenderer.create(<UploadPhotosModal answer={answer}/>).toJSON();
+    var uploadPhotosModalTree = TestRenderer.create(<UploadPhotosModal answer={answer} photos={{photoCount: 0, uploadedPhotos: []}}/>).toJSON();
     expect(uploadPhotosModalTree).toMatchSnapshot();
   });
 });

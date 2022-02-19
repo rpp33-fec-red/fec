@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './subcomponents/SearchBar.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
 import QuestionButtons from './subcomponents/QuestionButtons.jsx';
+import {sampleData} from './sampleData.js';
 import './questionsStyles.scss';
 
 class QuestionsWidget extends React.Component {
@@ -12,7 +13,7 @@ class QuestionsWidget extends React.Component {
       queriedQuestions: [],
       maxQuestionsDisplayed: 2,
       allQuestionsDisplayed: false,
-      questionsData: []
+      questionsData: sampleData
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleDisplayMoreQuestions = this.handleDisplayMoreQuestions.bind(this);
@@ -20,7 +21,10 @@ class QuestionsWidget extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getQuestions(`qa/questions/`, {product_id: this.props.product_id}, (data) => {
+    let array = [`qa`, 'questions', this.props.product_id];
+    console.log('array', array);
+    this.props.getQuestions(['qa', 'questions', this.props.product_id], (data) => {
+      console.log('data', data);
       const sorted = data.results.results.sort((a, b) => {
         return b.question_helpfulness - a.question_helpfulness;
       });
@@ -31,7 +35,7 @@ class QuestionsWidget extends React.Component {
     });
   }
 
-  handleDisplayMoreQuestions(event) {
+  handleDisplayMoreQuestions() {
     this.setState({
       maxQuestionsDisplayed: this.state.maxQuestionsDisplayed + 2
     }, () => {
@@ -63,7 +67,7 @@ class QuestionsWidget extends React.Component {
     }
   }
 
-  queryQuestions(questionsData) {
+  queryQuestions() {
     let queriedQuestions = [];
     for (const question of this.state.questionsData) {
       if (question.question_body.indexOf(this.state.query) !== -1) {

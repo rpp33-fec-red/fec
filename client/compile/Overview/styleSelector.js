@@ -1,12 +1,9 @@
 
-import React from 'react'
+import React from 'react';
 var StyleSelector = function (props) {
 
 
-  return <div className="styleSelector">
-
-
-  </div>
+  return (<div className="styleSelector"></div>);
 
 
 }

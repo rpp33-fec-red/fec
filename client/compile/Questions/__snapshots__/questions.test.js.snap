@@ -373,6 +373,40 @@ exports[`QuestionButtons component loads and displays Question Buttons comoponen
 </div>
 `;
 
+exports[`Questions widget component loads and displays questions widget component 1`] = `
+<div
+  className="questions-widget"
+>
+  <h6>
+    QUESTIONS & ANSWERS
+  </h6>
+  <div
+    className="search-bar"
+  >
+    <input
+      id="questions-search-bar"
+      onChange={[Function]}
+      placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+      type="search"
+    />
+  </div>
+  <div
+    className="question-buttons"
+  >
+    <button
+      onClick={[Function]}
+    >
+      MORE ANSWERED QUESTIONS
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      ADD A QUESTION +
+    </button>
+  </div>
+</div>
+`;
+
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
 exports[`SearchBar component loads and displays SearchBar component 1`] = `
@@ -384,5 +418,49 @@ exports[`SearchBar component loads and displays SearchBar component 1`] = `
     placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
     type="search"
   />
+</div>
+`;
+
+exports[`UploadPhotosModal component loads and displays Answer component 1`] = `
+<div
+  className="modal"
+  id="upload-photo-modal"
+>
+  <div
+    className="modal-content"
+  >
+    <a
+      className="close-window"
+    >
+      X
+    </a>
+    <h3>
+      Upload Photos for 
+    </h3>
+    <form>
+      <div>
+        <label
+          htmlFor="photo-upload"
+        >
+          Choose photo to upload
+        </label>
+        <input
+          accept="image/png, image/jpeg"
+          id="upload-answer-photo"
+          name="photoUpload"
+          type="file"
+        />
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Upload Photo"
+        />
+      </div>
+    </form>
+    <div
+      className="selected-photos"
+    />
+  </div>
 </div>
 `;

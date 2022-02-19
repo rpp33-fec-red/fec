@@ -7,8 +7,9 @@ function ReviewsList (props) {
   return (
     <div className ="reviews-list">
       <ReviewsSorting/>
-      <ReviewTile/>
-      <button>More Reviews</button>
+      {props.reviews.map((review) => {
+        return <ReviewTile key={review.review_id} review={review}/>
+      })}
     </div>
   );
 }
