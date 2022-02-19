@@ -27,8 +27,6 @@ class QuestionsWidget extends React.Component {
       this.setState({
         questionsData: sorted,
         queriedQuestions: sorted
-      }, () => {
-        console.log('questions', this.state.questionsData);
       });
     });
   }

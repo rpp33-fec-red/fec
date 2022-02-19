@@ -5,13 +5,16 @@ class AddAnswerModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showUploadPhotosModal: false
+      showUploadPhotosModal: false,
+      uploadedPhotos: [],
+      photoCount: 0
     }
-    this.handlePhotoUploads = this.handlePhotoUploads.bind(this);
+    this.handlePhotoUploadModal = this.handlePhotoUploadModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleSelectPhoto = this.handleSelectPhoto.bind(this);
   }
 
-  handlePhotoUploads(event) {
+  handlePhotoUploadModal(event) {
     this.setState({
       showUploadPhotosModal: true
     });
@@ -23,8 +26,14 @@ class AddAnswerModal extends React.Component {
     })
   }
 
-  submitAnswer(event) {
-
+  handleSelectPhoto(event) {
+    event.preventDefault();
+    let photos = this.state.uploadedPhotos;
+    photos.push(event.target.photoUpload.value);
+    this.setState({
+      photoCount: this.state.photoCount + 1,
+      uploadedPhotos: photos
+    });
   }
 
   render() {
@@ -50,9 +59,14 @@ class AddAnswerModal extends React.Component {
               <p>For authentication reasons, you will not be emailed</p>
             </div>
             <div className="modal-form">
-              <label>upload Photos</label>
-              <input type="button" name="photos" onClick={this.handlePhotoUploads}></input>
+              {(this.state.photoCount < 5) &&
+                <input type="button" name="photos" onClick={this.handlePhotoUploadModal} value="Upload Photos"/>
+              }
             </div>
+            {(this.state.photoCount > 0) &&
+              this.state.uploadedPhotos.map((photo) =>
+                <p>{photo}</p>
+            )}
             <div className="modal-form">
               <input type="submit" value="Submit answer"/>
             </div>
@@ -61,7 +75,7 @@ class AddAnswerModal extends React.Component {
             }
           </form>
           {this.state.showUploadPhotosModal &&
-            <UploadPhotosModal product_name={this.props.product_name} close={this.closeModal}/>
+            <UploadPhotosModal product_name={this.props.product_name} close={this.closeModal} selectPhoto={this.handleSelectPhoto} photos={this.state}/>
           }
         </div>
       </div>

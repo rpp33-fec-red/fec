@@ -4,14 +4,7 @@ class UploadPhotosModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      photosUploaded: 0,
     }
-    this.handleSelectPhoto = this.handleSelectPhoto.bind(this);
-  }
-
-  handleSelectPhoto(event) {
-    event.preventDefault();
-    console.log(event.target.photoUpload)
   }
 
   render() {
@@ -21,14 +14,25 @@ class UploadPhotosModal extends React.Component {
         <div className="modal-content">
           <a className="close-window" onClick={this.props.close}>X</a>
           <h3>Upload Photos for {this.props.product_name}</h3>
-          <form>
-            <div>
-              <label htmlFor="photo-upload">Choose photo to upload</label>
-              <input type="file" id="upload-answer-photo" accept="image/png, image/jpeg" name="photoUpload"></input>
+          {(this.props.photos.photoCount < 5) &&
+            <form onSubmit={this.props.selectPhoto}>
+              <div>
+                <label htmlFor="photo-upload">Choose photo to upload</label>
+                <input type="file" id="upload-answer-photo" accept="image/png, image/jpeg" name="photoUpload"></input>
+              </div>
+              <div>
+                <input type="submit" value="Upload Photo"/>
+              </div>
+            </form>
+          }
+            <div className="selected-photos">
+              {this.props.photos.uploadedPhotos.map((photo) =>
+                <p key={photo}>{photo}</p>
+              )}
             </div>
-            <button onSubmit={this.handleSelectPhoto}>Submit Photo</button>
-            <div className="selected-photos"></div>
-          </form>
+            {(this.props.photos.photoCount > 0) &&
+              <button onClick={this.props.close}>Submit Photos</button>
+            }
         </div>
       </div>
     );

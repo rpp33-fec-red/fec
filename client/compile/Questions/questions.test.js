@@ -42,7 +42,6 @@ describe('QuestionsList component', () => {
 describe('Question component', () => {
   test('loads and displays Question component', () => {
     var questionTree = TestRenderer.create(<Question question={sampleData.results[0]}/>).toJSON();
-
     expect(questionTree).toMatchSnapshot();
   });
 });
@@ -50,7 +49,6 @@ describe('Question component', () => {
 describe('AnswerList component', () => {
   test('loads and displays AnswerList component', () => {
     var answerListTree = TestRenderer.create(<AnswerList answers={sampleData.results[0].answers}/>).toJSON();
-
     expect(answerListTree).toMatchSnapshot();
   });
 });
