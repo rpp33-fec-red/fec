@@ -1,0 +1,22 @@
+{
+    "parser": "@babel/eslint-parser",
+
+    "plugins": [
+        "react","eslint-plugin-react"
+    ],
+    "extends": [
+
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+      },
+    "rules": {
+        "indent": ["error", 2],
+        "react/no-set-state": "off",
+       "semi": ["error", "always"]
+
+    }
+}
