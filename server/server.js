@@ -10,14 +10,14 @@ var axios = require('axios');
 var bp = require('body-parser');
 app.use(bp.json());
 var cors = require('cors');
-
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
 
+//ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
 app.get('/getData',function(request, response) {
   var url = options.APIURL;
-  if (request.query.route1){
+  if (request.query.route1) {
     url+=`/${request.query.route1}`;
   }
   if (request.query.route2){

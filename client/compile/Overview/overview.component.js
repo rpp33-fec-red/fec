@@ -3,18 +3,19 @@ import LeftContainer from './leftContainer/leftcontainer.component.js';
 import RightContainer from './rightContainer/rightcontainer.component.js';
 import './overview.scss';
 import PropTypes from 'prop-types';
+import testProducts from './testProducts.js';
+import testStyles from './testStyle.json';
 
 
 class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onProduct: {},
-      onStyle: {}
+      onProduct: testProducts[0],
+      onStyle: testStyles
     };
     this.getData = this.getData.bind(this);
   }
-
   componentDidMount() {
     this.getData();
   }
