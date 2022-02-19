@@ -7,6 +7,9 @@ import Question from './subcomponents/Question.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
 import Answer from './subcomponents/Answer.jsx';
 import AnswerList from './subcomponents/AnswerList.jsx';
+import AddAnswerModal from './modals/AddAnswer.jsx';
+import AddQuestionModal from './modals/AddQuestion.jsx';
+import UploadPhotosModal from './modals/UploadPhotos';
 import { sampleData, answer } from './sampleData.js';
 
 //https://jestjs.io/docs/getting-started
@@ -57,5 +60,26 @@ describe('Answer component', () => {
   test('loads and displays Answer component', () => {
     var answerTree = TestRenderer.create(<Answer answer={answer}/>).toJSON();
     expect(answerTree).toMatchSnapshot();
+  });
+});
+
+describe('AddAnswerModal component', () => {
+  test('loads and displays Answer component', () => {
+    var addAnswerModalTree = TestRenderer.create(<AddAnswerModal answer={answer}/>).toJSON();
+    expect(addAnswerModalTree).toMatchSnapshot();
+  });
+});
+
+describe('AddQuestionModal component', () => {
+  test('loads and displays Answer component', () => {
+    var addQuestionModalTree = TestRenderer.create(<AddQuestionModal answer={answer}/>).toJSON();
+    expect(addQuestionModalTree).toMatchSnapshot();
+  });
+});
+
+describe('UploadPhotosModal component', () => {
+  test('loads and displays Answer component', () => {
+    var uploadPhotosModalTree = TestRenderer.create(<UploadPhotosModal answer={answer}/>).toJSON();
+    expect(uploadPhotosModalTree).toMatchSnapshot();
   });
 });
