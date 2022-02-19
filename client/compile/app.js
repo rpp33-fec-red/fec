@@ -1,17 +1,14 @@
 
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
 
- //components
- import Overview from './Overview/overview.component.js';
- import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
- import QuestionsWidget from './Questions/Questions.jsx';
- import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
-
+//components
+import Overview from './Overview/overview.component.js';
+import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
+import QuestionsWidget from './Questions/Questions.jsx';
+import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
 import Model from './model.js';
 var model = new Model(false);
-// console.log(model)
- //core css
 import './style.scss';
 
 class Main extends React.Component {
@@ -23,24 +20,19 @@ class Main extends React.Component {
     };
   }
 
-  componentDidMount(){
-
-  }
-
-  renderStars(count){
-
-  }
+  componentDidMount(){}
+  renderStars(){}
 
   render(){
     return (
-    <div className="main">
-      <Overview getProducts={model.getData} id={this.state.productID}/>
-      <RelatedProducs getData={model.getData} />
-      <QuestionsWidget />
-      <RatingsWidget/>
-  </div>)
+      <div className="main">
+        <Overview getProducts={model.getData} id={this.state.productID}/>
+        <RelatedProducs getData={model.getData} />
+        <QuestionsWidget />
+        <RatingsWidget/>
+      </div>);
   }
 }
 
 
-ReactDOM.render(<Main></Main>,document.getElementById('app'))
+ReactDOM.render(<Main></Main>,document.getElementById('app'));

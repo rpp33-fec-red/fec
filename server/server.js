@@ -1,14 +1,14 @@
 var express = require('express');
 var app = express();
 var port = 8080;
-var path = require('path')
+var path = require('path');
 app.use(express.static(path.join(__dirname + '/../client/public')));
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
-var axios = require('axios')
-var bp = require('body-parser')
-app.use(bp.json())
+var axios = require('axios');
+var bp = require('body-parser');
+app.use(bp.json());
 var cors = require('cors');
 
 app.use(cors());
@@ -28,7 +28,7 @@ app.get('/getData',function(request, response) {
   }
 
 
-  console.log('url',url)
+  console.log('url',url);
   axios({
     method: 'get',
     url:url,
@@ -37,16 +37,16 @@ app.get('/getData',function(request, response) {
     if (results.data){
       response.json({results:results.data});
     } else {
-      response.json({Error: new Error('no data')})
+      response.json({Error: new Error('no data')});
     }
   }).catch(err=>{
     response.json({results:[],Error:err});
   });
 
-})
+});
 
 
 app.listen(port,function(){
   console.log('listenening on ',port);
-})
+});
 
