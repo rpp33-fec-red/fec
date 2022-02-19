@@ -9,6 +9,7 @@ class AnswerList extends React.Component {
       answerData: this.props.answers
     }
     this.seeAllAnswers = this.seeAllAnswers.bind(this);
+    this.collapseAnswers = this.collapseAnswers.bind(this);
     this.createAnswerDataArray = this.createAnswerDataArray.bind(this);
   }
 
@@ -41,6 +42,12 @@ class AnswerList extends React.Component {
     });
   }
 
+  collapseAnswers(event) {
+    this.setState({
+      displayAllAnswers: false
+    });
+  }
+
   render() {
     if (this.state.answerData.length) {
       var answers = this.state.answerData;
@@ -57,6 +64,10 @@ class AnswerList extends React.Component {
           )}
           {(this.state.answerData.length > 2 && !this.state.displayAllAnswers) &&
             <a className="load-more-answers" onClick={this.seeAllAnswers}>SEE MORE ANSWERS</a>
+          }
+          {(this.state.answerData.length > 2 && this.state.displayAllAnswers) &&
+            <a className="load-more-answers" onClick={this.collapseAnswers}>COLLAPSE ANSWERS</a>
+
           }
         </div>
       </div>
