@@ -13,13 +13,12 @@ class OutfitCard extends React.Component {
         }
         this.getOutfitInfo = this.getOutfitInfo.bind(this);
     }
-
     componentDidMount () {
         this.getOutfitInfo(this.props.outfit_id);
     }
 
     getOutfitInfo (id) {
-    
+
         this.props.getData(['products',id], (data) => {
             this.setState ({
                 category: data.results.category,

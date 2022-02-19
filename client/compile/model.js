@@ -2,9 +2,8 @@
 var config = {
   'serverURL':'/',
   "testURL":'http://localhost:8080/'
-}
+};
 import $ from 'jquery';
-
 class Model {
 
   constructor(deploy) {
@@ -17,22 +16,21 @@ class Model {
   }
 
   getData(routes, cb) {
-      if (Array.isArray(routes)) {
-        var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
-        
-        var options = {
-          url:url,
-          method: 'GET',
-          success:function(data) {
-            cb(data);
-          }
-        };
-        if (options) {
-          $.ajax(options);
+    if (Array.isArray(routes)) {
+      var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
+      var options = {
+        url:url,
+        method: 'GET',
+        success:function(data) {
+          cb(data);
         }
-      } else {
-        throw new Error('ROUTES parameter passeed to getData must be an array in order for example ["products",128823,"styles"]; the product id is 128823');
+      };
+      if (options) {
+        $.ajax(options);
       }
+    } else {
+      throw new Error('ROUTES parameter passeed to getData must be an array in order for example ["products",128823,"styles"]; the product id is 128823');
+    }
   }
 
 }

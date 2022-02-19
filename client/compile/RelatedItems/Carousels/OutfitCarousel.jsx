@@ -2,7 +2,6 @@ import React from 'react';
 import OutfitCard from '../Cards/OutfitCard.jsx';
 
 const OutfitCarousel = (props) => {
-
     return (
         <div className="outfitCarouselContainer">
             <div className="productCarousel">
