@@ -1,9 +1,6 @@
 {
   "testMatch": ["**/?(*)+(.test.js?(x))"],
   "testPathIgnorePatterns":["/node_modules/"],
-  "collectCoverageFrom": [
-    "*.test.js"
-  ],
   "coverageReporters": [
     "html"
 ],

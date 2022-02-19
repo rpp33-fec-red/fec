@@ -71,7 +71,6 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
 </div>
 `;
 
-
 exports[`Question component loads and displays Question component 1`] = `
 <div
   className="question"
