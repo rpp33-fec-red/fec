@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import AddQuestionModal from '../modals/AddQuestion.jsx';
 
 class QuestionButtons extends React.Component {
@@ -23,18 +24,28 @@ class QuestionButtons extends React.Component {
 
   handleSubmitQuestion(event) {
     event.preventDefault();
-    const question = event.target.question.value;
-    const nickname = event.target.nickname.value;
-    const email = event.target.email.value;
-    const fields = {
-      question: question,
-      nickname: nickname,
-      email: email
+    const request = {
+      data: {
+        body: event.target.question.value,
+        name: event.target.nickname.value,
+        email: event.target.email.value,
+        product_id: parseInt(this.props.product_id)
+      },
+      endpoint: '/qa/questions',
+      params: null
     }
 
-    if (question && nickname && email) {
+    const fields = {
+      question: request.data.body,
+      nickname: request.data.name,
+      email: request.data.email
+    }
+
+    if (fields.question && fields.nickname && fields.email) {
       this.setState({
         showAddQuestionModal: false
+      }, () => {
+        axios.post('/postData', request);
       });
     } else {
       let missingFields = '';

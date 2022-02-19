@@ -6,6 +6,16 @@ class AddQuestionModal extends React.Component {
     this.state = {
 
     }
+    this.submitQuestion = this.submitQuestion.bind(this);
+  }
+
+  submitQuestion(event) {
+    let question = {
+      body: event.target.question.value,
+      name: event.target.nickname.value,
+      email: event.target.email.value,
+      product_id: this.props.product_id
+    }
   }
 
   render() {

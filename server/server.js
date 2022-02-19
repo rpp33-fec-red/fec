@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use(bp.json())
 
+let headers = {
+  headers: {'authorization':`${options.APIKEY}`}
+}
 
 app.get('/getData',function(request, response) {
   var url = options.APIURL;
@@ -40,7 +43,44 @@ app.get('/getData',function(request, response) {
   }).catch(err=>{
     response.json({results:[],Error:err});
   });
+});
 
+app.post('/postData', (req, res) => {
+  let data = req.body.data;
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.post(url, data, config)
+  .then(function(response) {
+    console.log('Status 201 CREATED');
+    res.send();
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+});
+
+app.put('/putData', (req, res) => {
+  let data = req.body.data;
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.put(url, data, config)
+  .then(function(response) {
+    console.log('Status: 204 NO CONTENT');
+    res.send();
+  })
+  .catch(function(error) {
+    console.log(error);
+  })
 })
 
 app.listen(port,function(){

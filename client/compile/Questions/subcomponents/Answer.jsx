@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Answer extends React.Component {
   constructor(props) {
@@ -13,21 +14,39 @@ class Answer extends React.Component {
   }
 
   handleHelpfulnessVote(event) {
+    let request = {
+      data: null,
+      endpoint: `/qa/answers/${this.props.answer.id}/helpful`,
+      params: {
+        answer_id: this.props.answer.id
+      }
+    }
     if  (!this.state.helpful) {
       this.setState({
         helpful: true,
         helpfulnessVoteCount: this.state.helpfulnessVoteCount + 1,
         date: ''
+      }, function() {
+        axios.put('/putData', request);
       });
     }
     this.convertDate = this.convertDate.bind(this);
   }
 
   handleReport(event) {
+    let request = {
+      data: null,
+      endpoint: `/qa/answers/${this.props.answer.id}/report`,
+      params: {
+        answer_id: this.props.answer.id
+      }
+    }
     if (!this.state.reported) {
       this.setState({
         reported: true
-      })
+      }, function() {
+        axios.put('/putData', request);
+      });
     }
   }
 

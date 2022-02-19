@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import AnswerList from './AnswerList.jsx';
 import AddAnswerModal from '../modals/addAnswer.jsx'
 
@@ -18,10 +19,20 @@ class Question extends React.Component {
   }
 
   handleHelpfulnessVote(event) {
+    let request = {
+      data: null,
+      endpoint: `/qa/questions/${this.props.question.question_id}/helpful`,
+      params: {
+        question_id: this.props.question.question_id
+      }
+    }
+
     if  (!this.state.helpful) {
       this.setState({
         helpful: true,
         helpfulnessVoteCount: this.state.helpfulnessVoteCount + 1
+      }, function() {
+        axios.put('/putData', request);
       });
     }
   }
@@ -36,19 +47,29 @@ class Question extends React.Component {
 
   handleSubmitAnswer(event) {
     event.preventDefault();
-    console.log('target', event.target)
-    const answer = event.target.answer.value;
-    const nickname = event.target.nickname.value;
-    const email = event.target.email.value;
+    const request = {
+      data: {
+        body: event.target.answer.value,
+        name: event.target.nickname.value,
+        email: event.target.email.value,
+        photos: [],
+      },
+      endpoint: `/qa/questions/${this.props.question.question_id}/answers`,
+      params: {
+        question_id: this.props.question.question_id
+      }
+    }
     const fields = {
-      answer: answer,
-      nickname: nickname,
-      email: email
+      answer: request.data.body,
+      nickname: request.data.name,
+      email: request.data.email
     }
 
-    if (answer && nickname && email) {
+    if (fields.answer && fields.nickname && fields.email) {
       this.setState({
         showAddAnswerModal: false
+      }, function() {
+        axios.post('/postData', request);
       });
     } else {
       let missingFields = '';

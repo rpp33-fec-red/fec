@@ -9,12 +9,14 @@ class QuestionsWidget extends React.Component {
     super(props);
     this.state = {
       query: '',
+      queriedQuestions: [],
       maxQuestionsDisplayed: 2,
       allQuestionsDisplayed: false,
       questionsData: []
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleDisplayMoreQuestions = this.handleDisplayMoreQuestions.bind(this);
+    this.queryQuestions = this.queryQuestions.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +25,8 @@ class QuestionsWidget extends React.Component {
         return b.question_helpfulness - a.question_helpfulness;
       });
       this.setState({
-        questionsData: sorted
+        questionsData: sorted,
+        queriedQuestions: sorted
       }, () => {
         console.log('questions', this.state.questionsData);
       });
@@ -34,7 +37,7 @@ class QuestionsWidget extends React.Component {
     this.setState({
       maxQuestionsDisplayed: this.state.maxQuestionsDisplayed + 2
     }, () => {
-      if (this.state.questionsData.length <= this.state.maxQuestionsDisplayed) {
+      if (this.state.queriedQuestions.length <= this.state.maxQuestionsDisplayed) {
         this.setState({
           allQuestionsDisplayed: true
         });
@@ -45,16 +48,31 @@ class QuestionsWidget extends React.Component {
   handleSearch(event) {
     event.preventDefault();
     let query = event.target.value;
-
     if (query.length > 2) {
       this.setState({
         query: query
+      }, function() {
+        let questions = this.queryQuestions(this.state.questionsData);
+        this.setState({
+          queriedQuestions: questions
+        });
       });
     } else if (this.state.query !== '') {
       this.setState({
-        query: ''
+        query: '',
+        queriedQuestions: this.state.questionsData
       });
     }
+  }
+
+  queryQuestions(questionsData) {
+    let queriedQuestions = [];
+    for (const question of this.state.questionsData) {
+      if (question.question_body.indexOf(this.state.query) !== -1) {
+        queriedQuestions.push(question);
+      }
+    }
+    return queriedQuestions;
   }
 
   render() {
@@ -62,8 +80,8 @@ class QuestionsWidget extends React.Component {
       <div className="questions-widget">
         <h6>QUESTIONS &amp; ANSWERS</h6>
         <SearchBar search={this.handleSearch}/>
-        <QuestionsList questions={this.state.questionsData} displayed={this.state.maxQuestionsDisplayed} scroll={this.state.allQuestionsDisplayed}/>
-        <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} displayMore={this.handleDisplayMoreQuestions}/>
+        <QuestionsList questions={this.state.queriedQuestions} displayed={this.state.maxQuestionsDisplayed} scroll={this.state.allQuestionsDisplayed}/>
+        <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} displayMore={this.handleDisplayMoreQuestions} product_id={this.props.product_id}/>
       </div>
     );
   }
