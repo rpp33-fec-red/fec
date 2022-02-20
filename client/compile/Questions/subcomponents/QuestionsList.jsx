@@ -10,7 +10,6 @@ class QuestionsList extends React.Component {
 
   render() {
     let questions = this.props.questions;
-    console.log('QUESTIONS', questions);
 
     if (questions.length) {
       questions = questions.slice(0, this.props.displayed);

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import SearchBar from './subcomponents/SearchBar.jsx';
 import QuestionsList from './subcomponents/QuestionsList.jsx';
@@ -21,24 +22,36 @@ class QuestionsWidget extends React.Component {
     this.queryQuestions = this.queryQuestions.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.getQuestions(['qa', 'questions', this.props.product_id], (data) => {
-  //     console.log('data', data);
-  //     if (data.results.results) {
-  //       const sorted = data.results.results.sort((a, b) => {
-  //         return b.question_helpfulness - a.question_helpfulness;
-  //       });
-  //       this.setState({
-  //         questionsData: sorted,
-  //         queriedQuestions: sorted
-  //       });
-  //     } else {
-  //       this.setState({
-  //         questionsData: []
-  //       });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    let request = {
+      endpoint: '/qa/questions',
+      params: {
+        product_id: this.props.product_id,
+        page: 1,
+        count: 5
+      }
+    };
+    axios.post('/getQuestions', request)
+      .then((response) => {
+        if (response.data.results) {
+          const sorted = response.data.results.sort((a, b) => {
+            return b.question_helpfulness - a.question_helpfulness;
+          });
+          console.log('sorted', sorted);
+          this.setState({
+            queriedQuestions: sorted,
+            questionsData: sorted
+          });
+        } else {
+          this.setState({
+            questionsData: []
+          });
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 
   handleDisplayMoreQuestions() {
     this.setState({
@@ -72,14 +85,14 @@ class QuestionsWidget extends React.Component {
     }
   }
 
-  queryQuestions(questionsData) {
-    let queriedQuestions = [];
-    for (const question of questionsData) {
+  queryQuestions(questions) {
+    let questionsSearched = [];
+    for (const question of questions) {
       if (question.question_body.indexOf(this.state.query) !== -1) {
-        queriedQuestions.push(question);
+        questionsSearched.push(question);
       }
     }
-    return queriedQuestions;
+    return questionsSearched;
   }
 
   render() {

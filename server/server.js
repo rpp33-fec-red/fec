@@ -44,6 +44,24 @@ app.get('/getData',function(request, response) {
   });
 });
 
+app.post('/getQuestions', (req, res) => {
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.get(url, config)
+    .then(function(response) {
+      console.log('Status 200 OK');
+      res.send(response.data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
 app.post('/postData', (req, res) => {
   let data = req.body.data;
   let url = options.APIURL + req.body.endpoint;
