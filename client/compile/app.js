@@ -39,7 +39,7 @@ class Main extends React.Component {
         <Overview getProducts={model.getData} id={this.state.productID}/>
         <RelatedProducs getData={model.getData} />
         <QuestionsWidget />
-        <RatingsWidget/>
+        <RatingsWidget getReviews={model.getData}/>
       </div>);
   }
 }
