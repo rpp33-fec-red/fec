@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import UploadPhotosModal from './uploadPhotos.jsx';
 
 class AddAnswerModal extends React.Component {
@@ -8,13 +9,14 @@ class AddAnswerModal extends React.Component {
       showUploadPhotosModal: false,
       uploadedPhotos: [],
       photoCount: 0
-    }
+    };
     this.handlePhotoUploadModal = this.handlePhotoUploadModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSelectPhoto = this.handleSelectPhoto.bind(this);
   }
 
   handlePhotoUploadModal(event) {
+    event.preventDefault();
     this.setState({
       showUploadPhotosModal: true
     });
@@ -23,7 +25,7 @@ class AddAnswerModal extends React.Component {
   closeModal() {
     this.setState({
       showUploadPhotosModal: false
-    })
+    });
   }
 
   handleSelectPhoto(event) {
@@ -65,8 +67,8 @@ class AddAnswerModal extends React.Component {
             </div>
             {(this.state.photoCount > 0) &&
               this.state.uploadedPhotos.map((photo) =>
-                <p>{photo}</p>
-            )}
+                <p key={photo}>{photo}</p>
+              )}
             <div className="modal-form">
               <input type="submit" value="Submit answer"/>
             </div>
@@ -75,12 +77,25 @@ class AddAnswerModal extends React.Component {
             }
           </form>
           {this.state.showUploadPhotosModal &&
-            <UploadPhotosModal product_name={this.props.product_name} close={this.closeModal} selectPhoto={this.handleSelectPhoto} photos={this.state}/>
+            <UploadPhotosModal
+              product_name={this.props.product_name}
+              close={this.closeModal}
+              selectPhoto={this.handleSelectPhoto}
+              photos={this.state}
+            />
           }
         </div>
       </div>
     );
   }
 }
+
+AddAnswerModal.propTypes = {
+  product_name: PropTypes.string,
+  missing: PropTypes.string,
+  close: PropTypes.func,
+  question: PropTypes.object,
+  submit: PropTypes.func
+};
 
 export default AddAnswerModal;

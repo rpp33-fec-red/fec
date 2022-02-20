@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 class Answer extends React.Component {
   constructor(props) {
@@ -8,19 +9,20 @@ class Answer extends React.Component {
       helpful: false,
       helpfulnessVoteCount: this.props.answer.helpfulness,
       reported: false,
-    }
+    };
     this.handleHelpfulnessVote = this.handleHelpfulnessVote.bind(this);
     this.handleReport = this.handleReport.bind(this);
   }
 
   handleHelpfulnessVote(event) {
+    event.preventDefault();
     let request = {
       data: null,
       endpoint: `/qa/answers/${this.props.answer.id}/helpful`,
       params: {
         answer_id: this.props.answer.id
       }
-    }
+    };
     if  (!this.state.helpful) {
       this.setState({
         helpful: true,
@@ -34,13 +36,14 @@ class Answer extends React.Component {
   }
 
   handleReport(event) {
+    event.preventDefault();
     let request = {
       data: null,
       endpoint: `/qa/answers/${this.props.answer.id}/report`,
       params: {
         answer_id: this.props.answer.id
       }
-    }
+    };
     if (!this.state.reported) {
       this.setState({
         reported: true
@@ -51,7 +54,7 @@ class Answer extends React.Component {
   }
 
   convertDate(dateTime) {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let date = new Date(dateTime);
     let answerDate = months[date.getMonth()] + ', ' + date.getDate() + ', ' + date.getFullYear();
     return answerDate;
@@ -64,9 +67,13 @@ class Answer extends React.Component {
       <div className="answer">
         <p className="answer-title">{this.props.answer.body}</p>
         <div className="answer-links">
-          <p>by <span className={(this.props.answer.answerer_name === 'Seller') ? 'answerer-seller' : 'answerer-other'}>{this.props.answer.answerer_name}</span>
-          , {this.convertDate(this.props.answer.date)}&nbsp; | &nbsp;Helpful?
-            <a className="answer-link" onClick={this.handleHelpfulnessVote}>Yes</a> ({this.state.helpfulnessVoteCount})&nbsp; | &nbsp;
+          <p>by
+            <span className={(this.props.answer.answerer_name === 'Seller') ? 'answerer-seller' : 'answerer-other'}>
+              {this.props.answer.answerer_name}
+            </span>
+            , {this.convertDate(this.props.answer.date)}&nbsp; | &nbsp;Helpful?
+            <a className="answer-link" onClick={this.handleHelpfulnessVote}>Yes</a>
+            ({this.state.helpfulnessVoteCount})&nbsp; | &nbsp;
             {!this.state.reported ?
               <a className="answer-link" onClick={this.handleReport}>Report</a> :
               <a className="answer-link" onClick={this.handleReport}>Reported</a>
@@ -77,5 +84,9 @@ class Answer extends React.Component {
     );
   }
 }
+
+Answer.propTypes = {
+  answer: PropTypes.object
+};
 
 export default Answer;

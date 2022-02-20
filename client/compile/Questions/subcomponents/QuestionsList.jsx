@@ -1,12 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Question from './Question.jsx';
 
 
 class QuestionsList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
 
   render() {
@@ -18,7 +17,11 @@ class QuestionsList extends React.Component {
       return(
         <div className='questions-list'>
           {questions.map((question) =>
-            <Question key={question.question_id} question={question} product_name={this.props.product_name}/>
+            <Question
+              key={question.question_id}
+              question={question}
+              product_name={this.props.product_name}
+            />
           )}
         </div>
       );
@@ -27,5 +30,11 @@ class QuestionsList extends React.Component {
     }
   }
 }
+
+QuestionsList.propTypes = {
+  questions: PropTypes.array,
+  displayed: PropTypes.number,
+  product_name: PropTypes.string
+};
 
 export default QuestionsList;

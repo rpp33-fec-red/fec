@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import AddQuestionModal from '../modals/AddQuestion.jsx';
 
 class QuestionButtons extends React.Component {
@@ -7,7 +8,7 @@ class QuestionButtons extends React.Component {
     super(props);
     this.state = {
       showAddQuestionModal: false
-    }
+    };
 
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleSubmitQuestion = this.handleSubmitQuestion.bind(this);
@@ -33,13 +34,13 @@ class QuestionButtons extends React.Component {
       },
       endpoint: '/qa/questions',
       params: null
-    }
+    };
 
     const fields = {
       question: request.data.body,
       nickname: request.data.name,
       email: request.data.email
-    }
+    };
 
     if (fields.question && fields.nickname && fields.email) {
       this.setState({
@@ -63,16 +64,21 @@ class QuestionButtons extends React.Component {
   closeModal() {
     this.setState({
       showAddQuestionModal: false
-    })
+    });
   }
 
   render() {
     return (
       <div className="question-buttons">
         {this.state.showAddQuestionModal &&
-          <AddQuestionModal product_name={this.props.product_name} missing={this.state.missingFields} submit={this.handleSubmitQuestion} close={this.closeModal}/>
+          <AddQuestionModal
+            product_name={this.props.product_name}
+            missing={this.state.missingFields}
+            submit={this.handleSubmitQuestion}
+            close={this.closeModal}
+          />
         }
-        {!this.props.allQuestionsDisplayed &&
+        {(this.props.questions.length && !this.props.allQuestionsDisplayed) &&
           <button onClick={this.props.displayMore}>MORE ANSWERED QUESTIONS</button>
         }
         <button onClick={this.handleAddQuestion} missing={this.state.missingFields}>ADD A QUESTION +</button>
@@ -80,5 +86,13 @@ class QuestionButtons extends React.Component {
     );
   }
 }
+
+QuestionButtons.propTypes = {
+  product_id: PropTypes.string,
+  product_name: PropTypes.string,
+  allQuestionsDisplayed: PropTypes.bool,
+  questions: PropTypes.object,
+  displayMore: PropTypes.func
+};
 
 export default QuestionButtons;

@@ -22,8 +22,6 @@ class QuestionsWidget extends React.Component {
   }
 
   componentDidMount() {
-    let array = [`qa`, 'questions', this.props.product_id];
-    console.log('array', array);
     this.props.getQuestions(['qa', 'questions', this.props.product_id], (data) => {
       console.log('data', data);
       if (data.results.results) {
@@ -89,17 +87,28 @@ class QuestionsWidget extends React.Component {
       <div className="questions-widget">
         <h6>QUESTIONS &amp; ANSWERS</h6>
         <SearchBar search={this.handleSearch}/>
-        <QuestionsList questions={this.state.queriedQuestions} displayed={this.state.maxQuestionsDisplayed} scroll={this.state.allQuestionsDisplayed} product_name={this.props.product_name}/>
-        <QuestionButtons allQuestionsDisplayed={this.state.allQuestionsDisplayed} displayMore={this.handleDisplayMoreQuestions} product_id={this.props.product_id} product_name={this.props.product_name}/>
+        <QuestionsList
+          questions={this.state.queriedQuestions}
+          displayed={this.state.maxQuestionsDisplayed}
+          scroll={this.state.allQuestionsDisplayed}
+          product_name={this.props.product_name}
+        />
+        <QuestionButtons
+          questions={this.state.questionsData}
+          allQuestionsDisplayed={this.state.allQuestionsDisplayed}
+          displayMore={this.handleDisplayMoreQuestions}
+          product_id={this.props.product_id}
+          product_name={this.props.product_name}
+        />
       </div>
     );
   }
 }
 
 QuestionsWidget.propTypes = {
-  getQuestions: PropTypes.function,
-  product_id: Number,
-  product_name: String
+  getQuestions: PropTypes.func,
+  product_id: PropTypes.string,
+  product_name: PropTypes.string
 };
 
 export default QuestionsWidget;

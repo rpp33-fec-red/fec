@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Answer from './Answer.jsx';
 
 class AnswerList extends React.Component {
@@ -7,7 +8,7 @@ class AnswerList extends React.Component {
     this.state = {
       displayAllAnswers: false,
       answerData: this.props.answers
-    }
+    };
     this.seeAllAnswers = this.seeAllAnswers.bind(this);
     this.collapseAnswers = this.collapseAnswers.bind(this);
     this.createAnswerDataArray = this.createAnswerDataArray.bind(this);
@@ -15,10 +16,10 @@ class AnswerList extends React.Component {
 
   createAnswerDataArray(objectData) {
     let answers = [];
-    for (const answer in this.state.answerData) {
-      answers.push(this.state.answerData[answer]);
+    for (const answer in objectData) {
+      answers.push(objectData[answer]);
     }
-    const sellerSorted = answers.sort((a, b) => {
+    answers.sort((a, b) => {
       if ((a.answerer_name !== 'Seller') && (b.answerer_name === 'Seller')) {
         return 1;
       }
@@ -37,12 +38,14 @@ class AnswerList extends React.Component {
   }
 
   seeAllAnswers(event) {
+    event.preventDefault();
     this.setState({
       displayAllAnswers: true
     });
   }
 
   collapseAnswers(event) {
+    event.preventDefault();
     this.setState({
       displayAllAnswers: false
     });
@@ -57,25 +60,32 @@ class AnswerList extends React.Component {
 
       return(
         <div className="answers">
-        <p className="a">A:&nbsp;</p>
-        <div className='answer-list'>
-          {answers.map((answer) =>
-            <Answer key={answer.id} answer={answer} />
-          )}
-          {(this.state.answerData.length > 2 && !this.state.displayAllAnswers) &&
-            <a className="load-more-answers" onClick={this.seeAllAnswers}>SEE MORE ANSWERS</a>
-          }
-          {(this.state.answerData.length > 2 && this.state.displayAllAnswers) &&
-            <a className="load-more-answers" onClick={this.collapseAnswers}>COLLAPSE ANSWERS</a>
-
-          }
+          <p className="a">A:&nbsp;</p>
+          <div className='answer-list'>
+            {answers.map((answer) =>
+              <Answer
+                key={answer.id}
+                answer={answer}
+              />
+            )}
+            {(this.state.answerData.length > 2 && !this.state.displayAllAnswers) &&
+              <a className="load-more-answers" onClick={this.seeAllAnswers}>SEE MORE ANSWERS</a>
+            }
+            {(this.state.answerData.length > 2 && this.state.displayAllAnswers) &&
+              <a className="load-more-answers" onClick={this.collapseAnswers}>COLLAPSE ANSWERS</a>
+            }
+          </div>
         </div>
-      </div>
       );
     } else {
       return null;
     }
   }
 }
+
+AnswerList.propTypes = {
+  search: PropTypes.func,
+  answers: PropTypes.object
+};
 
 export default AnswerList;

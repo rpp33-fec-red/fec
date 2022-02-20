@@ -1,10 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class UploadPhotosModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
 
   render() {
@@ -25,18 +24,25 @@ class UploadPhotosModal extends React.Component {
               </div>
             </form>
           }
-            <div className="selected-photos">
-              {this.props.photos.uploadedPhotos.map((photo) =>
-                <p key={photo}>{photo}</p>
-              )}
-            </div>
-            {(this.props.photos.photoCount > 0) &&
-              <button onClick={this.props.close}>Submit Photos</button>
-            }
+          <div className="selected-photos">
+            {this.props.photos.uploadedPhotos.map((photo) =>
+              <p key={photo}>{photo}</p>
+            )}
+          </div>
+          {(this.props.photos.photoCount > 0) &&
+            <button onClick={this.props.close}>Submit Photos</button>
+          }
         </div>
       </div>
     );
   }
 }
+
+UploadPhotosModal.propTypes = {
+  photos: PropTypes.object,
+  close: PropTypes.func,
+  selectPhoto: PropTypes.func,
+  product_name: PropTypes.string
+};
 
 export default UploadPhotosModal;

@@ -1,11 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class AddQuestionModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
   }
 
   render() {
@@ -42,5 +40,13 @@ class AddQuestionModal extends React.Component {
     );
   }
 }
+
+AddQuestionModal.propTypes = {
+  missing: PropTypes.bool,
+  close: PropTypes.func,
+  submit: PropTypes.func,
+  product_name: PropTypes.string
+
+};
 
 export default AddQuestionModal;
