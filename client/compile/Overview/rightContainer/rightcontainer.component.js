@@ -21,7 +21,6 @@ class RightContainer extends React.Component{
       <div className="main-content">
         <div className="reviewWrapper"><StarsComponent className="star-ct" color={'red'} count={5}></StarsComponent><a onClick={this.clickedReviews}>readall reviews</a></div>
       </div>
-
       <div className="style-selectors">
 
       </div>
