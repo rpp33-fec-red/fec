@@ -51,6 +51,7 @@ exports[`Related Products Component renders initially 1`] = `
         >
           <button
             id="addButton"
+            onClick={[Function]}
             varian="outline-primary"
           >
              + 
@@ -61,6 +62,7 @@ exports[`Related Products Component renders initially 1`] = `
         >
           <button
             id="deleteButton"
+            onClick={[Function]}
             value={64622}
           >
             X
