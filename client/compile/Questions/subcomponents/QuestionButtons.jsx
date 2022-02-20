@@ -78,7 +78,7 @@ class QuestionButtons extends React.Component {
             close={this.closeModal}
           />
         }
-        {(this.props.questions.length && !this.props.allQuestionsDisplayed) &&
+        {(!this.props.allQuestionsDisplayed) &&
           <button onClick={this.props.displayMore}>MORE ANSWERED QUESTIONS</button>
         }
         <button onClick={this.handleAddQuestion} missing={this.state.missingFields}>ADD A QUESTION +</button>
@@ -91,7 +91,7 @@ QuestionButtons.propTypes = {
   product_id: PropTypes.string,
   product_name: PropTypes.string,
   allQuestionsDisplayed: PropTypes.bool,
-  questions: PropTypes.object,
+  questions: PropTypes.any,
   displayMore: PropTypes.func
 };
 

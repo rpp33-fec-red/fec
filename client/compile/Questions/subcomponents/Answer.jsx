@@ -69,11 +69,11 @@ class Answer extends React.Component {
         <div className="answer-links">
           <p>by
             <span className={(this.props.answer.answerer_name === 'Seller') ? 'answerer-seller' : 'answerer-other'}>
-              {this.props.answer.answerer_name}
+              &nbsp;{this.props.answer.answerer_name}
             </span>
-            , {this.convertDate(this.props.answer.date)}&nbsp; | &nbsp;Helpful?
+            ,&nbsp;{this.convertDate(this.props.answer.date)}&nbsp; | &nbsp;Helpful?&nbsp;
             <a className="answer-link" onClick={this.handleHelpfulnessVote}>Yes</a>
-            ({this.state.helpfulnessVoteCount})&nbsp; | &nbsp;
+            &nbsp;({this.state.helpfulnessVoteCount})&nbsp; | &nbsp;
             {!this.state.reported ?
               <a className="answer-link" onClick={this.handleReport}>Report</a> :
               <a className="answer-link" onClick={this.handleReport}>Reported</a>

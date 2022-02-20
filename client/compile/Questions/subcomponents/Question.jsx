@@ -107,9 +107,9 @@ class Question extends React.Component {
         <div className="questionTitle">
           <p className="question-body">Q: {this.props.question.question_body}</p>
           <div className="questionLinks">
-            <p>Helpful?
+            <p>Helpful?&nbsp;
               <a className="question-link" onClick={this.handleHelpfulnessVote}>Yes</a>
-              ({this.state.helpfulnessVoteCount}) |
+              &nbsp;({this.state.helpfulnessVoteCount})&nbsp;|&nbsp;
               <a className="question-link" onClick={this.handleAddAnswer}>Add Answer</a>
             </p>
           </div>

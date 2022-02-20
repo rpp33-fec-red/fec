@@ -11,34 +11,34 @@ class QuestionsWidget extends React.Component {
     super(props);
     this.state = {
       query: '',
-      queriedQuestions: [],
+      queriedQuestions: sampleData.results,
       maxQuestionsDisplayed: 2,
       allQuestionsDisplayed: false,
-      questionsData: sampleData
+      questionsData: sampleData.results
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleDisplayMoreQuestions = this.handleDisplayMoreQuestions.bind(this);
     this.queryQuestions = this.queryQuestions.bind(this);
   }
 
-  componentDidMount() {
-    this.props.getQuestions(['qa', 'questions', this.props.product_id], (data) => {
-      console.log('data', data);
-      if (data.results.results) {
-        const sorted = data.results.results.sort((a, b) => {
-          return b.question_helpfulness - a.question_helpfulness;
-        });
-        this.setState({
-          questionsData: sorted,
-          queriedQuestions: sorted
-        });
-      } else {
-        this.setState({
-          questionsData: []
-        });
-      }
-    });
-  }
+  // componentDidMount() {
+  //   this.props.getQuestions(['qa', 'questions', this.props.product_id], (data) => {
+  //     console.log('data', data);
+  //     if (data.results.results) {
+  //       const sorted = data.results.results.sort((a, b) => {
+  //         return b.question_helpfulness - a.question_helpfulness;
+  //       });
+  //       this.setState({
+  //         questionsData: sorted,
+  //         queriedQuestions: sorted
+  //       });
+  //     } else {
+  //       this.setState({
+  //         questionsData: []
+  //       });
+  //     }
+  //   });
+  // }
 
   handleDisplayMoreQuestions() {
     this.setState({

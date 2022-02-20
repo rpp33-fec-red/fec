@@ -10,6 +10,7 @@ class QuestionsList extends React.Component {
 
   render() {
     let questions = this.props.questions;
+    console.log('QUESTIONS', questions);
 
     if (questions.length) {
       questions = questions.slice(0, this.props.displayed);
@@ -32,7 +33,7 @@ class QuestionsList extends React.Component {
 }
 
 QuestionsList.propTypes = {
-  questions: PropTypes.array,
+  questions: PropTypes.any,
   displayed: PropTypes.number,
   product_name: PropTypes.string
 };
