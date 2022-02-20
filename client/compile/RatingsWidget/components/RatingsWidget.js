@@ -3,7 +3,6 @@ import '../ratings.scss';
 import Reviews from './Reviews/Reviews.js';
 import Ratings from './Ratings/Ratings.js';
 import reviewsData from '../sample_data.js';
-import PropTypes from 'prop-types';
 
 class RatingsWidget extends React.Component {
   constructor(props) {
@@ -17,24 +16,13 @@ class RatingsWidget extends React.Component {
         fourStar: false,
         fiveStar: false,
       }
-    }
-    this.getData = this.getData.bind(this);
+    };
   }
-
 
   componentDidMount () {
-    this.getData();
+
   }
 
-
-  getData () {
-    var options = {
-      sort: 'newest'
-    };
-    this.props.getReviews('GET', ['reviews', 64620, ''], options, (data) => {
-      console.log('these are the reviews:', data);
-    });
-  }
 
 
   render () {
@@ -46,10 +34,5 @@ class RatingsWidget extends React.Component {
     );
   }
 }
-
-RatingsWidget.propTypes = {
-  getReviews: PropTypes.any
-};
-
 
 export default RatingsWidget;
