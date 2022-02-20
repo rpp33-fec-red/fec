@@ -22,7 +22,7 @@ class Overview extends React.Component {
 
   getData() {
     var that = this;
-    this.props.getProducts(['products', 64620, 'styles'], function(data) {
+    this.props.getProducts('GET', ['products', 64620, 'styles'], function(data) {
       that.setState({ onProduct: data.results });
       if ( data.results){
         that.setState({ onStyle: data.results.results[0] });

@@ -16,21 +16,31 @@ app.use(express.static(path.join(__dirname,'../client/public')));
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
 app.get('/getData',function(request, response) {
+  var type =  request.query.type;
   var url = options.APIURL;
-  if (request.query.route1) {
-    url+=`/${request.query.route1}`;
+  Object.keys(request.query).forEach((key)=>{
+    var value = request.query[key];
+    if (key.includes('route') ){
+      url+=`/${value}`;
+    }
+  });
+  url+='?';
+  Object.keys(request.query).forEach((param, index)=>{
+    var value = request.query[param];
+    if (param.includes('route') === false && param.includes('type') === false){
+      if (index > 0) {
+        url+=`&${param}=${value}`;
+      } else {
+        url+=`${param}=${value}`;
+      }
   }
-  if (request.query.route2){
-    url+=`/${request.query.route2}`;
-  }
-  if (request.query.route3){
-    url+=`/${request.query.route3}`;
-  }
+
+  });
 
 
   console.log('url',url);
   axios({
-    method: 'get',
+    method: type,
     url:url,
     headers:{'authorization':`${options.APIKEY}`,'Accept':'*'}
   }).then(function(results){
