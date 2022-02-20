@@ -2,9 +2,11 @@
  * @jest-environment jsdom
  */
 
+/* eslint-disable no-undef */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render, fireEvent, queryByText} from '@testing-library/react'
+import {render, fireEvent} from '@testing-library/react';
 import RatingsWidget from './components/RatingsWidget.js';
 import Ratings from './components/Ratings/Ratings.js';
 import Reviews from './components/Reviews/Reviews.js';
@@ -16,8 +18,8 @@ describe('RatingsWidget component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-    .create(<RatingsWidget/>)
-    .toJSON();
+      .create(<RatingsWidget/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -27,8 +29,8 @@ describe('Reviews component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-    .create(<Reviews reviews={reviewsData.results}/>)
-    .toJSON();
+      .create(<Reviews reviews={reviewsData.results}/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -39,8 +41,8 @@ describe('Ratings component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-    .create(<Ratings/>)
-    .toJSON();
+      .create(<Ratings/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -51,8 +53,8 @@ describe('ReviewTile component', () => {
   let testReview = reviewsData.results[0];
   test('renders correctly', () => {
     const tree = renderer
-    .create(<ReviewTile review={reviewsData.results[0]}/>)
-    .toJSON();
+      .create(<ReviewTile review={testReview}/>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -88,7 +90,7 @@ describe('ReviewTile component', () => {
 
     // testing if show more does not appear
     testReview = reviewsData.results[1];
-    rerender(<ReviewTile review={testReview}/>)
+    rerender(<ReviewTile review={testReview}/>);
     expect(() => {
       getByText('Show More').toThrow();
     });
@@ -118,6 +120,37 @@ describe('ReviewTile component', () => {
     fireEvent.click(getByText('Yes'));
     expect(getByText(/8/)).toBeInTheDocument();
   });
+
+
+  test('displays images when they are included in the review', () => {
+    // shows image when review image is included
+    let testReview = reviewsData.results[0];
+    const {getByAltText, rerender} = render(<ReviewTile review={testReview}/>);
+    expect(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`)).toBeInTheDocument();
+
+    // does not show image when review not submitted by reviewer
+    testReview = reviewsData.results[1];
+    rerender(<ReviewTile review={testReview}/>);
+    expect(() => {
+      getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`).toThrow();
+    });
+  });
+
+
+  // test('Shows a modal window when image is clicked', () => {
+  //   let testReview = reviewsData.results[0];
+  //   const {getByAltText} = render(<ReviewTile review={testReview}/>);
+  //   fireEvent.click(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`));
+  //   expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewerName}`));
+  // });
+
+
+  // test('closes modal window when image is clicked out', () => {
+  //   let testReview = reviewsData.results[1];
+  //   const {getByAltText, rerender} = render(<ReviewTile review={testReview}/>);
+  //   fireEvent.click();
+  //   expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewerName}`)).toBeInTheDocument();
+  // });
 
 });
 

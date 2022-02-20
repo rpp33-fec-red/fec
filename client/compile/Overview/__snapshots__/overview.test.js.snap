@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`component should render should have overview component in browser 1`] = `
+exports[`Overview component should render should have overview component in browser 1`] = `
 <div
   className="overview"
 >
