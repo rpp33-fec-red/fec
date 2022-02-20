@@ -10,13 +10,16 @@ class RightContainer extends React.Component{
   }
 
   //right container display flex;
-
+  clickedReviews(e){
+    //scroll page to reviews section;
+    console.log('read all reviews clicked');
+  }
 
   render (){
     return (<div className="rightCt" >
 
       <div className="main-content">
-        <StarsComponent color={'red'} count={5}></StarsComponent>
+        <div className="reviewWrapper"><StarsComponent className="star-ct" color={'red'} count={5}></StarsComponent><a onClick={this.clickedReviews}>readall reviews</a></div>
       </div>
 
       <div className="style-selectors">
@@ -25,7 +28,7 @@ class RightContainer extends React.Component{
       <div className="option-selectors">
 
       </div>
-    </div>)
+    </div>);
   }
 
 

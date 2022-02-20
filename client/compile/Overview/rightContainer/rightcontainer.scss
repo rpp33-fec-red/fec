@@ -6,6 +6,9 @@
     width:100%;
     height:30%;
     background:orange;
+    .starCt{
+      display:inline-block
+    }
   }
   .style-selectors{
     width:100%;
@@ -18,4 +21,9 @@
     background:yellow;
 
   }
+}
+a{
+  text-decoration: underline;
+  color:blue;
+  cursor: pointer;
 }

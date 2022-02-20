@@ -22,11 +22,11 @@ class Overview extends React.Component {
   getData() {
     var that = this;
     this.props.getProducts('GET', ['products', 64620, 'styles'], function(data) {
-      that.setState({ onProduct: data.results });
+      // that.setState({ onProduct: data.results });
       if ( data.results) {
-        var replicated =  this.state.onProduct;
-        replicated.styles = data.results.results;
-        that.setState({ onProduct: replicated });
+        var newOnProduct = that.state.onProduct;
+        newOnProduct.styles = data.results;
+        that.setState({ onProduct: newOnProduct });
       }
       // window.location = 'http://localhost:8080/?productid=499434';
     });
