@@ -23,15 +23,14 @@ class ReviewsList extends React.Component {
 
   updateReviewsDisplayed () {
     const numberOfReviewsDisplayed = this.state.reviewsDisplayed.length;
-    console.log(this.props.reviews);
-    if (numberOfReviewsDisplayed <= this.props.reviews.length) {
+
+    if (numberOfReviewsDisplayed < this.props.reviews.length) {
       const reviewsNotDisplayed = this.props.reviews.length - numberOfReviewsDisplayed;
-      console.log(numberOfReviewsDisplayed);
       let updatedReviews;
       if (reviewsNotDisplayed === 1) {
         updatedReviews = this.props.reviews;
       } else {
-        updatedReviews = this.props.reviews.splice(0, numberOfReviewsDisplayed + 2);
+        updatedReviews = this.props.reviews.slice(0, numberOfReviewsDisplayed + 2);
       }
 
       this.setState({
@@ -48,7 +47,13 @@ class ReviewsList extends React.Component {
     } else {
       reviews = this.state.reviewsDisplayed;
     }
-    console.log(reviews);
+
+    let moreReviewsButton;
+    // shows more reviews button only when all reviews are not showing
+    if (this.state.reviewsDisplayed.length !== this.props.reviews.length) {
+      moreReviewsButton = <button onClick={this.updateReviewsDisplayed}>MORE REVIEWS</button>;
+    }
+
     return (
       <div className ="reviews-list">
         <ReviewsSorting/>
@@ -56,7 +61,7 @@ class ReviewsList extends React.Component {
           return <ReviewTile key={review.review_id} review={review}/>;
         })}
         <div className ="reviews-buttons">
-          <button onClick={this.updateReviewsDisplayed}>MORE REVIEWS</button>
+          {moreReviewsButton}
           <button>ADD A REVIEW +</button>
         </div>
       </div>
