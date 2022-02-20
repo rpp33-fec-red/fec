@@ -1,6 +1,7 @@
 import React from 'react';
 import './rightcontainer.scss';
 
+import StarsComponent from '../../stars.component.js';
 
 class RightContainer extends React.Component{
 
@@ -14,9 +15,8 @@ class RightContainer extends React.Component{
   render (){
     return (<div className="rightCt" >
 
-    right container
       <div className="main-content">
-
+        <StarsComponent color={'red'} count={5}></StarsComponent>
       </div>
 
       <div className="style-selectors">
