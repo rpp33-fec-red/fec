@@ -187,18 +187,19 @@ exports[`Answer component loads and displays Answer component 1`] = `
       <span
         className="answerer-seller"
       >
+         
         Seller
       </span>
-      , 
+      , 
       August, 17, 2018
-        |  Helpful?
+        |  Helpful? 
       <a
         className="answer-link"
         onClick={[Function]}
       >
         Yes
       </a>
-      (
+       (
       4
       )  |  
       <a
@@ -240,18 +241,19 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
           <span
             className="answerer-seller"
           >
+             
             Seller
           </span>
-          , 
+          , 
           August, 17, 2018
-            |  Helpful?
+            |  Helpful? 
           <a
             className="answer-link"
             onClick={[Function]}
           >
             Yes
           </a>
-          (
+           (
           4
           )  |  
           <a
@@ -284,16 +286,16 @@ exports[`Question component loads and displays Question component 1`] = `
       className="questionLinks"
     >
       <p>
-        Helpful?
+        Helpful? 
         <a
           className="question-link"
           onClick={[Function]}
         >
           Yes
         </a>
-        (
+         (
         4
-        ) |
+        ) | 
         <a
           className="question-link"
           onClick={[Function]}
@@ -330,18 +332,19 @@ exports[`Question component loads and displays Question component 1`] = `
             <span
               className="answerer-seller"
             >
+               
               Seller
             </span>
-            , 
+            , 
             August, 17, 2018
-              |  Helpful?
+              |  Helpful? 
             <a
               className="answer-link"
               onClick={[Function]}
             >
               Yes
             </a>
-            (
+             (
             4
             )  |  
             <a
@@ -389,6 +392,228 @@ exports[`Questions widget component loads and displays questions widget componen
       placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
       type="search"
     />
+  </div>
+  <div
+    className="questions-list"
+  >
+    <div
+      className="question"
+    >
+      <div
+        className="questionTitle"
+      >
+        <p
+          className="question-body"
+        >
+          Q: 
+          Why is this product cheaper here than other sites?
+        </p>
+        <div
+          className="questionLinks"
+        >
+          <p>
+            Helpful? 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
+              Yes
+            </a>
+             (
+            4
+            ) | 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
+              Add Answer
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="answers"
+      >
+        <p
+          className="a"
+        >
+          A: 
+        </p>
+        <div
+          className="answer-list"
+        >
+          <div
+            className="answer"
+          >
+            <p
+              className="answer-title"
+            >
+              We are selling it here without any markup from the middleman!
+            </p>
+            <div
+              className="answer-links"
+            >
+              <p>
+                by
+                <span
+                  className="answerer-seller"
+                >
+                   
+                  Seller
+                </span>
+                , 
+                August, 17, 2018
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Yes
+                </a>
+                 (
+                4
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="question"
+    >
+      <div
+        className="questionTitle"
+      >
+        <p
+          className="question-body"
+        >
+          Q: 
+          How long does it last?
+        </p>
+        <div
+          className="questionLinks"
+        >
+          <p>
+            Helpful? 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
+              Yes
+            </a>
+             (
+            2
+            ) | 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
+              Add Answer
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="answers"
+      >
+        <p
+          className="a"
+        >
+          A: 
+        </p>
+        <div
+          className="answer-list"
+        >
+          <div
+            className="answer"
+          >
+            <p
+              className="answer-title"
+            >
+              9 lives
+            </p>
+            <div
+              className="answer-links"
+            >
+              <p>
+                by
+                <span
+                  className="answerer-other"
+                >
+                   
+                  iluvdogz
+                </span>
+                , 
+                November, 11, 2019
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Yes
+                </a>
+                 (
+                31
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
+          <div
+            className="answer"
+          >
+            <p
+              className="answer-title"
+            >
+              Some of the seams started splitting the first time I wore it!
+            </p>
+            <div
+              className="answer-links"
+            >
+              <p>
+                by
+                <span
+                  className="answerer-other"
+                >
+                   
+                  sillyguy
+                </span>
+                , 
+                November, 27, 2019
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Yes
+                </a>
+                 (
+                6
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="question-buttons"
