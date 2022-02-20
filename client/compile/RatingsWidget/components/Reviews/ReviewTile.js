@@ -3,7 +3,6 @@ import ReviewImage from './ReviewImage.js';
 import ReviewImageWindow from './ReviewImageWindow.js';
 import ReviewResponse from './ReviewResponse.js';
 import PropTypes from 'prop-types';
-import $ from 'jquery';
 
 class ReviewTile extends React.Component {
   constructor (props) {
@@ -12,7 +11,8 @@ class ReviewTile extends React.Component {
       showFullReview: false,
       helpfulnessVoteCount: 0,
       helpfulnessVoted: false,
-      reviewImageDisplayed: ''
+      modalWindowDisplayed: false,
+      photoDisplayedInWindow: {}
     };
     this.convertDate = this.convertDate.bind(this);
     this.showFullReview = this.showFullReview.bind(this);
@@ -58,19 +58,28 @@ class ReviewTile extends React.Component {
 
   showModalWindow (event) {
     event.preventDefault();
-    const imageId = event.target.id;
-    const $image = $(`#${imageId}`);
-    const url = $image.attr('src');
-    const $modalContent = $('.modal-content');
-    const $modal = $('.modal-window');
-    $modalContent.attr('src', url);
-    $modal.css('display', 'block');
+    const reviewerNameID = event.target.id.split('_');
+    const reviewerName = reviewerNameID[0];
+    const id = reviewerNameID[1];
+    const src = event.target.src;
+
+    const photo = {
+      reviewerName: reviewerName,
+      id: id,
+      src: src
+    };
+
+    this.setState({
+      modalWindowDisplayed: true,
+      photoDisplayedInWindow: photo
+    });
   }
 
   closeModalWindow (event) {
     event.preventDefault();
-    const $modal = $('.modal-window');
-    $modal.css('display', 'none');
+    this.setState({
+      modalWindowDisplayed: false
+    });
   }
 
   render () {
@@ -105,17 +114,27 @@ class ReviewTile extends React.Component {
       reviewBody = lessBody;
     }
 
+
     // shows "I recommend this product" if product is recommended by reviewer
     let recommend;
     if (this.props.review.recommend) {
       recommend = <div className="recommend">☑ I recommend this product</div>;
     }
 
+
     // shows response from seller if there is a response
     let reviewResponse;
     if (this.props.review.response) {
       reviewResponse = <ReviewResponse response={this.props.review.response}/>;
     }
+
+
+    // shows modal window when review image is clicked
+    let modalWindow;
+    if (this.state.modalWindowDisplayed) {
+      modalWindow = <ReviewImageWindow closeModalWindow={this.closeModalWindow} photoDisplayedInWindow={this.state.photoDisplayedInWindow}/>;
+    }
+
 
     return (
       <div className="review-tile">
@@ -136,7 +155,7 @@ class ReviewTile extends React.Component {
               return <ReviewImage key={photo.id} photo={photo} showModalWindow={this.showModalWindow} reviewerName={this.props.review.reviewer_name}/>;
             })}
 
-            <ReviewImageWindow closeModalWindow={this.closeModalWindow}/>
+            {modalWindow}
 
           </div>
 
