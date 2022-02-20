@@ -17,10 +17,20 @@ class Main extends React.Component {
     super(props);
     this.state = {
       // ProductId: from url query param
+<<<<<<< HEAD
     };
   }
 
   componentDidMount(){}
+=======
+      // products:
+    };
+  }
+
+  componentDidMount(){
+
+  }
+>>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
   renderStars(){}
 
   render(){

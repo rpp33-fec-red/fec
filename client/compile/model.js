@@ -15,14 +15,50 @@ class Model {
     this.getData = this.getData.bind(this);
   }
 
-  getData(routes, cb) {
+  getData() {
+    var type = 'GET';
+    var params = {};
+    var routes =[];
+    var callback;
+    //  console.log(arguments)
+    Object.keys(arguments).forEach(key=>{
+      if (typeof arguments[key] === "string"){
+        type = arguments[key];
+      } else if ( Array.isArray(arguments[key]) ) {
+        routes = arguments[key];
+      } else if (typeof arguments[key] === 'object') {
+        params = arguments[key];
+      } else {
+        callback = arguments[key];
+      }
+    });
+    console.log(type,routes,params,callback);
+
     if (Array.isArray(routes)) {
-      var url = this.url + `getData?route1=${routes[0]}&route2=${routes[1]}&route3=${routes[2]}`;
+      var url = this.url + `getData?`;
+      routes.forEach((route,index)=>{
+        if (index > 0) {
+          url += `&route${index+1}=${route}`;
+        } else {
+          url += `route${index+1}=${route}`;
+        }
+      });
+      if (typeof params !== 'function') {
+        Object.keys(params).forEach((param)=> {
+          var value = params[param];
+          url+=`&${param}=${value}`;
+        });
+      }
+      // console.log(type)
+      if (type){
+        url+=`&type=${type}`;
+      }
+      // console.log(url);
       var options = {
         url:url,
         method: 'GET',
         success:function(data) {
-          cb(data);
+          callback(data);
         }
       };
       if (options) {

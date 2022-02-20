@@ -8,7 +8,12 @@
     "liveBuild": "webpack-dev-server",
     "build": "webpack --watch",
     "start": "nodemon server/server.js",
+<<<<<<< HEAD
     "updateArtifacts": "jest --updateSnapshot"
+=======
+    "updateArtifacts": "jest --updateSnapshot",
+    "eslint":"npx eslint ."
+>>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
   },
   "repository": {
     "type": "git",

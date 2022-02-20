@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var port = 8080;
+<<<<<<< HEAD
 var path = require('path')
 app.use(express.static(path.join(__dirname,'client/public')));
 var config = require('../config');
@@ -28,16 +29,63 @@ app.get('/getData',function(request, response) {
       url+=`&${param}=${value}`;
     }
   });
+=======
+var path = require('path');
+app.use(express.static(path.join(__dirname + '/../client/public')));
+var config = require('../config');
+var options = new config(false);
+options = options.getOptions();
+var axios = require('axios');
+var bp = require('body-parser');
+app.use(bp.json());
+var cors = require('cors');
+app.use(cors());
+app.use(express.static(path.join(__dirname,'../client/public')));
+
+//ajuna beats;
+//changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
+app.get('/getData',function(request, response) {
+  var type =  request.query.type;
+  var url = options.APIURL;
+  Object.keys(request.query).forEach((key)=>{
+    var value = request.query[key];
+    if (key.includes('route') ){
+      url+=`/${value}`;
+    }
+  });
+  url+='?';
+  Object.keys(request.query).forEach((param, index)=>{
+    var value = request.query[param];
+    if (param.includes('route') === false && param.includes('type') === false){
+      if (index > 0) {
+        url+=`&${param}=${value}`;
+      } else {
+        url+=`${param}=${value}`;
+      }
+  }
+
+  });
+
+
+  console.log('url',url);
+>>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
   axios({
-    method: 'get',
+    method: type,
     url:url,
     headers:{'authorization':`${options.APIKEY}`,'Accept':'*'}
   }).then(function(results){
+<<<<<<< HEAD
     console.log(results);
     if (results.data){
       response.json({results:results.data});
     } else {
       response.json({Error: new Error('no data')})
+=======
+    if (results.data){
+      response.json({results:results.data});
+    } else {
+      response.json({Error: new Error('no data')});
+>>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
     }
   }).catch(err=>{
     response.json({results:[],Error:err});
