@@ -5,7 +5,7 @@ import './rightcontainer.scss';
 class RightContainer extends React.Component{
 
   constructor(props){
-    super(props)
+    super(props);
   }
 
 

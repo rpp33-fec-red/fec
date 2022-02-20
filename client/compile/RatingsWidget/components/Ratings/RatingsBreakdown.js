@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RatingsBreakdown(props) {
+function RatingsBreakdown() {
   return (
     <div className="ratings-breakdown">
       <div>5 stars ------------</div>

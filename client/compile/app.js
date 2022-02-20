@@ -1,39 +1,38 @@
-import React from 'react'
+
+import React from 'react';
 import ReactDOM from 'react-dom';
 
- //components
- import Overview from './Overview/overview.component.js';
- import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
- import QuestionsWidget from './Questions/Questions.jsx';
- import RelatedItems from './RelatedItems/relatedItems.component.js';
- import Model from './model.js';
- var model = new Model(false);
- //core css
+//components
+import Overview from './Overview/overview.component.js';
+import RatingsWidget from './RatingsWidget/components/RatingsWidget.js';
+import QuestionsWidget from './Questions/Questions.jsx';
+import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
+import Model from './model.js';
+var model = new Model(false);
+import './style.scss';
 
- import './style.scss'
 class Main extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-
-    }
+      // ProductId: from url query param
+    };
   }
 
-  componentDidMount(){
-
-  }
+  componentDidMount(){}
+  renderStars(){}
 
   render(){
     return (
-    <div className="main">
-      <Overview getProducts={model.getData}/>
-      <RelatedItems/>
-      <QuestionsWidget />
-      <RatingsWidget/>
-    </div>
-    );
+      <div className="main">
+        <Overview getProducts={model.getData} id={this.state.productID}/>
+        <RelatedProducs getData={model.getData} />
+        <QuestionsWidget />
+        <RatingsWidget/>
+      </div>);
   }
 }
 
-export default Main;
+
+ReactDOM.render(<Main></Main>,document.getElementById('app'));
