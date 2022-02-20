@@ -35,7 +35,7 @@ app.get('/getData',function(request, response) {
       } else {
         url+=`&${param}=${value}`;
       }
-  }
+  };
 
   });
 

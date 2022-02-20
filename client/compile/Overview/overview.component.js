@@ -36,7 +36,7 @@ class Overview extends React.Component {
     return (
       <div className = "overview" >
         <LeftContainer styleIndex={this.state.styleIndex} onProduct={ this.state.onProduct } />
-        <RightContainer/>
+        <RightContainer styleIndex={this.state.styleIndex} onProduct={ this.state.onProduct } />
       </div>);
   }
 }
