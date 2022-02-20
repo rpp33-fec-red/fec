@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RatingsSummary(props) {
+function RatingsSummary() {
   return (
     <div className="ratings-summary">
       <h2>3.5</h2>

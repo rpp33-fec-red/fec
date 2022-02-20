@@ -1,526 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components render correctly main ratings and reviews widget renders correctly 1`] = `
-<div
-  className="ratings-and-reviews"
->
-  <div
-    className="ratings"
-  >
-    <h4>
-      Ratings & Reviews
-    </h4>
-    <div
-      className="ratings-summary"
-    >
-      <h2>
-        3.5
-      </h2>
-      <p
-        className="star-rating"
-      >
-        * * * * *
-      </p>
-      <p>
-        100% of the reviews recommend this product
-      </p>
-    </div>
-    <div
-      className="ratings-breakdown"
-    >
-      <div>
-        5 stars ------------
-      </div>
-      <div>
-        4 stars ------------
-      </div>
-      <div>
-        3 stars ------------
-      </div>
-      <div>
-        2 stars ------------
-      </div>
-      <div>
-        1 stars ------------
-      </div>
-    </div>
-    <div
-      className="ratings-product-breakdown"
-    >
-      Ratings Product Breakdown Placeholder
-    </div>
-  </div>
-  <div
-    className="reviews"
-  >
-    <div
-      className="reviews-list"
-    >
-      <div
-        className="reviews-sorting"
-      >
-        <label
-          htmlFor="sorting-option"
-        >
-          238 reviews, sorted by 
-        </label>
-        <select
-          name="sorting-option"
-        >
-          <option
-            value="relevance"
-          >
-            relevance
-          </option>
-          <option
-            value="helpfulness"
-          >
-            helpfuness
-          </option>
-          <option
-            value="newest"
-          >
-            newest
-          </option>
-        </select>
-      </div>
-      <div
-        className="review-tile"
-      >
-        <div
-          className="review-header"
-        >
-          <div
-            className="star-rating"
-          >
-            * * * * *
-          </div>
-          <div
-            className="right-corner"
-          >
-            shortandsweeet, April 13, 2019
-          </div>
-        </div>
-        <h3
-          className="review-summary"
-        >
-          I'm enjoying wearing these shades
-        </h3>
-        <div
-          className="review-main"
-        >
-          <div
-            className="review-body"
-          >
-            <p>
-              Comfortable and practical.
-            </p>
-          </div>
-          <div
-            className="recommend"
-          >
-            ☑ I recommend this product
-          </div>
-          <div
-            className="review-helpfulness-voting"
-          >
-            <p>
-              Helpful? 
-              <a
-                onClick={[Function]}
-              >
-                 Yes
-              </a>
-               (
-              5
-              )
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        className="review-tile"
-      >
-        <div
-          className="review-header"
-        >
-          <div
-            className="star-rating"
-          >
-            * * * * *
-          </div>
-          <div
-            className="right-corner"
-          >
-            bigbrotherbenjamin, June 22, 2019
-          </div>
-        </div>
-        <h3
-          className="review-summary"
-        >
-          I am liking these glasses
-        </h3>
-        <div
-          className="review-main"
-        >
-          <div
-            className="review-body"
-          >
-            <p>
-              They are very dark. But that's good because I'm in very sunny spots
-            </p>
-          </div>
-          <div
-            className="review-helpfulness-voting"
-          >
-            <p>
-              Helpful? 
-              <a
-                onClick={[Function]}
-              >
-                 Yes
-              </a>
-               (
-              5
-              )
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        className="review-tile"
-      >
-        <div
-          className="review-header"
-        >
-          <div
-            className="star-rating"
-          >
-            * * * * *
-          </div>
-          <div
-            className="right-corner"
-          >
-            alyshagilliard, July 24, 2020
-          </div>
-        </div>
-        <h3
-          className="review-summary"
-        >
-          I'm enjoying wearing these shades because they block the sun...
-        </h3>
-        <div
-          className="review-main"
-        >
-          <div
-            className="review-body"
-          >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
-            </p>
-            <a
-              onClick={[Function]}
-            >
-              Show More
-            </a>
-          </div>
-          <div
-            className="recommend"
-          >
-            ☑ I recommend this product
-          </div>
-          <div
-            className="review-helpfulness-voting"
-          >
-            <p>
-              Helpful? 
-              <a
-                onClick={[Function]}
-              >
-                 Yes
-              </a>
-               (
-              8
-              )
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="reviews-buttons"
-    >
-      <button>
-        MORE REVIEWS
-      </button>
-      <button>
-        ADD A REVIEW +
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Components render correctly main ratings component renders correctly 1`] = `
-<div
-  className="ratings"
->
-  <h4>
-    Ratings & Reviews
-  </h4>
-  <div
-    className="ratings-summary"
-  >
-    <h2>
-      3.5
-    </h2>
-    <p
-      className="star-rating"
-    >
-      * * * * *
-    </p>
-    <p>
-      100% of the reviews recommend this product
-    </p>
-  </div>
-  <div
-    className="ratings-breakdown"
-  >
-    <div>
-      5 stars ------------
-    </div>
-    <div>
-      4 stars ------------
-    </div>
-    <div>
-      3 stars ------------
-    </div>
-    <div>
-      2 stars ------------
-    </div>
-    <div>
-      1 stars ------------
-    </div>
-  </div>
-  <div
-    className="ratings-product-breakdown"
-  >
-    Ratings Product Breakdown Placeholder
-  </div>
-</div>
-`;
-
-exports[`Components render correctly main reviews component renders correctly 1`] = `
-<div
-  className="reviews"
->
-  <div
-    className="reviews-list"
-  >
-    <div
-      className="reviews-sorting"
-    >
-      <label
-        htmlFor="sorting-option"
-      >
-        238 reviews, sorted by 
-      </label>
-      <select
-        name="sorting-option"
-      >
-        <option
-          value="relevance"
-        >
-          relevance
-        </option>
-        <option
-          value="helpfulness"
-        >
-          helpfuness
-        </option>
-        <option
-          value="newest"
-        >
-          newest
-        </option>
-      </select>
-    </div>
-    <div
-      className="review-tile"
-    >
-      <div
-        className="review-header"
-      >
-        <div
-          className="star-rating"
-        >
-          * * * * *
-        </div>
-        <div
-          className="right-corner"
-        >
-          shortandsweeet, April 13, 2019
-        </div>
-      </div>
-      <h3
-        className="review-summary"
-      >
-        I'm enjoying wearing these shades
-      </h3>
-      <div
-        className="review-main"
-      >
-        <div
-          className="review-body"
-        >
-          <p>
-            Comfortable and practical.
-          </p>
-        </div>
-        <div
-          className="recommend"
-        >
-          ☑ I recommend this product
-        </div>
-        <div
-          className="review-helpfulness-voting"
-        >
-          <p>
-            Helpful? 
-            <a
-              onClick={[Function]}
-            >
-               Yes
-            </a>
-             (
-            5
-            )
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      className="review-tile"
-    >
-      <div
-        className="review-header"
-      >
-        <div
-          className="star-rating"
-        >
-          * * * * *
-        </div>
-        <div
-          className="right-corner"
-        >
-          bigbrotherbenjamin, June 22, 2019
-        </div>
-      </div>
-      <h3
-        className="review-summary"
-      >
-        I am liking these glasses
-      </h3>
-      <div
-        className="review-main"
-      >
-        <div
-          className="review-body"
-        >
-          <p>
-            They are very dark. But that's good because I'm in very sunny spots
-          </p>
-        </div>
-        <div
-          className="review-helpfulness-voting"
-        >
-          <p>
-            Helpful? 
-            <a
-              onClick={[Function]}
-            >
-               Yes
-            </a>
-             (
-            5
-            )
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      className="review-tile"
-    >
-      <div
-        className="review-header"
-      >
-        <div
-          className="star-rating"
-        >
-          * * * * *
-        </div>
-        <div
-          className="right-corner"
-        >
-          alyshagilliard, July 24, 2020
-        </div>
-      </div>
-      <h3
-        className="review-summary"
-      >
-        I'm enjoying wearing these shades because they block the sun...
-      </h3>
-      <div
-        className="review-main"
-      >
-        <div
-          className="review-body"
-        >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
-          </p>
-          <a
-            onClick={[Function]}
-          >
-            Show More
-          </a>
-        </div>
-        <div
-          className="recommend"
-        >
-          ☑ I recommend this product
-        </div>
-        <div
-          className="review-helpfulness-voting"
-        >
-          <p>
-            Helpful? 
-            <a
-              onClick={[Function]}
-            >
-               Yes
-            </a>
-             (
-            8
-            )
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="reviews-buttons"
-  >
-    <button>
-      MORE REVIEWS
-    </button>
-    <button>
-      ADD A REVIEW +
-    </button>
-  </div>
-</div>
-`;
-
 exports[`Ratings component renders correctly 1`] = `
 <div
   className="ratings"
@@ -687,6 +166,37 @@ exports[`RatingsWidget component renders correctly 1`] = `
             </p>
           </div>
           <div
+            className="thumbnail-display"
+          >
+            <div>
+              <img
+                alt="Review photo 1 submitted by: shortandsweeet"
+                className="review-image"
+                id="shortandsweeet_1"
+                onClick={[Function]}
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              />
+            </div>
+            <div>
+              <img
+                alt="Review photo 2 submitted by: shortandsweeet"
+                className="review-image"
+                id="shortandsweeet_2"
+                onClick={[Function]}
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              />
+            </div>
+            <div
+              className="modal-window"
+              onClick={[Function]}
+            >
+              <img
+                className="modal-content"
+                src=""
+              />
+            </div>
+          </div>
+          <div
             className="recommend"
           >
             ☑ I recommend this product
@@ -738,6 +248,29 @@ exports[`RatingsWidget component renders correctly 1`] = `
           >
             <p>
               They are very dark. But that's good because I'm in very sunny spots
+            </p>
+          </div>
+          <div
+            className="thumbnail-display"
+          >
+            <div
+              className="modal-window"
+              onClick={[Function]}
+            >
+              <img
+                className="modal-content"
+                src=""
+              />
+            </div>
+          </div>
+          <div
+            className="review-response"
+          >
+            <h4>
+              Response from seller
+            </h4>
+            <p>
+              Glad you're enjoying the product!
             </p>
           </div>
           <div
@@ -793,6 +326,46 @@ exports[`RatingsWidget component renders correctly 1`] = `
             >
               Show More
             </a>
+          </div>
+          <div
+            className="thumbnail-display"
+          >
+            <div>
+              <img
+                alt="Review photo 1 submitted by: alyshagilliard"
+                className="review-image"
+                id="alyshagilliard_1"
+                onClick={[Function]}
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              />
+            </div>
+            <div>
+              <img
+                alt="Review photo 2 submitted by: alyshagilliard"
+                className="review-image"
+                id="alyshagilliard_2"
+                onClick={[Function]}
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              />
+            </div>
+            <div>
+              <img
+                alt="Review photo 3 submitted by: alyshagilliard"
+                className="review-image"
+                id="alyshagilliard_3"
+                onClick={[Function]}
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              />
+            </div>
+            <div
+              className="modal-window"
+              onClick={[Function]}
+            >
+              <img
+                className="modal-content"
+                src=""
+              />
+            </div>
           </div>
           <div
             className="recommend"
@@ -863,6 +436,37 @@ exports[`ReviewTile component renders correctly 1`] = `
       <p>
         Comfortable and practical.
       </p>
+    </div>
+    <div
+      className="thumbnail-display"
+    >
+      <div>
+        <img
+          alt="Review photo 1 submitted by: shortandsweeet"
+          className="review-image"
+          id="shortandsweeet_1"
+          onClick={[Function]}
+          src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+        />
+      </div>
+      <div>
+        <img
+          alt="Review photo 2 submitted by: shortandsweeet"
+          className="review-image"
+          id="shortandsweeet_2"
+          onClick={[Function]}
+          src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+        />
+      </div>
+      <div
+        className="modal-window"
+        onClick={[Function]}
+      >
+        <img
+          className="modal-content"
+          src=""
+        />
+      </div>
     </div>
     <div
       className="recommend"
@@ -956,6 +560,37 @@ exports[`Reviews component renders correctly 1`] = `
           </p>
         </div>
         <div
+          className="thumbnail-display"
+        >
+          <div>
+            <img
+              alt="Review photo 1 submitted by: shortandsweeet"
+              className="review-image"
+              id="shortandsweeet_1"
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+            />
+          </div>
+          <div>
+            <img
+              alt="Review photo 2 submitted by: shortandsweeet"
+              className="review-image"
+              id="shortandsweeet_2"
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+            />
+          </div>
+          <div
+            className="modal-window"
+            onClick={[Function]}
+          >
+            <img
+              className="modal-content"
+              src=""
+            />
+          </div>
+        </div>
+        <div
           className="recommend"
         >
           ☑ I recommend this product
@@ -1007,6 +642,29 @@ exports[`Reviews component renders correctly 1`] = `
         >
           <p>
             They are very dark. But that's good because I'm in very sunny spots
+          </p>
+        </div>
+        <div
+          className="thumbnail-display"
+        >
+          <div
+            className="modal-window"
+            onClick={[Function]}
+          >
+            <img
+              className="modal-content"
+              src=""
+            />
+          </div>
+        </div>
+        <div
+          className="review-response"
+        >
+          <h4>
+            Response from seller
+          </h4>
+          <p>
+            Glad you're enjoying the product!
           </p>
         </div>
         <div
@@ -1062,6 +720,46 @@ exports[`Reviews component renders correctly 1`] = `
           >
             Show More
           </a>
+        </div>
+        <div
+          className="thumbnail-display"
+        >
+          <div>
+            <img
+              alt="Review photo 1 submitted by: alyshagilliard"
+              className="review-image"
+              id="alyshagilliard_1"
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+            />
+          </div>
+          <div>
+            <img
+              alt="Review photo 2 submitted by: alyshagilliard"
+              className="review-image"
+              id="alyshagilliard_2"
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+            />
+          </div>
+          <div>
+            <img
+              alt="Review photo 3 submitted by: alyshagilliard"
+              className="review-image"
+              id="alyshagilliard_3"
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+            />
+          </div>
+          <div
+            className="modal-window"
+            onClick={[Function]}
+          >
+            <img
+              className="modal-content"
+              src=""
+            />
+          </div>
         </div>
         <div
           className="recommend"
