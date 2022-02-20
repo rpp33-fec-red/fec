@@ -3,16 +3,15 @@ import LeftContainer from './leftContainer/leftcontainer.component.js';
 import RightContainer from './rightContainer/rightcontainer.component.js';
 import './overview.scss';
 import PropTypes from 'prop-types';
-import testProducts from './testProducts.js';
-import testStyles from './testStyle.json';
+import testProduct from './testProducts.json';
 
 
 class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onProduct: testProducts[0],
-      onStyle: testStyles
+      onProduct: testProduct,
+      styleIndex: 0
     };
     this.getData = this.getData.bind(this);
   }
@@ -24,8 +23,10 @@ class Overview extends React.Component {
     var that = this;
     this.props.getProducts('GET', ['products', 64620, 'styles'], function(data) {
       that.setState({ onProduct: data.results });
-      if ( data.results){
-        that.setState({ onStyle: data.results.results[0] });
+      if ( data.results) {
+        var replicated =  this.state.onProduct;
+        replicated.styles = data.results.results;
+        that.setState({ onProduct: replicated });
       }
       // window.location = 'http://localhost:8080/?productid=499434';
     });
@@ -34,7 +35,7 @@ class Overview extends React.Component {
   render() {
     return (
       <div className = "overview" >
-        <LeftContainer onStyle={ this.state.onStyle } />
+        <LeftContainer styleIndex={this.state.styleIndex} onProduct={ this.state.onProduct } />
         <RightContainer/>
       </div>);
   }

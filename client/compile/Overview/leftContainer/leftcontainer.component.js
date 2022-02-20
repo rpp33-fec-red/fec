@@ -5,14 +5,14 @@ import ImageHolder from './imageholder/imageholder.component.js';
 class LeftContainer extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props.onStyle);
-
+    console.log('props LeftCOntainer',props);
+    this.image = props.onProduct.styles[props.styleIndex].photos[0]
   }
 
   render (){
     return (
       <div className="leftCt">
-        <ImageHolder product={this.props.onStyle}/>
+        <ImageHolder image={this.image}/>
       </div>);
   }
 }

@@ -1,16 +1,20 @@
 import React from 'react';
 import './imageholder.scss';
 import StyleSelector from '../../styleSelector.js';
+import PropTypes from 'prop-types';
 
 function ImageHolder(props){
-  console.log('props',props);
+  console.log('array of photos',props);
+  // var photo = props.style[0];
+
   return (
     <div className="image-holder">
-      <div className="fixed-selector">
-        <StyleSelector>
-        </StyleSelector>
-      </div>
+      <img src={props.image.url}></img>
+        <StyleSelector></StyleSelector>
     </div>);
 
 }
+ImageHolder.propTypes = {
+  image: PropTypes.any
+};
 export default ImageHolder;
