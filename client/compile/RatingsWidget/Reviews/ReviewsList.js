@@ -6,15 +6,59 @@ import PropTypes from 'prop-types';
 class ReviewsList extends React.Component {
   constructor (props) {
     super(props);
-
+    this.state = {
+      reviewsDisplayed: []
+    };
+    this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
   }
+
+  componentDidMount () {
+    if (this.props.reviews.length > 2) {
+      const reviews = this.props.reviews.slice(0, 2);
+      this.setState({
+        reviewsDisplayed: reviews
+      });
+    }
+  }
+
+  updateReviewsDisplayed () {
+    const numberOfReviewsDisplayed = this.state.reviewsDisplayed.length;
+    console.log(this.props.reviews);
+    if (numberOfReviewsDisplayed <= this.props.reviews.length) {
+      const reviewsNotDisplayed = this.props.reviews.length - numberOfReviewsDisplayed;
+      console.log(numberOfReviewsDisplayed);
+      let updatedReviews;
+      if (reviewsNotDisplayed === 1) {
+        updatedReviews = this.props.reviews;
+      } else {
+        updatedReviews = this.props.reviews.splice(0, numberOfReviewsDisplayed + 2);
+      }
+
+      this.setState({
+        reviewsDisplayed: updatedReviews
+      });
+    }
+  }
+
   render () {
+
+    let reviews;
+    if (this.props.reviews < 2) {
+      reviews = this.props.reviews;
+    } else {
+      reviews = this.state.reviewsDisplayed;
+    }
+    console.log(reviews);
     return (
       <div className ="reviews-list">
         <ReviewsSorting/>
-        {this.props.reviews.map((review) => {
+        {reviews.map((review) => {
           return <ReviewTile key={review.review_id} review={review}/>;
         })}
+        <div className ="reviews-buttons">
+          <button onClick={this.updateReviewsDisplayed}>MORE REVIEWS</button>
+          <button>ADD A REVIEW +</button>
+        </div>
       </div>
     );
   }
