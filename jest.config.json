@@ -1,0 +1,12 @@
+{
+  "testMatch": ["**/?(*)+(.test.js?(x))"],
+  "testPathIgnorePatterns":["/node_modules/"],
+  "coverageReporters": [
+    "html"
+],
+  "coverageDirectory": "./coverage",
+  "collectCoverage":true,
+   "moduleNameMapper": {
+    "^.+\\.(css|scss)$": "babel-jest"
+  }
+}
