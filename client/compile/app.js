@@ -1,6 +1,5 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 //components
 import Overview from './Overview/overview.component.js';
@@ -11,7 +10,7 @@ import Model from './model.js';
 var model = new Model(false);
 import './style.scss';
 
-class Main extends React.Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,5 +33,4 @@ class Main extends React.Component {
   }
 }
 
-
-ReactDOM.render(<Main></Main>,document.getElementById('app'));
+export default App;

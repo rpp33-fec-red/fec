@@ -1,19 +1,10 @@
 {
-<<<<<<< HEAD
-  "testMatch": ["**/?(app)+(.test.js?(x))"],
-  "testPathIgnorePatterns":["/node_modules/"],
-  "collectCoverageFrom": [
-    "app.test.js"
-
-  ],
-=======
   "testMatch": ["**/?(*)+(.test.js?(x))"],
   "testPathIgnorePatterns":["/node_modules/"],
   "coverageReporters": [
     "html"
 ],
   "coverageDirectory": "./coverage",
->>>>>>> 00d8c0da502edf49db34a94e714bc8c137ea70e9
   "collectCoverage":true,
    "moduleNameMapper": {
     "^.+\\.(css|scss)$": "babel-jest"

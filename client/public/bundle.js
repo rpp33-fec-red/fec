@@ -1,5 +1,3 @@
-/* eslint-disable indent */
-/* eslint-disable no-unused-vars */
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
@@ -391,7 +389,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/esm/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/esm/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/esm/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _Overview_overview_component_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Overview/overview.component.js */ \"./client/compile/Overview/overview.component.js\");\n/* harmony import */ var _RatingsWidget_components_RatingsWidget_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./RatingsWidget/components/RatingsWidget.js */ \"./client/compile/RatingsWidget/components/RatingsWidget.js\");\n/* harmony import */ var _Questions_Questions_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Questions/Questions.jsx */ \"./client/compile/Questions/Questions.jsx\");\n/* harmony import */ var _RelatedItems_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./RelatedItems/RelatedProducts.jsx */ \"./client/compile/RelatedItems/RelatedProducts.jsx\");\n/* harmony import */ var _model_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./model.js */ \"./client/compile/model.js\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./style.scss */ \"./client/compile/style.scss\");\n\n\n\n\n\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(this, result); }; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }\n\n\n //components\n\n\n\n\n\n\nvar model = new _model_js__WEBPACK_IMPORTED_MODULE_11__[\"default\"](false);\n\n\nvar Main = /*#__PURE__*/function (_React$Component) {\n  (0,_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(Main, _React$Component);\n\n  var _super = _createSuper(Main);\n\n  function Main(props) {\n    var _this;\n\n    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(this, Main);\n\n    _this = _super.call(this, props);\n    _this.state = {// ProductId: from url query param\n    };\n    return _this;\n  }\n\n  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(Main, [{\n    key: \"componentDidMount\",\n    value: function componentDidMount() {}\n  }, {\n    key: \"renderStars\",\n    value: function renderStars() {}\n  }, {\n    key: \"render\",\n    value: function render() {\n      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(\"div\", {\n        className: \"main\"\n      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_Overview_overview_component_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"], {\n        getProducts: model.getData,\n        id: this.state.productID\n      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_RelatedItems_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_10__[\"default\"], {\n        getData: model.getData\n      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_Questions_Questions_jsx__WEBPACK_IMPORTED_MODULE_9__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_RatingsWidget_components_RatingsWidget_js__WEBPACK_IMPORTED_MODULE_8__[\"default\"], null));\n    }\n  }]);\n\n  return Main;\n}(react__WEBPACK_IMPORTED_MODULE_5__.Component);\n\nreact_dom__WEBPACK_IMPORTED_MODULE_6__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(Main, null), document.getElementById('app'));\n\n//# sourceURL=webpack://fec/./client/compile/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/esm/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/esm/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/esm/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _Overview_overview_component_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Overview/overview.component.js */ \"./client/compile/Overview/overview.component.js\");\n/* harmony import */ var _RatingsWidget_components_RatingsWidget_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RatingsWidget/components/RatingsWidget.js */ \"./client/compile/RatingsWidget/components/RatingsWidget.js\");\n/* harmony import */ var _Questions_Questions_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Questions/Questions.jsx */ \"./client/compile/Questions/Questions.jsx\");\n/* harmony import */ var _RelatedItems_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./RelatedItems/RelatedProducts.jsx */ \"./client/compile/RelatedItems/RelatedProducts.jsx\");\n/* harmony import */ var _model_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./model.js */ \"./client/compile/model.js\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./style.scss */ \"./client/compile/style.scss\");\n\n\n\n\n\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(this, result); }; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }\n\n //components\n\n\n\n\n\n\nvar model = new _model_js__WEBPACK_IMPORTED_MODULE_10__[\"default\"](false);\n\n\nvar App = /*#__PURE__*/function (_React$Component) {\n  (0,_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(App, _React$Component);\n\n  var _super = _createSuper(App);\n\n  function App(props) {\n    var _this;\n\n    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(this, App);\n\n    _this = _super.call(this, props);\n    _this.state = {// ProductId: from url query param\n    };\n    return _this;\n  }\n\n  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(App, [{\n    key: \"componentDidMount\",\n    value: function componentDidMount() {}\n  }, {\n    key: \"renderStars\",\n    value: function renderStars() {}\n  }, {\n    key: \"render\",\n    value: function render() {\n      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(\"div\", {\n        className: \"main\"\n      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_Overview_overview_component_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"], {\n        getProducts: model.getData,\n        id: this.state.productID\n      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_RelatedItems_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_9__[\"default\"], {\n        getData: model.getData\n      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_Questions_Questions_jsx__WEBPACK_IMPORTED_MODULE_8__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_RatingsWidget_components_RatingsWidget_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"], null));\n    }\n  }]);\n\n  return App;\n}(react__WEBPACK_IMPORTED_MODULE_5__.Component);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://fec/./client/compile/app.js?");
 
 /***/ }),
 
@@ -968,7 +966,7 @@ eval("module.exports = JSON.parse('{\"product\":{\"style_id\":398195,\"name\":\"
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/
+/******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -982,14 +980,14 @@ eval("module.exports = JSON.parse('{\"product\":{\"style_id\":398195,\"name\":\"
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/
+/******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+/******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -1002,7 +1000,7 @@ eval("module.exports = JSON.parse('{\"product\":{\"style_id\":398195,\"name\":\"
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -1014,12 +1012,12 @@ eval("module.exports = JSON.parse('{\"product\":{\"style_id\":398195,\"name\":\"
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -1030,13 +1028,13 @@ eval("module.exports = JSON.parse('{\"product\":{\"style_id\":398195,\"name\":\"
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /************************************************************************/
-/******/
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./client/compile/index.js");
-/******/
+/******/ 	
 /******/ })()
 ;
