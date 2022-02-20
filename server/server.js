@@ -12,9 +12,11 @@ app.use(bp.json());
 var cors = require('cors');
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
+app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 
-//ajuna beats;
-//changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
+//added coverage file for serving
+
+//ajuna beats presents best techno music
 app.get('/getData',function(request, response) {
   var type =  request.query.type;
   var url = options.APIURL;
@@ -28,10 +30,10 @@ app.get('/getData',function(request, response) {
   Object.keys(request.query).forEach((param, index)=>{
     var value = request.query[param];
     if (param.includes('route') === false && param.includes('type') === false){
-      if (url.includes('&') === false) {
-        url+=`&${param}=${value}`;
-      } else {
+      if (url.includes('=') === false) {
         url+=`${param}=${value}`;
+      } else {
+        url+=`&${param}=${value}`;
       }
   }
 
