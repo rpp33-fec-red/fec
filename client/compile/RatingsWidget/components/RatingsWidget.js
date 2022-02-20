@@ -3,6 +3,7 @@ import '../ratings.scss';
 import Reviews from './Reviews/Reviews.js';
 import Ratings from './Ratings/Ratings.js';
 import reviewsData from '../sample_data.js';
+import PropTypes from 'prop-types';
 
 class RatingsWidget extends React.Component {
   constructor(props) {
@@ -45,5 +46,10 @@ class RatingsWidget extends React.Component {
     );
   }
 }
+
+RatingsWidget.propTypes = {
+  getReviews: PropTypes.any
+};
+
 
 export default RatingsWidget;
