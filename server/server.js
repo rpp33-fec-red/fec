@@ -1,35 +1,6 @@
 var express = require('express');
 var app = express();
 var port = 8080;
-<<<<<<< HEAD
-var path = require('path')
-app.use(express.static(path.join(__dirname,'client/public')));
-var config = require('../config');
-var options = new config(false);
-options = options.getOptions();
-var axios = require('axios')
-var bp = require('body-parser')
-app.use(bp.json())
-var cors = require('cors');
-
-
-app.use(cors());
-
-
-app.get('/getData',function(request, response) {
-  var url = options.APIURL;
-  if (request.query.route){
-    url+=`/${request.query.route}?`;
-  }
-  Object.keys(request.query).forEach((param)=>{
-    console.log('url',url)
-    console.log(param)
-    var value = request.query[param];
-    if (param !== 'route'){
-      url+=`&${param}=${value}`;
-    }
-  });
-=======
 var path = require('path');
 app.use(express.static(path.join(__dirname + '/../client/public')));
 var config = require('../config');
@@ -57,7 +28,7 @@ app.get('/getData',function(request, response) {
   Object.keys(request.query).forEach((param, index)=>{
     var value = request.query[param];
     if (param.includes('route') === false && param.includes('type') === false){
-      if (index > 0) {
+      if (url.includes('&') === false) {
         url+=`&${param}=${value}`;
       } else {
         url+=`${param}=${value}`;
@@ -68,24 +39,15 @@ app.get('/getData',function(request, response) {
 
 
   console.log('url',url);
->>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
   axios({
     method: type,
     url:url,
     headers:{'authorization':`${options.APIKEY}`,'Accept':'*'}
   }).then(function(results){
-<<<<<<< HEAD
-    console.log(results);
-    if (results.data){
-      response.json({results:results.data});
-    } else {
-      response.json({Error: new Error('no data')})
-=======
     if (results.data){
       response.json({results:results.data});
     } else {
       response.json({Error: new Error('no data')});
->>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
     }
   }).catch(err=>{
     response.json({results:[],Error:err});

@@ -12,17 +12,10 @@ var model = new Model(false);
 import './style.scss';
 
 class Main extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       // ProductId: from url query param
-<<<<<<< HEAD
-    };
-  }
-
-  componentDidMount(){}
-=======
       // products:
     };
   }
@@ -30,7 +23,6 @@ class Main extends React.Component {
   componentDidMount(){
 
   }
->>>>>>> 4a8c0f4bfdf84b43441e439f8ef7032ec1c93227
   renderStars(){}
 
   render(){
@@ -39,7 +31,7 @@ class Main extends React.Component {
         <Overview getProducts={model.getData} id={this.state.productID}/>
         <RelatedProducs getData={model.getData} />
         <QuestionsWidget />
-        <RatingsWidget getReviews={model.getData}/>
+        <RatingsWidget/>
       </div>);
   }
 }
