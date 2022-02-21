@@ -7,10 +7,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {render, fireEvent} from '@testing-library/react';
-import RatingsWidget from './components/RatingsWidget.js';
-import Ratings from './components/Ratings/Ratings.js';
-import Reviews from './components/Reviews/Reviews.js';
-import ReviewTile from './components/Reviews/ReviewTile.js';
+import RatingsWidget from './RatingsWidget.js';
+import Ratings from './Ratings/Ratings.js';
+import Reviews from './Reviews/Reviews.js';
+import ReviewTile from './ReviewTile.js';
 import reviewsData from './sample_data.js';
 import '@testing-library/jest-dom';
 
