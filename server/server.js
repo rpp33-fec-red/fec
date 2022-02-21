@@ -91,9 +91,9 @@ app.put('/putData', (req, res) => {
     params: req.body.params
   };
   axios.put(url, data, config)
-    .then(function(response) {
+    .then(function() {
       console.log('Status: 204 NO CONTENT');
-      res.send(response);
+      res.send();
     })
     .catch(function(error) {
       console.log(error);
