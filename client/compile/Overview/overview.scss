@@ -7,4 +7,26 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  .imageSelector {
+    position: absolute;
+    width:80px;
+    height:70%;
+    background:orange;
+    left:0px;
+    display: grid;
+.row{
+  margin:0 auto;
+  border:1px solid black;
+  img{
+    width:95%; height:30px;
+  }
+  max-height:40px;
+  max-width:100%;
+}
+.arrow{
+  width:30px;
+   height:30px;
+ cursor: pointer;
+}
+  }
 }

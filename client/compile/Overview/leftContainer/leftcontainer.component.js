@@ -11,13 +11,13 @@ class LeftContainer extends React.Component{
   constructor(props){
     super(props);
     console.log('props LeftCOntainer',props);
-    this.image = props.onProduct.styles[props.styleIndex].photos[0];
+    this.images = props.onProduct.styles[props.styleIndex];
   }
 
   render (){
     return (
       <div className="leftCt">
-        <ImageHolder image={this.image}/>
+        <ImageHolder image={this.images}/>
       </div>);
   }
 }
