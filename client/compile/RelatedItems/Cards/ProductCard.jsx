@@ -1,4 +1,5 @@
 import React from 'react';
+import StarsComponent from '../../stars.component';
 import '../relatedItems.scss';
 import PropTypes from 'prop-types';
 
@@ -52,7 +53,7 @@ class ProductCard extends React.Component {
           //comment href out because page /products/:id doesn't exist yet
         ><b>{this.state.product_name}</b></h4>
         <p className="default-price" >$ {this.state.default_price}</p>
-
+        <StarsComponent product_id={this.props.product_id}/>
       </div>
     );
   }
