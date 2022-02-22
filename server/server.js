@@ -27,7 +27,7 @@ app.get('/getData',function(request, response) {
     }
   });
   url+='?';
-  Object.keys(request.query).forEach((param, index)=>{
+  Object.keys(request.query).forEach((param)=>{
     var value = request.query[param];
     if (param.includes('route') === false && param.includes('type') === false){
       if (url.includes('=') === false) {
