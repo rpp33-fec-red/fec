@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import AnswerList from './AnswerList.jsx';
-import AddAnswerModal from '../modals/addAnswer.jsx';
+import AddAnswerModal from '../modals/AddAnswer.jsx';
 
 class Question extends React.Component {
   constructor(props) {
