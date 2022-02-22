@@ -9,8 +9,8 @@ class UploadPhotosModal extends React.Component {
   render() {
     return (
 
-      <div className="modal" id="upload-photo-modal">
-        <div className="modal-content">
+      <div className="questions-modals" id="upload-photo-modal">
+        <div className="questions-modals-content">
           <a className="close-window" onClick={this.props.close}>X</a>
           <h3>Upload Photos for {this.props.product_name}</h3>
           {(this.props.photos.photoCount < 5) &&
