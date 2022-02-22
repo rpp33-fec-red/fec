@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import AddQuestionModal from '../modals/AddQuestion.jsx';
 
 class QuestionButtons extends React.Component {
@@ -6,34 +8,45 @@ class QuestionButtons extends React.Component {
     super(props);
     this.state = {
       showAddQuestionModal: false
-    }
+    };
 
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleSubmitQuestion = this.handleSubmitQuestion.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleAddQuestion(event) {
     event.preventDefault();
     this.setState({
       showAddQuestionModal: true,
-      missingFields: '',
+      missingFields: ''
     });
   }
 
   handleSubmitQuestion(event) {
     event.preventDefault();
-    const question = event.target.question.value;
-    const nickname = event.target.nickname.value;
-    const email = event.target.email.value;
-    const fields = {
-      question: question,
-      nickname: nickname,
-      email: email,
-    }
+    const request = {
+      data: {
+        body: event.target.question.value,
+        name: event.target.nickname.value,
+        email: event.target.email.value,
+        product_id: parseInt(this.props.product_id)
+      },
+      endpoint: '/qa/questions',
+      params: null
+    };
 
-    if (question && nickname && email) {
+    const fields = {
+      question: request.data.body,
+      nickname: request.data.name,
+      email: request.data.email
+    };
+
+    if (fields.question && fields.nickname && fields.email) {
       this.setState({
         showAddQuestionModal: false
+      }, () => {
+        axios.post('/postData', request);
       });
     } else {
       let missingFields = '';
@@ -41,7 +54,6 @@ class QuestionButtons extends React.Component {
         if (!fields[field]) {
           missingFields = missingFields + field + ' ';
         }
-        console.log('missing fields', missingFields)
         this.setState({
           missingFields: missingFields
         });
@@ -49,21 +61,38 @@ class QuestionButtons extends React.Component {
     }
   }
 
-
+  closeModal() {
+    this.setState({
+      showAddQuestionModal: false
+    });
+  }
 
   render() {
     return (
       <div className="question-buttons">
         {this.state.showAddQuestionModal &&
-          <AddQuestionModal missing={this.state.missingFields} submit={this.handleSubmitQuestion}/>
+          <AddQuestionModal
+            product_name={this.props.product_name}
+            missing={this.state.missingFields}
+            submit={this.handleSubmitQuestion}
+            close={this.closeModal}
+          />
         }
-        {!this.props.allQuestionsDisplayed &&
-          <button>MORE ANSWERED QUESTIONS</button>
+        {(!this.props.allQuestionsDisplayed) &&
+          <button onClick={this.props.displayMore}>MORE ANSWERED QUESTIONS</button>
         }
         <button onClick={this.handleAddQuestion} missing={this.state.missingFields}>ADD A QUESTION +</button>
       </div>
     );
   }
 }
+
+QuestionButtons.propTypes = {
+  product_id: PropTypes.string,
+  product_name: PropTypes.string,
+  allQuestionsDisplayed: PropTypes.bool,
+  questions: PropTypes.any,
+  displayMore: PropTypes.func
+};
 
 export default QuestionButtons;

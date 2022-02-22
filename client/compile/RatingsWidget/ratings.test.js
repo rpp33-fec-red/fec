@@ -137,20 +137,23 @@ describe('ReviewTile component', () => {
   });
 
 
-  // test('Shows a modal window when image is clicked', () => {
-  //   let testReview = reviewsData.results[0];
-  //   const {getByAltText} = render(<ReviewTile review={testReview}/>);
-  //   fireEvent.click(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`));
-  //   expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewerName}`));
-  // });
+  test('Shows a modal window when image is clicked', () => {
+    let testReview = reviewsData.results[0];
+    const {getByAltText} = render(<ReviewTile review={testReview}/>);
+    fireEvent.click(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`));
+    expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`));
+  });
 
 
-  // test('closes modal window when image is clicked out', () => {
-  //   let testReview = reviewsData.results[1];
-  //   const {getByAltText, rerender} = render(<ReviewTile review={testReview}/>);
-  //   fireEvent.click();
-  //   expect(getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewerName}`)).toBeInTheDocument();
-  // });
+  test('closes modal window when image is clicked out', () => {
+    let testReview = reviewsData.results[0];
+    const {getByAltText} = render(<ReviewTile review={testReview}/>);
+    fireEvent.click(getByAltText(`Review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`));
+    fireEvent.click(document);
+    expect(() => {
+      getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`).toThrow();
+    });
+  });
 
 });
 

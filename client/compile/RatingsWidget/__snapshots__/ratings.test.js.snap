@@ -174,7 +174,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
                 className="review-image"
                 id="shortandsweeet_1"
                 onClick={[Function]}
-                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+                src="urlplaceholder/review_5_photo_number_1.jpg"
               />
             </div>
             <div>
@@ -183,16 +183,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
                 className="review-image"
                 id="shortandsweeet_2"
                 onClick={[Function]}
-                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-              />
-            </div>
-            <div
-              className="modal-window"
-              onClick={[Function]}
-            >
-              <img
-                className="modal-content"
-                src=""
+                src="urlplaceholder/review_5_photo_number_2.jpg"
               />
             </div>
           </div>
@@ -252,17 +243,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
           </div>
           <div
             className="thumbnail-display"
-          >
-            <div
-              className="modal-window"
-              onClick={[Function]}
-            >
-              <img
-                className="modal-content"
-                src=""
-              />
-            </div>
-          </div>
+          />
           <div
             className="review-response"
           >
@@ -304,7 +285,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
           <div
             className="right-corner"
           >
-            alyshagilliard, July 24, 2020
+            alyshagilliard, July 23, 2020
           </div>
         </div>
         <h3
@@ -336,7 +317,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
                 className="review-image"
                 id="alyshagilliard_1"
                 onClick={[Function]}
-                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+                src="urlplaceholder/review_5_photo_number_1.jpg"
               />
             </div>
             <div>
@@ -345,25 +326,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
                 className="review-image"
                 id="alyshagilliard_2"
                 onClick={[Function]}
-                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-              />
-            </div>
-            <div>
-              <img
-                alt="Review photo 3 submitted by: alyshagilliard"
-                className="review-image"
-                id="alyshagilliard_3"
-                onClick={[Function]}
-                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-              />
-            </div>
-            <div
-              className="modal-window"
-              onClick={[Function]}
-            >
-              <img
-                className="modal-content"
-                src=""
+                src="urlplaceholder/review_5_photo_number_2.jpg"
               />
             </div>
           </div>
@@ -446,7 +409,7 @@ exports[`ReviewTile component renders correctly 1`] = `
           className="review-image"
           id="shortandsweeet_1"
           onClick={[Function]}
-          src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+          src="urlplaceholder/review_5_photo_number_1.jpg"
         />
       </div>
       <div>
@@ -455,16 +418,7 @@ exports[`ReviewTile component renders correctly 1`] = `
           className="review-image"
           id="shortandsweeet_2"
           onClick={[Function]}
-          src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-        />
-      </div>
-      <div
-        className="modal-window"
-        onClick={[Function]}
-      >
-        <img
-          className="modal-content"
-          src=""
+          src="urlplaceholder/review_5_photo_number_2.jpg"
         />
       </div>
     </div>
@@ -568,7 +522,7 @@ exports[`Reviews component renders correctly 1`] = `
               className="review-image"
               id="shortandsweeet_1"
               onClick={[Function]}
-              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              src="urlplaceholder/review_5_photo_number_1.jpg"
             />
           </div>
           <div>
@@ -577,16 +531,7 @@ exports[`Reviews component renders correctly 1`] = `
               className="review-image"
               id="shortandsweeet_2"
               onClick={[Function]}
-              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-            />
-          </div>
-          <div
-            className="modal-window"
-            onClick={[Function]}
-          >
-            <img
-              className="modal-content"
-              src=""
+              src="urlplaceholder/review_5_photo_number_2.jpg"
             />
           </div>
         </div>
@@ -646,17 +591,7 @@ exports[`Reviews component renders correctly 1`] = `
         </div>
         <div
           className="thumbnail-display"
-        >
-          <div
-            className="modal-window"
-            onClick={[Function]}
-          >
-            <img
-              className="modal-content"
-              src=""
-            />
-          </div>
-        </div>
+        />
         <div
           className="review-response"
         >
@@ -698,7 +633,7 @@ exports[`Reviews component renders correctly 1`] = `
         <div
           className="right-corner"
         >
-          alyshagilliard, July 24, 2020
+          alyshagilliard, July 23, 2020
         </div>
       </div>
       <h3
@@ -730,7 +665,7 @@ exports[`Reviews component renders correctly 1`] = `
               className="review-image"
               id="alyshagilliard_1"
               onClick={[Function]}
-              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+              src="urlplaceholder/review_5_photo_number_1.jpg"
             />
           </div>
           <div>
@@ -739,25 +674,7 @@ exports[`Reviews component renders correctly 1`] = `
               className="review-image"
               id="alyshagilliard_2"
               onClick={[Function]}
-              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-            />
-          </div>
-          <div>
-            <img
-              alt="Review photo 3 submitted by: alyshagilliard"
-              className="review-image"
-              id="alyshagilliard_3"
-              onClick={[Function]}
-              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
-            />
-          </div>
-          <div
-            className="modal-window"
-            onClick={[Function]}
-          >
-            <img
-              className="modal-content"
-              src=""
+              src="urlplaceholder/review_5_photo_number_2.jpg"
             />
           </div>
         </div>
