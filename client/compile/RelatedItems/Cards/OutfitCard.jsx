@@ -55,7 +55,6 @@ class OutfitCard extends React.Component {
   }
 }
 OutfitCard.propTypes = {
-  key: PropTypes.any,
   index: PropTypes.any,
   outfit_id: PropTypes.any,
   handleDelete: PropTypes.any,

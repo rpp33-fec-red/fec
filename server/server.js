@@ -26,7 +26,7 @@ app.get('/getData',function(request, response) {
       url+=`/${value}`;
     }
   });
-  url+='?';
+  // url+='?';
   Object.keys(request.query).forEach((param, index)=>{
     var value = request.query[param];
     if (param.includes('route') === false && param.includes('type') === false){
@@ -35,7 +35,7 @@ app.get('/getData',function(request, response) {
       } else {
         url+=`&${param}=${value}`;
       }
-  };
+    }
 
   });
 

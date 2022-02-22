@@ -16,7 +16,7 @@ class StarsComponent extends React.Component{
   }
   //props will be product id
   componentDidMount () {
-    this.getRating(64621);
+    this.getRating();
   }
 
   convertStar (rating) {
@@ -38,21 +38,21 @@ class StarsComponent extends React.Component{
     return ratingPercentage;
   }
 
-  getRating (id) {
-    //hardcode id 64622 to test but get not get data
-    model.getData(['reviews', `meta?product_id=${id}`,'' ], (data) => {
+  getRating () {
+    model.getData(['reviews', `meta?product_id=${this.props.product_id}` ], (data) => {
       const allRatings = data.results.ratings;
       console.log('allratings', data);
       let sum = 0;
       let count = 0;
       for (let val in allRatings) {
         sum += val * allRatings[val];
-        count += allRatings[val];
+        count += parseInt(allRatings[val]);
       }
       const rating = sum/count;
       const percentage = this.convertStar(rating);
-      console.log('percentage', percentage);
-      this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage});
+      this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage}, () => {
+        this.makeStars();
+      });
     });
   }
  
@@ -73,9 +73,9 @@ class StarsComponent extends React.Component{
   render (){
 
     return (<div className="starComponent" >
-      {this.props.product_id
+      {this.state.percentage === 0
         ? <div></div>
-        : <div>{this.makeStars()}</div> 
+        : <div>{this.getRating()}</div> 
       }
     </div>);
   }
