@@ -1,32 +1,17 @@
 
 .productCard {
     box-shadow : 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
     width: 15rem;
-    height: 26rem;
+    height: 30rem;
     margin-right: 1rem;
-    padding: 1rem;
-
-    img { 
-        display: block; 
-        width: 13rem;
-        height: 16rem;
-        padding: 1rem;
-    };
-
-    .category {
-        padding-left: 1rem;
-    }
-    
-    .name {
-        padding-left: 1rem;
-    }
-    
-    .default-price {
-        padding-left: 1rem;
-    }
-
+    padding: 1.5rem;
 }
+img { 
+    display: block; 
+    width: 13rem;
+    height: 16rem;
+    padding: 1rem;
+};
 
 .modal {
     position: fixed;

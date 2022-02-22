@@ -1,15 +1,14 @@
 import React from 'react';
-import Model from './model';
+import Model from './model.js';
+var model = new Model(false);
 import PropTypes from 'prop-types';
-
-const model = new Model(false);
 
 class StarsComponent extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       rating: 0,
-      percentage: 80
+      percentage: 0
     };
     this.convertStar = this.convertStar.bind(this);
     this.getRating = this.getRating.bind(this);
@@ -17,7 +16,7 @@ class StarsComponent extends React.Component{
   }
   //props will be product id
   componentDidMount () {
-    this.getRating();
+    this.getRating(64621);
   }
 
   convertStar (rating) {
@@ -27,11 +26,11 @@ class StarsComponent extends React.Component{
     if ( modulo >= 0 && modulo < 0.125) {
       ratingPercentage = int;
     } else if ( modulo >= 0.125 && modulo < 0.375 ) {
-      ratingPercentage = int + 0.35;
+      ratingPercentage = int + 0.25;
     } else if ( modulo >= 0.375 && modulo < 0.625 ) {
-      ratingPercentage = int + 0.45;
+      ratingPercentage = int + 0.5;
     } else if ( modulo >= 0.625 && modulo < 0.875 ) {
-      ratingPercentage = int + 0.55;
+      ratingPercentage = int + 0.75;
     } else {
       ratingPercentage = int + 1;
     }
@@ -39,10 +38,11 @@ class StarsComponent extends React.Component{
     return ratingPercentage;
   }
 
-  getRating () {
-    model.getData(['reviews', this.props.product_id, 'meta'], (data) => {
+  getRating (id) {
+    //hardcode id 64622 to test but get not get data
+    model.getData(['reviews', `meta?product_id=${id}`,'' ], (data) => {
       const allRatings = data.results.ratings;
-      console.log('allratings', allRatings);
+      console.log('allratings', data);
       let sum = 0;
       let count = 0;
       for (let val in allRatings) {
@@ -51,6 +51,7 @@ class StarsComponent extends React.Component{
       }
       const rating = sum/count;
       const percentage = this.convertStar(rating);
+      console.log('percentage', percentage);
       this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage});
     });
   }
@@ -58,21 +59,23 @@ class StarsComponent extends React.Component{
   makeStars(){
     let array =[];
     for(let i=0; i< 5; i++){
-      array.push(<svg key={i} className="star" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill='#D3D3D3'><g><rect fill="none" height="24" width="24" x="0"/><polygon points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"/></g></svg> );
+      array.push(<svg key={i} className="star" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill='#f8d448' ><g><rect fill="none" height="24" width="24" x="0"/><polygon points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" stroke='#646464'/></g></svg> );
     }
-    return array;
+
+    return (
+      <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
+        <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
+        <div className="starOverlay" style={{ "width": `${100-this.state.percentage}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1" }}></div>
+      </div>
+    );
   }
 
   render (){
 
     return (<div className="starComponent" >
-      {this.state.percentage === 0
+      {this.props.product_id
         ? <div></div>
-        : 
-        (<div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative"}}>
-          <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{this.makeStars()}</div>
-          <div className="starOverlay" style={{ "width": `${this.state.percentage}%`, "backgroundColor": "yellow", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1", "mixBlendMode": "color", "opacity": "unset" }}></div>
-        </div>)
+        : <div>{this.makeStars()}</div> 
       }
     </div>);
   }
@@ -80,7 +83,7 @@ class StarsComponent extends React.Component{
 }
 
 StarsComponent.propTypes = {
-  product_id: PropTypes.any 
+  product_id: PropTypes.any
 };
 
 export default StarsComponent;
