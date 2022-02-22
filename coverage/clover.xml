@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1645298029089" clover="3.2.0">
+  <project timestamp="1645298029089" name="All files">
+    <metrics statements="568" coveredstatements="131" conditionals="439" coveredconditionals="24" methods="299" coveredmethods="59" elements="1306" coveredelements="214" complexity="0" loc="568" ncloc="568" packages="20" files="45" classes="45"/>
+    <package name="fec">
+      <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="config.js" path="/Users/nick/Documents/HackReactor/senior/fec/config.js">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="webpack.config.js" path="/Users/nick/Documents/HackReactor/senior/fec/webpack.config.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile">
+      <metrics statements="20" coveredstatements="6" conditionals="6" coveredconditionals="1" methods="7" coveredmethods="1"/>
+      <file name="app.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/app.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+      </file>
+      <file name="model.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/model.js">
+        <metrics statements="15" coveredstatements="6" conditionals="6" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview">
+      <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+      <file name="overview.component.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/overview.component.js">
+        <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+      <file name="styleSelector.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/styleSelector.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="testdata.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/testdata.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.leftContainer">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="leftcontainer.component.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/leftContainer/leftcontainer.component.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.leftContainer.description">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="description.component.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/leftContainer/description/description.component.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.leftContainer.imageholder">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="imageholder.component.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/leftContainer/imageholder/imageholder.component.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.rightContainer">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="rightcontainer.component.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/rightContainer/rightcontainer.component.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Overview.rightContainer.productInfo">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="optionsselctor.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/rightContainer/productInfo/optionsselctor.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="textinfo.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Overview/rightContainer/productInfo/textinfo.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Questions">
+      <metrics statements="29" coveredstatements="10" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="3"/>
+      <file name="Questions.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/Questions.jsx">
+        <metrics statements="26" coveredstatements="7" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="3"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+      </file>
+      <file name="sampleData.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/sampleData.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Questions.modals">
+      <metrics statements="20" coveredstatements="12" conditionals="14" coveredconditionals="7" methods="11" coveredmethods="6"/>
+      <file name="AddAnswer.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/modals/AddAnswer.jsx">
+        <metrics statements="13" coveredstatements="6" conditionals="8" coveredconditionals="5" methods="6" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+      </file>
+      <file name="AddQuestion.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/modals/AddQuestion.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="UploadPhotos.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/modals/UploadPhotos.jsx">
+        <metrics statements="4" coveredstatements="3" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.Questions.subcomponents">
+      <metrics statements="98" coveredstatements="47" conditionals="50" coveredconditionals="12" methods="33" coveredmethods="15"/>
+      <file name="Answer.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/subcomponents/Answer.jsx">
+        <metrics statements="19" coveredstatements="10" conditionals="8" coveredconditionals="2" methods="7" coveredmethods="3"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="54" count="6" type="stmt"/>
+        <line num="55" count="6" type="stmt"/>
+        <line num="56" count="6" type="stmt"/>
+        <line num="57" count="6" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="63" count="3" type="stmt"/>
+      </file>
+      <file name="AnswerList.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/subcomponents/AnswerList.jsx">
+        <metrics statements="25" coveredstatements="18" conditionals="18" coveredconditionals="5" methods="8" coveredmethods="5"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="52" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+      </file>
+      <file name="Question.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/subcomponents/Question.jsx">
+        <metrics statements="25" coveredstatements="7" conditionals="11" coveredconditionals="1" methods="8" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+      </file>
+      <file name="QuestionButtons.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/subcomponents/QuestionButtons.jsx">
+        <metrics statements="20" coveredstatements="6" conditionals="11" coveredconditionals="3" methods="6" coveredmethods="2"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+      </file>
+      <file name="QuestionsList.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/subcomponents/QuestionsList.jsx">
+        <metrics statements="8" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+      <file name="SearchBar.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/Questions/subcomponents/SearchBar.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RatingsWidget.components">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="RatingsWidget.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/RatingsWidget.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RatingsWidget.components.Ratings">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="Ratings.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Ratings/Ratings.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="RatingsBreakdown.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Ratings/RatingsBreakdown.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="RatingsProductBreakdown.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Ratings/RatingsProductBreakdown.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="RatingsSummary.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Ratings/RatingsSummary.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RatingsWidget.components.Reviews">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <file name="AddReview.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Reviews/AddReview.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="ReviewTile.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Reviews/ReviewTile.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="Reviews.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Reviews/Reviews.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="ReviewsList.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Reviews/ReviewsList.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="ReviewsSorting.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RatingsWidget/components/Reviews/ReviewsSorting.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RelatedItems">
+      <metrics statements="35" coveredstatements="16" conditionals="10" coveredconditionals="4" methods="15" coveredmethods="6"/>
+      <file name="ComparisonModal.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RelatedItems/ComparisonModal.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="RelatedProducts.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RelatedItems/RelatedProducts.jsx">
+        <metrics statements="33" coveredstatements="15" conditionals="10" coveredconditionals="4" methods="14" coveredmethods="6"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RelatedItems.Cards">
+      <metrics statements="18" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="4"/>
+      <file name="OutfitCard.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RelatedItems/Cards/OutfitCard.jsx">
+        <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+      </file>
+      <file name="ProductCard.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RelatedItems/Cards/ProductCard.jsx">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.compile.RelatedItems.Carousels">
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="OutfitCarousel.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RelatedItems/Carousels/OutfitCarousel.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="ProductCarousel.jsx" path="/Users/nick/Documents/HackReactor/senior/fec/client/compile/RelatedItems/Carousels/ProductCarousel.jsx">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.client.public">
+      <metrics statements="133" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="116" coveredmethods="0"/>
+      <file name="bundle.js" path="/Users/nick/Documents/HackReactor/senior/fec/client/public/bundle.js">
+        <metrics statements="133" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="116" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="161" count="0" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="193" count="0" type="stmt"/>
+        <line num="204" count="0" type="stmt"/>
+        <line num="215" count="0" type="stmt"/>
+        <line num="226" count="0" type="stmt"/>
+        <line num="237" count="0" type="stmt"/>
+        <line num="248" count="0" type="stmt"/>
+        <line num="259" count="0" type="stmt"/>
+        <line num="270" count="0" type="stmt"/>
+        <line num="281" count="0" type="stmt"/>
+        <line num="292" count="0" type="stmt"/>
+        <line num="303" count="0" type="stmt"/>
+        <line num="314" count="0" type="stmt"/>
+        <line num="325" count="0" type="stmt"/>
+        <line num="336" count="0" type="stmt"/>
+        <line num="347" count="0" type="stmt"/>
+        <line num="358" count="0" type="stmt"/>
+        <line num="369" count="0" type="stmt"/>
+        <line num="380" count="0" type="stmt"/>
+        <line num="391" count="0" type="stmt"/>
+        <line num="402" count="0" type="stmt"/>
+        <line num="413" count="0" type="stmt"/>
+        <line num="424" count="0" type="stmt"/>
+        <line num="435" count="0" type="stmt"/>
+        <line num="446" count="0" type="stmt"/>
+        <line num="457" count="0" type="stmt"/>
+        <line num="468" count="0" type="stmt"/>
+        <line num="479" count="0" type="stmt"/>
+        <line num="490" count="0" type="stmt"/>
+        <line num="501" count="0" type="stmt"/>
+        <line num="512" count="0" type="stmt"/>
+        <line num="523" count="0" type="stmt"/>
+        <line num="534" count="0" type="stmt"/>
+        <line num="545" count="0" type="stmt"/>
+        <line num="556" count="0" type="stmt"/>
+        <line num="567" count="0" type="stmt"/>
+        <line num="578" count="0" type="stmt"/>
+        <line num="589" count="0" type="stmt"/>
+        <line num="600" count="0" type="stmt"/>
+        <line num="611" count="0" type="stmt"/>
+        <line num="622" count="0" type="stmt"/>
+        <line num="633" count="0" type="stmt"/>
+        <line num="644" count="0" type="stmt"/>
+        <line num="655" count="0" type="stmt"/>
+        <line num="666" count="0" type="stmt"/>
+        <line num="677" count="0" type="stmt"/>
+        <line num="688" count="0" type="stmt"/>
+        <line num="699" count="0" type="stmt"/>
+        <line num="710" count="0" type="stmt"/>
+        <line num="721" count="0" type="stmt"/>
+        <line num="732" count="0" type="stmt"/>
+        <line num="743" count="0" type="stmt"/>
+        <line num="754" count="0" type="stmt"/>
+        <line num="765" count="0" type="stmt"/>
+        <line num="776" count="0" type="stmt"/>
+        <line num="787" count="0" type="stmt"/>
+        <line num="798" count="0" type="stmt"/>
+        <line num="808" count="0" type="stmt"/>
+        <line num="819" count="0" type="stmt"/>
+        <line num="830" count="0" type="stmt"/>
+        <line num="841" count="0" type="stmt"/>
+        <line num="852" count="0" type="stmt"/>
+        <line num="863" count="0" type="stmt"/>
+        <line num="874" count="0" type="stmt"/>
+        <line num="885" count="0" type="stmt"/>
+        <line num="896" count="0" type="stmt"/>
+        <line num="907" count="0" type="stmt"/>
+        <line num="918" count="0" type="stmt"/>
+        <line num="929" count="0" type="stmt"/>
+        <line num="940" count="0" type="stmt"/>
+        <line num="951" count="0" type="stmt"/>
+        <line num="962" count="0" type="stmt"/>
+        <line num="973" count="0" type="stmt"/>
+        <line num="984" count="0" type="stmt"/>
+        <line num="995" count="0" type="stmt"/>
+        <line num="1006" count="0" type="stmt"/>
+        <line num="1017" count="0" type="stmt"/>
+        <line num="1028" count="0" type="stmt"/>
+        <line num="1039" count="0" type="stmt"/>
+        <line num="1050" count="0" type="stmt"/>
+        <line num="1061" count="0" type="stmt"/>
+        <line num="1072" count="0" type="stmt"/>
+        <line num="1083" count="0" type="stmt"/>
+        <line num="1094" count="0" type="stmt"/>
+        <line num="1105" count="0" type="stmt"/>
+        <line num="1116" count="0" type="stmt"/>
+        <line num="1127" count="0" type="stmt"/>
+        <line num="1138" count="0" type="stmt"/>
+        <line num="1149" count="0" type="stmt"/>
+        <line num="1156" count="0" type="stmt"/>
+        <line num="1161" count="0" type="stmt"/>
+        <line num="1162" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="1163" count="0" type="stmt"/>
+        <line num="1166" count="0" type="stmt"/>
+        <line num="1173" count="0" type="stmt"/>
+        <line num="1176" count="0" type="stmt"/>
+        <line num="1181" count="0" type="stmt"/>
+        <line num="1183" count="0" type="stmt"/>
+        <line num="1184" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="1185" count="0" type="stmt"/>
+        <line num="1186" count="0" type="stmt"/>
+        <line num="1187" count="0" type="stmt"/>
+        <line num="1188" count="0" type="stmt"/>
+        <line num="1193" count="0" type="stmt"/>
+        <line num="1195" count="0" type="stmt"/>
+        <line num="1196" count="0" type="stmt"/>
+        <line num="1197" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="1198" count="0" type="stmt"/>
+        <line num="1205" count="0" type="stmt"/>
+        <line num="1206" count="0" type="stmt"/>
+        <line num="1210" count="0" type="stmt"/>
+        <line num="1212" count="0" type="stmt"/>
+        <line num="1213" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="1214" count="0" type="stmt"/>
+        <line num="1216" count="0" type="stmt"/>
+        <line num="1225" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.coverage.lcov-report">
+      <metrics statements="120" coveredstatements="0" conditionals="329" coveredconditionals="0" methods="54" coveredmethods="0"/>
+      <file name="block-navigation.js" path="/Users/nick/Documents/HackReactor/senior/fec/coverage/lcov-report/block-navigation.js">
+        <metrics statements="30" coveredstatements="0" conditionals="19" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+      </file>
+      <file name="prettify.js" path="/Users/nick/Documents/HackReactor/senior/fec/coverage/lcov-report/prettify.js">
+        <metrics statements="1" coveredstatements="0" conditionals="286" coveredconditionals="0" methods="29" coveredmethods="0"/>
+        <line num="2" count="0" type="cond" truecount="0" falsecount="286"/>
+      </file>
+      <file name="sorter.js" path="/Users/nick/Documents/HackReactor/senior/fec/coverage/lcov-report/sorter.js">
+        <metrics statements="89" coveredstatements="0" conditionals="24" coveredconditionals="0" methods="19" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="111" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="119" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="146" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="154" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
+        <line num="160" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="161" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="165" count="0" type="stmt"/>
+        <line num="166" count="0" type="stmt"/>
+        <line num="167" count="0" type="stmt"/>
+        <line num="170" count="0" type="stmt"/>
+        <line num="171" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="174" count="0" type="stmt"/>
+        <line num="175" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="176" count="0" type="stmt"/>
+        <line num="178" count="0" type="stmt"/>
+        <line num="184" count="0" type="stmt"/>
+        <line num="185" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="186" count="0" type="stmt"/>
+        <line num="188" count="0" type="stmt"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="190" count="0" type="stmt"/>
+        <line num="191" count="0" type="stmt"/>
+        <line num="192" count="0" type="stmt"/>
+        <line num="196" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="fec.server">
+      <metrics statements="46" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <file name="server.js" path="/Users/nick/Documents/HackReactor/senior/fec/server/server.js">
+        <metrics statements="46" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
