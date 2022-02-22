@@ -38,13 +38,24 @@ class QuestionsWidget extends React.Component {
             return b.question_helpfulness - a.question_helpfulness;
           });
           console.log('sorted', sorted);
-          this.setState({
-            queriedQuestions: sorted,
-            questionsData: sorted
-          });
+          if (sorted.length < 3) {
+            this.setState({
+              allQuestionsDisplayed: true,
+              queriedQuestions: sorted,
+              questionsData: sorted
+            });
+          } else {
+            this.setState({
+              allQuestionsDisplayed: false,
+              queriedQuestions: sorted,
+              questionsData: sorted
+            });
+          }
         } else {
           this.setState({
-            questionsData: []
+            allQuestionsDisplayed: true,
+            questionsData: [],
+            queriedQuestions: []
           });
         }
       })

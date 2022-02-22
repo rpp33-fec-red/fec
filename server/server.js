@@ -44,6 +44,7 @@ app.get('/getData',function(request, response) {
   });
 });
 
+
 app.post('/getQuestions', (req, res) => {
   let url = options.APIURL + req.body.endpoint;
   let config = {
@@ -72,9 +73,9 @@ app.post('/postData', (req, res) => {
     params: req.body.params
   };
   axios.post(url, data, config)
-    .then(function(response) {
+    .then(function() {
       console.log('Status 201 CREATED');
-      res.send(response);
+      res.send();
     })
     .catch(function(error) {
       console.log(error);
