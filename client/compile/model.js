@@ -32,7 +32,7 @@ class Model {
         callback = arguments[key];
       }
     });
-    console.log(type,routes,params,callback);
+    // console.log(type,routes,params,callback);
 
     if (Array.isArray(routes)) {
       var url = this.url + `getData?`;
