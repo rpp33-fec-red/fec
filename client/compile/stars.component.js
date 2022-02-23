@@ -41,7 +41,6 @@ class StarsComponent extends React.Component{
   getRating () {
     model.getData(['reviews', `meta?product_id=${this.props.product_id}` ], (data) => {
       const allRatings = data.results.ratings;
-      console.log('allratings', data);
       let sum = 0;
       let count = 0;
       for (let val in allRatings) {
