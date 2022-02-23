@@ -26,11 +26,11 @@ class StarsComponent extends React.Component{
     if ( modulo >= 0 && modulo < 0.125) {
       ratingPercentage = int;
     } else if ( modulo >= 0.125 && modulo < 0.375 ) {
-      ratingPercentage = int + 0.25;
+      ratingPercentage = int + 0.35;
     } else if ( modulo >= 0.375 && modulo < 0.625 ) {
-      ratingPercentage = int + 0.5;
+      ratingPercentage = int + 0.45;
     } else if ( modulo >= 0.625 && modulo < 0.875 ) {
-      ratingPercentage = int + 0.75;
+      ratingPercentage = int + 0.55;
     } else {
       ratingPercentage = int + 1;
     }
@@ -50,9 +50,10 @@ class StarsComponent extends React.Component{
       }
       const rating = sum/count;
       const percentage = this.convertStar(rating);
-      this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage}, () => {
-        this.makeStars();
-      });
+      if (percentage !== 0) {
+        this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage});
+      }
+      
     });
   }
  
@@ -66,6 +67,7 @@ class StarsComponent extends React.Component{
       <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
         <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
         <div className="starOverlay" style={{ "width": `${100-this.state.percentage}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1" }}></div>
+        
       </div>
     );
   }
@@ -75,7 +77,7 @@ class StarsComponent extends React.Component{
     return (<div className="starComponent" >
       {this.state.percentage === 0
         ? <div></div>
-        : <div>{this.getRating()}</div> 
+        : <div>{this.makeStars()}</div> 
       }
     </div>);
   }
