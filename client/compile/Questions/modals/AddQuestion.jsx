@@ -8,8 +8,8 @@ class AddQuestionModal extends React.Component {
 
   render() {
     return (
-      <div className="modal" id="add-question-modal">
-        <div className="modal-content">
+      <div className="questions-modals" id="add-question-modal">
+        <div className="questions-modals-content">
           <a className="close-modal" onClick={this.props.close}>X</a>
           <h2>Ask Your Question</h2>
           <h3>About the {this.props.product_name}</h3>

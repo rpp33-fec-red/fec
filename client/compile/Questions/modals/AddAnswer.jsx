@@ -40,8 +40,8 @@ class AddAnswerModal extends React.Component {
 
   render() {
     return (
-      <div className="modal" id="add-answer-modal">
-        <div className="modal-content">
+      <div className="questions-modals" id="add-answer-modal">
+        <div className="questions-modals-content">
           <a className="close-modal" onClick={this.props.close}>X</a>
           <h2>Submit your Answer</h2>
           <h3>{this.props.product_name}: {this.props.question}</h3>
