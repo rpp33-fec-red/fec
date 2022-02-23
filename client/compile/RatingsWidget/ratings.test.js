@@ -10,7 +10,7 @@ import {render, fireEvent} from '@testing-library/react';
 import RatingsWidget from './RatingsWidget.js';
 import Ratings from './Ratings/Ratings.js';
 import Reviews from './Reviews/Reviews.js';
-import ReviewTile from './ReviewTile.js';
+import ReviewTile from './Reviews/ReviewTile.js';
 import reviewsData from './sample_data.js';
 import '@testing-library/jest-dom';
 
