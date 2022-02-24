@@ -155,5 +155,27 @@ describe('ReviewTile component', () => {
     });
   });
 
+  // the list should display two tiles at a time
+  test('reviews list contains two reviews by default when there are only two reviews for a product', () => {
+
+  });
+
+  // if there are more than two reviews, the reviews button should show
+  test('more reviews button shows when there are more than two reviews for a product', () => {
+
+  });
+
+  // if there are 2 or less reviews for the product, the reviews button should not exist
+  test('more reviews button does not appear when there are two or less reviews', () => {
+
+  });
+
+  // two additional reviews should appear if more reviews button is clicked
+  test('two additional reviews appear if more reviews button is clicked', () => {
+
+  });
+
+  // if no reviews are submitted for the product, the list should collapse and there will be a add review button
+
 });
 
