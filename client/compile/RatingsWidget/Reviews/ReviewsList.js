@@ -56,9 +56,9 @@ class ReviewsList extends React.Component {
 
     return (
       <>
+        <ReviewsSorting/>
 
         <div className ="reviews-list">
-          <ReviewsSorting/>
           {reviews.map((review) => {
             return <ReviewTile key={review.review_id} review={review}/>;
           })}
