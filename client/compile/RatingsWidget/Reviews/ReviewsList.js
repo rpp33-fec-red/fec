@@ -55,16 +55,21 @@ class ReviewsList extends React.Component {
     }
 
     return (
-      <div className ="reviews-list">
-        <ReviewsSorting/>
-        {reviews.map((review) => {
-          return <ReviewTile key={review.review_id} review={review}/>;
-        })}
+      <>
+
+        <div className ="reviews-list">
+          <ReviewsSorting/>
+          {reviews.map((review) => {
+            return <ReviewTile key={review.review_id} review={review}/>;
+          })}
+        </div>
+
         <div className ="reviews-buttons">
           {moreReviewsButton}
-          <button>ADD A REVIEW +</button>
+          <button>ADD A REVIEW +< /button>
         </div>
-      </div>
+
+      </>
     );
   }
 }
