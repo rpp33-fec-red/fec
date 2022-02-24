@@ -161,17 +161,19 @@ describe('ReviewTile component', () => {
 });
 
 describe('ReviewsList component', () => {
-
+  const testReview = reviewsData.results;
   test('renders correctly', () => {
     const tree = renderer
-      .create(<ReviewsList/>)
+      .create(<ReviewsList reviews={testReview}/>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   // the list should display two tiles at a time
   test('reviews list contains two reviews by default when there are only two reviews for a product', () => {
-
+    let testReview = reviewsData.results;
+    const {getAllByText} = render(<ReviewsList reviews={testReview}/>);
+    expect(getAllByText(/Helpful?\w/)).toHaveLength(2);
   });
 
   // if there are more than two reviews, the reviews button should show
