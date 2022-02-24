@@ -11,6 +11,7 @@ import RatingsWidget from './RatingsWidget.js';
 import Ratings from './Ratings/Ratings.js';
 import Reviews from './Reviews/Reviews.js';
 import ReviewTile from './Reviews/ReviewTile.js';
+import ReviewsList from './Reviews/ReviewsList.js';
 import reviewsData from './sample_data.js';
 import '@testing-library/jest-dom';
 
@@ -153,6 +154,19 @@ describe('ReviewTile component', () => {
     expect(() => {
       getByAltText(`Close-up of review photo ${testReview.photos[0].id} submitted by: ${testReview.reviewer_name}`).toThrow();
     });
+  });
+
+
+
+});
+
+describe('ReviewsList component', () => {
+
+  test('renders correctly', () => {
+    const tree = renderer
+      .create(<ReviewsList/>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   // the list should display two tiles at a time
