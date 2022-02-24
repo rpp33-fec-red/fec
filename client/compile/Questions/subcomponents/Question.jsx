@@ -104,10 +104,10 @@ class Question extends React.Component {
             close={this.closeModal}
           />
         }
-        <div className="questionTitle">
+        <div className="question-title">
           <p className="question-body">Q: {this.props.question.question_body}</p>
-          <div className="questionLinks">
-            <p>Helpful?&nbsp;
+          <div className="question-links">
+            <p >Helpful?&nbsp;
               <a className="question-link" onClick={this.handleHelpfulnessVote}>Yes</a>
               &nbsp;({this.state.helpfulnessVoteCount})&nbsp;|&nbsp;
               <a className="question-link" onClick={this.handleAddAnswer}>Add Answer</a>
