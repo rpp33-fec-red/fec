@@ -43,7 +43,7 @@ class OutfitCard extends React.Component {
           value={this.state.id}
           onClick={this.props.handleDelete}
         >X</button>
-        <img src={this.state.photo} />
+        <img src={this.state.photo} alt="Photo" className="productImage"/>
         <p className="category" ></p>
         <a
           className={`cardtitle ${this.props.outfit_id}`}
