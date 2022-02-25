@@ -12,6 +12,7 @@ import Ratings from './Ratings/Ratings.js';
 import Reviews from './Reviews/Reviews.js';
 import ReviewTile from './Reviews/ReviewTile.js';
 import ReviewsList from './Reviews/ReviewsList.js';
+import ReviewsSorting from './Reviews/ReviewsSorting.js';
 import reviewsData from './sample_data.js';
 import '@testing-library/jest-dom';
 
@@ -219,3 +220,13 @@ describe('ReviewsList component', () => {
 
 });
 
+describe('ReviewsSorting component', () => {
+
+  test('renders correctly', () => {
+    const tree = renderer
+      .create(<ReviewsSorting reviews={reviewsData.results}/>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+});
