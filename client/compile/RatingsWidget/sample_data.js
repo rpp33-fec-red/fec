@@ -62,7 +62,7 @@ var reviewsData = {
       ]
     },
     {
-      "review_id": 5,
+      "review_id": 6,
       "rating": 3,
       "summary": "I'm enjoying wearing these shades because they block the sun from my eyes and they are stylish.",
       "recommend": true,
@@ -87,7 +87,7 @@ var reviewsData = {
       ]
     },
     {
-      "review_id": 6,
+      "review_id": 7,
       "rating": 3,
       "summary": "I'm enjoying wearing these shades because they block the sun from my eyes and they are stylish.",
       "recommend": true,

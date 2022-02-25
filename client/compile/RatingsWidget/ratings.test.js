@@ -212,10 +212,11 @@ describe('ReviewsList component', () => {
 
   // two additional reviews should appear if more reviews button is clicked
   test('two additional reviews appear if more reviews button is clicked', () => {
-
+    let testReview = reviewsData.results;
+    const {getByRole, getAllByText} = render(<ReviewsList reviews={testReview}/>);
+    fireEvent.click(getByRole('button', {name: "MORE REVIEWS"}));
+    expect(getAllByText(/Helpful?\w/)).toHaveLength(4);
   });
-
-  // if no reviews are submitted for the product, the list should collapse and there will be a add review button
 
 });
 
