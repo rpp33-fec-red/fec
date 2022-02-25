@@ -40,7 +40,7 @@ class StarsComponent extends React.Component{
 
   getRating () {
     model.getData(['reviews', `meta?product_id=${this.props.product_id}` ], (data) => {
-      const allRatings = data.results.ratings;
+      const allRatings = data.results.ratings;     
       let sum = 0;
       let count = 0;
       for (let val in allRatings) {
@@ -50,7 +50,7 @@ class StarsComponent extends React.Component{
       const rating = sum/count;
       const percentage = this.convertStar(rating);
       if (percentage !== 0) {
-        this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage});
+        this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage}, ()=>{console.log('this.state.percentage', this.state.percentage);});
       }
       
     });
@@ -74,7 +74,7 @@ class StarsComponent extends React.Component{
   render (){
 
     return (<div className="starComponent" >
-      {this.state.percentage === 0
+      {this.state.percentage === 0 || !this.state.percentage
         ? <div></div>
         : <div>{this.makeStars()}</div> 
       }
