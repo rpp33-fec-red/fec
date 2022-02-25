@@ -167,7 +167,6 @@ describe('ReviewsList component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  // the list should display two tiles at a time
   test('reviews list contains two reviews by default when there are only two reviews for a product', () => {
     let testReview = reviewsData.results;
     const {getAllByText} = render(<ReviewsList reviews={testReview}/>);
@@ -181,7 +180,7 @@ describe('ReviewsList component', () => {
     expect(getByRole('button', {name: "MORE REVIEWS"})).toBeInTheDocument();
   });
 
-  // if there are 2 or less reviews for the product, the reviews button should not exist
+
   test('more reviews button does not appear when there are two or less reviews', () => {
     let testReview = [{
       "review_id": 5,
@@ -210,7 +209,7 @@ describe('ReviewsList component', () => {
     });
   });
 
-  // two additional reviews should appear if more reviews button is clicked
+
   test('two additional reviews appear if more reviews button is clicked', () => {
     let testReview = reviewsData.results;
     const {getByRole, getAllByText} = render(<ReviewsList reviews={testReview}/>);
