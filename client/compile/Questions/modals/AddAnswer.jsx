@@ -43,8 +43,8 @@ class AddAnswerModal extends React.Component {
       <div className="questions-modals" id="add-answer-modal">
         <div className="questions-modals-content">
           <a className="close-modal" onClick={this.props.close}>X</a>
-          <h2>Submit your Answer</h2>
-          <h3>{this.props.product_name}: {this.props.question}</h3>
+          <h4 className="modal-title">SUBMIT YOUR ANSWER</h4>
+          <h4 className="modal-subtitle">{this.props.product_name}: {this.props.question}</h4>
           <form className="add-answer-form" onSubmit={this.props.submit} >
             <div className="modal-form">
               <label>Your Answer*</label>
@@ -53,16 +53,16 @@ class AddAnswerModal extends React.Component {
             <div className="modal-form">
               <label>What is your nickname*</label>
               <input type="text" maxLength="60" placeholder="Example: jack543!" name="nickname"></input>
-              <p>For privacy reasons, do not use your full name or email address</p>
+              <p className="modal-warning">For privacy reasons, do not use your full name or email address</p>
             </div>
             <div className="modal-form">
               <label>Your email*</label>
               <input type="email" maxLength="60" placeholder="Example: jack@email.com" name="email"></input>
-              <p>For authentication reasons, you will not be emailed</p>
+              <p className="modal-warning">For authentication reasons, you will not be emailed</p>
             </div>
             <div className="modal-form">
               {(this.state.photoCount < 5) &&
-                <input type="button" name="photos" onClick={this.handlePhotoUploadModal} value="Upload Photos"/>
+                <input className="submit-modal"type="button" name="photos" onClick={this.handlePhotoUploadModal} value="UPLOAD PHOTOS"/>
               }
             </div>
             {(this.state.photoCount > 0) &&
@@ -70,10 +70,14 @@ class AddAnswerModal extends React.Component {
                 <p key={photo}>{photo}</p>
               )}
             <div className="modal-form">
-              <input type="submit" value="Submit answer"/>
+              <input className="submit-modal" type="submit" value="SUBMIT ANSWER"/>
             </div>
             {this.props.missing &&
-              <p>You must enter the following: {this.props.missing}</p>
+              <p className="modal-alert">You must enter the following:
+                <span className="modal-alert-fields">
+                  {this.props.missing}
+                </span>
+              </p>
             }
           </form>
           {this.state.showUploadPhotosModal &&
@@ -94,7 +98,7 @@ AddAnswerModal.propTypes = {
   product_name: PropTypes.string,
   missing: PropTypes.string,
   close: PropTypes.func,
-  question: PropTypes.object,
+  question: PropTypes.string,
   submit: PropTypes.func
 };
 

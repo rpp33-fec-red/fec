@@ -109,7 +109,7 @@ class QuestionsWidget extends React.Component {
   render() {
     return (
       <div className="questions-widget">
-        <h6>QUESTIONS &amp; ANSWERS</h6>
+        <h4 className="questions-title">QUESTIONS &amp; ANSWERS</h4>
         <SearchBar search={this.handleSearch}/>
         <QuestionsList
           questions={this.state.queriedQuestions}

@@ -67,7 +67,7 @@ class Answer extends React.Component {
       <div className="answer">
         <p className="answer-title">{this.props.answer.body}</p>
         <div className="answer-links">
-          <p>by
+          <p className="answerer-details">by
             <span className={(this.props.answer.answerer_name === 'Seller') ? 'answerer-seller' : 'answerer-other'}>
               &nbsp;{this.props.answer.answerer_name}
             </span>
