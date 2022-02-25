@@ -50,7 +50,7 @@ class StarsComponent extends React.Component{
       const rating = sum/count;
       const percentage = this.convertStar(rating);
       if (percentage !== 0) {
-        this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage}, ()=>{console.log('this.state.percentage', this.state.percentage);});
+        this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage});
       }
       
     });
