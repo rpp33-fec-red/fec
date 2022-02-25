@@ -11,16 +11,16 @@ class UploadPhotosModal extends React.Component {
 
       <div className="questions-modals" id="upload-photo-modal">
         <div className="questions-modals-content">
-          <a className="close-window" onClick={this.props.close}>X</a>
-          <h3>Upload Photos for {this.props.product_name}</h3>
+          <a className="close-modal" onClick={this.props.close}>X</a>
+          <h4 className="modal-title">Upload Photos for {this.props.product_name}</h4>
           {(this.props.photos.photoCount < 5) &&
-            <form onSubmit={this.props.selectPhoto}>
-              <div>
+            <form className="upload-photos-form" onSubmit={this.props.selectPhoto}>
+              <div className="modal-form">
                 <label htmlFor="photo-upload">Choose photo to upload</label>
                 <input type="file" id="upload-answer-photo" accept="image/png, image/jpeg" name="photoUpload"></input>
               </div>
               <div>
-                <input type="submit" value="Upload Photo"/>
+                <input className="submit-modal" type="submit" value="Upload Photo"/>
               </div>
             </form>
           }
@@ -30,7 +30,7 @@ class UploadPhotosModal extends React.Component {
             )}
           </div>
           {(this.props.photos.photoCount > 0) &&
-            <button onClick={this.props.close}>Submit Photos</button>
+            <button className="submit-modal" onClick={this.props.close}>SUBMIT PHOTOS</button>
           }
         </div>
       </div>

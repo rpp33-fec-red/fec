@@ -79,9 +79,9 @@ class QuestionButtons extends React.Component {
           />
         }
         {(!this.props.allQuestionsDisplayed) &&
-          <button onClick={this.props.displayMore}>MORE ANSWERED QUESTIONS</button>
+          <button className="more-question-button" onClick={this.props.displayMore}>MORE ANSWERED QUESTIONS</button>
         }
-        <button onClick={this.handleAddQuestion} missing={this.state.missingFields}>ADD A QUESTION +</button>
+        <button className="add-question-button" onClick={this.handleAddQuestion} missing={this.state.missingFields}>ADD A QUESTION +</button>
       </div>
     );
   }
