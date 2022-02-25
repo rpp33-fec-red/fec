@@ -29,7 +29,7 @@ class Main extends React.Component {
         <Overview getProducts={model.getData} id={this.state.productID}/>
         <RelatedProducs getData={model.getData} />
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
-        <RatingsWidget/>
+        <RatingsWidget getReviews={model.getData}/>
       </div>);
   }
 }
