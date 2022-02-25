@@ -26,10 +26,6 @@ class RatingsWidget extends React.Component {
     this.getReviews();
   }
 
-  componentDidUpdate (prevProps, prevState) {
-
-  }
-
 
   getReviews() {
     const that = this;
