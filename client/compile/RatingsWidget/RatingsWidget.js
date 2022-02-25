@@ -23,35 +23,42 @@ class RatingsWidget extends React.Component {
   }
 
   componentDidMount () {
-    this.getReviews((reviews) => {
-      this.setState({
-        reviews: reviews
-      });
-    });
+    this.getReviews();
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+
   }
 
 
-  getReviews(callback) {
-    const productID = '64621';
-    this.props.getReviews([`reviews?product_id=${productID}%26sort=${this.state.sortedBy}`, ``, ''], function(data) {
+  getReviews() {
+    const that = this;
+    const productID = '64620';
+    const count = 10;
+    this.props.getReviews([`reviews?product_id=${productID}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
       if (data.results){
-        callback(data.results.results);
+        that.setState({
+          reviews: data.results.results
+        });
       }
     });
   }
 
+
   updateSorting (event) {
     event.preventDefault();
     const sortedBy = event.target.value;
-    console.log(sortedBy);
     this.setState({
       sortedBy: sortedBy
+    }, () => {
+      this.getReviews();
     });
   }
 
 
   render () {
     const reviews = this.state.reviews;
+    console.log('ratingswidget', reviews);
     return (
       <div className="ratings-and-reviews">
         <Ratings/>
