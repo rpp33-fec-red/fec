@@ -54,7 +54,6 @@ class RatingsWidget extends React.Component {
 
   render () {
     const reviews = this.state.reviews;
-    console.log('ratingswidget', reviews);
     return (
       <div className="ratings-and-reviews">
         <Ratings/>

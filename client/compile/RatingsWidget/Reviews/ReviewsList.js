@@ -54,7 +54,7 @@ class ReviewsList extends React.Component {
     } else {
       reviews = this.state.reviewsDisplayed;
     }
-    console.log(this.props.reviews);
+
     let moreReviewsButton;
     // shows more reviews button only when all reviews are not showing
     if (this.state.reviewsDisplayed.length !== this.props.reviews.length) {
