@@ -8,7 +8,7 @@ class RatingsWidget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortedBy: 'relevance',
+      sortedBy: 'relevant',
       filteredBy: {
         oneStar: false,
         twoStar: false,

@@ -7,8 +7,8 @@ function ReviewsSorting (props) {
     <div className ="reviews-sorting">
       <label htmlFor="sorting-option">{props.numOfReviews} reviews, sorted by </label>
       <select name="sorting-option">
-        <option value="relevance">relevance</option>
-        <option value="helpfulness">helpfuness</option>
+        <option value="relevance">relevant</option>
+        <option value="helpfulness">helpful</option>
         <option value="newest">newest</option>
       </select>
     </div>
