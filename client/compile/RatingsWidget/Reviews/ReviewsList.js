@@ -12,17 +12,20 @@ class ReviewsList extends React.Component {
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
   }
 
-  componentDidMount() {
-    console.log('reviews list:', this.props.reviews);
-    if (this.props.reviews.length > 2) {
-      const reviews = this.props.reviews.slice(0, 2);
-      this.setState({
-        reviewsDisplayed: reviews
-      });
-    } else {
-      this.setState({
-        reviewsDisplayed: this.props.reviews
-      });
+  componentDidUpdate(prevProps) {
+    const previousProps = prevProps.reviews.toString();
+    const currentProps = this.props.reviews.toString();
+    if (previousProps !== currentProps) {
+      if (this.props.reviews.length > 2) {
+        const reviews = this.props.reviews.slice(0, 2);
+        this.setState({
+          reviewsDisplayed: reviews
+        });
+      } else {
+        this.setState({
+          reviewsDisplayed: this.props.reviews
+        });
+      }
     }
   }
 
@@ -51,7 +54,7 @@ class ReviewsList extends React.Component {
     } else {
       reviews = this.state.reviewsDisplayed;
     }
-    console.log('here are the reviews', this.props.reviews);
+
     let moreReviewsButton;
     // shows more reviews button only when all reviews are not showing
     if (this.state.reviewsDisplayed.length !== this.props.reviews.length) {
