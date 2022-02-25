@@ -63,7 +63,7 @@ class ReviewsList extends React.Component {
 
     return (
       <>
-        <ReviewsSorting numOfReviews={this.props.reviews.length}/>
+        <ReviewsSorting numOfReviews={this.props.reviews.length} updateSorting={this.props.updateSorting}/>
 
         <div className ="reviews-list">
           {reviews.map((review) => {
@@ -82,7 +82,8 @@ class ReviewsList extends React.Component {
 }
 
 ReviewsList.propTypes = {
-  reviews: PropTypes.any
+  reviews: PropTypes.any,
+  updateSorting: PropTypes.any
 };
 
 

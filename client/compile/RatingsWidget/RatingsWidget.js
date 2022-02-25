@@ -19,6 +19,7 @@ class RatingsWidget extends React.Component {
       reviews: []
     };
     this.getReviews = this.getReviews.bind(this);
+    this.updateSorting = this.updateSorting.bind(this);
   }
 
   componentDidMount () {
@@ -39,13 +40,22 @@ class RatingsWidget extends React.Component {
     });
   }
 
+  updateSorting (event) {
+    event.preventDefault();
+    const sortedBy = event.target.value;
+    console.log(sortedBy);
+    this.setState({
+      sortedBy: sortedBy
+    });
+  }
+
 
   render () {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
         <Ratings/>
-        <Reviews reviews={reviews} />
+        <Reviews reviews={reviews} updateSorting={this.updateSorting}/>
       </div>
     );
   }
