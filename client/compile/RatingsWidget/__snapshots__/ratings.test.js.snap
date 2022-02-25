@@ -103,36 +103,36 @@ exports[`RatingsWidget component renders correctly 1`] = `
     className="reviews"
   >
     <div
+      className="reviews-sorting"
+    >
+      <label
+        htmlFor="sorting-option"
+      >
+        238 reviews, sorted by 
+      </label>
+      <select
+        name="sorting-option"
+      >
+        <option
+          value="relevance"
+        >
+          relevance
+        </option>
+        <option
+          value="helpfulness"
+        >
+          helpfuness
+        </option>
+        <option
+          value="newest"
+        >
+          newest
+        </option>
+      </select>
+    </div>
+    <div
       className="reviews-list"
     >
-      <div
-        className="reviews-sorting"
-      >
-        <label
-          htmlFor="sorting-option"
-        >
-          238 reviews, sorted by 
-        </label>
-        <select
-          name="sorting-option"
-        >
-          <option
-            value="relevance"
-          >
-            relevance
-          </option>
-          <option
-            value="helpfulness"
-          >
-            helpfuness
-          </option>
-          <option
-            value="newest"
-          >
-            newest
-          </option>
-        </select>
-      </div>
       <div
         className="review-tile"
       >
@@ -174,7 +174,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
                 className="review-image"
                 id="shortandsweeet_1"
                 onClick={[Function]}
-                src="urlplaceholder/review_5_photo_number_1.jpg"
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
               />
             </div>
             <div>
@@ -183,7 +183,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
                 className="review-image"
                 id="shortandsweeet_2"
                 onClick={[Function]}
-                src="urlplaceholder/review_5_photo_number_2.jpg"
+                src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
               />
             </div>
           </div>
@@ -271,92 +271,13 @@ exports[`RatingsWidget component renders correctly 1`] = `
           </div>
         </div>
       </div>
-      <div
-        className="review-tile"
-      >
-        <div
-          className="review-header"
-        >
-          <div
-            className="star-rating"
-          >
-            * * * * *
-          </div>
-          <div
-            className="right-corner"
-          >
-            alyshagilliard, July 23, 2020
-          </div>
-        </div>
-        <h3
-          className="review-summary"
-        >
-          I'm enjoying wearing these shades because they block the sun...
-        </h3>
-        <div
-          className="review-main"
-        >
-          <div
-            className="review-body"
-          >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
-            </p>
-            <a
-              onClick={[Function]}
-            >
-              Show More
-            </a>
-          </div>
-          <div
-            className="thumbnail-display"
-          >
-            <div>
-              <img
-                alt="Review photo 1 submitted by: alyshagilliard"
-                className="review-image"
-                id="alyshagilliard_1"
-                onClick={[Function]}
-                src="urlplaceholder/review_5_photo_number_1.jpg"
-              />
-            </div>
-            <div>
-              <img
-                alt="Review photo 2 submitted by: alyshagilliard"
-                className="review-image"
-                id="alyshagilliard_2"
-                onClick={[Function]}
-                src="urlplaceholder/review_5_photo_number_2.jpg"
-              />
-            </div>
-          </div>
-          <div
-            className="recommend"
-          >
-            ☑ I recommend this product
-          </div>
-          <div
-            className="review-helpfulness-voting"
-          >
-            <p>
-              Helpful? 
-              <a
-                onClick={[Function]}
-              >
-                 Yes
-              </a>
-               (
-              8
-              )
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
     <div
       className="reviews-buttons"
     >
-      <button>
+      <button
+        onClick={[Function]}
+      >
         MORE REVIEWS
       </button>
       <button>
@@ -409,7 +330,7 @@ exports[`ReviewTile component renders correctly 1`] = `
           className="review-image"
           id="shortandsweeet_1"
           onClick={[Function]}
-          src="urlplaceholder/review_5_photo_number_1.jpg"
+          src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
         />
       </div>
       <div>
@@ -418,7 +339,7 @@ exports[`ReviewTile component renders correctly 1`] = `
           className="review-image"
           id="shortandsweeet_2"
           onClick={[Function]}
-          src="urlplaceholder/review_5_photo_number_2.jpg"
+          src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
         />
       </div>
     </div>
@@ -451,36 +372,36 @@ exports[`Reviews component renders correctly 1`] = `
   className="reviews"
 >
   <div
+    className="reviews-sorting"
+  >
+    <label
+      htmlFor="sorting-option"
+    >
+      238 reviews, sorted by 
+    </label>
+    <select
+      name="sorting-option"
+    >
+      <option
+        value="relevance"
+      >
+        relevance
+      </option>
+      <option
+        value="helpfulness"
+      >
+        helpfuness
+      </option>
+      <option
+        value="newest"
+      >
+        newest
+      </option>
+    </select>
+  </div>
+  <div
     className="reviews-list"
   >
-    <div
-      className="reviews-sorting"
-    >
-      <label
-        htmlFor="sorting-option"
-      >
-        238 reviews, sorted by 
-      </label>
-      <select
-        name="sorting-option"
-      >
-        <option
-          value="relevance"
-        >
-          relevance
-        </option>
-        <option
-          value="helpfulness"
-        >
-          helpfuness
-        </option>
-        <option
-          value="newest"
-        >
-          newest
-        </option>
-      </select>
-    </div>
     <div
       className="review-tile"
     >
@@ -522,7 +443,7 @@ exports[`Reviews component renders correctly 1`] = `
               className="review-image"
               id="shortandsweeet_1"
               onClick={[Function]}
-              src="urlplaceholder/review_5_photo_number_1.jpg"
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
             />
           </div>
           <div>
@@ -531,7 +452,7 @@ exports[`Reviews component renders correctly 1`] = `
               className="review-image"
               id="shortandsweeet_2"
               onClick={[Function]}
-              src="urlplaceholder/review_5_photo_number_2.jpg"
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
             />
           </div>
         </div>
@@ -619,6 +540,55 @@ exports[`Reviews component renders correctly 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    className="reviews-buttons"
+  >
+    <button
+      onClick={[Function]}
+    >
+      MORE REVIEWS
+    </button>
+    <button>
+      ADD A REVIEW +
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ReviewsList component renders correctly 1`] = `
+Array [
+  <div
+    className="reviews-sorting"
+  >
+    <label
+      htmlFor="sorting-option"
+    >
+      238 reviews, sorted by 
+    </label>
+    <select
+      name="sorting-option"
+    >
+      <option
+        value="relevance"
+      >
+        relevance
+      </option>
+      <option
+        value="helpfulness"
+      >
+        helpfuness
+      </option>
+      <option
+        value="newest"
+      >
+        newest
+      </option>
+    </select>
+  </div>,
+  <div
+    className="reviews-list"
+  >
     <div
       className="review-tile"
     >
@@ -633,13 +603,13 @@ exports[`Reviews component renders correctly 1`] = `
         <div
           className="right-corner"
         >
-          alyshagilliard, July 23, 2020
+          shortandsweeet, April 13, 2019
         </div>
       </div>
       <h3
         className="review-summary"
       >
-        I'm enjoying wearing these shades because they block the sun...
+        I'm enjoying wearing these shades
       </h3>
       <div
         className="review-main"
@@ -648,33 +618,28 @@ exports[`Reviews component renders correctly 1`] = `
           className="review-body"
         >
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu elementum ligula, in feugiat purus. Aenean sed nisl imperdiet, ultrices neque sit amet, vehicula lorem. Duis ut gravida dolor, ut ultricies nunc. Pellentesque ultrices efficitur element
+            Comfortable and practical.
           </p>
-          <a
-            onClick={[Function]}
-          >
-            Show More
-          </a>
         </div>
         <div
           className="thumbnail-display"
         >
           <div>
             <img
-              alt="Review photo 1 submitted by: alyshagilliard"
+              alt="Review photo 1 submitted by: shortandsweeet"
               className="review-image"
-              id="alyshagilliard_1"
+              id="shortandsweeet_1"
               onClick={[Function]}
-              src="urlplaceholder/review_5_photo_number_1.jpg"
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
             />
           </div>
           <div>
             <img
-              alt="Review photo 2 submitted by: alyshagilliard"
+              alt="Review photo 2 submitted by: shortandsweeet"
               className="review-image"
-              id="alyshagilliard_2"
+              id="shortandsweeet_2"
               onClick={[Function]}
-              src="urlplaceholder/review_5_photo_number_2.jpg"
+              src="https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
             />
           </div>
         </div>
@@ -694,22 +659,86 @@ exports[`Reviews component renders correctly 1`] = `
                Yes
             </a>
              (
-            8
+            5
             )
           </p>
         </div>
       </div>
     </div>
-  </div>
+    <div
+      className="review-tile"
+    >
+      <div
+        className="review-header"
+      >
+        <div
+          className="star-rating"
+        >
+          * * * * *
+        </div>
+        <div
+          className="right-corner"
+        >
+          bigbrotherbenjamin, June 22, 2019
+        </div>
+      </div>
+      <h3
+        className="review-summary"
+      >
+        I am liking these glasses
+      </h3>
+      <div
+        className="review-main"
+      >
+        <div
+          className="review-body"
+        >
+          <p>
+            They are very dark. But that's good because I'm in very sunny spots
+          </p>
+        </div>
+        <div
+          className="thumbnail-display"
+        />
+        <div
+          className="review-response"
+        >
+          <h4>
+            Response from seller
+          </h4>
+          <p>
+            Glad you're enjoying the product!
+          </p>
+        </div>
+        <div
+          className="review-helpfulness-voting"
+        >
+          <p>
+            Helpful? 
+            <a
+              onClick={[Function]}
+            >
+               Yes
+            </a>
+             (
+            5
+            )
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
   <div
     className="reviews-buttons"
   >
-    <button>
+    <button
+      onClick={[Function]}
+    >
       MORE REVIEWS
     </button>
     <button>
       ADD A REVIEW +
     </button>
-  </div>
-</div>
+  </div>,
+]
 `;
