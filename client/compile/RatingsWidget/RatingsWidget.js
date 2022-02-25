@@ -19,31 +19,34 @@ class RatingsWidget extends React.Component {
       },
       reviews: []
     };
-    this.getData = this.getData.bind(this);
+    this.getReviews = this.getReviews.bind(this);
   }
 
   componentDidMount () {
-    this.getData();
+    this.getReviews((reviews) => {
+      this.setState({
+        reviews: reviews
+      });
+    });
   }
 
 
-  getData() {
+  getReviews(callback) {
     const productID = '64620';
     this.props.getReviews([`reviews?product_id=${productID}`, '', ''], function(data) {
       if (data.results){
-        this.setState({
-          reviews: data.results
-        });
+        callback(data.results.results);
       }
     });
   }
 
 
   render () {
+    const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
         <Ratings/>
-        <Reviews reviews={reviewsData.results} />
+        <Reviews reviews={reviews} />
       </div>
     );
   }
