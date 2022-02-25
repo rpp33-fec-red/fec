@@ -63,7 +63,7 @@ class ReviewsList extends React.Component {
 
     return (
       <>
-        <ReviewsSorting/>
+        <ReviewsSorting numOfReviews={this.props.reviews.length}/>
 
         <div className ="reviews-list">
           {reviews.map((review) => {
