@@ -31,8 +31,8 @@ class RatingsWidget extends React.Component {
 
 
   getReviews(callback) {
-    const productID = '64620';
-    this.props.getReviews([`reviews?product_id=${productID}`, '', ''], function(data) {
+    const productID = '64621';
+    this.props.getReviews([`reviews?product_id=${productID}%26sort=${this.state.sortedBy}`, ``, ''], function(data) {
       if (data.results){
         callback(data.results.results);
       }
