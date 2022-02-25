@@ -2,11 +2,11 @@
 
 exports[`AddAnswerModal component loads and displays Answer component 1`] = `
 <div
-  className="modal"
+  className="questions-modals"
   id="add-answer-modal"
 >
   <div
-    className="modal-content"
+    className="questions-modals-content"
   >
     <a
       className="close-modal"
@@ -92,11 +92,11 @@ exports[`AddAnswerModal component loads and displays Answer component 1`] = `
 
 exports[`AddQuestionModal component loads and displays Answer component 1`] = `
 <div
-  className="modal"
+  className="questions-modals"
   id="add-question-modal"
 >
   <div
-    className="modal-content"
+    className="questions-modals-content"
   >
     <a
       className="close-modal"
@@ -648,11 +648,11 @@ exports[`SearchBar component loads and displays SearchBar component 1`] = `
 
 exports[`UploadPhotosModal component loads and displays Answer component 1`] = `
 <div
-  className="modal"
+  className="questions-modals"
   id="upload-photo-modal"
 >
   <div
-    className="modal-content"
+    className="questions-modals-content"
   >
     <a
       className="close-window"
