@@ -26,8 +26,8 @@ app.get('/getData',function(request, response) {
       url+=`/${value}`;
     }
   });
-  url+='?';
-  Object.keys(request.query).forEach((param)=>{
+  // url+='?';
+  Object.keys(request.query).forEach((param, index)=>{
     var value = request.query[param];
     if (param.includes('route') === false && param.includes('type') === false){
       if (url.includes('=') === false) {
@@ -35,7 +35,7 @@ app.get('/getData',function(request, response) {
       } else {
         url+=`&${param}=${value}`;
       }
-  };
+    }
 
   });
 
@@ -54,9 +54,64 @@ app.get('/getData',function(request, response) {
   }).catch(err=>{
     response.json({results:[],Error:err});
   });
-
 });
 
+
+app.post('/getQuestions', (req, res) => {
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.get(url, config)
+    .then(function(response) {
+      console.log('Status 200 OK');
+      res.send(response.data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+app.post('/postData', (req, res) => {
+  let data = req.body.data;
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.post(url, data, config)
+    .then(function() {
+      console.log('Status 201 CREATED');
+      res.send();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+app.put('/putData', (req, res) => {
+  let data = req.body.data;
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.put(url, data, config)
+    .then(function() {
+      console.log('Status: 204 NO CONTENT');
+      res.send();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
 
 app.listen(port,function(){
   console.log('listenening on ',port);
