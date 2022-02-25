@@ -156,8 +156,6 @@ describe('ReviewTile component', () => {
     });
   });
 
-
-
 });
 
 describe('ReviewsList component', () => {
@@ -176,14 +174,40 @@ describe('ReviewsList component', () => {
     expect(getAllByText(/Helpful?\w/)).toHaveLength(2);
   });
 
-  // if there are more than two reviews, the reviews button should show
-  test('more reviews button shows when there are more than two reviews for a product', () => {
 
+  test('more reviews button shows when there are more than two reviews for a product', () => {
+    let testReview = reviewsData.results;
+    const {getByRole} = render(<ReviewsList reviews={testReview}/>);
+    expect(getByRole('button', {name: "MORE REVIEWS"})).toBeInTheDocument();
   });
 
   // if there are 2 or less reviews for the product, the reviews button should not exist
   test('more reviews button does not appear when there are two or less reviews', () => {
-
+    let testReview = [{
+      "review_id": 5,
+      "rating": 3,
+      "summary": "I'm enjoying wearing these shades",
+      "recommend": true,
+      "response": null,
+      "body": "Comfortable and practical.",
+      "date": "2019-04-14T00:00:00.000Z",
+      "reviewer_name": "shortandsweeet",
+      "helpfulness": 5,
+      "photos": [{
+        "id": 1,
+        "url": "https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+      },
+      {
+        "id": 2,
+        "url": "https://images.unsplash.com/photo-1560570803-7474c0f9af99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+      },
+        // ...
+      ]
+    }];
+    const {getByRole} = render(<ReviewsList reviews={testReview}/>);
+    expect(() => {
+      getByRole('button', {name: "MORE REVIEWS"}).toThrow();
+    });
   });
 
   // two additional reviews should appear if more reviews button is clicked
