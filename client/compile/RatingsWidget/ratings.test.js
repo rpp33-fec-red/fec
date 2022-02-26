@@ -14,13 +14,15 @@ import ReviewTile from './Reviews/ReviewTile.js';
 import ReviewsList from './Reviews/ReviewsList.js';
 import ReviewsSorting from './Reviews/ReviewsSorting.js';
 import reviewsData from './sample_data.js';
+import Model from '../model.js';
+var model = new Model(false);
 import '@testing-library/jest-dom';
 
 describe('RatingsWidget component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-      .create(<RatingsWidget/>)
+      .create(<RatingsWidget getReviews={model.getData}/>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -168,9 +170,9 @@ describe('ReviewsList component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('reviews list contains two reviews by default when there are only two reviews for a product', () => {
+  test('reviews list contains two reviews by default when there are only two reviews for a product', async () => {
     let testReview = reviewsData.results;
-    const {getAllByText} = render(<ReviewsList reviews={testReview}/>);
+    const {getAllByText} = await render(<ReviewsList reviews={testReview}/>);
     expect(getAllByText(/Helpful?\w/)).toHaveLength(2);
   });
 
