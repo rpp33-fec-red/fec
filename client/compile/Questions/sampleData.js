@@ -45,7 +45,7 @@ const sampleData = {
     }
   },
   ]
-}
+};
 
 const answer = {
   "id": 68,
@@ -54,9 +54,9 @@ const answer = {
   "answerer_name": "Seller",
   "helpfulness": 4,
   "photos": []
-}
+};
 
 module.exports = {
   sampleData: sampleData,
   answer: answer
-}
+};

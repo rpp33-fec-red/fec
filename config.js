@@ -1,7 +1,7 @@
-var campusCode ='hr-rpp'
+var campusCode ='hr-rpp';
 
 var options = {
-  APIURL:`https://app-hrsei-api.herokuapp.com/api/fec2/${campusCode}`,
+  APIURL:`https://app-hrsei-api.herokuapp.com/api/fec2/${campusCode}/`,
   database: null,
   APIKEY:'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'
 }

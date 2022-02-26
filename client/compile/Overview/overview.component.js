@@ -21,12 +21,22 @@ class Overview extends React.Component {
 
   getData() {
     var that = this;
+<<<<<<< HEAD
     this.props.getProducts('GET', ['products', 64620, 'styles'], function(data) {
       that.setState({ onProduct: data.results });
       if ( data.results) {
         var replicated =  this.state.onProduct;
         replicated.styles = data.results.results;
         that.setState({ onProduct: replicated });
+=======
+    this.props.getProducts({path:'products/'+64620+'/styles',params:{}}, function(data) {
+      // that.setState({ onProduct: data.results });
+      if ( data.results) {
+        console.log(data.results)
+        var newOnProduct = that.state.onProduct;
+        newOnProduct.styles = data.results;
+        that.setState({ onProduct: newOnProduct });
+>>>>>>> 37a40a20c8dee18c563fcc2ee60389b1cae99088
       }
       // window.location = 'http://localhost:8080/?productid=499434';
     });
@@ -36,7 +46,11 @@ class Overview extends React.Component {
     return (
       <div className = "overview" >
         <LeftContainer styleIndex={this.state.styleIndex} onProduct={ this.state.onProduct } />
+<<<<<<< HEAD
         <RightContainer/>
+=======
+        <RightContainer styleIndex={this.state.styleIndex} onProduct={ this.state.onProduct } />
+>>>>>>> 37a40a20c8dee18c563fcc2ee60389b1cae99088
       </div>);
   }
 }

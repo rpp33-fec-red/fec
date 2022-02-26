@@ -6,6 +6,8 @@
     flex: 1;
 
     .reviews-list {
+      max-height: 80vh;
+      overflow: auto;
       .review-tile {
 
         margin: 30px;
@@ -54,7 +56,6 @@
 }
 
 .modal-window {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;

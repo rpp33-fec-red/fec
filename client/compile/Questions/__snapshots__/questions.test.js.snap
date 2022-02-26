@@ -1,28 +1,211 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AddAnswerModal component loads and displays Answer component 1`] = `
+<div
+  className="questions-modals"
+  id="add-answer-modal"
+>
+  <div
+    className="questions-modals-content"
+  >
+    <a
+      className="close-modal"
+    >
+      X
+    </a>
+    <h2>
+      Submit your Answer
+    </h2>
+    <h3>
+      : 
+    </h3>
+    <form
+      className="add-answer-form"
+    >
+      <div
+        className="modal-form"
+      >
+        <label>
+          Your Answer*
+        </label>
+        <textarea
+          id="new-answer-field"
+          maxLength="1000"
+          name="answer"
+          type="text"
+        />
+      </div>
+      <div
+        className="modal-form"
+      >
+        <label>
+          What is your nickname*
+        </label>
+        <input
+          maxLength="60"
+          name="nickname"
+          placeholder="Example: jack543!"
+          type="text"
+        />
+        <p>
+          For privacy reasons, do not use your full name or email address
+        </p>
+      </div>
+      <div
+        className="modal-form"
+      >
+        <label>
+          Your email*
+        </label>
+        <input
+          maxLength="60"
+          name="email"
+          placeholder="Example: jack@email.com"
+          type="email"
+        />
+        <p>
+          For authentication reasons, you will not be emailed
+        </p>
+      </div>
+      <div
+        className="modal-form"
+      >
+        <input
+          name="photos"
+          onClick={[Function]}
+          type="button"
+          value="Upload Photos"
+        />
+      </div>
+      <div
+        className="modal-form"
+      >
+        <input
+          type="submit"
+          value="Submit answer"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`AddQuestionModal component loads and displays Answer component 1`] = `
+<div
+  className="questions-modals"
+  id="add-question-modal"
+>
+  <div
+    className="questions-modals-content"
+  >
+    <a
+      className="close-modal"
+    >
+      X
+    </a>
+    <h2>
+      Ask Your Question
+    </h2>
+    <h3>
+      About the 
+    </h3>
+    <form
+      className="add-question-form"
+    >
+      <div
+        className="modal-form"
+      >
+        <label>
+          Your Question*
+        </label>
+        <textarea
+          id="new-question-field"
+          maxLength="1000"
+          name="question"
+          type="text"
+        />
+      </div>
+      <div
+        className="modal-form"
+      >
+        <label>
+          What is your nickname*
+        </label>
+        <input
+          maxLength="60"
+          name="nickname"
+          placeholder="Example: jackson11!"
+          type="text"
+        />
+        <p>
+          For privacy reasons, do not use your full name or email address
+        </p>
+      </div>
+      <div
+        className="modal-form"
+      >
+        <label>
+          Your email*
+        </label>
+        <input
+          maxLength="60"
+          name="email"
+          placeholder="Why did you like the product or not?"
+          type="email"
+        />
+        <p>
+          For authentication reasons, you will not be emailed
+        </p>
+      </div>
+      <div
+        className="modal-form"
+      >
+        <input
+          type="submit"
+          value="Submit question"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`Answer component loads and displays Answer component 1`] = `
 <div
   className="answer"
 >
   <p
-    className="answerTitle"
+    className="answer-title"
   >
     We are selling it here without any markup from the middleman!
   </p>
   <div
-    className="answerLinks"
+    className="answer-links"
   >
     <p>
-      by 
-      Seller
-      , MONTH, DD, YEAR | Helpful? 
-      <a>
+      by
+      <span
+        className="answerer-seller"
+      >
+         
+        Seller
+      </span>
+      , 
+      August, 17, 2018
+        |  Helpful? 
+      <a
+        className="answer-link"
+        onClick={[Function]}
+      >
         Yes
       </a>
-       (
+       (
       4
-      ) | 
-      <a>
+      )  |  
+      <a
+        className="answer-link"
+        onClick={[Function]}
+      >
         Report
       </a>
     </p>
@@ -34,34 +217,49 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
 <div
   className="answers"
 >
-  <p>
+  <p
+    className="a"
+  >
     A: 
   </p>
   <div
-    className="answerList"
+    className="answer-list"
   >
     <div
       className="answer"
     >
       <p
-        className="answerTitle"
+        className="answer-title"
       >
         We are selling it here without any markup from the middleman!
       </p>
       <div
-        className="answerLinks"
+        className="answer-links"
       >
         <p>
-          by 
-          Seller
-          , MONTH, DD, YEAR | Helpful? 
-          <a>
+          by
+          <span
+            className="answerer-seller"
+          >
+             
+            Seller
+          </span>
+          , 
+          August, 17, 2018
+            |  Helpful? 
+          <a
+            className="answer-link"
+            onClick={[Function]}
+          >
             Yes
           </a>
-           (
+           (
           4
-          ) | 
-          <a>
+          )  |  
+          <a
+            className="answer-link"
+            onClick={[Function]}
+          >
             Report
           </a>
         </p>
@@ -78,7 +276,9 @@ exports[`Question component loads and displays Question component 1`] = `
   <div
     className="questionTitle"
   >
-    <p>
+    <p
+      className="question-body"
+    >
       Q: 
       Why is this product cheaper here than other sites?
     </p>
@@ -86,14 +286,20 @@ exports[`Question component loads and displays Question component 1`] = `
       className="questionLinks"
     >
       <p>
-        Helpful? 
-        <a>
+        Helpful? 
+        <a
+          className="question-link"
+          onClick={[Function]}
+        >
           Yes
         </a>
-         (
+         (
         4
-        ) | 
-        <a>
+        ) | 
+        <a
+          className="question-link"
+          onClick={[Function]}
+        >
           Add Answer
         </a>
       </p>
@@ -102,34 +308,49 @@ exports[`Question component loads and displays Question component 1`] = `
   <div
     className="answers"
   >
-    <p>
+    <p
+      className="a"
+    >
       A: 
     </p>
     <div
-      className="answerList"
+      className="answer-list"
     >
       <div
         className="answer"
       >
         <p
-          className="answerTitle"
+          className="answer-title"
         >
           We are selling it here without any markup from the middleman!
         </p>
         <div
-          className="answerLinks"
+          className="answer-links"
         >
           <p>
-            by 
-            Seller
-            , MONTH, DD, YEAR | Helpful? 
-            <a>
+            by
+            <span
+              className="answerer-seller"
+            >
+               
+              Seller
+            </span>
+            , 
+            August, 17, 2018
+              |  Helpful? 
+            <a
+              className="answer-link"
+              onClick={[Function]}
+            >
               Yes
             </a>
-             (
+             (
             4
-            ) | 
-            <a>
+            )  |  
+            <a
+              className="answer-link"
+              onClick={[Function]}
+            >
               Report
             </a>
           </p>
@@ -157,21 +378,23 @@ exports[`QuestionButtons component loads and displays Question Buttons comoponen
 
 exports[`Questions widget component loads and displays questions widget component 1`] = `
 <div
-  className="questionsWidget"
+  className="questions-widget"
 >
   <h6>
     QUESTIONS & ANSWERS
   </h6>
-  <div>
+  <div
+    className="search-bar"
+  >
     <input
-      id="questionsSearchBar"
+      id="questions-search-bar"
       onChange={[Function]}
       placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
       type="search"
     />
   </div>
   <div
-    className="questionList"
+    className="questions-list"
   >
     <div
       className="question"
@@ -179,7 +402,9 @@ exports[`Questions widget component loads and displays questions widget componen
       <div
         className="questionTitle"
       >
-        <p>
+        <p
+          className="question-body"
+        >
           Q: 
           Why is this product cheaper here than other sites?
         </p>
@@ -187,14 +412,20 @@ exports[`Questions widget component loads and displays questions widget componen
           className="questionLinks"
         >
           <p>
-            Helpful? 
-            <a>
+            Helpful? 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
               Yes
             </a>
-             (
+             (
             4
-            ) | 
-            <a>
+            ) | 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
               Add Answer
             </a>
           </p>
@@ -203,34 +434,49 @@ exports[`Questions widget component loads and displays questions widget componen
       <div
         className="answers"
       >
-        <p>
+        <p
+          className="a"
+        >
           A: 
         </p>
         <div
-          className="answerList"
+          className="answer-list"
         >
           <div
             className="answer"
           >
             <p
-              className="answerTitle"
+              className="answer-title"
             >
               We are selling it here without any markup from the middleman!
             </p>
             <div
-              className="answerLinks"
+              className="answer-links"
             >
               <p>
-                by 
-                Seller
-                , MONTH, DD, YEAR | Helpful? 
-                <a>
+                by
+                <span
+                  className="answerer-seller"
+                >
+                   
+                  Seller
+                </span>
+                , 
+                August, 17, 2018
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
                   Yes
                 </a>
-                 (
+                 (
                 4
-                ) | 
-                <a>
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
                   Report
                 </a>
               </p>
@@ -245,7 +491,9 @@ exports[`Questions widget component loads and displays questions widget componen
       <div
         className="questionTitle"
       >
-        <p>
+        <p
+          className="question-body"
+        >
           Q: 
           How long does it last?
         </p>
@@ -253,14 +501,20 @@ exports[`Questions widget component loads and displays questions widget componen
           className="questionLinks"
         >
           <p>
-            Helpful? 
-            <a>
+            Helpful? 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
               Yes
             </a>
-             (
+             (
             2
-            ) | 
-            <a>
+            ) | 
+            <a
+              className="question-link"
+              onClick={[Function]}
+            >
               Add Answer
             </a>
           </p>
@@ -269,34 +523,49 @@ exports[`Questions widget component loads and displays questions widget componen
       <div
         className="answers"
       >
-        <p>
+        <p
+          className="a"
+        >
           A: 
         </p>
         <div
-          className="answerList"
+          className="answer-list"
         >
           <div
             className="answer"
           >
             <p
-              className="answerTitle"
+              className="answer-title"
             >
-              Some of the seams started splitting the first time I wore it!
+              9 lives
             </p>
             <div
-              className="answerLinks"
+              className="answer-links"
             >
               <p>
-                by 
-                sillyguy
-                , MONTH, DD, YEAR | Helpful? 
-                <a>
+                by
+                <span
+                  className="answerer-other"
+                >
+                   
+                  iluvdogz
+                </span>
+                , 
+                November, 11, 2019
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
                   Yes
                 </a>
-                 (
-                6
-                ) | 
-                <a>
+                 (
+                31
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
                   Report
                 </a>
               </p>
@@ -306,24 +575,37 @@ exports[`Questions widget component loads and displays questions widget componen
             className="answer"
           >
             <p
-              className="answerTitle"
+              className="answer-title"
             >
-              9 lives
+              Some of the seams started splitting the first time I wore it!
             </p>
             <div
-              className="answerLinks"
+              className="answer-links"
             >
               <p>
-                by 
-                iluvdogz
-                , MONTH, DD, YEAR | Helpful? 
-                <a>
+                by
+                <span
+                  className="answerer-other"
+                >
+                   
+                  sillyguy
+                </span>
+                , 
+                November, 27, 2019
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
                   Yes
                 </a>
-                 (
-                31
-                ) | 
-                <a>
+                 (
+                6
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
                   Report
                 </a>
               </p>
@@ -336,7 +618,9 @@ exports[`Questions widget component loads and displays questions widget componen
   <div
     className="question-buttons"
   >
-    <button>
+    <button
+      onClick={[Function]}
+    >
       MORE ANSWERED QUESTIONS
     </button>
     <button
@@ -351,11 +635,57 @@ exports[`Questions widget component loads and displays questions widget componen
 exports[`QuestionsList component loads and displays QuestionsList component 1`] = `null`;
 
 exports[`SearchBar component loads and displays SearchBar component 1`] = `
-<div>
+<div
+  className="search-bar"
+>
   <input
-    id="questionsSearchBar"
+    id="questions-search-bar"
     placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
     type="search"
   />
+</div>
+`;
+
+exports[`UploadPhotosModal component loads and displays Answer component 1`] = `
+<div
+  className="questions-modals"
+  id="upload-photo-modal"
+>
+  <div
+    className="questions-modals-content"
+  >
+    <a
+      className="close-window"
+    >
+      X
+    </a>
+    <h3>
+      Upload Photos for 
+    </h3>
+    <form>
+      <div>
+        <label
+          htmlFor="photo-upload"
+        >
+          Choose photo to upload
+        </label>
+        <input
+          accept="image/png, image/jpeg"
+          id="upload-answer-photo"
+          name="photoUpload"
+          type="file"
+        />
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Upload Photo"
+        />
+      </div>
+    </form>
+    <div
+      className="selected-photos"
+    />
+  </div>
 </div>
 `;
