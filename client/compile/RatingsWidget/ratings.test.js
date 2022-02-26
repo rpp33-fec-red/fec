@@ -162,6 +162,11 @@ describe('ReviewTile component', () => {
 });
 
 describe('ReviewsList component', () => {
+
+  beforeAll(() = {
+    return render(<ReviewsList reviews={testReview}/>);
+  });
+
   const testReview = reviewsData.results;
   test('renders correctly', () => {
     const tree = renderer
