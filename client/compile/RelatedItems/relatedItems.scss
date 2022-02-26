@@ -1,32 +1,74 @@
-
 .productCard {
     box-shadow : 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
     width: 15rem;
-    height: 26rem;
+    height: 30rem;
     margin-right: 1rem;
+    padding: 1.5rem;
+}
+.productImage { 
+    display: block; 
+    width: 13rem;
+    height: 16rem;
     padding: 1rem;
+};
 
-    img { 
-        display: block; 
-        width: 13rem;
-        height: 16rem;
-        padding: 1rem;
-    };
-
-    .category {
-        padding-left: 1rem;
-    }
-    
-    .name {
-        padding-left: 1rem;
-    }
-    
-    .default-price {
-        padding-left: 1rem;
-    }
-
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+  
+.modal-main {
+    position:fixed;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    padding: 3rem;
+    transform: translate(-50%,-50%);
+}
+  
+.display-block {
+    display: block;
+}
+  
+.display-none {
+    display: none;
 }
 
+#compareButton {
+    float: right;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
 
+.closeCompareModal {
+    position: fixed;
+    width: 8%;
+    height: auto;
+    margin: 1rem;
+}
 
+#addButton {
+    color: grey;
+    background-color: white;
+    text-align: center;
+    width: 15rem;
+    height: 30rem;
+    font-size: 500%;
+    border-color: white;
+}
+
+#addButton:hover {
+    color: #007bff;
+    border: 3px solid #007bff;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
+}
