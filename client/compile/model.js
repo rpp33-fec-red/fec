@@ -26,8 +26,9 @@ class Model {
       errorcheck = 'make sure the path does not end with / please remove it should look like get/19191/styles';
     }
     if (errorcheck !== null){
-      throw new Error(errorcheck);
+      return new Error(errorcheck);
     }
+    return null;
   }
   checkParams(options){
     var errorcheck = null;
@@ -44,59 +45,68 @@ class Model {
   }
 
   compareOptions(options){
+    var error =null;
     switch (Object.keys(options)){
-    case 'path': this.checkURL(options);
+    case 'path': error = this.checkURL(options);
       break;
-    case 'params': this.checkParams(options);
+    case 'params': error =this.checkParams(options);
       break;
-    default: console.log('looks good for the server :))');
+    default: error = new Error('its missing param and or path option properties');
     }
+    return error;
   }
 
   getData(options,callback){
-    this.compareOptions(options);
-    if (options.path === undefined){
-      options.path = '';
-    }
-    options.params['path'] = options.path;
-    var url = this.url+'getData?' + $.param(options.params);
-
-    var ajaxoptions = {
-      url: url,
-      method: 'GET',
-      contentType:'application/json',
-      success: function(info){
-        if (info){
-          callback(info);
-        } else {
-          throw new Error('there is no data send back please fix your error!');
-        }
+    var error = this.compareOptions(options);
+    if (error == null){
+      if (options.path === undefined){
+        options.path = '';
       }
-    };
-    $.ajax(ajaxoptions);
+      options.params['path'] = options.path;
+      var url = this.url+'getData?' + $.param(options.params);
 
+      var ajaxoptions = {
+        url: url,
+        method: 'GET',
+        contentType:'application/json',
+        success: function(info){
+          if (info){
+            callback(info);
+          } else {
+            throw new Error('there is no data send back please fix your error!');
+          }
+        }
+      };
+      $.ajax(ajaxoptions);
+    }  else {
+      throw error;
+    }
   }
   postData(options,data,callback){
-    this.compareOptions(options);
-    if (options.path === undefined){
-      options.path = '';
-    }
-    options.params['path'] = options.path;
-    console.log($.param(options.params));
-    var url = this.url+'postData?' + $.param(options.params).toString();
-    if (data === undefined){
-      throw Error('there is no data for this post requests please fix it');
-    }
-    var ajaxoptions = {
-      url: url,
-      method: 'POST',
-      contentType:'application/json',
-      data: JSON.stringify({data:data}),
-      success: function(info){
-        callback(info);
+    var error =  this.compareOptions(options);
+    if (error == null) {
+
+      if (options.path === undefined){
+        options.path = '';
       }
-    };
-    $.ajax(ajaxoptions);
+      options.params['path'] = options.path;
+      var url = this.url+'postData?' + $.param(options.params).toString();
+      if (data === undefined){
+        throw Error('there is no data for this post requests please fix it');
+      }
+      var ajaxoptions = {
+        url: url,
+        method: 'POST',
+        contentType:'application/json',
+        data: JSON.stringify({data:data}),
+        success: function(info){
+          callback(info);
+        }
+      };
+      $.ajax(ajaxoptions);
+    } else {
+      throw error;
+    }
   }
   putData(options,data,callback){
     this.compare(options);
