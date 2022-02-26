@@ -40,29 +40,34 @@ class Model {
       errorcheck = null;
     }
     if (errorcheck !== null){
-      throw new Error(errorcheck);
+      return new Error(errorcheck);
     }
+    return errorcheck;
   }
 
   compareOptions(options){
     var error =null;
+    console.log(Object.keys(options));
     switch (Object.keys(options)){
     case 'path': error = this.checkURL(options);
       break;
     case 'params': error =this.checkParams(options);
       break;
-    default: error = new Error('its missing param and or path option properties');
+    }
+    if (options.path === undefined){
+      return new Error('missing path must have that passed in options object')
     }
     return error;
   }
 
   getData(options,callback){
+    console.log('options',options);
     var error = this.compareOptions(options);
     if (error == null){
+      options.params['path'] = options.path;
       if (options.path === undefined){
         options.path = '';
       }
-      options.params['path'] = options.path;
       var url = this.url+'getData?' + $.param(options.params);
 
       var ajaxoptions = {
@@ -83,6 +88,8 @@ class Model {
     }
   }
   postData(options,data,callback){
+    console.log('options',options)
+
     var error =  this.compareOptions(options);
     if (error == null) {
 

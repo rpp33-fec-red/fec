@@ -21,22 +21,28 @@ class Main extends React.Component {
   }
 
   componentDidMount(){
-    model.postData({params:{product_id:64620}},{body:'this is a message',name:'grant',email:'soundbreakr1@gmail.com',product_id:64620},function(data){
-      console.log('data',data);
-    });
-    model.getData({path:'qa/questions',params:{product_id:64620}},function(data){
-      console.log('data',data);
-    });
+
+    // model.postData({path:'qa/questions',params:{product_id:64620}},{body:'this is a message',name:'grant',email:'soundbreakr1@gmail.com',product_id:64620},function(data){
+    //   console.log('data',data);
+    // });
+    // model.getData({path:'qa/questions',params:{product_id:64620}},function(data){
+    //   console.log('data',data);
+    // });
   }
-  renderStars(){}
+
 
   render(){
     return (
       <div className="main">
+         {/* function box(Overview, name){
+            Overview apply clickchanger to this function
+          return function Overview2.0
+        } */}
+          {/* <newoverview getProducts={model.getData}></newoverview> */}
         <Overview getProducts={model.getData} id={this.state.productID}/>
-        <RelatedProducs getData={model.getData} />
+        {/* <RelatedProducs getData={model.getData} />
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
-        <RatingsWidget/>
+        <RatingsWidget/> */}
       </div>);
   }
 }

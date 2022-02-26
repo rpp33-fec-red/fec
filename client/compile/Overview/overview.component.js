@@ -21,9 +21,10 @@ class Overview extends React.Component {
 
   getData() {
     var that = this;
-    this.props.getProducts('GET', ['products', 64620, 'styles'], function(data) {
+    this.props.getProducts({path:'products/'+64620+'/styles',params:{}}, function(data) {
       // that.setState({ onProduct: data.results });
       if ( data.results) {
+        console.log(data.results)
         var newOnProduct = that.state.onProduct;
         newOnProduct.styles = data.results;
         that.setState({ onProduct: newOnProduct });

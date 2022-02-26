@@ -18,7 +18,6 @@ class Model {
 
 
   placeParams(params){
-
     var url = this.APIURL+params['path']+'?';
     Object.keys(params).forEach((queryparam,index)=>{
       if (queryparam !== 'path'){
@@ -29,7 +28,6 @@ class Model {
         }
       }
     });
-    console.log('url',url);
     return url;
   }
 
@@ -62,7 +60,7 @@ class Model {
     };
     axios(axiosoptions).then(response=>{
       if (response.status !== 201){
-        var error = new Error('response status is not 200');
+        var error = new Error('response status is not 201');
         callback({Error:response.status,err:error},null);
       } else {
         callback(null,response.data);
