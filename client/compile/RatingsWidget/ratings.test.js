@@ -6,7 +6,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render, fireEvent} from '@testing-library/react';
+import {render, fireEvent, waitFor} from '@testing-library/react';
 import RatingsWidget from './RatingsWidget.js';
 import Ratings from './Ratings/Ratings.js';
 import Reviews from './Reviews/Reviews.js';
@@ -173,7 +173,7 @@ describe('ReviewsList component', () => {
   test('reviews list contains two reviews by default when there are only two reviews for a product', async () => {
     let testReview = reviewsData.results;
     const {getAllByText} = await render(<ReviewsList reviews={testReview}/>);
-    expect(getAllByText(/Helpful?\w/)).toHaveLength(2);
+    await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(2));
   });
 
 
@@ -213,11 +213,11 @@ describe('ReviewsList component', () => {
   });
 
 
-  test('two additional reviews appear if more reviews button is clicked', () => {
+  test('two additional reviews appear if more reviews button is clicked', async () => {
     let testReview = reviewsData.results;
     const {getByRole, getAllByText} = render(<ReviewsList reviews={testReview}/>);
     fireEvent.click(getByRole('button', {name: "MORE REVIEWS"}));
-    expect(getAllByText(/Helpful?\w/)).toHaveLength(4);
+    await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(4));
   });
 
 });
