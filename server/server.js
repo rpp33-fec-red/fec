@@ -31,6 +31,7 @@ app.post('/postData',function(req, res) {
     }
   });
 });
+<<<<<<< HEAD
 
 app.put('/putData',function(req, res) {
   model.putData(req.query,req.body,function(err,data){
@@ -41,8 +42,65 @@ app.put('/putData',function(req, res) {
       res.json({Error:null,data:data});
     }
   });
+=======
+
+
+app.post('/getQuestions', (req, res) => {
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.get(url, config)
+    .then(function(response) {
+      console.log('Status 200 OK');
+      res.send(response.data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+>>>>>>> f870b9a4b9ebaae9e793f8ac2ba1fe43a13e8c3f
 });
 
+app.post('/postData', (req, res) => {
+  let data = req.body.data;
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.post(url, data, config)
+    .then(function() {
+      console.log('Status 201 CREATED');
+      res.send();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+app.put('/putData', (req, res) => {
+  let data = req.body.data;
+  let url = options.APIURL + req.body.endpoint;
+  let config = {
+    headers: {
+      authorization:`${options.APIKEY}`
+    },
+    params: req.body.params
+  };
+  axios.put(url, data, config)
+    .then(function() {
+      console.log('Status: 204 NO CONTENT');
+      res.send();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
 
 
 app.listen(port,function(){
