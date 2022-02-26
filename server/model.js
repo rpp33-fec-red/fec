@@ -80,7 +80,7 @@ class Model {
     };
     axios(axiosoptions).then(response=>{
       if (response.status !== 204){
-        var error = new Error('response status is not 200');
+        var error = new Error('response status is not 204');
         callback({Error:response.status,err:error},null);
       } else {
         callback(null,response.data);
