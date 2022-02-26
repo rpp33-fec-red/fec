@@ -6,6 +6,8 @@
     flex: 1;
 
     .reviews-list {
+      max-height: 80vh;
+      overflow: auto;
       .review-tile {
 
         margin: 30px;

@@ -1,9 +1,13 @@
 import React from 'react';
-import '../ratings.scss';
+import './ratings.scss';
 import Reviews from './Reviews/Reviews.js';
 import Ratings from './Ratings/Ratings.js';
+<<<<<<< HEAD:client/compile/RatingsWidget/components/RatingsWidget.js
 import reviewsData from '../sample_data.js';
 import PropTypes from 'prop-types';
+=======
+import reviewsData from './sample_data.js';
+>>>>>>> 526977b206bd75aa82f9ff922a92541aa035a75f:client/compile/RatingsWidget/RatingsWidget.js
 
 class RatingsWidget extends React.Component {
   constructor(props) {

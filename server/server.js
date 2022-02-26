@@ -3,60 +3,47 @@ var app = express();
 var port = 8080;
 var path = require('path');
 app.use(express.static(path.join(__dirname + '/../client/public')));
-var config = require('../config');
-var options = new config(false);
-options = options.getOptions();
-var axios = require('axios');
 var bp = require('body-parser');
 app.use(bp.json());
 var cors = require('cors');
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
+app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 
-//ajuna beats;
-//changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
-app.get('/getData',function(request, response) {
-  var type =  request.query.type;
-  var url = options.APIURL;
-  Object.keys(request.query).forEach((key)=>{
-    var value = request.query[key];
-    if (key.includes('route') ){
-      url+=`/${value}`;
-    }
-  });
-  url+='?';
-  Object.keys(request.query).forEach((param, index)=>{
-    var value = request.query[param];
-    if (param.includes('route') === false && param.includes('type') === false){
-      if (url.includes('&') === false) {
-        url+=`&${param}=${value}`;
-      } else {
-        url+=`${param}=${value}`;
-      }
-  }
+var Model = require('./model');
+var model = new Model(false);
 
-  });
-
-
-  console.log('url',url);
-  axios({
-    method: type,
-    url:url,
-    headers:{'authorization':`${options.APIKEY}`,'Accept':'*'}
-  }).then(function(results){
-    if (results.data){
-      response.json({results:results.data});
+app.get('/getData',function(req, res) {
+  model.getData(req.query,req.body,function(err,data){
+    if (err){
+      res.json({Error:err,data:null});
     } else {
-      response.json({Error: new Error('no data')});
-    }
-  }).catch(err=>{
-    response.json({results:[],Error:err});
-  });
-
+      res.json({Error:null,data:data});
+    }  });
 });
 
+app.post('/postData',function(req, res) {
+  model.postData(req.query,req.body,function(err,data){
+    console.log('got data back');
+    if (err){
+      res.json({Error:err,data:null});
+    } else {
+      res.json({Error:null,data:data});
+    }
+  });
+});
+
+app.put('/putData',function(req, res) {
+  model.putData(req.query,req.body,function(err,data){
+    console.log('got data back');
+    if (err){
+      res.json({Error:err,data:null});
+    } else {
+      res.json({Error:null,data:data});
+    }
+  });
+});
 
 app.listen(port,function(){
-  console.log('listenening on ',port);
+  console.log('listening on ',port);
 });
-
