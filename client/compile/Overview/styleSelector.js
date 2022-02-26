@@ -1,18 +1,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
-
-var StyleSelector = function (props) {
-
-  console.log('url',props.url);
-  return (
-    <div className="styleSelector">
-    </div>);
-
-
-};
-=======
 
 class StyleSelector extends React.Component {
 //picks a certain style and shows all images for that style
@@ -101,19 +89,15 @@ class StyleSelector extends React.Component {
     }
   }
 
->>>>>>> 37a40a20c8dee18c563fcc2ee60389b1cae99088
 
 StyleSelector.propTypes = {
   url: PropTypes.any,
 };
 
-<<<<<<< HEAD
-=======
 }
 
 StyleSelector.propTypes = {
   url: PropTypes.any,
 };
 
->>>>>>> 37a40a20c8dee18c563fcc2ee60389b1cae99088
 export default StyleSelector;
