@@ -20,11 +20,11 @@ function AddReview (props) {
     bodyCharacterCountMessage = <p>Minimum reached</p>;
 
   return (
-    <div className="add-review">
-      <form>
+    <div className="add-review modal-window">
+      <form className="modal-content">
         <h2>Write Your Review</h2>
         <h3>About the [Product Name]</h3>
-
+        <button onClick={props.closeAddReviewWindow}>Close</button>
         <div>
           <label htmlFor="rating">Overall Rating: </label>
           <input name="rating" type="text" required="required"/>
@@ -87,7 +87,8 @@ function AddReview (props) {
 }
 
 AddReview.propTypes = {
-  reviewsCharacteristics: PropTypes.any
+  reviewsCharacteristics: PropTypes.any,
+  closeAddReviewWindow: PropTypes.func
 };
 
 export default AddReview;
