@@ -3,16 +3,15 @@ import LeftContainer from './leftContainer/leftcontainer.component.js';
 import RightContainer from './rightContainer/rightcontainer.component.js';
 import './overview.scss';
 import PropTypes from 'prop-types';
-import testProducts from './testProducts.js';
-import testStyles from './testStyle.json';
+import testData from './testProducts.js';
 
 
 class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onProduct: testProducts[0],
-      onStyle: testStyles
+      styles: testData.styles,
+      onStyle:0
     };
     this.getData = this.getData.bind(this);
   }
@@ -22,10 +21,10 @@ class Overview extends React.Component {
 
   getData() {
     var that = this;
-    this.props.getProducts(['products', 64620, 'styles'], function(data) {
-      that.setState({ onProduct: data.results });
-      if ( data.results){
-        that.setState({ onStyle: data.results.results[0] });
+    this.props.getProducts(['products',64620,'styles'], function(data) {
+      if ( data.results) {
+        console.log(data.results);
+        that.setState({ styles: data.results.results});
       }
     });
   }
@@ -33,8 +32,8 @@ class Overview extends React.Component {
   render() {
     return (
       <div className = "overview" >
-        <LeftContainer onStyle={ this.state.onStyle } />
-        <RightContainer/>
+        <LeftContainer style={this.state.styles[this.state.onStyle]}/>
+        {/* <RightContainer styleIndex={this.state.styleIndex} onProduct={ this.state.onProduct } /> */}
       </div>);
   }
 }

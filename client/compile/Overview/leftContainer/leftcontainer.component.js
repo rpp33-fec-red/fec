@@ -3,22 +3,26 @@ import './leftcontainer.scss';
 import PropTypes from 'prop-types';
 import ImageHolder from './imageholder/imageholder.component.js';
 class LeftContainer extends React.Component{
+  static get propTypes() {
+    return {
+      style: PropTypes.any,
+    };
+  }
   constructor(props){
     super(props);
-    console.log(this.props.onStyle);
-
+    console.log('props LeftCOntainer',props);
+    this.photos = this.props.style.photos;
   }
 
   render (){
     return (
       <div className="leftCt">
-        <ImageHolder product={this.props.onStyle}/>
+        <ImageHolder photos={this.photos}/>
       </div>);
   }
 }
-LeftContainer.propTypes = {
-  onStyle: PropTypes.any,
-};
+
+
 export default LeftContainer;
 
 
