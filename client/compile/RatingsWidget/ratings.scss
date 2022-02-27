@@ -64,6 +64,7 @@
   height: 100%;
   background-color: rgba(0,0,0,0.4);
   padding-top: 100px;
+  overflow: auto;
 }
 
 .modal-content {
@@ -71,7 +72,6 @@
   display: block;
   margin: auto;
   max-width: 100%;
-  margin: 50px;
 }
 
 
