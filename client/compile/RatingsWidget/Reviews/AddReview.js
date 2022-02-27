@@ -15,11 +15,9 @@ function AddReview (props) {
   const [characterCount, updateCharacterCount] = useState(0);
 
   let bodyCharacterCountMessage;
-  if (characterCount < 50) {
-    bodyCharacterCountMessage = <p>Minimum required characters left: {50 - characterCount}</p>;
-  } else {
+  characterCount < 50 ?
+    bodyCharacterCountMessage = <p>Minimum required characters left: {50 - characterCount}</p> :
     bodyCharacterCountMessage = <p>Minimum reached</p>;
-  }
 
   return (
     <div className="add-review">
