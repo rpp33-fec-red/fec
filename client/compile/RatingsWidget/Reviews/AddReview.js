@@ -71,12 +71,12 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="nickname">Nickname: </label>
-          <input name="nickname" type="text" required="required"/>
+          <input name="nickname" type="text" required="required" maxLength="60"/>
         </div>
 
         <div>
           <label htmlFor="email">Email: </label>
-          <input name="email" type="text" required="required"/>
+          <input name="email" type="text" required="required" maxLength="60"/>
         </div>
 
         <input type="submit"/>

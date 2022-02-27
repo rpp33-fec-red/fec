@@ -71,7 +71,7 @@ function ReviewCharacteristicRadioButton (props) {
     <div>
       {ratingDescription}
       <label htmlFor={props.characteristic}>{props.value}</label>
-      <input name={props.characteristic} type="radio" value={props.value} onClick={props.showDescription}/>
+      <input name={props.characteristic} type="radio" value={props.value} onClick={props.showDescription} required="required"/>
     </div>
   );
 }
