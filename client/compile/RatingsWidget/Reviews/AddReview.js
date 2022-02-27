@@ -3,6 +3,14 @@ import ReviewProductCharacteristics from './ReviewProductCharacteristics.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
+  let characteristics;
+  if (props.reviewsCharacteristics) {
+    characteristics =
+
+    Object.keys(props.reviewsCharacteristics).map((characteristic) => {
+      return <ReviewProductCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
+    });
+  }
   return (
     <div className="add-review">
       <form>
@@ -25,7 +33,7 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="characteristics" required="required">Characteristics: </label>
-          <ReviewProductCharacteristics/>
+          {characteristics}
         </div>
 
         <div>
@@ -61,7 +69,7 @@ function AddReview (props) {
 }
 
 AddReview.propTypes = {
-
+  reviewsCharacteristics: PropTypes.any
 };
 
 export default AddReview;

@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 function ReviewProductCharacteristics (props) {
   return (
     <div>
-      <label>{props.characteristics}</label>
+      <label>{props.characteristic}</label>
       <input name="characteristics" type="radio"/>
     </div>
   );
 }
 
 ReviewProductCharacteristics.propTypes = {
-  characteristics: PropTypes.any
+  characteristic: PropTypes.any
 };
 
 export default ReviewProductCharacteristics;

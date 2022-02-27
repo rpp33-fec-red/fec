@@ -77,7 +77,7 @@ class ReviewsList extends React.Component {
           <button>ADD A REVIEW +< /button>
         </div>
 
-        <AddReview/>
+        <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics}/>
 
       </>
     );
@@ -86,7 +86,8 @@ class ReviewsList extends React.Component {
 
 ReviewsList.propTypes = {
   reviews: PropTypes.any,
-  updateSorting: PropTypes.any
+  updateSorting: PropTypes.any,
+  reviewsCharacteristics: PropTypes.any
 };
 
 
