@@ -1,13 +1,11 @@
-.productCarousel {
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+.chevron-left {
+    background-color: transparent;
+    border: transparent;
 }
-.productCarousel ::-webkit-scrollbar-track {
-    background: transparent;
-}
-.productCarousel ::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
+.chevron-right {
+    float: right;
+    background-color: transparent;
+    border: transparent;
 }
 
 .productCard {
