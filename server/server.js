@@ -27,8 +27,6 @@ app.get('/getData',function(request, response) {
     url+=`/${request.query.route3}`;
   }
 
-
-  console.log('url',url);
   axios({
     method: 'get',
     url:url,
