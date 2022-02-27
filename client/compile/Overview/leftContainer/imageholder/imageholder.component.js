@@ -4,17 +4,26 @@ import StyleSelector from '../../styleSelector.js';
 import PropTypes from 'prop-types';
 
 function ImageHolder(props){
-  console.log('array of photos',props);
-  var [image,setImage] = React.useState(props.photos[0].url)
+  var [showBigImage,setshowBigImage] = React.useState(false)
   // var photo = props.style[0];
-  function imageClick(){
-    setImage(props.photos[this.index].url);
+  function showbigImage(){
+    setshowBigImage(true)
+  }
+  function hidebigImage(){
+    setshowBigImage(false)
+  }
+
+  function Modal(){
+   return ( <div className="bigImage">
+    <img src={props.image || props.photos[0].url} style={{width:"800px",height:"1000px"}}></img>
+    </div>);
   }
   return (
     <div className="image-holder">
-      <img src={image}></img>
-      <StyleSelector imageClick={imageClick} photos={props.photos} showImages={true}></StyleSelector>
-
+      <img src={props.image || props.photos[0].url}></img>
+      { showBigImage ? <Modal /> : null }
+      <div className="hoverModal" onMouseLeave={hidebigImage} onMouseOver={showbigImage} style={{background:"transparent", position:"absolute"}}></div>
+      <StyleSelector imageClick={props.imageClick} photos={props.photos} showImages={true}></StyleSelector>
     </div>);
 
 }

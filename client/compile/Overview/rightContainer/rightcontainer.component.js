@@ -9,9 +9,7 @@ class RightContainer extends React.Component{
     console.log(props.productInfo);
   }
 
-  //right container display flex;
-  clickedReviews(e){
-    //scroll page to reviews section;
+  clickedReviews(e) {
     console.log('read all reviews clicked');
   }
 
@@ -28,8 +26,21 @@ class RightContainer extends React.Component{
         <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles}> </StyleSelector>
       </div>
       <div className="option-selectors">
+        <div className="selector">
+        <label for="styles">Choose a style_id:</label>
+          <select className="drop-down" name="styles" id="cars">
+              <option>style1</option>
+              <option>style2</option>
+          </select>
+          <input placeholder="1"></input>
+        </div>
 
+        <div className="selector">
+        <button className="addToBag"></button>
+        <button className="addFavorite">star</button>
+        </div>
       </div>
+
     </div>);
   }
 

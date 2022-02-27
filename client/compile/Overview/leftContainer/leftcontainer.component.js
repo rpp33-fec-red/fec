@@ -12,7 +12,7 @@ class LeftContainer extends React.Component{
   render (){
     return (
       <div className="leftCt">
-        <ImageHolder photos={this.props.style.photos}/>
+        <ImageHolder image={this.props.image} imageClick={this.props.imageClick} photos={this.props.style.photos}/>
       </div>);
   }
 }

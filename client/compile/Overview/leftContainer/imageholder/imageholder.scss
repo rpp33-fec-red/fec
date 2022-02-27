@@ -11,9 +11,24 @@
   align-items: center;
    justify-content: center;
    align-items: flex-start;
+   overflow: visible;
    img{
      max-height:100%;
      width:auto;
 
+   }
+   .hoverModal{
+    background: transparent;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    right: 0px;
+   }
+   .bigImage{
+     position: absolute;
+     right:-50px;
+     img{
+      z-index: 2002;
+     }
    }
 }
