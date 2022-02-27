@@ -15,6 +15,7 @@ class RelatedProducts extends React.Component {
       outfitLoaded: false,
       showModal: false
     };
+    this.removeDuplicate = this.removeDuplicate.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.getOutfits = this.getOutfits.bind(this);
     this.handleAddToOutfit = this.handleAddToOutfit.bind(this);
@@ -26,7 +27,8 @@ class RelatedProducts extends React.Component {
   //all 64621 needs to be change to props.productId once params.id is passed to component
   componentDidMount () {
     this.props.getData(['products','64621', 'related'], (data) => {
-      this.setState({ relatedProducts: data.results });
+      const uniqueIds = this.removeDuplicate(data.results);
+      this.setState({ relatedProducts: uniqueIds });
     });
 
     this.props.getData(['products','64621', ''], (data) => {
@@ -36,10 +38,16 @@ class RelatedProducts extends React.Component {
     this.getOutfits();
   }
 
+  removeDuplicate (array) {
+    // eslint-disable-next-line no-undef
+    return [...new Set(array)];
+  }
+
   handleClick (e) {
     let id = e.currentTarget.className.split(' ')[1];
     this.props.getData (['products', id, 'related'], (data) => {
-      this.setState({ relatedProducts: data.results });
+      const uniqueIds = this.removeDuplicate(data.results);
+      this.setState({ relatedProducts: uniqueIds });
     });
     this.props.getData(['products',id, ''], (data) => {
       this.setState ({ current: data.results });
