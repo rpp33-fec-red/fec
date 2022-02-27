@@ -4,3 +4,4 @@ coverage
 jest.config.json
 bundle.js
 client/public/bundle.js
+client/compile/Questions/photos
