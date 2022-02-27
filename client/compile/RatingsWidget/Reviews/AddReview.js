@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewProductCharacteristics from './ReviewProductCharacteristics.js';
+import ReviewProductCharacteristics from './AddReview/ReviewProductCharacteristics.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
