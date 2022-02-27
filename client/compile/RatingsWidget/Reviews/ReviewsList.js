@@ -73,7 +73,7 @@ class ReviewsList extends React.Component {
 
         <div className ="reviews-buttons">
           {moreReviewsButton}
-          <button>ADD A REVIEW +< /button>
+          <button>ADD A REVIEW + </button>
         </div>
 
       </>
