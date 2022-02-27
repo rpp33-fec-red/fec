@@ -14,6 +14,13 @@ function AddReview (props) {
 
   const [characterCount, updateCharacterCount] = useState(0);
 
+  let bodyCharacterCountMessage;
+  if (characterCount < 50) {
+    bodyCharacterCountMessage = <p>Minimum required characters left: {50 - characterCount}</p>;
+  } else {
+    bodyCharacterCountMessage = <p>Minimum reached</p>;
+  }
+
   return (
     <div className="add-review">
       <form>
@@ -54,9 +61,9 @@ function AddReview (props) {
             maxLength="1000"
             placeholder="Why did you like the product or not?"
             onChange={(event)=> {
-              console.log(event.target.value.length);
               updateCharacterCount(event.target.value.length);
             }}/>
+          {bodyCharacterCountMessage}
         </div>
 
         <div>
