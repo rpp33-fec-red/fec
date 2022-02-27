@@ -163,10 +163,6 @@ describe('ReviewTile component', () => {
 
 describe('ReviewsList component', () => {
 
-  beforeAll(() = {
-    return render(<ReviewsList reviews={testReview}/>);
-  });
-
   const testReview = reviewsData.results;
   test('renders correctly', () => {
     const tree = renderer
@@ -177,7 +173,7 @@ describe('ReviewsList component', () => {
 
   test('reviews list contains two reviews by default when there are only two reviews for a product', async () => {
     let testReview = reviewsData.results;
-    const {getAllByText} = await render(<ReviewsList reviews={testReview}/>);
+    const {getAllByText} = render(<ReviewsList reviews={testReview}/>);
     await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(2));
   });
 
