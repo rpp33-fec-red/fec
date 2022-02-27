@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import ReviewProductCharacteristics from './AddReview/ReviewCharacteristics.js';
+import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -8,7 +9,7 @@ function AddReview (props) {
     characteristics =
 
     Object.keys(props.reviewsCharacteristics).map((characteristic) => {
-      return <ReviewProductCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
+      return <ReviewCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
     });
   }
 
@@ -18,6 +19,25 @@ function AddReview (props) {
   characterCount < 50 ?
     bodyCharacterCountMessage = <p>Minimum required characters left: {50 - characterCount}</p> :
     bodyCharacterCountMessage = <p>Minimum reached</p>;
+
+  const submitReview = (event) => {
+    event.preventDefault();
+    console.log('this is the form data', event.target);
+    const reviewData = {
+      product_id: product_id,
+      rating: rating,
+      summary: summary,
+      body: body,
+      recommend: recommend,
+      name: name,
+      email: email,
+      photos: [],
+      characteristics: {}
+    };
+    axios.post('/reviews', reviewData, () => {
+
+    });
+  };
 
   return (
     <div className="add-review modal-window">
@@ -65,7 +85,7 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="photos">Upload photos: </label>
-          <input name="photos" type="file" required="required"/>
+          <input name="photos" type="file"/>
         </div>
 
         <div>
@@ -78,7 +98,7 @@ function AddReview (props) {
           <input name="email" type="text" required="required" maxLength="60"/>
         </div>
 
-        <input type="submit"/>
+        <input type="submit" onSubmit={submitReview}/>
 
       </form>
     </div>
