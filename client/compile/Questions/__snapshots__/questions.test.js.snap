@@ -13,12 +13,16 @@ exports[`AddAnswerModal component loads and displays Answer component 1`] = `
     >
       X
     </a>
-    <h2>
-      Submit your Answer
-    </h2>
-    <h3>
+    <h4
+      className="modal-title"
+    >
+      SUBMIT YOUR ANSWER
+    </h4>
+    <h4
+      className="modal-subtitle"
+    >
       : 
-    </h3>
+    </h4>
     <form
       className="add-answer-form"
     >
@@ -47,7 +51,9 @@ exports[`AddAnswerModal component loads and displays Answer component 1`] = `
           placeholder="Example: jack543!"
           type="text"
         />
-        <p>
+        <p
+          className="modal-warning"
+        >
           For privacy reasons, do not use your full name or email address
         </p>
       </div>
@@ -63,7 +69,9 @@ exports[`AddAnswerModal component loads and displays Answer component 1`] = `
           placeholder="Example: jack@email.com"
           type="email"
         />
-        <p>
+        <p
+          className="modal-warning"
+        >
           For authentication reasons, you will not be emailed
         </p>
       </div>
@@ -71,18 +79,20 @@ exports[`AddAnswerModal component loads and displays Answer component 1`] = `
         className="modal-form"
       >
         <input
+          className="submit-modal"
           name="photos"
           onClick={[Function]}
           type="button"
-          value="Upload Photos"
+          value="UPLOAD PHOTOS"
         />
       </div>
       <div
         className="modal-form"
       >
         <input
+          className="submit-modal"
           type="submit"
-          value="Submit answer"
+          value="SUBMIT ANSWER"
         />
       </div>
     </form>
@@ -103,12 +113,16 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
     >
       X
     </a>
-    <h2>
-      Ask Your Question
-    </h2>
-    <h3>
+    <h4
+      className="modal-title"
+    >
+      ASK YOUR QUESTION
+    </h4>
+    <h4
+      className="modal-subtitle"
+    >
       About the 
-    </h3>
+    </h4>
     <form
       className="add-question-form"
     >
@@ -137,7 +151,9 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
           placeholder="Example: jackson11!"
           type="text"
         />
-        <p>
+        <p
+          className="modal-warning"
+        >
           For privacy reasons, do not use your full name or email address
         </p>
       </div>
@@ -153,7 +169,9 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
           placeholder="Why did you like the product or not?"
           type="email"
         />
-        <p>
+        <p
+          className="modal-warning"
+        >
           For authentication reasons, you will not be emailed
         </p>
       </div>
@@ -161,8 +179,9 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
         className="modal-form"
       >
         <input
+          className="submit-modal"
           type="submit"
-          value="Submit question"
+          value="SUBMIT QUESTION"
         />
       </div>
     </form>
@@ -182,7 +201,9 @@ exports[`Answer component loads and displays Answer component 1`] = `
   <div
     className="answer-links"
   >
-    <p>
+    <p
+      className="answerer-details"
+    >
       by
       <span
         className="answerer-seller"
@@ -236,7 +257,9 @@ exports[`AnswerList component loads and displays AnswerList component 1`] = `
       <div
         className="answer-links"
       >
-        <p>
+        <p
+          className="answerer-details"
+        >
           by
           <span
             className="answerer-seller"
@@ -274,7 +297,7 @@ exports[`Question component loads and displays Question component 1`] = `
   className="question"
 >
   <div
-    className="questionTitle"
+    className="question-title"
   >
     <p
       className="question-body"
@@ -283,7 +306,7 @@ exports[`Question component loads and displays Question component 1`] = `
       Why is this product cheaper here than other sites?
     </p>
     <div
-      className="questionLinks"
+      className="question-links"
     >
       <p>
         Helpful? 
@@ -327,7 +350,9 @@ exports[`Question component loads and displays Question component 1`] = `
         <div
           className="answer-links"
         >
-          <p>
+          <p
+            className="answerer-details"
+          >
             by
             <span
               className="answerer-seller"
@@ -365,10 +390,13 @@ exports[`QuestionButtons component loads and displays Question Buttons comoponen
 <div
   className="question-buttons"
 >
-  <button>
+  <button
+    className="more-question-button"
+  >
     MORE ANSWERED QUESTIONS
   </button>
   <button
+    className="add-question-button"
     onClick={[Function]}
   >
     ADD A QUESTION +
@@ -380,9 +408,11 @@ exports[`Questions widget component loads and displays questions widget componen
 <div
   className="questions-widget"
 >
-  <h6>
+  <h4
+    className="questions-title"
+  >
     QUESTIONS & ANSWERS
-  </h6>
+  </h4>
   <div
     className="search-bar"
   >
@@ -400,7 +430,7 @@ exports[`Questions widget component loads and displays questions widget componen
       className="question"
     >
       <div
-        className="questionTitle"
+        className="question-title"
       >
         <p
           className="question-body"
@@ -409,7 +439,7 @@ exports[`Questions widget component loads and displays questions widget componen
           Why is this product cheaper here than other sites?
         </p>
         <div
-          className="questionLinks"
+          className="question-links"
         >
           <p>
             Helpful? 
@@ -453,7 +483,9 @@ exports[`Questions widget component loads and displays questions widget componen
             <div
               className="answer-links"
             >
-              <p>
+              <p
+                className="answerer-details"
+              >
                 by
                 <span
                   className="answerer-seller"
@@ -489,7 +521,7 @@ exports[`Questions widget component loads and displays questions widget componen
       className="question"
     >
       <div
-        className="questionTitle"
+        className="question-title"
       >
         <p
           className="question-body"
@@ -498,7 +530,7 @@ exports[`Questions widget component loads and displays questions widget componen
           How long does it last?
         </p>
         <div
-          className="questionLinks"
+          className="question-links"
         >
           <p>
             Helpful? 
@@ -542,7 +574,9 @@ exports[`Questions widget component loads and displays questions widget componen
             <div
               className="answer-links"
             >
-              <p>
+              <p
+                className="answerer-details"
+              >
                 by
                 <span
                   className="answerer-other"
@@ -582,7 +616,9 @@ exports[`Questions widget component loads and displays questions widget componen
             <div
               className="answer-links"
             >
-              <p>
+              <p
+                className="answerer-details"
+              >
                 by
                 <span
                   className="answerer-other"
@@ -619,11 +655,13 @@ exports[`Questions widget component loads and displays questions widget componen
     className="question-buttons"
   >
     <button
+      className="more-question-button"
       onClick={[Function]}
     >
       MORE ANSWERED QUESTIONS
     </button>
     <button
+      className="add-question-button"
       onClick={[Function]}
     >
       ADD A QUESTION +
@@ -655,15 +693,21 @@ exports[`UploadPhotosModal component loads and displays Answer component 1`] = `
     className="questions-modals-content"
   >
     <a
-      className="close-window"
+      className="close-modal"
     >
       X
     </a>
-    <h3>
+    <h4
+      className="modal-title"
+    >
       Upload Photos for 
-    </h3>
-    <form>
-      <div>
+    </h4>
+    <form
+      className="upload-photos-form"
+    >
+      <div
+        className="modal-form"
+      >
         <label
           htmlFor="photo-upload"
         >
@@ -678,6 +722,7 @@ exports[`UploadPhotosModal component loads and displays Answer component 1`] = `
       </div>
       <div>
         <input
+          className="submit-modal"
           type="submit"
           value="Upload Photo"
         />

@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 
 // The purpose of this component is to hold the entirety of the reviews section.
 function Reviews (props) {
+  const reviews = props.reviews;
   return (
     <div className ="reviews">
-      <ReviewsList reviews={props.reviews}/>
+      <ReviewsList reviews={reviews} updateSorting={props.updateSorting}/>
     </div>
   );
 }
 
 Reviews.propTypes = {
-  reviews: PropTypes.any
+  reviews: PropTypes.any,
+  updateSorting: PropTypes.any
 };
 
 

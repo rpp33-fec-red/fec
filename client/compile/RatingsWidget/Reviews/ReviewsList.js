@@ -12,12 +12,20 @@ class ReviewsList extends React.Component {
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
   }
 
-  componentDidMount () {
-    if (this.props.reviews.length > 2) {
-      const reviews = this.props.reviews.slice(0, 2);
-      this.setState({
-        reviewsDisplayed: reviews
-      });
+  componentDidUpdate(prevProps) {
+    const previousProps = JSON.stringify(prevProps.reviews);
+    const currentProps = JSON.stringify(this.props.reviews);
+    if (previousProps !== currentProps) {
+      if (this.props.reviews.length > 2) {
+        const reviews = this.props.reviews.slice(0, 2);
+        this.setState({
+          reviewsDisplayed: reviews
+        });
+      } else {
+        this.setState({
+          reviewsDisplayed: this.props.reviews
+        });
+      }
     }
   }
 
@@ -32,7 +40,6 @@ class ReviewsList extends React.Component {
       } else {
         updatedReviews = this.props.reviews.slice(0, numberOfReviewsDisplayed + 2);
       }
-
       this.setState({
         reviewsDisplayed: updatedReviews
       });
@@ -42,7 +49,7 @@ class ReviewsList extends React.Component {
   render () {
 
     let reviews;
-    if (this.props.reviews < 2) {
+    if (this.props.reviews.length < 2) {
       reviews = this.props.reviews;
     } else {
       reviews = this.state.reviewsDisplayed;
@@ -56,7 +63,7 @@ class ReviewsList extends React.Component {
 
     return (
       <>
-        <ReviewsSorting/>
+        <ReviewsSorting numOfReviews={this.props.reviews.length} updateSorting={this.props.updateSorting}/>
 
         <div className ="reviews-list">
           {reviews.map((review) => {
@@ -66,7 +73,7 @@ class ReviewsList extends React.Component {
 
         <div className ="reviews-buttons">
           {moreReviewsButton}
-          <button>ADD A REVIEW +< /button>
+          <button>ADD A REVIEW + </button>
         </div>
 
       </>
@@ -75,7 +82,8 @@ class ReviewsList extends React.Component {
 }
 
 ReviewsList.propTypes = {
-  reviews: PropTypes.any
+  reviews: PropTypes.any,
+  updateSorting: PropTypes.any
 };
 
 
