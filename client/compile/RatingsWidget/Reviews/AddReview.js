@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewProductCharacteristics from './AddReview/ReviewProductCharacteristics.js';
+import ReviewProductCharacteristics from './AddReview/ReviewCharacteristics.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -38,12 +38,12 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="summary">Review Summary: </label>
-          <input name="summary" type="text" required="required"/>
+          <input name="summary" type="text" required="required" maxLength="60" placeholder="Example: Best purchase ever!"/>
         </div>
 
         <div>
           <label htmlFor="body">Review Body: </label>
-          <input name="body" type="text" required="required"/>
+          <input name="body" type="text" required="required" minLength="50" maxLength="1000" placeholder="Why did you like the product or not?"/>
         </div>
 
         <div>
