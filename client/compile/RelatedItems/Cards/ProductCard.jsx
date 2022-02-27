@@ -49,18 +49,17 @@ class ProductCard extends React.Component {
           onClick = {this.props.handleCompare}
         >*</button>{''}
         <img src={this.state.photo} alt="Photo" className="productImage" />
-        <p className="category" style={{"paddingLeft": "1rem"}} >{this.state.category}</p>
+        <p className="product_category" >{this.state.category}</p>
         <h4
-          className={`cardtitle ${this.props.product_id}`}
-          style={{"paddingLeft": "1rem"}}
+          className={`product_cardtitle ${this.props.product_id}`}
           onClick={this.props.handleClick}
           // href={`/products/${this.props.product_id}`}
           //comment href out because page /products/:id doesn't exist yet
         ><b>{this.state.product_name}</b></h4>
-        <p className="default-price" style={{"paddingLeft": "1rem"}}>
+        <p className="product_default_price">
           { !this.state.sale_price
             ? (`$ ${this.state.default_price}`)
-            : (<span><span className='original_price' style={{ "textDecorationLine": "line-through" }}>$ {this.state.original_price}</span><b><span className='sale_price' style={{"color": "red"}}>  $ {this.state.sale_price}</span></b></span>)
+            : (<span><span className='product_original_price'>$ {this.state.original_price}</span><b><span className='product_sale_price'>  $ {this.state.sale_price}</span></b></span>)
           }</p>
         <StarsComponent product_id={this.props.product_id} />
       </div>

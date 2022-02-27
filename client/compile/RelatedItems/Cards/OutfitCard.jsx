@@ -7,7 +7,6 @@ class OutfitCard extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      id: props.outfit_id,
       photo: `https://i.pinimg.com/originals/2d/38/62/2d3862abf214ecdb6a1c231e035c1796.jpg`,
       category: 'Pug',
       product_name: '',
@@ -45,15 +44,15 @@ class OutfitCard extends React.Component {
       <div className="productCard" >
         <button
           id="deleteButton"
-          value={this.state.id}
+          value={this.props.outfit_id}
           onClick={this.props.handleDelete}
         >X</button>
         <img src={this.state.photo} alt="Photo" className="productImage" />
-        <p className="category" style={{"paddingLeft": "1rem"}}>{this.state.category}</p>
-        <p className="default-price" style={{"paddingLeft": "1rem"}}>
+        <p className="product_category">{this.state.category}</p>
+        <p className="product_default_price">
           { !this.state.sale_price
             ? (`$ ${this.state.default_price}`)
-            : (<span><span className='original_price' style={{ "textDecorationLine": "line-through" }}>$ {this.state.original_price}</span><b><span className='sale_price' style={{"color": "red"}}>  $ {this.state.sale_price}</span></b></span>)
+            : (<span><span className='product_original_price'>$ {this.state.original_price}</span><b><span className='product_sale_price'>  $ {this.state.sale_price}</span></b></span>)
           }</p>
         <StarsComponent product_id={this.props.outfit_id} />
       </div>

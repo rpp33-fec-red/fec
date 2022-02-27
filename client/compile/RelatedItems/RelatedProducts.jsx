@@ -10,7 +10,7 @@ class RelatedProducts extends React.Component {
     this.state = {
       current: {},
       compare: {},
-      relatedProducts: [], // to keep track of products on higher level
+      relatedProducts: [], 
       outfitIds: [],
       outfitLoaded: false,
       showModal: false
