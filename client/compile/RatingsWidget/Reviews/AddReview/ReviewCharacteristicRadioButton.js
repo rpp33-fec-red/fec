@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function ReviewCharacteristicValue (props) {
+function ReviewCharacteristicRadioButton (props) {
 
   // Determines what descriptions to show based on the characteristic
   let valueDescriptions;
@@ -76,11 +76,11 @@ function ReviewCharacteristicValue (props) {
   );
 }
 
-ReviewCharacteristicValue.propTypes = {
+ReviewCharacteristicRadioButton.propTypes = {
   characteristic: PropTypes.any,
   value: PropTypes.any,
   showDescription: PropTypes.any,
   descriptionShown: PropTypes.any
 };
 
-export default ReviewCharacteristicValue;
+export default ReviewCharacteristicRadioButton;

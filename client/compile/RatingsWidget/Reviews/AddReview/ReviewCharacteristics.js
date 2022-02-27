@@ -1,8 +1,8 @@
 import React from 'react';
-import ReviewCharacteristicValue from './ReviewCharacteristicValue.js';
+import ReviewCharacteristicRadioButton from './ReviewCharacteristicRadioButton.js';
 import PropTypes from 'prop-types';
 
-class ReviewProductCharacteristics extends React.Component {
+class ReviewCharacteristics extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -28,7 +28,7 @@ class ReviewProductCharacteristics extends React.Component {
           let descriptionShown;
           this.state.valueSelected === value ? descriptionShown = true : descriptionShown = false;
 
-          return <ReviewCharacteristicValue
+          return <ReviewCharacteristicRadioButton
             key={value}
             value={value}
             characteristic={this.props.characteristic}
@@ -40,8 +40,8 @@ class ReviewProductCharacteristics extends React.Component {
   }
 }
 
-ReviewProductCharacteristics.propTypes = {
+ReviewCharacteristics.propTypes = {
   characteristic: PropTypes.any
 };
 
-export default ReviewProductCharacteristics;
+export default ReviewCharacteristics;
