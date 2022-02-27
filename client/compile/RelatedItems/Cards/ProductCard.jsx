@@ -18,7 +18,6 @@ class ProductCard extends React.Component {
   }
 
   componentDidMount () {
-    console.log('props', this.props);
     this.getCardInfo(this.props.product_id);
   }
 

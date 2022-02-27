@@ -68,13 +68,10 @@ class RelatedProducts extends React.Component {
 
   getOutfits () {
     let outfitIds = JSON.parse(localStorage.getItem("outfit"));
-    // let outfitIds = [64622]; //hardcode in to check for Outfitrender
     if (outfitIds) {
-      this.setState({ outfitIds: outfitIds}, ()=> {
-        this.setState({ outfitLoaded: true });
-      });
+      this.setState({ outfitIds: outfitIds});
+      this.setState({ outfitLoaded: true });
     }
-
   }
 
   handleAddToOutfit () {
