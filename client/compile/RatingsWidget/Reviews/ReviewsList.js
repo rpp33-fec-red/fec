@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewTile from './ReviewTile.js';
 import ReviewsSorting from './ReviewsSorting.js';
+import AddReview from './AddReview.js';
 import PropTypes from 'prop-types';
 
 class ReviewsList extends React.Component {
@@ -75,6 +76,8 @@ class ReviewsList extends React.Component {
           {moreReviewsButton}
           <button>ADD A REVIEW +< /button>
         </div>
+
+        <AddReview/>
 
       </>
     );
