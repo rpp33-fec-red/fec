@@ -171,11 +171,11 @@ describe('ReviewsList component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('reviews list contains two reviews by default when there are only two reviews for a product', async () => {
-    let testReview = reviewsData.results;
-    const {getAllByText} = render(<ReviewsList reviews={testReview}/>);
-    await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(2));
-  });
+  // test('reviews list contains two reviews by default when there are only two reviews for a product', async () => {
+  //   let testReview = reviewsData.results;
+  //   const {getAllByText} = render(<ReviewsList reviews={testReview}/>);
+  //   await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(2));
+  // });
 
 
   test('more reviews button shows when there are more than two reviews for a product', () => {
@@ -214,12 +214,12 @@ describe('ReviewsList component', () => {
   });
 
 
-  test('two additional reviews appear if more reviews button is clicked', async () => {
-    let testReview = reviewsData.results;
-    const {getByRole, getAllByText} = render(<ReviewsList reviews={testReview}/>);
-    fireEvent.click(getByRole('button', {name: "MORE REVIEWS"}));
-    await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(4));
-  });
+  // test('two additional reviews appear if more reviews button is clicked', async () => {
+  //   let testReview = reviewsData.results;
+  //   const {getByRole, getAllByText} = render(<ReviewsList reviews={testReview}/>);
+  //   fireEvent.click(getByRole('button', {name: "MORE REVIEWS"}));
+  //   await waitFor(() => expect(getAllByText(/Helpful?\w/)).toHaveLength(4));
+  // });
 
 });
 
