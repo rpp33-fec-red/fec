@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import StarsComponent from '../../showStars';
 import '../relatedItems.scss';
 
 class OutfitCard extends React.Component {
@@ -11,6 +12,8 @@ class OutfitCard extends React.Component {
       category: 'Pug',
       product_name: '',
       default_price: '$$$',
+      sale_price: null,
+      original_price: '$$'
     };
     this.getOutfitInfo = this.getOutfitInfo.bind(this);
   }
@@ -30,7 +33,9 @@ class OutfitCard extends React.Component {
 
     this.props.getData(['products',id,'styles'],(data) => {
       this.setState({
-        photo: data.results.results[0]['photos'][0]['thumbnail_url']
+        photo: data.results.results[0]['photos'][0]['thumbnail_url'],
+        original_price: data.results.results[0]['original_price'],
+        sale_price: parseInt(data.results.results[0]['sale_price'])
       });
     });
   }
@@ -44,12 +49,13 @@ class OutfitCard extends React.Component {
           onClick={this.props.handleDelete}
         >X</button>
         <img src={this.state.photo} alt="Photo" className="productImage" />
-        <p className="category" ></p>
-        <a
-          className={`cardtitle ${this.props.outfit_id}`}
-        ><b>{this.state.product_name}</b></a>
-        <p className="default-price" >$ {this.state.default_price}</p>
-
+        <p className="category" style={{"paddingLeft": "1rem"}}>{this.state.category}</p>
+        <p className="default-price" style={{"paddingLeft": "1rem"}}>
+          { !this.state.sale_price
+            ? (`$ ${this.state.default_price}`)
+            : (<span><span className='original_price' style={{ "textDecorationLine": "line-through" }}>$ {this.state.original_price}</span><b><span className='sale_price' style={{"color": "red"}}>  $ {this.state.sale_price}</span></b></span>)
+          }</p>
+        <StarsComponent product_id={this.props.outfit_id} />
       </div>
     );
   }

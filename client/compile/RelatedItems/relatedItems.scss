@@ -1,3 +1,15 @@
+.productCarousel {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+.productCarousel ::-webkit-scrollbar-track {
+    background: transparent;
+}
+.productCarousel ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+
 .productCard {
     box-shadow : 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 15rem;
@@ -20,11 +32,9 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
-  
+
 .modal-main {
-    position:fixed;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
     background: white;
     width: 80%;
     height: auto;
@@ -33,13 +43,31 @@
     padding: 3rem;
     transform: translate(-50%,-50%);
 }
-  
+
+.compare-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // align-items: flex-start center;
+    column-gap: 10rem;
+    row-gap: 2rem;
+    border-bottom: 1px solid #dcdcdc;
+}
+
 .display-block {
     display: block;
 }
   
 .display-none {
     display: none;
+}
+
+.rowTitle {
+    font-weight: bold;
+}
+
+.feature {
+    font-weight: bold;
 }
 
 #compareButton {

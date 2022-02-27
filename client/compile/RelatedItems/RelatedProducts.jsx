@@ -48,10 +48,9 @@ class RelatedProducts extends React.Component {
 
   handleCompare (e) {
     let id = e.target.value;
-    console.log('compare id', id);
     this.props.getData (['products', id, ''], (data) => {
       this.setState({ compare: data.results });
-      this.setState({ showModal: true }, () => { console.log('current & compare', this.state); });
+      this.setState({ showModal: true });
     });
   }
 
@@ -60,8 +59,8 @@ class RelatedProducts extends React.Component {
   }
 
   getOutfits () {
-    // let outfitIds = JSON.parse(localStorage.getItem("outfit"));
-    let outfitIds = [64622]; //hardcode in to check for Outfitrender
+    let outfitIds = JSON.parse(localStorage.getItem("outfit"));
+    // let outfitIds = [64622]; //hardcode in to check for Outfitrender
     if (outfitIds) {
       this.setState({ outfitIds: outfitIds}, ()=> {
         this.setState({ outfitLoaded: true });
