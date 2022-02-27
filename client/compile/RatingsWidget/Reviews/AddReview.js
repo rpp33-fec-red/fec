@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewProductCharacteristics from './ReviewProductCharacteristics.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -23,7 +24,8 @@ function AddReview (props) {
         </div>
 
         <div>
-
+          <label htmlFor="characteristics" required="required">Characteristics </label>
+          <ReviewProductCharacteristics/>
         </div>
 
       </form>
