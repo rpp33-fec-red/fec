@@ -31,12 +31,11 @@ function AddReview (props) {
         </div>
 
         <div>
-          <label htmlFor="recommend" required="required">Do you recommend this product? </label>
-
+          <label htmlFor="recommend">Do you recommend this product? </label>
           <label>Yes </label>
-          <input name="recommend" type="radio"/>
+          <input name="recommend" type="radio" required="required"/>
           <label>No </label>
-          <input name="recommend" type="radio"/>
+          <input name="recommend" type="radio" required="required"/>
         </div>
 
         <div>

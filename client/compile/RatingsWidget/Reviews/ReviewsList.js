@@ -14,6 +14,7 @@ class ReviewsList extends React.Component {
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
     this.showAddReviewWindow = this.showAddReviewWindow.bind(this);
     this.closeAddReviewWindow = this.closeAddReviewWindow.bind(this);
+    this.addNewReview = this.addNewReview.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -60,6 +61,10 @@ class ReviewsList extends React.Component {
     this.setState({
       addReviewDisplayed: false
     });
+  }
+
+  addNewReview () {
+
   }
 
   render () {
