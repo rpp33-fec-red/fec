@@ -17,19 +17,24 @@ class StyleSelector extends React.Component {
       expandedStyles:{'transform':'rotate(0deg)'}
     };
     this.expand = this.expand.bind(this);
-
+    this.showStyles = this.showStyles.bind(this);
   }
-  styleClicked() {
 
-  }
-  imageClicked(){
 
-  }
+
 
   showStyles(){
-    return (
-      <div className="styleSelector">
+    var that = this;
+    function clickchangeStyle(){
+      that.props.changeStyle(this.index);
+    };
 
+    return (
+      <div className="grid-ct">
+        { this.props.styles.map(function(style,index){
+          return <div className="style"  onClick={clickchangeStyle.bind({index:index})} key={style.style_id}> <img src={style.photos[0].thumbnail_url}></img></div>;
+        })
+        }
       </div>);
   }
 
