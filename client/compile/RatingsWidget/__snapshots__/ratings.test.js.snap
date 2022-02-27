@@ -139,7 +139,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
       className="reviews-buttons"
     >
       <button>
-        ADD A REVIEW +
+        ADD A REVIEW + 
       </button>
     </div>
   </div>
@@ -270,7 +270,7 @@ exports[`Reviews component renders correctly 1`] = `
       MORE REVIEWS
     </button>
     <button>
-      ADD A REVIEW +
+      ADD A REVIEW + 
     </button>
   </div>
 </div>
@@ -319,7 +319,7 @@ Array [
       MORE REVIEWS
     </button>
     <button>
-      ADD A REVIEW +
+      ADD A REVIEW + 
     </button>
   </div>,
 ]
