@@ -24,9 +24,36 @@ function AddReview (props) {
         </div>
 
         <div>
-          <label htmlFor="characteristics" required="required">Characteristics </label>
+          <label htmlFor="characteristics" required="required">Characteristics: </label>
           <ReviewProductCharacteristics/>
         </div>
+
+        <div>
+          <label htmlFor="summary">Review Summary: </label>
+          <input name="summary" type="text" required="required"/>
+        </div>
+
+        <div>
+          <label htmlFor="body">Review Body: </label>
+          <input name="body" type="text" required="required"/>
+        </div>
+
+        <div>
+          <label htmlFor="photos">Upload photos: </label>
+          <input name="photos" type="file" required="required"/>
+        </div>
+
+        <div>
+          <label htmlFor="nickname">Nickname: </label>
+          <input name="nickname" type="text" required="required"/>
+        </div>
+
+        <div>
+          <label htmlFor="email">Email: </label>
+          <input name="email" type="text" required="required"/>
+        </div>
+
+        <input type="submit"/>
 
       </form>
     </div>
