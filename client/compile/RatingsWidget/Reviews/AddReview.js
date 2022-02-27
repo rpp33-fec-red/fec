@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReviewProductCharacteristics from './AddReview/ReviewCharacteristics.js';
 import PropTypes from 'prop-types';
 
@@ -11,6 +11,9 @@ function AddReview (props) {
       return <ReviewProductCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
     });
   }
+
+  const [characterCount, updateCharacterCount] = useState(0);
+
   return (
     <div className="add-review">
       <form>
@@ -43,7 +46,17 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="body">Review Body: </label>
-          <input name="body" type="text" required="required" minLength="50" maxLength="1000" placeholder="Why did you like the product or not?"/>
+          <input
+            name="body"
+            type="text"
+            required="required"
+            minLength="50"
+            maxLength="1000"
+            placeholder="Why did you like the product or not?"
+            onChange={(event)=> {
+              console.log(event.target.value.length);
+              updateCharacterCount(event.target.value.length);
+            }}/>
         </div>
 
         <div>
