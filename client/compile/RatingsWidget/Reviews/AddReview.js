@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
 import {validateFields, formatReviewData} from './AddReview/helpers.js';
+import StarRatingInput from './AddReview/StarRatingInput.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -15,6 +16,9 @@ function AddReview (props) {
     });
   }
 
+  // Updates rating input value based on what the user has clicked
+  const [starRating, updateStarRating] = useState(0);
+  console.log('this is the star rating: ', starRating);
   // Updates message under body input field with character count
   const [bodyCharacterCount, updateBodyCharacterCount] = useState(0);
 
@@ -29,6 +33,7 @@ function AddReview (props) {
   const submitReview = (event) => {
     event.preventDefault();
     const form = event.target;
+    console.log(form);
     const applicableCharacteristics = props.reviewsCharacteristics;
     submissionMessage = validateFields(form.elements, applicableCharacteristics);
     if (submissionMessage === 'Your review has been submitted.') {
@@ -56,7 +61,7 @@ function AddReview (props) {
         <button onClick={props.closeAddReviewWindow}>Close</button>
         <div>
           <label htmlFor="rating">Overall Rating: </label>
-          <input name="rating" type="text"/>
+          <StarRatingInput name="rating" updateStarRating={updateStarRating} starRating={starRating}/>
         </div>
 
         <div>

@@ -1,7 +1,7 @@
-const validateFields = (fields, applicableCharacteristics) => {
+const validateFields = (fields, applicableCharacteristics, rating) => {
   let success = true;
+
   const mandatoryFields = {
-    rating: fields.rating.value,
     recommend: fields.recommend.value,
     summary: fields.summary.value,
     body: fields.body.value,
@@ -48,6 +48,11 @@ const validateFields = (fields, applicableCharacteristics) => {
   if (!mandatoryFields.email.includes('@') && !mandatoryFields.email.includes('.com')) {
     const characterCountError = 'valid email address';
     addToErrorMessage(characterCountError);
+  }
+
+  // if no star rating provided
+  if (rating === 0) {
+    addToErrorMessage(rating);
   }
 
   // adding image validatation [in-progress]
