@@ -21,7 +21,7 @@ class ReviewCharacteristics extends React.Component {
   render () {
     const values = [1, 2, 3, 4, 5];
     return (
-      <div>
+      <div className="radio-buttons">
         <label htmlFor={this.props.characteristic}>{this.props.characteristic}</label>
         {values.map((value) => {
 

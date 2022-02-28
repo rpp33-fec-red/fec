@@ -65,7 +65,7 @@ function ReviewCharacteristicRadioButton (props) {
   // Sets the description based on the value
   let ratingDescription;
   const valueDescription = valueDescriptions[props.value];
-  props.descriptionShown ? ratingDescription = <div>{valueDescription}</div> : null;
+  props.descriptionShown ? ratingDescription = <div>{valueDescription}</div> : <div>   </div>;
 
   return (
     <div>
