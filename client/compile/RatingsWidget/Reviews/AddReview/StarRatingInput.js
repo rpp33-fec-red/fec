@@ -36,7 +36,7 @@ class StarRatingInput extends React.Component{
     let starRatingDescription = <p>{description[this.props.starRating]}</p>;
 
     return (
-      <div>
+      <div className="star-rating-input">
         <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
           <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
           <div className="starOverlay" style={{ "width": `${100-(this.props.starRating * 20)}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1", "pointerEvents": "none" }}></div>
