@@ -71,7 +71,7 @@ class RatingsWidget extends React.Component {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings reviewsMetadata={this.state.reviewsMetadata}/>
+        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={'64621'}/>
         <Reviews reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );
