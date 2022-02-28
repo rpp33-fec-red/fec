@@ -67,7 +67,7 @@ const validateFields = (fields, applicableCharacteristics, rating) => {
 
 };
 
-const formatReviewData = (fields, applicableCharacteristics) => {
+const formatReviewData = (fields, applicableCharacteristics, starRating) => {
 
   // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
   let reviewCharRating = {};
@@ -77,7 +77,6 @@ const formatReviewData = (fields, applicableCharacteristics) => {
     reviewCharRating[characteristicRating_id] = parseInt(characteristicRating);
   }
 
-  const rating = parseInt(event.target.elements.rating.value);
   const recommend = fields.recommend.value === 'true' ? true : false;
   const summary = fields.summary.value;
   const body = fields.body.value;
@@ -86,7 +85,7 @@ const formatReviewData = (fields, applicableCharacteristics) => {
 
   const reviewData = {
     product_id: 64621,
-    rating: rating,
+    rating: starRating,
     summary: summary,
     body: body,
     recommend: recommend,

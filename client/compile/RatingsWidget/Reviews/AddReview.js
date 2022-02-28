@@ -35,9 +35,9 @@ function AddReview (props) {
     const form = event.target;
     console.log(form);
     const applicableCharacteristics = props.reviewsCharacteristics;
-    submissionMessage = validateFields(form.elements, applicableCharacteristics);
+    submissionMessage = validateFields(form.elements, applicableCharacteristics, starRating);
     if (submissionMessage === 'Your review has been submitted.') {
-      const reviewData = formatReviewData(form.elements, applicableCharacteristics);
+      const reviewData = formatReviewData(form.elements, applicableCharacteristics, starRating);
       axios.post('/reviews', reviewData)
         .then(() => {
           form.reset();
@@ -111,8 +111,8 @@ function AddReview (props) {
           <input name="email" type="text" maxLength="60"/>
           <p>For authentication reasons, you will not be emailed</p>
         </div>
+        <input type="submit"/>
 
-        <input type="submit" />
         {submissionMessage}
       </form>
     </div>

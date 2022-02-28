@@ -27,7 +27,6 @@ class StarRatingInput extends React.Component{
   }
 
   render (){
-
     return (
       <div className="starComponent">
         <div>{this.makeStars()}</div>
