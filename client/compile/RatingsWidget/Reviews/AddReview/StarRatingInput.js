@@ -8,14 +8,33 @@ class StarRatingInput extends React.Component{
   }
 
   makeStars(){
+    let description = {
+      1: 'Poor',
+      2: 'Fair',
+      3: 'Average',
+      4: 'Good',
+      5: 'Great'
+    };
+
     let array =[];
+
     for(let i=0; i< 5; i++){
-      array.push(<svg key={i}
-        className="star"
-        xmlns="http://www.w3.org/2000/svg"
-        enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill='#f8d448' ><g>
-          <rect fill="none" height="24" width="24" x="0"/>
-          <polygon onClick={(event) => { this.props.updateStarRating(parseInt(event.target.id)); }} id={i + 1} points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" stroke='#646464'/></g></svg> );
+      let starRatingDescription;
+      if (i + 1 === this.props.starRating) {
+        starRatingDescription = <p>{description[i + 1]}</p>;
+      }
+      array.push(
+        <div>
+          <svg key={i}
+            className="star"
+            xmlns="http://www.w3.org/2000/svg"
+            enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill='#f8d448' ><g>
+              <rect fill="none" height="24" width="24" x="0"/>
+              <polygon onClick={(event) => { this.props.updateStarRating(parseInt(event.target.id)); }} id={i + 1} points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" stroke='#646464'/></g>
+          </svg>
+          {starRatingDescription}
+        </div>
+      );
     }
 
     return (
