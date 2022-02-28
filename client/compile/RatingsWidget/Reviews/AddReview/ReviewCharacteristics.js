@@ -12,14 +12,14 @@ class ReviewCharacteristics extends React.Component {
   }
 
   showDescription (event) {
-    const valueSelected = event.target.value;
+    const valueSelected = parseInt(event.target.value);
     this.setState({
       valueSelected: valueSelected
     });
   }
 
   render () {
-    const values = ['1', '2', '3', '4', '5'];
+    const values = [1, 2, 3, 4, 5];
     return (
       <div>
         <label htmlFor={this.props.characteristic}>{this.props.characteristic}</label>

@@ -100,7 +100,19 @@ app.put('/putData', (req, res) => {
 });
 
 app.post('/reviews', (req, res) => {
-  console.log(req.body);
+  let reviewData = req.body;
+  console.log(reviewData)
+  // let url = options.APIURL + '/reviews';
+  // const config = {
+  //   headers: {
+  //     authorization:`${options.APIKEY}`
+  //   }
+  // };
+  // axios.post(url, reviewData, config)
+  //   .then((data) => {
+  //     console.log('review saved:', data);
+  //     res.send();
+  //   });
 });
 
 app.listen(port,function(){

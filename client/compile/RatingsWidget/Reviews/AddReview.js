@@ -32,7 +32,7 @@ function AddReview (props) {
     }
 
     const reviewData = {
-      product_id: '64621',
+      product_id: 64621,
       rating: event.target.elements.rating.value,
       summary: event.target.elements.summary.value,
       body: event.target.elements.body.value,
