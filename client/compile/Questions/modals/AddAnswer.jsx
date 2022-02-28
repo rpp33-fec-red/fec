@@ -39,7 +39,6 @@ class AddAnswerModal extends React.Component {
       .then((response) => {
         let relativePath = '..' + response.data.split('photos')[1];
         photos.push(relativePath);
-        console.log(photos);
         this.setState({
           photoCount: this.state.photoCount + 1,
           uploadedPhotos: photos
