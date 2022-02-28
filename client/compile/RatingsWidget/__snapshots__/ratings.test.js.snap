@@ -1,5 +1,374 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AddReviews component renders correctly 1`] = `
+<div
+  className="add-review modal-window"
+>
+  <form
+    className="modal-content"
+  >
+    <h2>
+      Write Your Review
+    </h2>
+    <h3>
+      About the [Product Name]
+    </h3>
+    <button>
+      Close
+    </button>
+    <div>
+      <label
+        htmlFor="rating"
+      >
+        Overall Rating: 
+      </label>
+      <input
+        name="rating"
+        required="required"
+        type="text"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="recommend"
+      >
+        Do you recommend this product? 
+      </label>
+      <label>
+        Yes 
+      </label>
+      <input
+        name="recommend"
+        required="required"
+        type="radio"
+      />
+      <label>
+        No 
+      </label>
+      <input
+        name="recommend"
+        required="required"
+        type="radio"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="characteristics"
+        required="required"
+      >
+        Characteristics: 
+      </label>
+      <div>
+        <label
+          htmlFor="Size"
+        >
+          Size
+        </label>
+        <div>
+          <label
+            htmlFor="Size"
+          >
+            1
+          </label>
+          <input
+            name="Size"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="1"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Size"
+          >
+            2
+          </label>
+          <input
+            name="Size"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="2"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Size"
+          >
+            3
+          </label>
+          <input
+            name="Size"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="3"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Size"
+          >
+            4
+          </label>
+          <input
+            name="Size"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="4"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Size"
+          >
+            5
+          </label>
+          <input
+            name="Size"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="5"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="Width"
+        >
+          Width
+        </label>
+        <div>
+          <label
+            htmlFor="Width"
+          >
+            1
+          </label>
+          <input
+            name="Width"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="1"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Width"
+          >
+            2
+          </label>
+          <input
+            name="Width"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="2"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Width"
+          >
+            3
+          </label>
+          <input
+            name="Width"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="3"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Width"
+          >
+            4
+          </label>
+          <input
+            name="Width"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="4"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Width"
+          >
+            5
+          </label>
+          <input
+            name="Width"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="5"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="Comfort"
+        >
+          Comfort
+        </label>
+        <div>
+          <label
+            htmlFor="Comfort"
+          >
+            1
+          </label>
+          <input
+            name="Comfort"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="1"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Comfort"
+          >
+            2
+          </label>
+          <input
+            name="Comfort"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="2"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Comfort"
+          >
+            3
+          </label>
+          <input
+            name="Comfort"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="3"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Comfort"
+          >
+            4
+          </label>
+          <input
+            name="Comfort"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="4"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="Comfort"
+          >
+            5
+          </label>
+          <input
+            name="Comfort"
+            onClick={[Function]}
+            required="required"
+            type="radio"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div>
+      <label
+        htmlFor="summary"
+      >
+        Review Summary: 
+      </label>
+      <input
+        maxLength="60"
+        name="summary"
+        placeholder="Example: Best purchase ever!"
+        required="required"
+        type="text"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="body"
+      >
+        Review Body: 
+      </label>
+      <input
+        maxLength="1000"
+        minLength="50"
+        name="body"
+        onChange={[Function]}
+        placeholder="Why did you like the product or not?"
+        required="required"
+        type="text"
+      />
+      <p>
+        Minimum required characters left: 
+        50
+      </p>
+    </div>
+    <div>
+      <label
+        htmlFor="photos"
+      >
+        Upload photos: 
+      </label>
+      <input
+        name="photos"
+        type="file"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="nickname"
+      >
+        Nickname: 
+      </label>
+      <input
+        maxLength="60"
+        name="nickname"
+        required="required"
+        type="text"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="email"
+      >
+        Email: 
+      </label>
+      <input
+        maxLength="60"
+        name="email"
+        required="required"
+        type="text"
+      />
+    </div>
+    <input
+      onSubmit={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
 exports[`Ratings component renders correctly 1`] = `
 <div
   className="ratings"
@@ -138,8 +507,10 @@ exports[`RatingsWidget component renders correctly 1`] = `
     <div
       className="reviews-buttons"
     >
-      <button>
-        ADD A REVIEW +
+      <button
+        onClick={[Function]}
+      >
+        ADD A REVIEW + 
       </button>
     </div>
   </div>
@@ -269,8 +640,10 @@ exports[`Reviews component renders correctly 1`] = `
     >
       MORE REVIEWS
     </button>
-    <button>
-      ADD A REVIEW +
+    <button
+      onClick={[Function]}
+    >
+      ADD A REVIEW + 
     </button>
   </div>
 </div>
@@ -318,8 +691,10 @@ Array [
     >
       MORE REVIEWS
     </button>
-    <button>
-      ADD A REVIEW +
+    <button
+      onClick={[Function]}
+    >
+      ADD A REVIEW + 
     </button>
   </div>,
 ]

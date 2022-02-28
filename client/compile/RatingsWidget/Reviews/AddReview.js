@@ -22,28 +22,41 @@ function AddReview (props) {
 
   const submitReview = (event) => {
     event.preventDefault();
-    console.log('this is the form data', event.target);
-    const reviewData = {
-      product_id: product_id,
-      rating: rating,
-      summary: summary,
-      body: body,
-      recommend: recommend,
-      name: name,
-      email: email,
-      photos: [],
-      characteristics: {}
-    };
-    axios.post('/reviews', reviewData, () => {
 
-    });
+    let reviewCharSelection = {};
+    for (var characteristic in props.reviewsCharacteristics) {
+      reviewCharSelection[characteristic] = {
+        id: props.reviewsCharacteristics[characteristic].id,
+        value: event.target.elements[characteristic].value
+      };
+    }
+
+    const reviewData = {
+      product_id: '64621',
+      rating: event.target.elements.rating.value,
+      summary: event.target.elements.summary.value,
+      body: event.target.elements.body.value,
+      recommend: event.target.elements.recommend.value,
+      name: event.target.elements.nickname.value,
+      email: event.target.elements.email.value,
+      photos: [],
+      characteristics: reviewCharSelection
+    };
+
+    axios.post('/reviews', reviewData)
+      .then((data) => {
+        console.log('review data submitted:', data);
+      }).catch((error) => {
+        console.log('error submitting review:', error);
+      });
+    return false;
   };
 
   return (
     <div className="add-review modal-window">
-      <form className="modal-content">
-        <h2>Write Your Review</h2>
-        <h3>About the [Product Name]</h3>
+      <h2>Write Your Review</h2>
+      <h3>About the [Product Name]</h3>
+      <form className="modal-content" onSubmit={submitReview}>
         <button onClick={props.closeAddReviewWindow}>Close</button>
         <div>
           <label htmlFor="rating">Overall Rating: </label>
@@ -53,9 +66,9 @@ function AddReview (props) {
         <div>
           <label htmlFor="recommend">Do you recommend this product? </label>
           <label>Yes </label>
-          <input name="recommend" type="radio" required="required"/>
+          <input name="recommend" type="radio" required="required" value={true}/>
           <label>No </label>
-          <input name="recommend" type="radio" required="required"/>
+          <input name="recommend" type="radio" required="required" value={false}/>
         </div>
 
         <div>
@@ -98,7 +111,7 @@ function AddReview (props) {
           <input name="email" type="text" required="required" maxLength="60"/>
         </div>
 
-        <input type="submit" onSubmit={submitReview}/>
+        <input type="submit" />
 
       </form>
     </div>

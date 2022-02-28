@@ -68,14 +68,15 @@ exports[`Related Products Component renders initially 1`] = `
             X
           </button>
           <img
+            alt="Photo"
+            className="productImage"
             src="https://i.pinimg.com/originals/2d/38/62/2d3862abf214ecdb6a1c231e035c1796.jpg"
           />
           <p
             className="category"
           />
           <a
-            className="cardtitle undefined"
-            href="/products/undefined"
+            className="cardtitle 64622"
           >
             <b>
               

@@ -99,6 +99,10 @@ app.put('/putData', (req, res) => {
     });
 });
 
+app.post('/reviews', (req, res) => {
+  console.log(req.body);
+});
+
 app.listen(port,function(){
   console.log('listenening on ',port);
 });

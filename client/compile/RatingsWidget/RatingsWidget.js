@@ -47,7 +47,6 @@ class RatingsWidget extends React.Component {
     const that = this;
     const productID = '64621';
     this.props.getReviews([`reviews/meta?product_id=${productID}`, ``, ''], function(data) {
-      console.log(data.results);
       if (data.results){
         that.setState({
           reviewsMetadata: data.results
