@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
+import {validateFields} from './AddReview/helpers.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -23,73 +24,51 @@ function AddReview (props) {
     bodyCharacterCountMessage = <p>Minimum reached</p>;
 
 
+  let submitMessage;
+
   const submitReview = (event) => {
     event.preventDefault();
-
-    // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
-    let reviewCharRating = {};
     const applicableCharacteristics = props.reviewsCharacteristics;
-    for (var characteristic in applicableCharacteristics) {
-      const characteristicRating_id = applicableCharacteristics[characteristic].id;
-      const characteristicRating = event.target.elements[characteristic].value;
-      reviewCharRating[characteristicRating_id] = parseInt(characteristicRating);
-    }
+    validateFields(event.target.elements, applicableCharacteristics);
+    // const successMessage = <p>Your review has been submitted</p>;
 
-    const productRating = parseInt(event.target.elements.rating.value);
-    const recommend = event.target.elements.recommend.value === 'true' ? true : false;
-    const summary = event.target.elements.summary.value;
-    const body = event.target.elements.body.value;
-    const name = event.target.elements.nickname.value;
-    const email = event.target.elements.email.value;
-
-    const reviewData = {
-      product_id: 64621,
-      rating: productRating,
-      summary: summary,
-      body: body,
-      recommend: recommend,
-      name: name,
-      email: email,
-      photos: [''],
-      characteristics: reviewCharRating
-    };
-
-    axios.post('/reviews', reviewData)
-      .then((data) => {
-        console.log('review data submitted:', data);
-      }).catch((error) => {
-        console.log('error submitting review:', error);
-      });
-    return false;
+    // axios.post('/reviews', reviewData)
+    //   .then((data) => {
+    //     submitMessage = successMessage;
+    //     console.log('review data submitted:', data);
+    //   }).catch((error) => {
+    //     console.log('error submitting review:', error);
+    //   });
+    // return false;
   };
 
   return (
     <div className="add-review modal-window">
-      <h2>Write Your Review</h2>
-      <h3>About the [Product Name]</h3>
       <form className="modal-content" onSubmit={submitReview}>
+        <h2>Write Your Review</h2>
+        <h3>About the [Product Name]</h3>
         <button onClick={props.closeAddReviewWindow}>Close</button>
         <div>
           <label htmlFor="rating">Overall Rating: </label>
-          <input name="rating" type="text" required="required"/>
+          <input name="rating" type="text"/>
         </div>
 
         <div>
           <label htmlFor="recommend">Do you recommend this product? </label>
           <label>Yes </label>
-          <input name="recommend" type="radio" required="required" value={true}/>
+          <input name="recommend" type="radio" value={true}/>
           <label>No </label>
-          <input name="recommend" type="radio" required="required" value={false}/>
+          <input name="recommend" type="radio" value={false}/>
         </div>
 
         <div>
-          <label htmlFor="characteristics" required="required">Characteristics: </label>
+          <label htmlFor="characteristics">Characteristics: </label>
           {characteristics}
         </div>
 
         <div>
           <label htmlFor="summary">Review Summary: </label>
-          <input name="summary" type="text" required="required" maxLength="60" placeholder="Example: Best purchase ever!"/>
+          <input name="summary" type="text" maxLength="60" placeholder="Example: Best purchase ever!"/>
         </div>
 
         <div>
@@ -97,7 +76,6 @@ function AddReview (props) {
           <input
             name="body"
             type="text"
-            required="required"
             minLength="50"
             maxLength="1000"
             placeholder="Why did you like the product or not?"
@@ -114,16 +92,16 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="nickname">Nickname: </label>
-          <input name="nickname" type="text" required="required" maxLength="60"/>
+          <input name="nickname" type="text" maxLength="60"/>
         </div>
 
         <div>
           <label htmlFor="email">Email: </label>
-          <input name="email" type="text" required="required" maxLength="60"/>
+          <input name="email" type="text" maxLength="60"/>
         </div>
 
         <input type="submit" />
-
+        {submitMessage}
       </form>
     </div>
   );
