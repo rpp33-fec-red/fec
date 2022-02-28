@@ -28,19 +28,23 @@ function AddReview (props) {
 
   const submitReview = (event) => {
     event.preventDefault();
+    const form = event.target;
     const applicableCharacteristics = props.reviewsCharacteristics;
-    submissionMessage = validateFields(event.target.elements, applicableCharacteristics);
+    submissionMessage = validateFields(form.elements, applicableCharacteristics);
     if (submissionMessage === 'Your review has been submitted.') {
-      const reviewData = formatReviewData(event.target.elements, applicableCharacteristics);
-      console.log(reviewData);
-      // axios.post('/reviews', reviewData)
-      //   .then((data) => {
-      //     submitMessage = successMessage;
-      //     console.log('review data submitted:', data);
-      //   }).catch((error) => {
-      //     console.log('error submitting review:', error);
-      //   });
-      // return false;
+      const reviewData = formatReviewData(form.elements, applicableCharacteristics);
+      axios.post('/reviews', reviewData)
+        .then(() => {
+          form.reset();
+          // alerts the user when review responses are successfully submitted to server
+          alert(submissionMessage);
+        }).catch(() => {
+          alert('An error occured when submitting your review. Try again later.');
+        });
+      return false;
+    } else {
+      // alerts the user when invalid responses are submitted
+      alert(submissionMessage);
     }
   };
 
@@ -102,7 +106,7 @@ function AddReview (props) {
         </div>
 
         <input type="submit" />
-        {submitMessage}
+        {submissionMessage}
       </form>
     </div>
   );
