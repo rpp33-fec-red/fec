@@ -1,9 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import PropTypes from 'prop-types';
 
-
-function createStar (starRating, clickHandler) {
+function createStarComponent (starRating, clickHandler) {
   return class StarReviewRating extends React.Component{
     constructor(props){
       super(props);
@@ -20,10 +18,23 @@ function createStar (starRating, clickHandler) {
             <polygon onClick={(event) => { clickHandler ? clickHandler(parseInt(event.target.id)) : null; }} id={i + 1} points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" stroke='#646464'/></g></svg> );
       }
 
+      let description = {
+        1: 'Poor',
+        2: 'Fair',
+        3: 'Average',
+        4: 'Good',
+        5: 'Great'
+      };
+
+      let starRatingDescription = <p>{description[starRating]}</p>;
+
       return (
-        <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
-          <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
-          <div className="starOverlay" style={{ "width": `${100-(starRating * 20)}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1", "pointerEvents": "none" }}></div>
+        <div className="star-rating-input">
+          <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
+            <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
+            <div className="starOverlay" style={{ "width": `${100-(starRating * 20)}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1", "pointerEvents": "none" }}></div>
+          </div>
+          {starRatingDescription}
         </div>
       );
     }
@@ -37,10 +48,4 @@ function createStar (starRating, clickHandler) {
   };
 }
 
-StarReviewRating.propTypes = {
-  starRating: PropTypes.any,
-  updateStarRating: PropTypes.any
-};
-
-
-export default createStar;
+export default createStarComponent;

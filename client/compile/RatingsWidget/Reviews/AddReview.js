@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
 import {validateFields, formatReviewData} from './AddReview/helpers.js';
-import StarRatingInput from './AddReview/StarRatingInput.js';
+import createStarComponent from './StarRatings.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -52,6 +52,8 @@ function AddReview (props) {
       alert(submissionMessage);
     }
   };
+
+  const StarRatingInput = createStarComponent(starRating, updateStarRating);
 
   return (
     <div className="add-review modal-window">
