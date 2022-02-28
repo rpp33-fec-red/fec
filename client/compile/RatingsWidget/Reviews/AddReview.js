@@ -42,6 +42,7 @@ function AddReview (props) {
       axios.post('/reviews', reviewData)
         .then(() => {
           form.reset();
+          updateStarRating(0);
           // alerts the user when review responses are successfully submitted to server
           alert(submissionMessage);
         }).catch(() => {
