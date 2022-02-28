@@ -30,24 +30,28 @@ function AddReview (props) {
     let reviewCharRating = {};
     const applicableCharacteristics = props.reviewsCharacteristics;
     for (var characteristic in applicableCharacteristics) {
-      const rating_id = applicableCharacteristics[characteristic].id;
-      const rating = event.target.elements[characteristic].value;
-      reviewCharRating[rating_id] = parseInt(rating);
+      const characteristicRating_id = applicableCharacteristics[characteristic].id;
+      const characteristicRating = event.target.elements[characteristic].value;
+      reviewCharRating[characteristicRating_id] = parseInt(characteristicRating);
     }
 
-    const rating = parseInt(event.target.elements.rating.value);
+    const productRating = parseInt(event.target.elements.rating.value);
     const recommend = event.target.elements.recommend.value === 'true' ? true : false;
+    const summary = event.target.elements.summary.value;
+    const body = event.target.elements.body.value;
+    const name = event.target.elements.nickname.value;
+    const email = event.target.elements.email.value;
 
     const reviewData = {
       product_id: 64621,
-      rating: rating,
-      summary: event.target.elements.summary.value,
-      body: event.target.elements.body.value,
+      rating: productRating,
+      summary: summary,
+      body: body,
       recommend: recommend,
-      name: event.target.elements.nickname.value,
-      email: event.target.elements.email.value,
+      name: name,
+      email: email,
       photos: [''],
-      characteristics: reviewCharSelection
+      characteristics: reviewCharRating
     };
 
     axios.post('/reviews', reviewData)
