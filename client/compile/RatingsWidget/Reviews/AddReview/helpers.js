@@ -1,5 +1,5 @@
 const validateFields = (fields, applicableCharacteristics) => {
-
+  let success = true;
   const mandatoryFields = {
     rating: fields.rating.value,
     recommend: fields.recommend.value,
@@ -10,13 +10,17 @@ const validateFields = (fields, applicableCharacteristics) => {
   };
 
   let errorMessage = 'You must enter the following:';
-  const addToErrorMessage = (field) => {
+
+  const addToErrorMessage = (message) => {
+    if (success === true) {
+      success = false;
+    }
     const lastCharacter = errorMessage.charAt(errorMessage.length - 1);
     if (lastCharacter === ':') {
-      errorMessage += ' ' + field;
-      return errorMessage;
+      errorMessage += ' ' + message;
+      return;
     }
-    errorMessage += ', ' + field;
+    errorMessage += ', ' + message;
   };
 
   // checks if all mandatory fields (expect for characteristics) are filled out and compiles error message
@@ -33,39 +37,61 @@ const validateFields = (fields, applicableCharacteristics) => {
       addToErrorMessage(characteristic);
     }
   }
-  return errorMessage;
+
+  // checks if review body is less than 50 characters
+  if (mandatoryFields.body.length < 50) {
+    const characterCountError = 'more than 50 characters in your review body';
+    addToErrorMessage(characterCountError);
+  }
+
+  // checks if email address is valid
+  if (!mandatoryFields.email.includes('@') && !mandatoryFields.email.includes('.com')) {
+    const characterCountError = 'valid email address';
+    addToErrorMessage(characterCountError);
+  }
+
+  // adding image validatation [in-progress]
+
+
+  if (success) {
+    const successMessage = 'Your review has been submitted.';
+    return successMessage;
+  } else {
+    return errorMessage;
+  }
+
 };
 
-// const formatReviewData = () => {
-//   // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
-//   let reviewCharRating = {};
-//   const applicableCharacteristics = props.reviewsCharacteristics;
-//   for (var characteristic in applicableCharacteristics) {
-//     const characteristicRating_id = applicableCharacteristics[characteristic].id;
-//     const characteristicRating = event.target.elements[characteristic].value;
-//     reviewCharRating[characteristicRating_id] = parseInt(characteristicRating);
-//   }
+const formatReviewData = (fields, applicableCharacteristics) => {
 
-// const rating = parseInt(event.target.elements.rating.value);
-// const recommend = event.target.elements.recommend.value === 'true' ? true : false;
-// const summary = event.target.elements.summary.value;
-// const body = event.target.elements.body.value;
-// const name = event.target.elements.nickname.value;
-// const email = event.target.elements.email.value;
+  // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
+  let reviewCharRating = {};
+  for (var characteristic in applicableCharacteristics) {
+    const characteristicRating_id = applicableCharacteristics[characteristic].id;
+    const characteristicRating = event.target.elements[characteristic].value;
+    reviewCharRating[characteristicRating_id] = parseInt(characteristicRating);
+  }
 
-//   const reviewData = {
-//     product_id: 64621,
-//     rating: rating,
-//     summary: summary,
-//     body: body,
-//     recommend: recommend,
-//     name: name,
-//     email: email,
-//     photos: [''],
-//     characteristics: reviewCharRating
-//   };
+  const rating = parseInt(event.target.elements.rating.value);
+  const recommend = fields.recommend.value === 'true' ? true : false;
+  const summary = fields.summary.value;
+  const body = fields.body.value;
+  const name = fields.nickname.value;
+  const email = fields.email.value;
 
-//   return reviewData;
-// };
+  const reviewData = {
+    product_id: 64621,
+    rating: rating,
+    summary: summary,
+    body: body,
+    recommend: recommend,
+    name: name,
+    email: email,
+    photos: [''],
+    characteristics: reviewCharRating
+  };
 
-export {validateFields};
+  return reviewData;
+};
+
+export {validateFields, formatReviewData};
