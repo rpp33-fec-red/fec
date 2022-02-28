@@ -32,9 +32,8 @@ class RatingsWidget extends React.Component {
 
   getReviews() {
     const that = this;
-    const productID = '64621';
     const count = 10;
-    this.props.getReviews([`reviews?product_id=${productID}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
+    this.props.getReviews([`reviews?product_id=${this.props.product_id}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
       if (data.results){
         that.setState({
           reviews: data.results.results
@@ -45,8 +44,7 @@ class RatingsWidget extends React.Component {
 
   getReviewsMetadata() {
     const that = this;
-    const productID = '64621';
-    this.props.getReviews([`reviews/meta?product_id=${productID}`, ``, ''], function(data) {
+    this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
       if (data.results){
         that.setState({
           reviewsMetadata: data.results
@@ -79,7 +77,8 @@ class RatingsWidget extends React.Component {
 }
 
 RatingsWidget.propTypes = {
-  getReviews: PropTypes.any
+  getReviews: PropTypes.func,
+  product_id: PropTypes.string
 };
 
 export default RatingsWidget;

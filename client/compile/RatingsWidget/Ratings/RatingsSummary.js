@@ -1,5 +1,6 @@
 import React from 'react';
 import StarsComponent from '../../showStars.js';
+import PropTypes from 'prop-types';
 
 function RatingsSummary(props) {
   return (
@@ -10,5 +11,9 @@ function RatingsSummary(props) {
     </div>
   );
 }
+
+RatingsSummary.propTypes = {
+  product_id: PropTypes.any
+};
 
 export default RatingsSummary;
