@@ -3,6 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import UploadPhotosModal from './uploadPhotos.jsx';
 
+
 class AddAnswerModal extends React.Component {
   constructor(props) {
     super(props);
@@ -38,6 +39,7 @@ class AddAnswerModal extends React.Component {
       .then((response) => {
         let relativePath = '..' + response.data.split('photos')[1];
         photos.push(relativePath);
+        console.log(photos);
         this.setState({
           photoCount: this.state.photoCount + 1,
           uploadedPhotos: photos
@@ -98,7 +100,8 @@ class AddAnswerModal extends React.Component {
               product_name={this.props.product_name}
               close={this.closeModal}
               selectPhoto={this.handleSelectPhoto}
-              photos={this.state}
+              photoCount={this.state.photoCount}
+              uploadedPhotos={this.state.uploadedPhotos}
             />
           }
         </div>

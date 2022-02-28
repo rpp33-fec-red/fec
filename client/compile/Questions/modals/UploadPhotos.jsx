@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+require.context('../photos', )
 
 class UploadPhotosModal extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class UploadPhotosModal extends React.Component {
         <div className="questions-modals-content">
           <a className="close-modal" onClick={this.props.close}>X</a>
           <h4 className="modal-title">Upload Photos for {this.props.product_name}</h4>
-          {(this.props.photos.photoCount < 5) &&
+          {(this.props.photoCount < 5) &&
             <form id="photo-upload-form" className="upload-photos-form" encType="multipart/form-data" onSubmit={this.props.selectPhoto}>
               <div className="modal-form">
                 <label htmlFor="photo-upload">Choose photo to upload</label>
@@ -25,11 +26,11 @@ class UploadPhotosModal extends React.Component {
             </form>
           }
           <div className="selected-photos">
-            {this.props.photos.uploadedPhotos.map((photo) =>
+            {this.props.uploadedPhotos.map((photo) =>
               <img className="answer-photos" key={photo} src={photo}></img>
             )}
           </div>
-          {(this.props.photos.photoCount > 0) &&
+          {(this.props.photoCount > 0) &&
             <button className="submit-modal" onClick={this.props.close}>DONE</button>
           }
         </div>
@@ -39,7 +40,8 @@ class UploadPhotosModal extends React.Component {
 }
 
 UploadPhotosModal.propTypes = {
-  photos: PropTypes.object,
+  photoCount: PropTypes.number,
+  uploadedPhotos: PropTypes.array,
   close: PropTypes.func,
   selectPhoto: PropTypes.func,
   product_name: PropTypes.string

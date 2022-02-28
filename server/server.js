@@ -12,8 +12,8 @@ var bp = require('body-parser');
 app.use(bp.json());
 var cors = require('cors');
 app.use(cors());
-app.use(express.static(path.join(__dirname,'../client/public')));
 app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
+app.use(express.static(path.join(__dirname,'../client/public')));
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
