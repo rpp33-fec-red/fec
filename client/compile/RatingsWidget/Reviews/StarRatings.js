@@ -26,7 +26,7 @@ function createStarComponent (starRating, clickHandler) {
         5: 'Great'
       };
 
-      let starRatingDescription = <p>{description[starRating]}</p>;
+      let starRatingDescription = clickHandler ? <p>{description[starRating]}</p> : null;
 
       return (
         <div className="star-rating-input">

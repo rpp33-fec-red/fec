@@ -2,7 +2,7 @@ import React from 'react';
 import ReviewImage from './ReviewImage.js';
 import ReviewImageWindow from './ReviewImageWindow.js';
 import ReviewResponse from './ReviewResponse.js';
-import StarReviewRating from'./StarReviewRating.js';
+import createStarComponent from './StarRatings.js';
 import PropTypes from 'prop-types';
 
 class ReviewTile extends React.Component {
@@ -136,12 +136,13 @@ class ReviewTile extends React.Component {
       modalWindow = <ReviewImageWindow closeModalWindow={this.closeModalWindow} photoDisplayedInWindow={this.state.photoDisplayedInWindow}/>;
     }
 
+    const StarReviewRating = createStarComponent(this.props.review.rating);
 
     return (
       <div className="review-tile">
 
         <div className="review-header">
-          <StarReviewRating starRating={this.props.review.rating}/>
+          <StarReviewRating />
           <div className="right-corner">{this.props.review.reviewer_name + ', ' + formattedDate}</div>
         </div>
 
