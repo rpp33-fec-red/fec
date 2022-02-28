@@ -71,7 +71,16 @@
   background-color: white;
   display: block;
   margin: auto;
-  max-width: 100%;
+  max-width: 60%
+}
+
+.form-content {
+  display: flex;
+  .div {
+    justify-content: center;
+  }
+  flex-direction: column;
+  padding: 50px;
 }
 
 

@@ -8,21 +8,9 @@ class StarRatingInput extends React.Component{
   }
 
   makeStars(){
-    let description = {
-      1: 'Poor',
-      2: 'Fair',
-      3: 'Average',
-      4: 'Good',
-      5: 'Great'
-    };
-
     let array =[];
 
     for(let i=0; i< 5; i++){
-      let starRatingDescription;
-      if (i + 1 === this.props.starRating) {
-        starRatingDescription = <p>{description[i + 1]}</p>;
-      }
       array.push(
         <div>
           <svg key={i}
@@ -37,11 +25,25 @@ class StarRatingInput extends React.Component{
       );
     }
 
+    let description = {
+      1: 'Poor',
+      2: 'Fair',
+      3: 'Average',
+      4: 'Good',
+      5: 'Great'
+    };
+
+    let starRatingDescription = <p>{description[this.props.starRating]}</p>;
+
     return (
-      <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
-        <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
-        <div className="starOverlay" style={{ "width": `${100-(this.props.starRating * 20)}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1", "pointerEvents": "none" }}></div>
+      <div>
+        <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
+          <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
+          <div className="starOverlay" style={{ "width": `${100-(this.props.starRating * 20)}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1", "pointerEvents": "none" }}></div>
+        </div>
+        {starRatingDescription}
       </div>
+
     );
   }
 

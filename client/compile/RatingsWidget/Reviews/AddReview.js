@@ -56,64 +56,66 @@ function AddReview (props) {
   return (
     <div className="add-review modal-window">
       <form className="modal-content" onSubmit={submitReview}>
-        <h2>Write Your Review</h2>
-        <h3>About the [Product Name]</h3>
-        <button onClick={props.closeAddReviewWindow}>Close</button>
-        <div>
-          <label htmlFor="rating">Overall Rating: </label>
-          <StarRatingInput name="rating" updateStarRating={updateStarRating} starRating={starRating}/>
-        </div>
+        <div className="form-content">
+          <h2>Write Your Review</h2>
+          <h3>About the [Product Name]</h3>
+          <button onClick={props.closeAddReviewWindow}>Close</button>
+          <div>
+            <label htmlFor="rating">Overall Rating: </label>
+            <StarRatingInput name="rating" updateStarRating={updateStarRating} starRating={starRating}/>
+          </div>
 
-        <div>
-          <label htmlFor="recommend">Do you recommend this product? </label>
-          <label>Yes </label>
-          <input name="recommend" type="radio" value={true}/>
-          <label>No </label>
-          <input name="recommend" type="radio" value={false}/>
-        </div>
+          <div>
+            <label htmlFor="recommend">Do you recommend this product? </label>
+            <label>Yes </label>
+            <input name="recommend" type="radio" value={true}/>
+            <label>No </label>
+            <input name="recommend" type="radio" value={false}/>
+          </div>
 
-        <div>
-          <label htmlFor="characteristics">Characteristics: </label>
-          {characteristics}
-        </div>
+          <div>
+            <label htmlFor="characteristics">Characteristics: </label>
+            {characteristics}
+          </div>
 
-        <div>
-          <label htmlFor="summary">Review Summary: </label>
-          <input name="summary" type="text" placeholder="Example: Best purchase ever!"/>
-        </div>
+          <div>
+            <label htmlFor="summary">Review Summary: </label>
+            <input name="summary" type="text" placeholder="Example: Best purchase ever!"/>
+          </div>
 
-        <div>
-          <label htmlFor="body">Review Body: </label>
-          <input
-            name="body"
-            type="text"
-            maxLength="1000"
-            placeholder="Why did you like the product or not?"
-            onChange={(event)=> {
-              updateBodyCharacterCount(event.target.value.length);
-            }}/>
-          {bodyCharacterCountMessage}
-        </div>
+          <div>
+            <label htmlFor="body">Review Body: </label>
+            <input
+              name="body"
+              type="text"
+              maxLength="1000"
+              placeholder="Why did you like the product or not?"
+              onChange={(event)=> {
+                updateBodyCharacterCount(event.target.value.length);
+              }}/>
+            {bodyCharacterCountMessage}
+          </div>
 
-        <div>
-          <label htmlFor="photos">Upload photos: </label>
-          <input name="photos" type="file"/>
-        </div>
+          <div>
+            <label htmlFor="photos">Upload photos: </label>
+            <input name="photos" type="file"/>
+          </div>
 
-        <div>
-          <label htmlFor="nickname">Nickname: </label>
-          <input name="nickname" type="text" maxLength="60"/>
-          <p>For privacy reasons, do not use your full name or email address</p>
-        </div>
+          <div>
+            <label htmlFor="nickname">Nickname: </label>
+            <input name="nickname" type="text" maxLength="60"/>
+            <p>For privacy reasons, do not use your full name or email address</p>
+          </div>
 
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input name="email" type="text" maxLength="60"/>
-          <p>For authentication reasons, you will not be emailed</p>
-        </div>
-        <input type="submit"/>
+          <div>
+            <label htmlFor="email">Email: </label>
+            <input name="email" type="text" maxLength="60"/>
+            <p>For authentication reasons, you will not be emailed</p>
+          </div>
+          <input type="submit"/>
 
-        {submissionMessage}
+          {submissionMessage}
+        </div>
       </form>
     </div>
   );
