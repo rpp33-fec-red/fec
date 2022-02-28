@@ -97,12 +97,14 @@ function AddReview (props) {
 
         <div>
           <label htmlFor="nickname">Nickname: </label>
-          <input name="nickname" type="text"/>
+          <input name="nickname" type="text" maxLength="60"/>
+          <p>For privacy reasons, do not use your full name or email address</p>
         </div>
 
         <div>
           <label htmlFor="email">Email: </label>
-          <input name="email" type="text"/>
+          <input name="email" type="text" maxLength="60"/>
+          <p>For authentication reasons, you will not be emailed</p>
         </div>
 
         <input type="submit" />
