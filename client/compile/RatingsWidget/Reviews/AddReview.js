@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 function AddReview (props) {
 
-  // Creates a form input for users to rate any characteristic designated as applicable for the product
+  // Creates a form input for users to rate any characteristic designated as applicable for the product (ex: quality, size, comfort)
   let characteristics;
   if (props.reviewsCharacteristics) {
     characteristics =
@@ -16,9 +16,11 @@ function AddReview (props) {
     });
   }
 
+
   // Updates rating input value based on what the user has clicked
   const [starRating, updateStarRating] = useState(0);
-  console.log('this is the star rating: ', starRating);
+
+
   // Updates message under body input field with character count
   const [bodyCharacterCount, updateBodyCharacterCount] = useState(0);
 
@@ -33,7 +35,6 @@ function AddReview (props) {
   const submitReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    console.log(form);
     const applicableCharacteristics = props.reviewsCharacteristics;
     submissionMessage = validateFields(form.elements, applicableCharacteristics, starRating);
     if (submissionMessage === 'Your review has been submitted.') {
@@ -46,7 +47,6 @@ function AddReview (props) {
         }).catch(() => {
           alert('An error occured when submitting your review. Try again later.');
         });
-      return false;
     } else {
       // alerts the user when invalid responses are submitted
       alert(submissionMessage);
@@ -113,8 +113,6 @@ function AddReview (props) {
             <p>For authentication reasons, you will not be emailed</p>
           </div>
           <input type="submit"/>
-
-          {submissionMessage}
         </div>
       </form>
     </div>
