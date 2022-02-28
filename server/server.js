@@ -101,7 +101,6 @@ app.put('/putData', (req, res) => {
 
 app.post('/reviews', (req, res) => {
   let reviewData = req.body;
-  console.log(reviewData)
   let url = options.APIURL + '/reviews';
   const config = {
     method: 'POST',
@@ -109,8 +108,7 @@ app.post('/reviews', (req, res) => {
     headers: {
       'authorization':`${options.APIKEY}`
     },
-    data: reviewData,
-
+    data: reviewData
   };
   axios(config)
     .then((data) => {

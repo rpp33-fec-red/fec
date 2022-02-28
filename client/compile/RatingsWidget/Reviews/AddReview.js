@@ -4,28 +4,35 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
+
+  // Creates a form input for users to rate any characteristic designated as applicable for the product
   let characteristics;
   if (props.reviewsCharacteristics) {
     characteristics =
-
     Object.keys(props.reviewsCharacteristics).map((characteristic) => {
       return <ReviewCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
     });
   }
 
-  const [characterCount, updateCharacterCount] = useState(0);
+  // Updates message under body input field with character count
+  const [bodyCharacterCount, updateBodyCharacterCount] = useState(0);
 
   let bodyCharacterCountMessage;
-  characterCount < 50 ?
-    bodyCharacterCountMessage = <p>Minimum required characters left: {50 - characterCount}</p> :
+  bodyCharacterCount < 50 ?
+    bodyCharacterCountMessage = <p>Minimum required characters left: {50 - bodyCharacterCount}</p> :
     bodyCharacterCountMessage = <p>Minimum reached</p>;
+
 
   const submitReview = (event) => {
     event.preventDefault();
 
-    let reviewCharSelection = {};
-    for (var characteristic in props.reviewsCharacteristics) {
-      reviewCharSelection[props.reviewsCharacteristics[characteristic].id] = parseInt(event.target.elements[characteristic].value);
+    // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
+    let reviewCharRating = {};
+    const applicableCharacteristics = props.reviewsCharacteristics;
+    for (var characteristic in applicableCharacteristics) {
+      const rating_id = applicableCharacteristics[characteristic].id;
+      const rating = event.target.elements[characteristic].value;
+      reviewCharRating[rating_id] = parseInt(rating);
     }
 
     const rating = parseInt(event.target.elements.rating.value);
@@ -91,7 +98,7 @@ function AddReview (props) {
             maxLength="1000"
             placeholder="Why did you like the product or not?"
             onChange={(event)=> {
-              updateCharacterCount(event.target.value.length);
+              updateBodyCharacterCount(event.target.value.length);
             }}/>
           {bodyCharacterCountMessage}
         </div>
