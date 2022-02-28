@@ -102,17 +102,25 @@ app.put('/putData', (req, res) => {
 app.post('/reviews', (req, res) => {
   let reviewData = req.body;
   console.log(reviewData)
-  // let url = options.APIURL + '/reviews';
-  // const config = {
-  //   headers: {
-  //     authorization:`${options.APIKEY}`
-  //   }
-  // };
-  // axios.post(url, reviewData, config)
-  //   .then((data) => {
-  //     console.log('review saved:', data);
-  //     res.send();
-  //   });
+  let url = options.APIURL + '/reviews';
+  const config = {
+    method: 'POST',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    },
+    data: reviewData,
+
+  };
+  axios(config)
+    .then((data) => {
+      console.log('review saved:', data);
+      console.log('Status 201 CREATED');
+      res.sendStatus(201);
+    }).catch((error) => {
+      console.log('this is the error when adding new review:', error.response);
+    });
+
 });
 
 app.listen(port,function(){

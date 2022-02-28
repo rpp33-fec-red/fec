@@ -25,21 +25,21 @@ function AddReview (props) {
 
     let reviewCharSelection = {};
     for (var characteristic in props.reviewsCharacteristics) {
-      reviewCharSelection[characteristic] = {
-        id: props.reviewsCharacteristics[characteristic].id,
-        value: event.target.elements[characteristic].value
-      };
+      reviewCharSelection[props.reviewsCharacteristics[characteristic].id] = parseInt(event.target.elements[characteristic].value);
     }
+
+    const rating = parseInt(event.target.elements.rating.value);
+    const recommend = event.target.elements.recommend.value === 'true' ? true : false;
 
     const reviewData = {
       product_id: 64621,
-      rating: event.target.elements.rating.value,
+      rating: rating,
       summary: event.target.elements.summary.value,
       body: event.target.elements.body.value,
-      recommend: event.target.elements.recommend.value,
+      recommend: recommend,
       name: event.target.elements.nickname.value,
       email: event.target.elements.email.value,
-      photos: [],
+      photos: [''],
       characteristics: reviewCharSelection
     };
 
