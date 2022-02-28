@@ -79,7 +79,7 @@ class ReviewsList extends React.Component {
 
     let addReviewsWindow;
     if(this.state.addReviewDisplayed) {
-      return <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics} closeAddReviewWindow={this.closeAddReviewWindow}/>;
+      return <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics} closeAddReviewWindow={this.closeAddReviewWindow} />;
     }
 
     return (

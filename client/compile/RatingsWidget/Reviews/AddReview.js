@@ -121,7 +121,8 @@ function AddReview (props) {
 
 AddReview.propTypes = {
   reviewsCharacteristics: PropTypes.any,
-  closeAddReviewWindow: PropTypes.func
+  closeAddReviewWindow: PropTypes.func,
+  getReviews: PropTypes.any
 };
 
 export default AddReview;
