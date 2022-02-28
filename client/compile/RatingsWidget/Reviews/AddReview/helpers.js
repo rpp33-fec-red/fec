@@ -39,13 +39,13 @@ const validateFields = (fields, applicableCharacteristics, rating) => {
   }
 
   // checks if review body is less than 50 characters
-  if (mandatoryFields.body.length < 50) {
+  if (mandatoryFields.body.length < 50 && errorMessage.indexOf('body') === -1) {
     const characterCountError = 'more than 50 characters in your review body';
     addToErrorMessage(characterCountError);
   }
 
   // checks if email address is valid
-  if (!mandatoryFields.email.includes('@') && !mandatoryFields.email.includes('.com')) {
+  if (!mandatoryFields.email.includes('@') && !mandatoryFields.email.includes('.com') && errorMessage.indexOf('email') === -1) {
     const characterCountError = 'valid email address';
     addToErrorMessage(characterCountError);
   }
