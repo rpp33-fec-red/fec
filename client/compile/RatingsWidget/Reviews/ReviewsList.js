@@ -97,7 +97,7 @@ class ReviewsList extends React.Component {
 
     return (
       <>
-        <ReviewsSorting numOfReviews={this.props.reviews.length} updateSorting={this.props.updateSorting}/>
+        <ReviewsSorting numOfReviews={this.state.reviewsDisplayed.length} updateSorting={this.props.updateSorting}/>
 
         <div className ="reviews-list">
           {reviews.map((review) => {
