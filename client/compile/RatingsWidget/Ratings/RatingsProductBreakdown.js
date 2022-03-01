@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 function RatingsProductBreakdown (props) {
   const characteristics = props.characteristics || {};
-  console.log(characteristics)
   return (
     <div className="ratings-product-breakdown">
       {Object.keys(characteristics).map((characteristic) => {
