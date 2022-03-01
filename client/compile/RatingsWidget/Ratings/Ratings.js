@@ -8,7 +8,7 @@ function Ratings (props) {
   return (
     <div className="ratings">
       <h4>Ratings &#38; Reviews</h4>
-      <RatingsSummary product_id={props.product_id}/>
+      <RatingsSummary product_id={props.product_id} averageRating={props.averageRating}/>
       <RatingsBreakdown/>
       <RatingsProductBreakdown/>
     </div>
@@ -16,7 +16,8 @@ function Ratings (props) {
 }
 
 Ratings.propTypes = {
-  product_id: PropTypes.string
+  product_id: PropTypes.number,
+  averageRating: PropTypes.number
 };
 
 export default Ratings;

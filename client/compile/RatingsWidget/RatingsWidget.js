@@ -17,10 +17,12 @@ class RatingsWidget extends React.Component {
         fiveStar: false,
       },
       reviews: [],
-      reviewsMetadata: {}
+      reviewsMetadata: {},
+      averageRating: 0
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
+    this.getAverageRating = this.getAverageRating.bind(this);
     this.getReviewsMetadata = this.getReviewsMetadata.bind(this);
   }
 
@@ -42,17 +44,29 @@ class RatingsWidget extends React.Component {
     });
   }
 
-  getReviewsMetadata() {
+  getAverageRating (ratings) {
+    let sum = 0;
+    let count = 0;
+    for (let val in ratings) {
+      sum += val * ratings[val];
+      count += parseInt(ratings[val]);
+    }
+    const averageRating = (Math.round((sum/count) * 4) / 4).toFixed(2);
+    return averageRating;
+  }
+
+  getReviewsMetadata () {
     const that = this;
     this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
       if (data.results){
+        const averageRating = that.getAverageRating(data.results.ratings);
         that.setState({
-          reviewsMetadata: data.results
+          reviewsMetadata: data.results,
+          averageRating: averageRating
         });
       }
     });
   }
-
 
   updateSorting (event) {
     event.preventDefault();
@@ -69,7 +83,7 @@ class RatingsWidget extends React.Component {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id}/>
+        <Ratings averageRating={this.state.averageRating} product_id={this.props.product_id}/>
         <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );
@@ -78,7 +92,7 @@ class RatingsWidget extends React.Component {
 
 RatingsWidget.propTypes = {
   getReviews: PropTypes.func,
-  product_id: PropTypes.string
+  product_id: PropTypes.number
 };
 
 export default RatingsWidget;
