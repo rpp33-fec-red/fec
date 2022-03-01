@@ -9,8 +9,8 @@ function Ratings (props) {
     <div className="ratings">
       <h4>Ratings &#38; Reviews</h4>
       <RatingsSummary product_id={props.product_id} averageRating={props.averageRating} recommendedPercentage={props.recommendedPercentage}/>
-      <RatingsBreakdown/>
-      <RatingsProductBreakdown/>
+      <RatingsBreakdown ratingsPercentage={props.ratingsPercentage}/>
+      <RatingsProductBreakdown />
     </div>
   );
 }
@@ -18,7 +18,8 @@ function Ratings (props) {
 Ratings.propTypes = {
   product_id: PropTypes.number,
   averageRating: PropTypes.any,
-  recommendedPercentage: PropTypes.any
+  recommendedPercentage: PropTypes.any,
+  ratingsPercentage: PropTypes.any
 };
 
 export default Ratings;

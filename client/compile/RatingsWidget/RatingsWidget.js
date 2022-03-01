@@ -19,7 +19,6 @@ class RatingsWidget extends React.Component {
       reviews: [],
       reviewsMetadata: {},
       recommendPercentage: 0,
-      ratingPercentages: 0,
       ratingsMetrics: {}
     };
     this.getReviews = this.getReviews.bind(this);
@@ -76,11 +75,13 @@ class RatingsWidget extends React.Component {
     this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
       if (data.results){
         const ratingsMetrics = that.calculateRatingMetrics(data.results.ratings);
-        console.log(ratingsMetrics);
         const recommendedPercentage = that.getRecommendedPercentage(data.results.recommended);
+        const averageRating = ratingsMetrics.averageRating;
+        const ratingsPercentage = ratingsMetrics.ratingsPercentage;
         that.setState({
           reviewsMetadata: data.results,
-          ratingsMetrics: ratingsMetrics,
+          averageRating: averageRating,
+          ratingsPercentage: ratingsPercentage,
           recommendedPercentage: recommendedPercentage
         });
       }
@@ -111,7 +112,7 @@ class RatingsWidget extends React.Component {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings averageRating={this.state.ratingsMetrics.averageRating} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage}/>
+        <Ratings averageRating={this.state.averageRating} ratingsPercentage={this.state.ratingsPercentage} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage} />
         <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );

@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 function RatingsBreakdownBar (props) {
   return (
     <div className="ratings-breakdown-bar">
-      <div>{props.value + 'stars'}</div>
+      <div className="star-label">{props.value + ' stars'}</div>
       <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" style={{"fill": "grey"}}>
-        <rect width="80%" height="5"/>
-        <rect width="50%" height="5" style={{"fill": "green", "zIndex": "1"}}/>
+        <rect width="100%" height="5"/>
+        <rect width={props.ratingPercentage + '%'} height="5" style={{"fill": "green", "zIndex": "1"}}/>
       </svg>
     </div>
   );
 }
 
 RatingsBreakdownBar.propTypes = {
-  value: PropTypes.any
+  value: PropTypes.any,
+  ratingPercentage: PropTypes.any
 };
 
 export default RatingsBreakdownBar;
