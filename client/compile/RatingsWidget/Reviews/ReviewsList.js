@@ -19,14 +19,22 @@ class ReviewsList extends React.Component {
     this.updateSearched = this.updateSearched.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
+  componentDidUpdate(prevProps, prevState) {
+
+    if (prevProps !== this.props || prevState.searched != this.state.searched) {
       let updatedReviews = [];
 
-      if (Object.keys(this.props.filteredBy).length !== 0) {
+      if (Object.keys(this.props.filteredBy).length !== 0 || this.state.searched.length > 0) {
         this.props.reviews.forEach((review) => {
-          if (this.props.filteredBy[review.rating]) {
-            updatedReviews.push(review);
+          console.log(review);
+          if (review.body.includes(this.state.searched)|| review.summary.includes(this.state.searched)) {
+            if (this.props.filteredBy) {
+              if (this.props.filteredBy[review.rating]) {
+                updatedReviews.push(review);
+              }
+            } else {
+              updatedReviews.push(review);
+            }
           }
         });
       } else {
