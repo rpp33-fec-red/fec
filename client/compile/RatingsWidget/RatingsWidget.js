@@ -76,7 +76,6 @@ class RatingsWidget extends React.Component {
 
   updateRatingFilter (event) {
     const rating = parseInt(event.target.id);
-    console.log(rating);
     let filteredBy = this.state.filteredBy;
     filteredBy[rating] = true;
     this.setState({
@@ -89,7 +88,7 @@ class RatingsWidget extends React.Component {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage} updateRatingFilter={this.updateRatingFilter}/>
+        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage} updateRatingFilter={this.updateRatingFilter} filteredBy={this.state.filteredBy}/>
         <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics} filteredBy={this.state.filteredBy}/>
       </div>
     );

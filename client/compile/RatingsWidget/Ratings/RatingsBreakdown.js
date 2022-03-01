@@ -6,6 +6,14 @@ function RatingsBreakdown (props) {
   const values = [1, 2, 3, 4, 5];
   const ratingsPercentage = props.ratingsPercentage || null;
   const ratingsCount = props.ratings || null;
+
+  let filterMessage;
+  if (Object.keys(props.filteredBy).length !== 0) {
+    filterMessage = 'Filtered by:';
+    for (const rating in props.filteredBy) {
+      filterMessage += '' + rating + ' star ';
+    }
+  }
   return (
     <div className="ratings-breakdown">
       {values.map((value) => {
@@ -16,6 +24,7 @@ function RatingsBreakdown (props) {
           reviewNumber={ratingsCount ? props.ratings[value] : 0}
           updateRatingFilter={props.updateRatingFilter} />;
       })}
+      <div>{filterMessage}</div>
     </div>
   );
 }
@@ -23,7 +32,8 @@ function RatingsBreakdown (props) {
 RatingsBreakdown.propTypes = {
   ratingsPercentage: PropTypes.any,
   ratings: PropTypes.any,
-  updateRatingFilter: PropTypes.any
+  updateRatingFilter: PropTypes.any,
+  filteredBy: PropTypes.any
 };
 
 export default RatingsBreakdown;
