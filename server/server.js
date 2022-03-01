@@ -111,12 +111,11 @@ app.post('/reviews', (req, res) => {
     data: reviewData
   };
   axios(config)
-    .then((data) => {
-      console.log('review saved:', data);
+    .then(() => {
       console.log('Status 201 CREATED');
       res.sendStatus(201);
     }).catch((error) => {
-      console.log('this is the error when adding new review:', error.response);
+      console.log('Error recieved when adding review:', error.response);
     });
 
 });
