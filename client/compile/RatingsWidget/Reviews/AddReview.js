@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
-import {validateFields, formatReviewData} from './AddReview/helpers.js';
+import {validateFields, formatReviewData} from '../helpers.js';
 import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 

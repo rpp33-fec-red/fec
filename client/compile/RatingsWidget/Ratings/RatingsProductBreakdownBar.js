@@ -9,6 +9,8 @@ function RatingsProductBreakdownBar (props) {
         <rect width="100%" height="3"/>
         <polygon points="0,0 5,0 2.5,5" transform={`translate(${props.value * 20}, 0)`}style={{"fill": "black", "pointerEvents": "none", "zIndex": "1"}} />
       </svg>
+      <div>lowest selection</div>
+      <div>highest selection</div>
     </div>
   );
 }
