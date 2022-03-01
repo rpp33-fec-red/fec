@@ -163,10 +163,6 @@ describe('ReviewTile component', () => {
 });
 
 describe('ReviewsList component', () => {
-  afterAll(async () => {
-    await new Promise(resolve => setTimeout(() => resolve(), 10000)); // avoid jest open handle error
-  });
-
   const testReview = reviewsData.results;
   test('renders correctly', () => {
     const tree = renderer
@@ -238,38 +234,38 @@ describe('ReviewsSorting component', () => {
 
 });
 
-describe('AddReviews component', () => {
-  const testMetadata = {
-    "product_id": "2",
-    "ratings": {
-      2: 1,
-      3: 1,
-      4: 2,
-    },
-    "recommended": {
-      0: 5
-    },
-    "characteristics": {
-      "Size": {
-        "id": 14,
-        "value": "4.0000"
-      },
-      "Width": {
-        "id": 15,
-        "value": "3.5000"
-      },
-      "Comfort": {
-        "id": 16,
-        "value": "4.0000"
-      }
-    }
-  };
+// describe('AddReviews component', () => {
+//   const testMetadata = {
+//     "product_id": "2",
+//     "ratings": {
+//       2: 1,
+//       3: 1,
+//       4: 2,
+//     },
+//     "recommended": {
+//       0: 5
+//     },
+//     "characteristics": {
+//       "Size": {
+//         "id": 14,
+//         "value": "4.0000"
+//       },
+//       "Width": {
+//         "id": 15,
+//         "value": "3.5000"
+//       },
+//       "Comfort": {
+//         "id": 16,
+//         "value": "4.0000"
+//       }
+//     }
+//   };
 
-  test('renders correctly', () => {
-    const tree = renderer
-      .create(<AddReview reviewsCharacteristics={testMetadata.characteristics} closeAddReviewWindow={ReviewsList.closeAddReviewWindow} product_id={64620}/>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+//   test('renders correctly', () => {
+//     const tree = renderer
+//       .create(<AddReview reviewsCharacteristics={testMetadata.characteristics} closeAddReviewWindow={ReviewsList.closeAddReviewWindow} product_id={64620}/>)
+//       .toJSON();
+//     expect(tree).toMatchSnapshot();
+//   });
 
-});
+// });
