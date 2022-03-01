@@ -17,7 +17,7 @@ function Ratings (props) {
 
 Ratings.propTypes = {
   product_id: PropTypes.number,
-  averageRating: PropTypes.number
+  averageRating: PropTypes.any
 };
 
 export default Ratings;

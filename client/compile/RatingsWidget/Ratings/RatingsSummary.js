@@ -1,12 +1,13 @@
 import React from 'react';
-import StarsComponent from '../../showStars.js';
+import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 
 function RatingsSummary(props) {
+  const AverageStarRating = createStarComponent(props.averageRating);
   return (
     <div className="ratings-summary">
       <h2>{props.averageRating}</h2>
-      <StarsComponent product_id={props.product_id}/>
+      <AverageStarRating/>
       <p>100% of the reviews recommend this product</p>
     </div>
   );
@@ -14,7 +15,7 @@ function RatingsSummary(props) {
 
 RatingsSummary.propTypes = {
   product_id: PropTypes.any,
-  averageRating: PropTypes.number
+  averageRating: PropTypes.any
 };
 
 export default RatingsSummary;

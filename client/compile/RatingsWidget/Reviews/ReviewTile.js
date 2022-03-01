@@ -2,7 +2,7 @@ import React from 'react';
 import ReviewImage from './ReviewImage.js';
 import ReviewImageWindow from './ReviewImageWindow.js';
 import ReviewResponse from './ReviewResponse.js';
-import createStarComponent from './StarRatings.js';
+import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 
 class ReviewTile extends React.Component {
