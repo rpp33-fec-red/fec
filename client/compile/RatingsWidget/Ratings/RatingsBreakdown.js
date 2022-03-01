@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 
 function RatingsBreakdown (props) {
   const values = [1, 2, 3, 4, 5];
-  const ratingsPercentage = props.ratingsPercentage || null;
-  const ratingsCount = props.ratings || null;
+  const ratingsPercentage = props.ratingsPercentage;
+  const ratingsCount = props.ratings;
 
+  // Updates filter message to show what filters are being applied
+  // Adds remove filter message when filters are applied
   let filterMessage;
   let removeFilterMessage;
   if (Object.keys(props.filteredBy).length !== 0) {
@@ -16,6 +18,7 @@ function RatingsBreakdown (props) {
     }
     removeFilterMessage = 'Remove all filters';
   }
+
   return (
     <div className="ratings-breakdown">
       {values.map((value) => {
