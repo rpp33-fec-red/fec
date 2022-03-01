@@ -26,8 +26,10 @@ class ReviewsList extends React.Component {
 
       if (Object.keys(this.props.filteredBy).length !== 0 || this.state.searched.length > 0) {
         this.props.reviews.forEach((review) => {
-          if (review.body.includes(this.state.searched)|| review.summary.includes(this.state.searched)) {
-            if (this.props.filteredBy) {
+          const reviewSummary = review.summary.toLowerCase();
+          const reviewBody = review.body.toLowerCase();
+          if (reviewSummary.includes(this.state.searched) || reviewBody.includes(this.state.searched)) {
+            if (Object.keys(this.props.filteredBy).length > 0) {
               if (this.props.filteredBy[review.rating]) {
                 updatedReviews.push(review);
               }
