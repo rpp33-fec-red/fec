@@ -13,9 +13,17 @@ function Ratings (props) {
   return (
     <div className="ratings">
       <h4>Ratings &#38; Reviews</h4>
-      <RatingsSummary product_id={props.product_id} averageRating={averageRating} recommendedPercentage={props.recommendedPercentage}/>
-      <RatingsBreakdown ratingsPercentage={ratingsPercentage} ratings={props.reviewsMetadata.ratings} updateRatingFilter={props.updateRatingFilter} filteredBy={props.filteredBy} removeRatingFilter={props.removeRatingFilter}/>
-      <RatingsProductBreakdown characteristics={props.reviewsMetadata.characteristics}/>
+      <RatingsSummary
+        product_id={props.product_id}
+        averageRating={averageRating}
+        recommendedPercentage={props.recommendedPercentage}/>
+      <RatingsBreakdown ratingsPercentage={ratingsPercentage}
+        ratings={props.reviewsMetadata.ratings}
+        updateRatingFilter={props.updateRatingFilter}
+        filteredBy={props.filteredBy}
+        removeRatingFilter={props.removeRatingFilter}/>
+      <RatingsProductBreakdown
+        characteristics={props.reviewsMetadata.characteristics}/>
     </div>
   );
 }
