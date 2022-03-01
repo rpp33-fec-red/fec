@@ -10,11 +10,13 @@ class ReviewsList extends React.Component {
     this.state = {
       filteredReviews: [],
       reviewsDisplayed: [],
-      addReviewDisplayed: false
+      addReviewDisplayed: false,
+      searched: ''
     };
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
     this.showAddReviewWindow = this.showAddReviewWindow.bind(this);
     this.closeAddReviewWindow = this.closeAddReviewWindow.bind(this);
+    this.updateSearched = this.updateSearched.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -63,6 +65,19 @@ class ReviewsList extends React.Component {
     }
   }
 
+  updateSearched (event) {
+
+    if (event.target.value.length < 3 && event.target.value !== 0) {
+      this.setState({
+        searched: ''
+      });
+    } else {
+      this.setState({
+        searched: event.target.value
+      });
+    }
+  }
+
   showAddReviewWindow () {
     this.setState({
       addReviewDisplayed: true
@@ -97,6 +112,7 @@ class ReviewsList extends React.Component {
 
     return (
       <>
+        <input type="text" onChange={this.updateSearched}/>
         <ReviewsSorting numOfReviews={this.state.reviewsDisplayed.length} updateSorting={this.props.updateSorting}/>
 
         <div className ="reviews-list">
