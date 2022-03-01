@@ -98,6 +98,11 @@
 .ratings-breakdown-bar {
   display: flex;
   flex-direction: row;
+
+}
+
+.ratings-breakdown-bar:hover {
+  background-color: red;
 }
 
 .star-label {
