@@ -70,7 +70,7 @@ class RatingsWidget extends React.Component {
     for (const value in recommended) {
       sum += parseInt(recommended[value]);
     }
-    const recommendedPercentage = (parseInt(recommended[true]) / sum) * 100;
+    const recommendedPercentage = Math.round((parseInt(recommended[true]) / sum) * 100);
     return recommendedPercentage;
   }
 
