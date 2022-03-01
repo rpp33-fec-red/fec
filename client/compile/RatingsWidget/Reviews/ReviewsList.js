@@ -20,8 +20,8 @@ class ReviewsList extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       let updatedReviews = [];
-      if (Object.keys(this.props.filteredBy).length !== 0) {
 
+      if (Object.keys(this.props.filteredBy).length !== 0) {
         this.props.reviews.forEach((review) => {
           if (this.props.filteredBy[review.rating]) {
             updatedReviews.push(review);
