@@ -77,7 +77,12 @@ class RatingsWidget extends React.Component {
   updateRatingFilter (event) {
     const rating = parseInt(event.target.id);
     let filteredBy = this.state.filteredBy;
-    filteredBy[rating] = true;
+    if (filteredBy[rating]) {
+      delete filteredBy[rating];
+    } else {
+      filteredBy[rating] = true;
+    }
+
     this.setState({
       filteredBy: filteredBy
     });

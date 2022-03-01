@@ -8,6 +8,7 @@ class ReviewsList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      filteredReviews: [],
       reviewsDisplayed: [],
       addReviewDisplayed: false
     };
@@ -26,10 +27,6 @@ class ReviewsList extends React.Component {
             updatedReviews.push(review);
           }
         });
-
-        this.setState({
-          reviewsDisplayed: updatedReviews
-        });
       } else {
         updatedReviews = this.props.reviews;
       }
@@ -37,11 +34,13 @@ class ReviewsList extends React.Component {
       if (updatedReviews.length > 2) {
         const reviews = updatedReviews.slice(0, 2);
         this.setState({
-          reviewsDisplayed: reviews
+          reviewsDisplayed: reviews,
+          filteredReviews: updatedReviews
         });
       } else {
         this.setState({
-          reviewsDisplayed: updatedReviews
+          reviewsDisplayed: updatedReviews,
+          filteredReviews: updatedReviews
         });
       }
     }
@@ -50,13 +49,13 @@ class ReviewsList extends React.Component {
   updateReviewsDisplayed () {
     const numberOfReviewsDisplayed = this.state.reviewsDisplayed.length;
 
-    if (numberOfReviewsDisplayed < this.props.reviews.length) {
-      const reviewsNotDisplayed = this.props.reviews.length - numberOfReviewsDisplayed;
+    if (numberOfReviewsDisplayed < this.state.filteredReviews.length) {
+      const reviewsNotDisplayed = this.state.filteredReviews.length - numberOfReviewsDisplayed;
       let updatedReviews;
       if (reviewsNotDisplayed === 1) {
-        updatedReviews = this.props.reviews;
+        updatedReviews = this.state.filteredReviews;
       } else {
-        updatedReviews = this.props.reviews.slice(0, numberOfReviewsDisplayed + 2);
+        updatedReviews = this.state.filteredReviews.slice(0, numberOfReviewsDisplayed + 2);
       }
       this.setState({
         reviewsDisplayed: updatedReviews
