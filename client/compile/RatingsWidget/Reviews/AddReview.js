@@ -115,7 +115,7 @@ function AddReview (props) {
           <div>
             <label htmlFor="photos">Upload photos: </label>
             <input name="photos" type="file" onChange={showFileThumbnail} multiple/>
-            <img src={filePreview} ></img>
+            <img id="add-review-thumbnail"src={filePreview} ></img>
           </div>
 
           <div>
