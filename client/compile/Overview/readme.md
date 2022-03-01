@@ -17,14 +17,26 @@ Getting started with how to use this wigits code;
 #how to import the model;
 
 ```javascript
-# this model connects to the backend to make requests for data
+//this model connects to the backend to make requests for data
 import Model from 'pathtomodelFile';
 var newModel = new Model(false|true);
-# if you choose false then you are not ready to deploy and the functionality may be slightly diffrent.
+// if you choose false then you are not ready to deploy and the functionality may be slightly diffrent.
 
+```
+#how to use the model for overview component?;
+#the overview uses getdata function to retrieve information from the api
+```javascript
+  newModel.getData;
+  parameters required (Array, function)
+  // the array must be array of routes for an example
+  newModel.getData(['products'],function(data){
+    console.log(data);
+  });
+  //thats it
 ```
 
 ### STATE
+
 
 
 
