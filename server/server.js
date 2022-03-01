@@ -120,6 +120,25 @@ app.post('/reviews', (req, res) => {
 
 });
 
+app.put('/reviews', (req, res) => {
+  let url = options.APIURL + `/reviews/${req.body.review_id}/helpful`;
+  const config = {
+    method: 'PUT',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    }
+  };
+  axios(config)
+    .then(() => {
+      console.log('Status: 204 NO CONTENT');
+      res.sendStatus(204);
+    }).catch((error) => {
+      console.log('Error recieved when voting helpfulness:', error.response);
+    });
+
+});
+
 app.listen(port,function(){
   console.log('listenening on ',port);
 });
