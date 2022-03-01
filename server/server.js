@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var port = 8080;
 var path = require('path');
-app.use(express.static(path.join(__dirname + '/../client/public')));
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
@@ -12,6 +11,7 @@ app.use(bp.json());
 var cors = require('cors');
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
+app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback

@@ -6,7 +6,12 @@ class LeftContainer extends React.Component{
 
   constructor(props){
     super(props);
-    console.log('props LeftCOntainer',props);
+  }
+
+  static propTypes = {
+    image:PropTypes.string,
+    imageClick:PropTypes.func,
+    style:PropTypes.any
   }
 
   render (){

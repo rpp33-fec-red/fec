@@ -4,30 +4,29 @@ import StyleSelector from '../../styleSelector.js';
 import PropTypes from 'prop-types';
 
 function ImageHolder(props){
-  var [showBigImage,setshowBigImage] = React.useState(false)
+  var [showBigImage,setshowBigImage] = React.useState(false);
   // var photo = props.style[0];
-  function showbigImage(){
-    setshowBigImage(true)
-  }
-  function hidebigImage(){
-    setshowBigImage(false)
-  }
 
-  function Modal(){
-   return ( <div className="bigImage">
-    <img src={props.image || props.photos[0].url} style={{width:"800px",height:"1000px"}}></img>
-    </div>);
+  function toggle(){
+    setshowBigImage(!showBigImage);
   }
-  return (
+  function Modal(){
+    return (<img onClick={toggle} className="iframeclass" src={props.photos[0].url} /> );
+
+  }
+  return (<React.Fragment>
+    { showBigImage ? <Modal /> : null  }
     <div className="image-holder">
       <img src={props.image || props.photos[0].url}></img>
-      { showBigImage ? <Modal /> : null }
-      <div className="hoverModal" onMouseLeave={hidebigImage} onMouseOver={showbigImage} style={{background:"transparent", position:"absolute"}}></div>
+      <div className="hoverModal" onClick={toggle}  style={{background:"transparent", position:"absolute"}}></div>
       <StyleSelector imageClick={props.imageClick} photos={props.photos} showImages={true}></StyleSelector>
-    </div>);
+    </div>
+  </React.Fragment>);
 
 }
 ImageHolder.propTypes = {
-  image: PropTypes.any
+  image: PropTypes.any,
+  imageClick: PropTypes.any,
+  photos: PropTypes.array
 };
 export default ImageHolder;
