@@ -3,10 +3,11 @@ import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 
 function RatingsSummary(props) {
-  const AverageStarRating = createStarComponent(props.averageRating);
+  const averageRating = props.averageRating;
+  const AverageStarRating = createStarComponent(averageRating);
   return (
     <div className="ratings-summary">
-      <h2>{props.averageRating}</h2>
+      <h2>{averageRating}</h2>
       <AverageStarRating/>
       <p>{props.recommendedPercentage}% of the reviews recommend this product</p>
     </div>

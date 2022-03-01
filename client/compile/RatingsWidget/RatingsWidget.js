@@ -18,9 +18,9 @@ class RatingsWidget extends React.Component {
       },
       reviews: [],
       reviewsMetadata: {},
-      averageRating: 0,
       recommendPercentage: 0,
-      ratingPercentages: {}
+      ratingPercentages: 0,
+      ratingsMetrics: {}
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
@@ -111,7 +111,7 @@ class RatingsWidget extends React.Component {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings averageRating={this.state.averageRating} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage}/>
+        <Ratings averageRating={this.state.ratingsMetrics.averageRating} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage}/>
         <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );
