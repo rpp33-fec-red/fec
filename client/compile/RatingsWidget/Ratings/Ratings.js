@@ -38,7 +38,7 @@ function Ratings (props) {
     <div className="ratings">
       <h4>Ratings &#38; Reviews</h4>
       <RatingsSummary product_id={props.product_id} averageRating={averageRating} recommendedPercentage={props.recommendedPercentage}/>
-      <RatingsBreakdown ratingsPercentage={ratingsPercentage} ratings={props.reviewsMetadata.ratings}/>
+      <RatingsBreakdown ratingsPercentage={ratingsPercentage} ratings={props.reviewsMetadata.ratings} updateRatingFilter={props.updateRatingFilter}/>
       <RatingsProductBreakdown />
     </div>
   );
@@ -47,7 +47,8 @@ function Ratings (props) {
 Ratings.propTypes = {
   product_id: PropTypes.number,
   reviewsMetadata: PropTypes.any,
-  recommendedPercentage: PropTypes.any
+  recommendedPercentage: PropTypes.any,
+  updateRatingFilter: PropTypes.any
 };
 
 export default Ratings;

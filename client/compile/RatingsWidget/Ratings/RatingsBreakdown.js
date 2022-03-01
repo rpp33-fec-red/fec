@@ -13,7 +13,8 @@ function RatingsBreakdown (props) {
           key={value}
           value={value}
           ratingPercentage={ratingsPercentage ? props.ratingsPercentage[value] : 0}
-          reviewNumber={ratingsCount ? props.ratings[value] : 0} />;
+          reviewNumber={ratingsCount ? props.ratings[value] : 0}
+          updateRatingFilter={props.updateRatingFilter} />;
       })}
     </div>
   );
@@ -21,7 +22,8 @@ function RatingsBreakdown (props) {
 
 RatingsBreakdown.propTypes = {
   ratingsPercentage: PropTypes.any,
-  ratings: PropTypes.any
+  ratings: PropTypes.any,
+  updateRatingFilter: PropTypes.any
 };
 
 export default RatingsBreakdown;

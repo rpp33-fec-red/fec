@@ -17,17 +17,32 @@ class ReviewsList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const previousProps = JSON.stringify(prevProps.reviews);
-    const currentProps = JSON.stringify(this.props.reviews);
-    if (previousProps !== currentProps) {
-      if (this.props.reviews.length > 2) {
-        const reviews = this.props.reviews.slice(0, 2);
+    if (prevProps !== this.props) {
+      let updatedReviews = [];
+      console.log(this.props.filteredBy);
+      if (Object.keys(this.props.filteredBy).length !== 0) {
+
+        this.props.reviews.forEach((review) => {
+          if (this.props.filteredBy[review.rating]) {
+            updatedReviews.push(review);
+          }
+        });
+
+        this.setState({
+          reviewsDisplayed: updatedReviews
+        });
+      } else {
+        updatedReviews = this.props.reviews;
+      }
+
+      if (updatedReviews.length > 2) {
+        const reviews = updatedReviews.slice(0, 2);
         this.setState({
           reviewsDisplayed: reviews
         });
       } else {
         this.setState({
-          reviewsDisplayed: this.props.reviews
+          reviewsDisplayed: updatedReviews
         });
       }
     }
@@ -107,7 +122,8 @@ ReviewsList.propTypes = {
   reviews: PropTypes.any,
   updateSorting: PropTypes.any,
   reviewsCharacteristics: PropTypes.any,
-  product_id: PropTypes.any
+  product_id: PropTypes.any,
+  filteredBy: PropTypes.any
 };
 
 
