@@ -79,7 +79,7 @@ class ReviewsList extends React.Component {
 
     let addReviewsWindow;
     if(this.state.addReviewDisplayed) {
-      return <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics} closeAddReviewWindow={this.closeAddReviewWindow} />;
+      return <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics} closeAddReviewWindow={this.closeAddReviewWindow} product_id={this.props.product_id}/>;
     }
 
     return (
@@ -106,7 +106,8 @@ class ReviewsList extends React.Component {
 ReviewsList.propTypes = {
   reviews: PropTypes.any,
   updateSorting: PropTypes.any,
-  reviewsCharacteristics: PropTypes.any
+  reviewsCharacteristics: PropTypes.any,
+  product_id: PropTypes.any
 };
 
 

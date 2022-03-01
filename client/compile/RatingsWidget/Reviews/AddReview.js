@@ -38,7 +38,7 @@ function AddReview (props) {
     const applicableCharacteristics = props.reviewsCharacteristics;
     submissionMessage = validateFields(form.elements, applicableCharacteristics, starRating);
     if (submissionMessage === 'Your review has been submitted.') {
-      const reviewData = formatReviewData(form.elements, applicableCharacteristics, starRating);
+      const reviewData = formatReviewData(form.elements, applicableCharacteristics, starRating, props.product_id);
       axios.post('/reviews', reviewData)
         .then(() => {
           form.reset();
@@ -125,7 +125,8 @@ function AddReview (props) {
 AddReview.propTypes = {
   reviewsCharacteristics: PropTypes.any,
   closeAddReviewWindow: PropTypes.func,
-  getReviews: PropTypes.any
+  getReviews: PropTypes.any,
+  product_id: PropTypes.any
 };
 
 export default AddReview;

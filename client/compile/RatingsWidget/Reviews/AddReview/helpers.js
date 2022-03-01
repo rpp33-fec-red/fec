@@ -67,7 +67,7 @@ const validateFields = (fields, applicableCharacteristics, rating) => {
 
 };
 
-const formatReviewData = (fields, applicableCharacteristics, starRating) => {
+const formatReviewData = (fields, applicableCharacteristics, starRating, product_id) => {
 
   // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
   let reviewCharRating = {};
@@ -84,7 +84,7 @@ const formatReviewData = (fields, applicableCharacteristics, starRating) => {
   const email = fields.email.value;
 
   const reviewData = {
-    product_id: 64621,
+    product_id: product_id,
     rating: starRating,
     summary: summary,
     body: body,

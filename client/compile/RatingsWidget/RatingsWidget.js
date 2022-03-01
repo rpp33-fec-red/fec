@@ -70,7 +70,7 @@ class RatingsWidget extends React.Component {
     return (
       <div className="ratings-and-reviews">
         <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id}/>
-        <Reviews reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
+        <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );
   }

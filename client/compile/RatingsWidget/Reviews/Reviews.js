@@ -7,7 +7,7 @@ function Reviews (props) {
   const reviews = props.reviews;
   return (
     <div className ="reviews">
-      <ReviewsList reviews={reviews} updateSorting={props.updateSorting} reviewsCharacteristics={props.reviewsCharacteristics} />
+      <ReviewsList reviews={reviews} updateSorting={props.updateSorting} reviewsCharacteristics={props.reviewsCharacteristics} product_id={props.product_id} />
     </div>
   );
 }
@@ -15,7 +15,8 @@ function Reviews (props) {
 Reviews.propTypes = {
   reviews: PropTypes.any,
   updateSorting: PropTypes.any,
-  reviewsCharacteristics: PropTypes.any
+  reviewsCharacteristics: PropTypes.any,
+  product_id: PropTypes.any
 };
 
 
