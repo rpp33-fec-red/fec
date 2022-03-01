@@ -26,7 +26,6 @@ class ReviewsList extends React.Component {
 
       if (Object.keys(this.props.filteredBy).length !== 0 || this.state.searched.length > 0) {
         this.props.reviews.forEach((review) => {
-          console.log(review);
           if (review.body.includes(this.state.searched)|| review.summary.includes(this.state.searched)) {
             if (this.props.filteredBy) {
               if (this.props.filteredBy[review.rating]) {
