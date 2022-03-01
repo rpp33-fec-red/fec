@@ -9,13 +9,15 @@ function RatingsBreakdownBar (props) {
         <rect width="100%" height="5"/>
         <rect width={props.ratingPercentage + '%'} height="5" style={{"fill": "green", "zIndex": "1"}}/>
       </svg>
+      <div className="review-number-label">{props.reviewNumber}</div>
     </div>
   );
 }
 
 RatingsBreakdownBar.propTypes = {
   value: PropTypes.any,
-  ratingPercentage: PropTypes.any
+  ratingPercentage: PropTypes.any,
+  reviewNumber: PropTypes.any
 };
 
 export default RatingsBreakdownBar;
