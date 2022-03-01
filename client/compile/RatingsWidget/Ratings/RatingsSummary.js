@@ -8,14 +8,15 @@ function RatingsSummary(props) {
     <div className="ratings-summary">
       <h2>{props.averageRating}</h2>
       <AverageStarRating/>
-      <p>100% of the reviews recommend this product</p>
+      <p>{props.recommendedPercentage}% of the reviews recommend this product</p>
     </div>
   );
 }
 
 RatingsSummary.propTypes = {
   product_id: PropTypes.any,
-  averageRating: PropTypes.any
+  averageRating: PropTypes.any,
+  recommendedPercentage: PropTypes.any
 };
 
 export default RatingsSummary;

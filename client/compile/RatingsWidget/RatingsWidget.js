@@ -18,12 +18,14 @@ class RatingsWidget extends React.Component {
       },
       reviews: [],
       reviewsMetadata: {},
-      averageRating: 0
+      averageRating: 0,
+      recommendPercentage: 0
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
     this.getAverageRating = this.getAverageRating.bind(this);
     this.getReviewsMetadata = this.getReviewsMetadata.bind(this);
+    this.getRecommendedPercentage = this.getRecommendedPercentage.bind(this);
   }
 
   componentDidMount () {
@@ -60,9 +62,12 @@ class RatingsWidget extends React.Component {
     this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
       if (data.results){
         const averageRating = that.getAverageRating(data.results.ratings);
+        const recommendedPercentage = that.getRecommendedPercentage(data.results.recommended);
+        console.log(recommendedPercentage);
         that.setState({
           reviewsMetadata: data.results,
-          averageRating: averageRating
+          averageRating: averageRating,
+          recommendedPercentage: recommendedPercentage
         });
       }
     });
@@ -78,12 +83,21 @@ class RatingsWidget extends React.Component {
     });
   }
 
+  getRecommendedPercentage (recommended) {
+    let sum = 0;
+    for (const value in recommended) {
+      sum += parseInt(recommended[value]);
+    }
+    const recommendedPercentage = (parseInt(recommended[true]) / sum) * 100;
+    return recommendedPercentage;
+  }
+
 
   render () {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings averageRating={this.state.averageRating} product_id={this.props.product_id}/>
+        <Ratings averageRating={this.state.averageRating} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage}/>
         <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );
