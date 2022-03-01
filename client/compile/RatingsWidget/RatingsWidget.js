@@ -20,6 +20,7 @@ class RatingsWidget extends React.Component {
     this.getReviewsMetadata = this.getReviewsMetadata.bind(this);
     this.getRecommendedPercentage = this.getRecommendedPercentage.bind(this);
     this.updateRatingFilter = this.updateRatingFilter.bind(this);
+    this.removeRatingFilter = this.removeRatingFilter.bind(this);
   }
 
   componentDidMount () {
@@ -88,12 +89,18 @@ class RatingsWidget extends React.Component {
     });
   }
 
+  removeRatingFilter () {
+    this.setState({
+      filteredBy: {}
+    });
+  }
+
 
   render () {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage} updateRatingFilter={this.updateRatingFilter} filteredBy={this.state.filteredBy}/>
+        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage} updateRatingFilter={this.updateRatingFilter} filteredBy={this.state.filteredBy} removeRatingFilter={this.removeRatingFilter}/>
         <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics} filteredBy={this.state.filteredBy}/>
       </div>
     );

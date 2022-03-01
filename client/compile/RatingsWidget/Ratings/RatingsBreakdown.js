@@ -8,11 +8,13 @@ function RatingsBreakdown (props) {
   const ratingsCount = props.ratings || null;
 
   let filterMessage;
+  let removeFilterMessage;
   if (Object.keys(props.filteredBy).length !== 0) {
     filterMessage = 'Filtered by:';
     for (const rating in props.filteredBy) {
       filterMessage += '' + rating + ' star ';
     }
+    removeFilterMessage = 'Remove all filters';
   }
   return (
     <div className="ratings-breakdown">
@@ -25,6 +27,7 @@ function RatingsBreakdown (props) {
           updateRatingFilter={props.updateRatingFilter} />;
       })}
       <div>{filterMessage}</div>
+      <a onClick={props.removeRatingFilter}>{removeFilterMessage}</a>
     </div>
   );
 }
@@ -33,7 +36,8 @@ RatingsBreakdown.propTypes = {
   ratingsPercentage: PropTypes.any,
   ratings: PropTypes.any,
   updateRatingFilter: PropTypes.any,
-  filteredBy: PropTypes.any
+  filteredBy: PropTypes.any,
+  removeRatingFilter: PropTypes.any
 };
 
 export default RatingsBreakdown;
