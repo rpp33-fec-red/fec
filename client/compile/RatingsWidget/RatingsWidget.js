@@ -41,8 +41,6 @@ class RatingsWidget extends React.Component {
     });
   }
 
-
-
   getReviewsMetadata () {
     const that = this;
     this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
@@ -56,6 +54,15 @@ class RatingsWidget extends React.Component {
     });
   }
 
+  getRecommendedPercentage (recommended) {
+    let sum = 0;
+    for (const value in recommended) {
+      sum += parseInt(recommended[value]);
+    }
+    const recommendedPercentage = Math.round((parseInt(recommended[true]) / sum) * 100);
+    return recommendedPercentage;
+  }
+
   updateSorting (event) {
     event.preventDefault();
     const sortedBy = event.target.value;
@@ -64,15 +71,6 @@ class RatingsWidget extends React.Component {
     }, () => {
       this.getReviews();
     });
-  }
-
-  getRecommendedPercentage (recommended) {
-    let sum = 0;
-    for (const value in recommended) {
-      sum += parseInt(recommended[value]);
-    }
-    const recommendedPercentage = Math.round((parseInt(recommended[true]) / sum) * 100);
-    return recommendedPercentage;
   }
 
   updateRatingFilter (event) {
@@ -95,13 +93,23 @@ class RatingsWidget extends React.Component {
     });
   }
 
-
   render () {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id} recommendedPercentage={this.state.recommendedPercentage} updateRatingFilter={this.updateRatingFilter} filteredBy={this.state.filteredBy} removeRatingFilter={this.removeRatingFilter}/>
-        <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics} filteredBy={this.state.filteredBy}/>
+        <Ratings
+          reviewsMetadata={this.state.reviewsMetadata}
+          product_id={this.props.product_id}
+          recommendedPercentage={this.state.recommendedPercentage}
+          updateRatingFilter={this.updateRatingFilter}
+          filteredBy={this.state.filteredBy}
+          removeRatingFilter={this.removeRatingFilter}/>
+        <Reviews
+          product_id={this.props.product_id}
+          reviews={reviews}
+          updateSorting={this.updateSorting}
+          reviewsCharacteristics={this.state.reviewsMetadata.characteristics}
+          filteredBy={this.state.filteredBy}/>
       </div>
     );
   }

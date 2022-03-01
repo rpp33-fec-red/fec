@@ -159,4 +159,28 @@ const getCharacteristicsDescriptions = (characteristic) => {
   return valueDescriptions;
 };
 
-export {validateFields, formatReviewData, getCharacteristicsDescriptions};
+const calculateRatingMetrics = (ratings) => {
+  let weightedSum = 0;
+  let count = 0;
+  let ratingsPercentage = {};
+
+  for (let val in ratings) {
+    weightedSum += val * ratings[val];
+    count += parseInt(ratings[val]);
+  }
+
+  for (let val in ratings) {
+    ratingsPercentage[val] = (parseInt(ratings[val]) / count) * 100;
+  }
+
+  const averageRating = (Math.round((weightedSum/count) * 4) / 4).toFixed(2);
+
+  const ratingsMetrics = {
+    averageRating: averageRating,
+    ratingsPercentage: ratingsPercentage
+  };
+
+  return ratingsMetrics;
+};
+
+export {validateFields, formatReviewData, getCharacteristicsDescriptions, calculateRatingMetrics};

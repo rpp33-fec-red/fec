@@ -2,34 +2,10 @@ import React from 'react';
 import RatingsSummary from './RatingsSummary.js';
 import RatingsBreakdown from './RatingsBreakdown.js';
 import RatingsProductBreakdown from './RatingsProductBreakdown.js';
+import {calculateRatingMetrics} from '../helpers.js';
 import PropTypes from 'prop-types';
 
 function Ratings (props) {
-
-  const calculateRatingMetrics = (ratings) => {
-    let weightedSum = 0;
-    let count = 0;
-    let ratingsPercentage = {};
-
-    for (let val in ratings) {
-      weightedSum += val * ratings[val];
-      count += parseInt(ratings[val]);
-    }
-
-    for (let val in ratings) {
-      ratingsPercentage[val] = (parseInt(ratings[val]) / count) * 100;
-    }
-
-    const averageRating = (Math.round((weightedSum/count) * 4) / 4).toFixed(2);
-
-    const ratingsMetrics = {
-      averageRating: averageRating,
-      ratingsPercentage: ratingsPercentage
-    };
-
-    return ratingsMetrics;
-  };
-
   const ratingsMetrics = calculateRatingMetrics(props.reviewsMetadata.ratings);
   const averageRating = ratingsMetrics.averageRating;
   const ratingsPercentage = ratingsMetrics.ratingsPercentage;
