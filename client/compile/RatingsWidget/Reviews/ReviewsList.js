@@ -86,7 +86,7 @@ class ReviewsList extends React.Component {
 
     let moreReviewsButton;
     // shows more reviews button only when all reviews are not showing
-    if (this.state.reviewsDisplayed.length !== this.props.reviews.length) {
+    if (this.state.reviewsDisplayed.length !== this.state.filteredReviews.length) {
       moreReviewsButton = <button onClick={this.updateReviewsDisplayed}>MORE REVIEWS</button>;
     }
 

@@ -30,7 +30,7 @@ class RatingsWidget extends React.Component {
 
   getReviews() {
     const that = this;
-    const count = 10;
+    const count = 50;
     this.props.getReviews([`reviews?product_id=${this.props.product_id}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
       if (data.results){
         that.setState({
