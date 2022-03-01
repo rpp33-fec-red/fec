@@ -6,365 +6,539 @@ exports[`AddReviews component renders correctly 1`] = `
 >
   <form
     className="modal-content"
+    onSubmit={[Function]}
   >
-    <h2>
-      Write Your Review
-    </h2>
-    <h3>
-      About the [Product Name]
-    </h3>
-    <button>
-      Close
-    </button>
-    <div>
-      <label
-        htmlFor="rating"
-      >
-        Overall Rating: 
-      </label>
-      <input
-        name="rating"
-        required="required"
-        type="text"
-      />
-    </div>
-    <div>
-      <label
-        htmlFor="recommend"
-      >
-        Do you recommend this product? 
-      </label>
-      <label>
-        Yes 
-      </label>
-      <input
-        name="recommend"
-        required="required"
-        type="radio"
-      />
-      <label>
-        No 
-      </label>
-      <input
-        name="recommend"
-        required="required"
-        type="radio"
-      />
-    </div>
-    <div>
-      <label
-        htmlFor="characteristics"
-        required="required"
-      >
-        Characteristics: 
-      </label>
+    <div
+      className="form-content"
+    >
+      <h2>
+        Write Your Review
+      </h2>
+      <h3>
+        About the [Product Name]
+      </h3>
+      <button>
+        Close
+      </button>
       <div>
         <label
-          htmlFor="Size"
+          htmlFor="rating"
         >
-          Size
+          Overall Rating: 
         </label>
-        <div>
-          <label
-            htmlFor="Size"
-          >
-            1
-          </label>
-          <input
-            name="Size"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="1"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Size"
-          >
-            2
-          </label>
-          <input
-            name="Size"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="2"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Size"
-          >
-            3
-          </label>
-          <input
-            name="Size"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="3"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Size"
-          >
-            4
-          </label>
-          <input
-            name="Size"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="4"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Size"
-          >
-            5
-          </label>
-          <input
-            name="Size"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="5"
-          />
+        <div
+          className="starComponent"
+        >
+          <div>
+            <div
+              className="star-rating-input"
+            >
+              <div
+                className="starContainer"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "inline-flex",
+                    "paddingLeft": "0.5rem",
+                    "position": "relative",
+                  }
+                }
+              >
+                <div
+                  className="starBase"
+                  style={
+                    Object {
+                      "display": "flex",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <svg
+                    className="star"
+                    enableBackground="new 0 0 24 24"
+                    fill="#f8d448"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <rect
+                        fill="none"
+                        height="24"
+                        width="24"
+                        x="0"
+                      />
+                      <polygon
+                        id={1}
+                        onClick={[Function]}
+                        points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                        stroke="#646464"
+                      />
+                    </g>
+                  </svg>
+                  <svg
+                    className="star"
+                    enableBackground="new 0 0 24 24"
+                    fill="#f8d448"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <rect
+                        fill="none"
+                        height="24"
+                        width="24"
+                        x="0"
+                      />
+                      <polygon
+                        id={2}
+                        onClick={[Function]}
+                        points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                        stroke="#646464"
+                      />
+                    </g>
+                  </svg>
+                  <svg
+                    className="star"
+                    enableBackground="new 0 0 24 24"
+                    fill="#f8d448"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <rect
+                        fill="none"
+                        height="24"
+                        width="24"
+                        x="0"
+                      />
+                      <polygon
+                        id={3}
+                        onClick={[Function]}
+                        points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                        stroke="#646464"
+                      />
+                    </g>
+                  </svg>
+                  <svg
+                    className="star"
+                    enableBackground="new 0 0 24 24"
+                    fill="#f8d448"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <rect
+                        fill="none"
+                        height="24"
+                        width="24"
+                        x="0"
+                      />
+                      <polygon
+                        id={4}
+                        onClick={[Function]}
+                        points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                        stroke="#646464"
+                      />
+                    </g>
+                  </svg>
+                  <svg
+                    className="star"
+                    enableBackground="new 0 0 24 24"
+                    fill="#f8d448"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <rect
+                        fill="none"
+                        height="24"
+                        width="24"
+                        x="0"
+                      />
+                      <polygon
+                        id={5}
+                        onClick={[Function]}
+                        points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                        stroke="#646464"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  className="starOverlay"
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "bottom": "0",
+                      "mixBlendMode": "color",
+                      "opacity": "unset",
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": "0",
+                      "top": "0",
+                      "width": "100%",
+                      "zIndex": "1",
+                    }
+                  }
+                />
+              </div>
+              <p />
+            </div>
+          </div>
         </div>
       </div>
       <div>
         <label
-          htmlFor="Width"
+          htmlFor="recommend"
         >
-          Width
+          Do you recommend this product? 
         </label>
-        <div>
+        <label>
+          Yes 
+        </label>
+        <input
+          name="recommend"
+          type="radio"
+          value={true}
+        />
+        <label>
+          No 
+        </label>
+        <input
+          name="recommend"
+          type="radio"
+          value={false}
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="characteristics"
+        >
+          Characteristics: 
+        </label>
+        <div
+          className="radio-buttons"
+        >
           <label
-            htmlFor="Width"
+            htmlFor="Size"
           >
-            1
+            Size
           </label>
-          <input
-            name="Width"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="1"
-          />
+          <div>
+            <div />
+            <label
+              htmlFor="Size"
+            >
+              1
+            </label>
+            <input
+              name="Size"
+              onClick={[Function]}
+              type="radio"
+              value={1}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Size"
+            >
+              2
+            </label>
+            <input
+              name="Size"
+              onClick={[Function]}
+              type="radio"
+              value={2}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Size"
+            >
+              3
+            </label>
+            <input
+              name="Size"
+              onClick={[Function]}
+              type="radio"
+              value={3}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Size"
+            >
+              4
+            </label>
+            <input
+              name="Size"
+              onClick={[Function]}
+              type="radio"
+              value={4}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Size"
+            >
+              5
+            </label>
+            <input
+              name="Size"
+              onClick={[Function]}
+              type="radio"
+              value={5}
+            />
+          </div>
         </div>
-        <div>
+        <div
+          className="radio-buttons"
+        >
           <label
             htmlFor="Width"
           >
-            2
+            Width
           </label>
-          <input
-            name="Width"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="2"
-          />
+          <div>
+            <div />
+            <label
+              htmlFor="Width"
+            >
+              1
+            </label>
+            <input
+              name="Width"
+              onClick={[Function]}
+              type="radio"
+              value={1}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Width"
+            >
+              2
+            </label>
+            <input
+              name="Width"
+              onClick={[Function]}
+              type="radio"
+              value={2}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Width"
+            >
+              3
+            </label>
+            <input
+              name="Width"
+              onClick={[Function]}
+              type="radio"
+              value={3}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Width"
+            >
+              4
+            </label>
+            <input
+              name="Width"
+              onClick={[Function]}
+              type="radio"
+              value={4}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Width"
+            >
+              5
+            </label>
+            <input
+              name="Width"
+              onClick={[Function]}
+              type="radio"
+              value={5}
+            />
+          </div>
         </div>
-        <div>
+        <div
+          className="radio-buttons"
+        >
           <label
-            htmlFor="Width"
+            htmlFor="Comfort"
           >
-            3
+            Comfort
           </label>
-          <input
-            name="Width"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="3"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Width"
-          >
-            4
-          </label>
-          <input
-            name="Width"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="4"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Width"
-          >
-            5
-          </label>
-          <input
-            name="Width"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="5"
-          />
+          <div>
+            <div />
+            <label
+              htmlFor="Comfort"
+            >
+              1
+            </label>
+            <input
+              name="Comfort"
+              onClick={[Function]}
+              type="radio"
+              value={1}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Comfort"
+            >
+              2
+            </label>
+            <input
+              name="Comfort"
+              onClick={[Function]}
+              type="radio"
+              value={2}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Comfort"
+            >
+              3
+            </label>
+            <input
+              name="Comfort"
+              onClick={[Function]}
+              type="radio"
+              value={3}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Comfort"
+            >
+              4
+            </label>
+            <input
+              name="Comfort"
+              onClick={[Function]}
+              type="radio"
+              value={4}
+            />
+          </div>
+          <div>
+            <div />
+            <label
+              htmlFor="Comfort"
+            >
+              5
+            </label>
+            <input
+              name="Comfort"
+              onClick={[Function]}
+              type="radio"
+              value={5}
+            />
+          </div>
         </div>
       </div>
       <div>
         <label
-          htmlFor="Comfort"
+          htmlFor="summary"
         >
-          Comfort
+          Review Summary: 
         </label>
-        <div>
-          <label
-            htmlFor="Comfort"
-          >
-            1
-          </label>
-          <input
-            name="Comfort"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="1"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Comfort"
-          >
-            2
-          </label>
-          <input
-            name="Comfort"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="2"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Comfort"
-          >
-            3
-          </label>
-          <input
-            name="Comfort"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="3"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Comfort"
-          >
-            4
-          </label>
-          <input
-            name="Comfort"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="4"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="Comfort"
-          >
-            5
-          </label>
-          <input
-            name="Comfort"
-            onClick={[Function]}
-            required="required"
-            type="radio"
-            value="5"
-          />
-        </div>
+        <input
+          name="summary"
+          placeholder="Example: Best purchase ever!"
+          type="text"
+        />
       </div>
-    </div>
-    <div>
-      <label
-        htmlFor="summary"
-      >
-        Review Summary: 
-      </label>
+      <div>
+        <label
+          htmlFor="body"
+        >
+          Review Body: 
+        </label>
+        <input
+          maxLength="1000"
+          name="body"
+          onChange={[Function]}
+          placeholder="Why did you like the product or not?"
+          type="text"
+        />
+        <p>
+          Minimum required characters left: 
+          50
+        </p>
+      </div>
+      <div>
+        <label
+          htmlFor="photos"
+        >
+          Upload photos: 
+        </label>
+        <input
+          name="photos"
+          type="file"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="nickname"
+        >
+          Nickname: 
+        </label>
+        <input
+          maxLength="60"
+          name="nickname"
+          type="text"
+        />
+        <p>
+          For privacy reasons, do not use your full name or email address
+        </p>
+      </div>
+      <div>
+        <label
+          htmlFor="email"
+        >
+          Email: 
+        </label>
+        <input
+          maxLength="60"
+          name="email"
+          type="text"
+        />
+        <p>
+          For authentication reasons, you will not be emailed
+        </p>
+      </div>
       <input
-        maxLength="60"
-        name="summary"
-        placeholder="Example: Best purchase ever!"
-        required="required"
-        type="text"
+        type="submit"
       />
     </div>
-    <div>
-      <label
-        htmlFor="body"
-      >
-        Review Body: 
-      </label>
-      <input
-        maxLength="1000"
-        minLength="50"
-        name="body"
-        onChange={[Function]}
-        placeholder="Why did you like the product or not?"
-        required="required"
-        type="text"
-      />
-      <p>
-        Minimum required characters left: 
-        50
-      </p>
-    </div>
-    <div>
-      <label
-        htmlFor="photos"
-      >
-        Upload photos: 
-      </label>
-      <input
-        name="photos"
-        type="file"
-      />
-    </div>
-    <div>
-      <label
-        htmlFor="nickname"
-      >
-        Nickname: 
-      </label>
-      <input
-        maxLength="60"
-        name="nickname"
-        required="required"
-        type="text"
-      />
-    </div>
-    <div>
-      <label
-        htmlFor="email"
-      >
-        Email: 
-      </label>
-      <input
-        maxLength="60"
-        name="email"
-        required="required"
-        type="text"
-      />
-    </div>
-    <input
-      onSubmit={[Function]}
-      type="submit"
-    />
   </form>
 </div>
 `;
@@ -382,11 +556,11 @@ exports[`Ratings component renders correctly 1`] = `
     <h2>
       3.5
     </h2>
-    <p
-      className="star-rating"
+    <div
+      className="starComponent"
     >
-      * * * * *
-    </p>
+      <div />
+    </div>
     <p>
       100% of the reviews recommend this product
     </p>
@@ -434,11 +608,11 @@ exports[`RatingsWidget component renders correctly 1`] = `
       <h2>
         3.5
       </h2>
-      <p
-        className="star-rating"
+      <div
+        className="starComponent"
       >
-        * * * * *
-      </p>
+        <div />
+      </div>
       <p>
         100% of the reviews recommend this product
       </p>
@@ -525,9 +699,173 @@ exports[`ReviewTile component renders correctly 1`] = `
     className="review-header"
   >
     <div
-      className="star-rating"
+      className="starComponent"
     >
-      * * * * *
+      <div>
+        <div
+          className="star-rating-input"
+        >
+          <div
+            className="starContainer"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+                "paddingLeft": "0.5rem",
+                "position": "relative",
+              }
+            }
+          >
+            <div
+              className="starBase"
+              style={
+                Object {
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={1}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={2}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={3}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={4}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={5}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="starOverlay"
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "bottom": "0",
+                  "mixBlendMode": "color",
+                  "opacity": "unset",
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "right": "0",
+                  "top": "0",
+                  "width": "40%",
+                  "zIndex": "1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div
       className="right-corner"

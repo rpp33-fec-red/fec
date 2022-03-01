@@ -6,7 +6,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render, fireEvent} from '@testing-library/react';
+import {render, fireEvent, afterAll} from '@testing-library/react';
 import RatingsWidget from './RatingsWidget.js';
 import Ratings from './Ratings/Ratings.js';
 import Reviews from './Reviews/Reviews.js';
@@ -163,6 +163,9 @@ describe('ReviewTile component', () => {
 });
 
 describe('ReviewsList component', () => {
+  afterAll(async () => {
+    await new Promise(resolve => setTimeout(() => resolve(), 10000)); // avoid jest open handle error
+  });
 
   const testReview = reviewsData.results;
   test('renders correctly', () => {
@@ -264,7 +267,7 @@ describe('AddReviews component', () => {
 
   test('renders correctly', () => {
     const tree = renderer
-      .create(<AddReview reviewsCharacteristics={testMetadata.characteristics} closeAddReviewWindow={ReviewsList.closeAddReviewWindow}/>)
+      .create(<AddReview reviewsCharacteristics={testMetadata.characteristics} closeAddReviewWindow={ReviewsList.closeAddReviewWindow} product_id={64620}/>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
