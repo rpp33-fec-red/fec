@@ -17,10 +17,10 @@ Getting started with how to use this wigits code;
 #how to import the model;
 
 ```javascript
-# this model connects to the backend to make requests for data
+// this model connects to the backend to make requests for data
 import Model from 'pathtomodelFile';
 var newModel = new Model(false|true);
-# if you choose false then you are not ready to deploy and the functionality may be slightly diffrent.
+// if you choose false then you are not ready to deploy and the functionality may be slightly diffrent.
 
 ```
 
