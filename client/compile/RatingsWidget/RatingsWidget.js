@@ -19,11 +19,12 @@ class RatingsWidget extends React.Component {
       reviews: [],
       reviewsMetadata: {},
       averageRating: 0,
-      recommendPercentage: 0
+      recommendPercentage: 0,
+      ratingPercentages: {}
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
-    this.getAverageRating = this.getAverageRating.bind(this);
+    this.calculateRatingMetrics = this.calculateRatingMetrics.bind(this);
     this.getReviewsMetadata = this.getReviewsMetadata.bind(this);
     this.getRecommendedPercentage = this.getRecommendedPercentage.bind(this);
   }
@@ -46,27 +47,40 @@ class RatingsWidget extends React.Component {
     });
   }
 
-  getAverageRating (ratings) {
-    let sum = 0;
+  calculateRatingMetrics (ratings) {
+    let weightedSum = 0;
     let count = 0;
+    let ratingsPercentage = {};
+
     for (let val in ratings) {
-      sum += val * ratings[val];
+      weightedSum += val * ratings[val];
       count += parseInt(ratings[val]);
     }
-    const averageRating = (Math.round((sum/count) * 4) / 4).toFixed(2);
-    return averageRating;
+
+    for (let val in ratings) {
+      ratingsPercentage[val] = (parseInt(ratings[val]) / count) * 100;
+    }
+
+    const averageRating = (Math.round((weightedSum/count) * 4) / 4).toFixed(2);
+
+    const ratingsMetrics = {
+      averageRating: averageRating,
+      ratingsPercentage: ratingsPercentage
+    };
+
+    return ratingsMetrics;
   }
 
   getReviewsMetadata () {
     const that = this;
     this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
       if (data.results){
-        const averageRating = that.getAverageRating(data.results.ratings);
+        const ratingsMetrics = that.calculateRatingMetrics(data.results.ratings);
+        console.log(ratingsMetrics);
         const recommendedPercentage = that.getRecommendedPercentage(data.results.recommended);
-        console.log(recommendedPercentage);
         that.setState({
           reviewsMetadata: data.results,
-          averageRating: averageRating,
+          ratingsMetrics: ratingsMetrics,
           recommendedPercentage: recommendedPercentage
         });
       }
