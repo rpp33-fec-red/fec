@@ -39,10 +39,9 @@ class StarsComponent extends React.Component{
     ratingPercentage = ratingPercentage * 20;
     return ratingPercentage;
   }
-
   getRating () {
     model.getData(['reviews', `meta?product_id=${this.props.product_id}` ], (data) => {
-      const allRatings = data.results.ratings;     
+      const allRatings = data.results.ratings;
       let sum = 0;
       let count = 0;
       for (let val in allRatings) {
@@ -54,10 +53,8 @@ class StarsComponent extends React.Component{
       if (percentage !== 0) {
         this.setState({ rating: Math.round(sum/count*10)/10, percentage: percentage});
       }
-      
     });
   }
- 
   makeStars(){
     let array =[];
     for(let i=0; i< 5; i++){
@@ -68,7 +65,6 @@ class StarsComponent extends React.Component{
       <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
         <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
         <div className="starOverlay" style={{ "width": `${100-this.state.percentage}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1" }}></div>
-        
       </div>
     );
   }
@@ -78,7 +74,7 @@ class StarsComponent extends React.Component{
     return (<div className="starComponent" >
       {this.state.percentage === 0 || !this.state.percentage
         ? <div></div>
-        : <div>{this.makeStars()}</div> 
+        : <div>{this.makeStars()}</div>
       }
     </div>);
   }

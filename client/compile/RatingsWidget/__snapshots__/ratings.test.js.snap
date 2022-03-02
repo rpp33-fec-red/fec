@@ -13,11 +13,11 @@ exports[`Ratings component renders correctly 1`] = `
     <h2>
       3.5
     </h2>
-    <p
-      className="star-rating"
+    <div
+      className="starComponent"
     >
-      * * * * *
-    </p>
+      <div />
+    </div>
     <p>
       100% of the reviews recommend this product
     </p>
@@ -65,11 +65,11 @@ exports[`RatingsWidget component renders correctly 1`] = `
       <h2>
         3.5
       </h2>
-      <p
-        className="star-rating"
+      <div
+        className="starComponent"
       >
-        * * * * *
-      </p>
+        <div />
+      </div>
       <p>
         100% of the reviews recommend this product
       </p>
@@ -109,7 +109,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
         htmlFor="sorting-option"
       >
         0
-         reviews, sorted by 
+         reviews, sorted by
       </label>
       <select
         name="sorting-option"
@@ -138,8 +138,10 @@ exports[`RatingsWidget component renders correctly 1`] = `
     <div
       className="reviews-buttons"
     >
-      <button>
-        ADD A REVIEW + 
+      <button
+        onClick={[Function]}
+      >
+        ADD A REVIEW +
       </button>
     </div>
   </div>
@@ -154,9 +156,173 @@ exports[`ReviewTile component renders correctly 1`] = `
     className="review-header"
   >
     <div
-      className="star-rating"
+      className="starComponent"
     >
-      * * * * *
+      <div>
+        <div
+          className="star-rating-input"
+        >
+          <div
+            className="starContainer"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+                "paddingLeft": "0.5rem",
+                "position": "relative",
+              }
+            }
+          >
+            <div
+              className="starBase"
+              style={
+                Object {
+                  "display": "flex",
+                  "width": "100%",
+                }
+              }
+            >
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={1}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={2}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={3}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={4}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+              <svg
+                className="star"
+                enableBackground="new 0 0 24 24"
+                fill="#f8d448"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <rect
+                    fill="none"
+                    height="24"
+                    width="24"
+                    x="0"
+                  />
+                  <polygon
+                    id={5}
+                    onClick={[Function]}
+                    points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                    stroke="#646464"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="starOverlay"
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "bottom": "0",
+                  "mixBlendMode": "color",
+                  "opacity": "unset",
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "right": "0",
+                  "top": "0",
+                  "width": "40%",
+                  "zIndex": "1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div
       className="right-corner"
@@ -210,7 +376,7 @@ exports[`ReviewTile component renders correctly 1`] = `
       className="review-helpfulness-voting"
     >
       <p>
-        Helpful? 
+        Helpful?
         <a
           onClick={[Function]}
         >
@@ -236,7 +402,7 @@ exports[`Reviews component renders correctly 1`] = `
       htmlFor="sorting-option"
     >
       5
-       reviews, sorted by 
+       reviews, sorted by
     </label>
     <select
       name="sorting-option"
@@ -269,8 +435,10 @@ exports[`Reviews component renders correctly 1`] = `
     >
       MORE REVIEWS
     </button>
-    <button>
-      ADD A REVIEW + 
+    <button
+      onClick={[Function]}
+    >
+      ADD A REVIEW +
     </button>
   </div>
 </div>
@@ -285,7 +453,7 @@ Array [
       htmlFor="sorting-option"
     >
       5
-       reviews, sorted by 
+       reviews, sorted by
     </label>
     <select
       name="sorting-option"
@@ -318,8 +486,10 @@ Array [
     >
       MORE REVIEWS
     </button>
-    <button>
-      ADD A REVIEW + 
+    <button
+      onClick={[Function]}
+    >
+      ADD A REVIEW +
     </button>
   </div>,
 ]
@@ -332,7 +502,7 @@ exports[`ReviewsSorting component renders correctly 1`] = `
   <label
     htmlFor="sorting-option"
   >
-     reviews, sorted by 
+     reviews, sorted by
   </label>
   <select
     name="sorting-option"

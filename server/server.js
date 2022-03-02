@@ -99,6 +99,27 @@ app.put('/putData', (req, res) => {
     });
 });
 
+app.post('/reviews', (req, res) => {
+  let reviewData = req.body;
+  let url = options.APIURL + '/reviews';
+  const config = {
+    method: 'POST',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    },
+    data: reviewData
+  };
+  axios(config)
+    .then(() => {
+      console.log('Status 201 CREATED');
+      res.sendStatus(201);
+    }).catch((error) => {
+      console.log('Error recieved when adding review:', error.response);
+    });
+
+});
+
 app.listen(port,function(){
   console.log('listenening on ',port);
 });

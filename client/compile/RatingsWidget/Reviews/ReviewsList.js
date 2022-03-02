@@ -1,15 +1,19 @@
 import React from 'react';
 import ReviewTile from './ReviewTile.js';
 import ReviewsSorting from './ReviewsSorting.js';
+import AddReview from './AddReview.js';
 import PropTypes from 'prop-types';
 
 class ReviewsList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      reviewsDisplayed: []
+      reviewsDisplayed: [],
+      addReviewDisplayed: false
     };
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
+    this.showAddReviewWindow = this.showAddReviewWindow.bind(this);
+    this.closeAddReviewWindow = this.closeAddReviewWindow.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -46,6 +50,18 @@ class ReviewsList extends React.Component {
     }
   }
 
+  showAddReviewWindow () {
+    this.setState({
+      addReviewDisplayed: true
+    });
+  }
+
+  closeAddReviewWindow () {
+    this.setState({
+      addReviewDisplayed: false
+    });
+  }
+
   render () {
 
     let reviews;
@@ -61,6 +77,11 @@ class ReviewsList extends React.Component {
       moreReviewsButton = <button onClick={this.updateReviewsDisplayed}>MORE REVIEWS</button>;
     }
 
+    let addReviewsWindow;
+    if(this.state.addReviewDisplayed) {
+      return <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics} closeAddReviewWindow={this.closeAddReviewWindow} product_id={this.props.product_id}/>;
+    }
+
     return (
       <>
         <ReviewsSorting numOfReviews={this.props.reviews.length} updateSorting={this.props.updateSorting}/>
@@ -73,9 +94,10 @@ class ReviewsList extends React.Component {
 
         <div className ="reviews-buttons">
           {moreReviewsButton}
-          <button>ADD A REVIEW + </button>
+          <button onClick={this.showAddReviewWindow}>ADD A REVIEW + </button>
         </div>
 
+        {addReviewsWindow}
       </>
     );
   }
@@ -83,7 +105,9 @@ class ReviewsList extends React.Component {
 
 ReviewsList.propTypes = {
   reviews: PropTypes.any,
-  updateSorting: PropTypes.any
+  updateSorting: PropTypes.any,
+  reviewsCharacteristics: PropTypes.any,
+  product_id: PropTypes.any
 };
 
 
