@@ -26,7 +26,7 @@ class QuestionsWidget extends React.Component {
     let request = {
       endpoint: '/qa/questions',
       params: {
-        product_id: this.props.product_id,
+        product_id: this.props.data.product_id,
         page: 1,
         count: 5
       }
@@ -108,21 +108,21 @@ class QuestionsWidget extends React.Component {
 
   render() {
     return (
-      <div className="questions-widget">
+      <div className="questions-widget" onClick={this.props.track}>
         <h4 className="questions-title">QUESTIONS &amp; ANSWERS</h4>
         <SearchBar search={this.handleSearch}/>
         <QuestionsList
           questions={this.state.queriedQuestions}
           displayed={this.state.maxQuestionsDisplayed}
           scroll={this.state.allQuestionsDisplayed}
-          product_name={this.props.product_name}
+          product_name={this.props.data.product_name}
         />
         <QuestionButtons
           questions={this.state.questionsData}
           allQuestionsDisplayed={this.state.allQuestionsDisplayed}
           displayMore={this.handleDisplayMoreQuestions}
-          product_id={this.props.product_id}
-          product_name={this.props.product_name}
+          product_id={this.props.data.product_id}
+          product_name={this.props.data.product_name}
         />
       </div>
     );
@@ -131,8 +131,8 @@ class QuestionsWidget extends React.Component {
 
 QuestionsWidget.propTypes = {
   getQuestions: PropTypes.func,
-  product_id: PropTypes.string,
-  product_name: PropTypes.string
+  data: PropTypes.object,
+  track: PropTypes.func
 };
 
 export default QuestionsWidget;
