@@ -39,23 +39,30 @@ const ComparisonModal = (props) => {
   return (
     <div className={showHideModel}>
       <section className='modal-main'>
-        <div className='column_one'>{currentName}</div>
-        <div className='column_two'>Features</div>
-        <div className='column_three'>{compareName}</div>
+        <div className='compare-row'>
+          <div className='rowTitle'>{currentName}</div>
+          <div className='rowTitle feature'>Features</div>
+          <div className='rowTitle'>{compareName}</div>
+        </div>
+        
         {totalfeatures.map((feature, i) => {
           let currentRow = null;
           let compareRow = null;
           if (current && current.hasOwnProperty(feature)) {
             currentRow = current[feature];
+          } else {
+            currentRow = 'n/a';
           }
           if (compare && compare.hasOwnProperty(feature)) {
             compareRow = compare[feature];
+          } else {
+            compareRow = 'n/a';
           }
           return (
-            <div className='row' key={i}>
-              <div className='column_one'>{currentRow}</div>
-              <div className='column_two'>{feature}</div>
-              <div className='column_three'>{compareRow}</div>
+            <div className='compare-row' key={i}>
+              <div className='modal-row'>{currentRow}</div>
+              <div className='modal-row feature'>{feature}</div>
+              <div className='modal-row'>{compareRow}</div>
             </div>
 
           );
