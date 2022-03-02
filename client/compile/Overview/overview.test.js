@@ -30,6 +30,7 @@ describe('should have correct data',function() {
   };
   var mainTree = renderer.create(<Overview getProducts={getData}/>);
   var instance =mainTree.getInstance();
+  console.log(instance)
   test('should have props onProduct',function(){
     expect(instance.state['onProduct']).not.toBe(undefined);
   });
