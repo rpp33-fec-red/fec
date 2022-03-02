@@ -16,25 +16,38 @@ class RatingsWidget extends React.Component {
         fourStar: false,
         fiveStar: false,
       },
-      reviews: []
+      reviews: [],
+      reviewsMetadata: {}
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
+    this.getReviewsMetadata = this.getReviewsMetadata.bind(this);
   }
 
   componentDidMount () {
     this.getReviews();
+    this.getReviewsMetadata();
   }
 
 
   getReviews() {
     const that = this;
-    const productID = '64621';
-    const count = 10;
-    this.props.getReviews([`reviews?product_id=${productID}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
+    const count = 50;
+    this.props.getReviews([`reviews?product_id=${this.props.product_id}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
       if (data.results){
         that.setState({
           reviews: data.results.results
+        });
+      }
+    });
+  }
+
+  getReviewsMetadata() {
+    const that = this;
+    this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
+      if (data.results){
+        that.setState({
+          reviewsMetadata: data.results
         });
       }
     });
@@ -56,15 +69,16 @@ class RatingsWidget extends React.Component {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings/>
-        <Reviews reviews={reviews} updateSorting={this.updateSorting}/>
+        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id}/>
+        <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
       </div>
     );
   }
 }
 
 RatingsWidget.propTypes = {
-  getReviews: PropTypes.any
+  getReviews: PropTypes.any,
+  product_id: PropTypes.any
 };
 
 export default RatingsWidget;

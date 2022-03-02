@@ -3,7 +3,6 @@ var app = express();
 const multer = require('multer');
 var port = 8080;
 var path = require('path');
-app.use(express.static(path.join(__dirname + '/../client/public')));
 var config = require('../config');
 var options = new config(false);
 options = options.getOptions();
@@ -14,6 +13,7 @@ var cors = require('cors');
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
 app.use(express.static(path.join(__dirname,'../client/public')));
+app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
@@ -112,6 +112,26 @@ const upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
   res.send(req.file.path);
+});
+
+app.post('/reviews', (req, res) => {
+  let reviewData = req.body;
+  let url = options.APIURL + '/reviews';
+  const config = {
+    method: 'POST',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    },
+    data: reviewData
+  };
+  axios(config)
+    .then(() => {
+      console.log('Status 201 CREATED');
+      res.sendStatus(201);
+    }).catch((error) => {
+      console.log('Error recieved when adding review:', error.response);
+    });
 });
 
 app.listen(port,function(){
