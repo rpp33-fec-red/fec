@@ -16,7 +16,7 @@ function Ratings (props) {
 }
 
 Ratings.propTypes = {
-  product_id: PropTypes.string
+  product_id: PropTypes.any
 };
 
 export default Ratings;

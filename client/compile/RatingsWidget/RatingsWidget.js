@@ -77,8 +77,8 @@ class RatingsWidget extends React.Component {
 }
 
 RatingsWidget.propTypes = {
-  getReviews: PropTypes.func,
-  product_id: PropTypes.string
+  getReviews: PropTypes.any,
+  product_id: PropTypes.any
 };
 
 export default RatingsWidget;
