@@ -109,7 +109,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
         htmlFor="sorting-option"
       >
         0
-         reviews, sorted by 
+         reviews, sorted by
       </label>
       <select
         name="sorting-option"
@@ -141,7 +141,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
       <button
         onClick={[Function]}
       >
-        ADD A REVIEW + 
+        ADD A REVIEW +
       </button>
     </div>
   </div>
@@ -376,7 +376,7 @@ exports[`ReviewTile component renders correctly 1`] = `
       className="review-helpfulness-voting"
     >
       <p>
-        Helpful? 
+        Helpful?
         <a
           onClick={[Function]}
         >
@@ -402,7 +402,7 @@ exports[`Reviews component renders correctly 1`] = `
       htmlFor="sorting-option"
     >
       5
-       reviews, sorted by 
+       reviews, sorted by
     </label>
     <select
       name="sorting-option"
@@ -438,7 +438,7 @@ exports[`Reviews component renders correctly 1`] = `
     <button
       onClick={[Function]}
     >
-      ADD A REVIEW + 
+      ADD A REVIEW +
     </button>
   </div>
 </div>
@@ -453,7 +453,7 @@ Array [
       htmlFor="sorting-option"
     >
       5
-       reviews, sorted by 
+       reviews, sorted by
     </label>
     <select
       name="sorting-option"
@@ -489,7 +489,7 @@ Array [
     <button
       onClick={[Function]}
     >
-      ADD A REVIEW + 
+      ADD A REVIEW +
     </button>
   </div>,
 ]
@@ -502,7 +502,7 @@ exports[`ReviewsSorting component renders correctly 1`] = `
   <label
     htmlFor="sorting-option"
   >
-     reviews, sorted by 
+     reviews, sorted by
   </label>
   <select
     name="sorting-option"

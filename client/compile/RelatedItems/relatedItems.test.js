@@ -1,16 +1,26 @@
+/* eslint-disable no-undef */
 import TestRenderer from 'react-test-renderer';
+import '@testing-library/jest-dom';
 import React from 'react';
 import RelatedProducts from './RelatedProducts.jsx';
-import ComparisonModal from './ComparisonModal.jsx';
-import ProductCarousel from './Carousels/ProductCarousel.jsx';
+
 
 import Model from '../model.js';
+import { instance } from 'eslint-plugin-react/lib/util/lifecycleMethods';
 var model = new Model(false);
-var getData = () => {model.getData};
+var getData = () => {model.getData;};
 
-test ('Related Products Component renders initially', () => {
+describe ('RelatedProducts Component', () => {
+  beforeEach (() => {
     const testRenderer = TestRenderer.create(<RelatedProducts getData={getData}/>);
-    expect (testRenderer.toJSON()).toMatchSnapshot();
+    const instance = testRenderer.getInstance();
+  });
+//   test ('RelatedProducts component should render correctly', () => {
+//     expect(testRenderer.toJSON()).toMatchSnapshot();
+//   });
+//   test ('RelatedProduct should have a props that is a function', () => {
+//     expect(typeof instance.props.getData).toBe('function');
+//   });
 });
 
 
