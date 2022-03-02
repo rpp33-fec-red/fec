@@ -111,11 +111,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
-  console.log(req.file);
   res.send(req.file.path);
 });
 
 app.listen(port,function(){
-  console.log('listenening on ',port);
+  console.log('listening on ',port);
 });
 
