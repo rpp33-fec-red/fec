@@ -377,6 +377,16 @@ var newModel = new Model(false|true);
       showBigImage:false,
     }
 ```
+### what can we do with this state?
+
+## well first we want to start off and build the left side of the componet which deals with the image.
+
+```
+javascript
+  // in our leftContainer we need to have state there as well with things for the image;
+
+```
+
 
 ### TESTING?
 
