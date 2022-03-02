@@ -381,8 +381,7 @@ var newModel = new Model(false|true);
 
 ## well first we want to start off and build the left side of the componet which deals with the image.
 
-```
-javascript
+```javascript
   // in our leftContainer we need to have state there as well with things for the image;
 
 ```
@@ -390,5 +389,12 @@ javascript
 
 ### TESTING?
 
+## we use reacttestRenderer library for jest to test react components are working properly
 
+** overview.test.js
 
+```javascript
+  import renderer from 'react-test-renderer';
+  //using renderer to fake render react componets without the DOM.
+
+```
