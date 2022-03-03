@@ -8,23 +8,15 @@ class ReviewsList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
       filteredReviews: [],
       reviewsDisplayed: [],
       addReviewDisplayed: false,
       searched: ''
-=======
-      reviewsDisplayed: [],
-      addReviewDisplayed: false
->>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
     };
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
     this.showAddReviewWindow = this.showAddReviewWindow.bind(this);
     this.closeAddReviewWindow = this.closeAddReviewWindow.bind(this);
-<<<<<<< HEAD
     this.updateSearched = this.updateSearched.bind(this);
-=======
->>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -82,7 +74,6 @@ class ReviewsList extends React.Component {
     }
   }
 
-<<<<<<< HEAD
   updateSearched (event) {
 
     if (event.target.value.length < 3 && event.target.value !== 0) {
@@ -96,8 +87,6 @@ class ReviewsList extends React.Component {
     }
   }
 
-=======
->>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
   showAddReviewWindow () {
     this.setState({
       addReviewDisplayed: true
@@ -156,12 +145,8 @@ ReviewsList.propTypes = {
   reviews: PropTypes.any,
   updateSorting: PropTypes.any,
   reviewsCharacteristics: PropTypes.any,
-<<<<<<< HEAD
   product_id: PropTypes.any,
   filteredBy: PropTypes.any
-=======
-  product_id: PropTypes.any
->>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
 };
 
 
