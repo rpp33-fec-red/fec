@@ -1,3 +1,14 @@
+/* Related Products Styling */
+.chevron-left {
+    background-color: transparent;
+    border: transparent;
+}
+.chevron-right {
+    float: right;
+    background-color: transparent;
+    border: transparent;
+}
+
 .productCard {
     box-shadow : 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 15rem;
@@ -12,6 +23,30 @@
     padding: 1rem;
 };
 
+.productCarousel {
+    display: flex;
+    justify-content: left;
+    padding: 2rem;
+}
+
+.product_category {
+    padding-left: 1rem;
+}
+.product_cardtitle {
+    padding-left: 1rem;
+}
+.product_default_price {
+    padding-left: 1rem;
+}
+.product_original_price {
+    text-decoration-line: line-through;
+}
+.product_sale_price {
+    color: red;
+    font-weight: bold;
+}
+
+/* Comparison Modal Styling */
 .modal {
     position: fixed;
     top: 0;
@@ -20,11 +55,9 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
-  
+
 .modal-main {
-    position:fixed;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
     background: white;
     width: 80%;
     height: auto;
@@ -33,13 +66,31 @@
     padding: 3rem;
     transform: translate(-50%,-50%);
 }
-  
+
+.compare-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // align-items: flex-start center;
+    column-gap: 10rem;
+    row-gap: 2rem;
+    border-bottom: 1px solid #dcdcdc;
+}
+
 .display-block {
     display: block;
 }
   
 .display-none {
     display: none;
+}
+
+.rowTitle {
+    font-weight: bold;
+}
+
+.feature {
+    font-weight: bold;
 }
 
 #compareButton {
@@ -56,6 +107,7 @@
     margin: 1rem;
 }
 
+/*My Outfit Styling */
 #addButton {
     color: grey;
     background-color: white;

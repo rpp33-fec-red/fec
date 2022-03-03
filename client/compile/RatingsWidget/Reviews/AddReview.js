@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
+<<<<<<< HEAD
 import {validateFields, formatReviewData} from '../helpers.js';
 import createStarComponent from '../StarRatings.js';
+=======
+import {validateFields, formatReviewData} from './AddReview/helpers.js';
+import createStarComponent from './StarRatings.js';
+>>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -29,6 +34,7 @@ function AddReview (props) {
     bodyCharacterCountMessage = <p>Minimum required characters left: {50 - bodyCharacterCount}</p> :
     bodyCharacterCountMessage = <p>Minimum reached</p>;
 
+<<<<<<< HEAD
   const [filePreview, updateFilePreviewed] = useState('');
 
   const showFileThumbnail = (event) => {
@@ -42,6 +48,8 @@ function AddReview (props) {
     };
     reader.readAsDataURL(files[0]);
   };
+=======
+>>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
 
   let submissionMessage;
 
@@ -114,8 +122,12 @@ function AddReview (props) {
 
           <div>
             <label htmlFor="photos">Upload photos: </label>
+<<<<<<< HEAD
             <input name="photos" type="file" onChange={showFileThumbnail} multiple/>
             <img id="add-review-thumbnail"src={filePreview} ></img>
+=======
+            <input name="photos" type="file"/>
+>>>>>>> 5ccae30fc28aa14f0b30218cf0e268788af916ed
           </div>
 
           <div>

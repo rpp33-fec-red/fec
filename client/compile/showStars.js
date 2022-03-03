@@ -18,7 +18,9 @@ class StarsComponent extends React.Component{
   componentDidMount () {
     this.getRating();
   }
-
+  /* The visual for rating should be representative of up to a quarter of a review point.  For example, if the average is 3.8, this should display as 3¾ solid stars and 1¼ outlined stars. 
+  0.35/ 0.45/ 0.55 is used instead of 0.25/0.5/0.75 to show the outlined part of the stars clearer. There is no specific calculation to how the number is come up. It's adjusted based on how it looks on browser when render. 
+  */ 
   convertStar (rating) {
     let ratingPercentage;
     const int = parseInt(rating);
