@@ -12,7 +12,8 @@ class OverviewModel extends React.Component {
       productId: 64620,
       styleIndex:0,
       ThumbnailIndex:0,
-      reviews:0
+      reviews:[],
+      ratings:5
     };
     this.config = {
       'serverURL':'/',
@@ -23,10 +24,22 @@ class OverviewModel extends React.Component {
     this.getReviews = this.getReviews.bind(this);
     this.getData = this.getData.bind(this);
     this.compareOptions = this.compareOptions.bind(this);
-
+    this.getRatings = this.getRatings.bind(this);
   }
 
-
+  getRatings(){
+    var count =0;
+    if (this.state.reviews.length >0){
+      this.state.reviews.forEach((review,index)=>{
+        if (index === 0){
+          count+=4;
+        } else {
+          count+=review.rating;
+        }
+      });
+      this.setState({ratings:parseFloat(count/this.state.reviews.length)});
+    }
+  }
 
   checkURL(data) {
     var errorcheck = null;
@@ -106,9 +119,10 @@ class OverviewModel extends React.Component {
     var id = this.state.productId;
     that.getData({path:'/reviews',params:{product_id:id}}, function(data) {
       var reviews = data.data.results;
-      var count =reviews.length -1;
-      console.log('count',count);
-      that.setState({reviews:count});
+      console.log(reviews);
+      that.setState({reviews:reviews});
+      that.getRatings();
+
     });
   }
 

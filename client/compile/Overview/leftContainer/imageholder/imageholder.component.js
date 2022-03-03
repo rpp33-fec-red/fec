@@ -10,7 +10,8 @@ class ImageHolder extends React.Component{
       expandThumbModal:false,
       expandImageModal:false,
       imageIndex:0,
-      thumbIndexArray:[0,6]
+      thumbsArray:props.style.photos,
+      image:props.style.photos[0]
     };
     this.expand = this.expand.bind(this);
     this.clickImage = this.clickImage.bind(this);
@@ -34,49 +35,43 @@ class ImageHolder extends React.Component{
   }
 
   clickImage(index){
-    this.setState({imageIndex:index});
+    this.setState({image:props.style.photos[index]});
   }
 
   moveUp(){
-    var newArray = this.state.thumbIndexArray;
-    newArray[0] = newArray[0]+1;
-    if (newArray[0] <= 0){
-      newArray[0] = 0;
-    }
-    newArray[1] = newArray[1]+1;
-    if (newArray[1] > this.props.style.photos.length){
-      newArray[1] =  this.props.style.photos.length;
-      newArray[0] =  newArray[0] -1;
-    }
-    this.setState({thumbIndexArray:newArray});
+    var el = this.state.thumbsArray[0];
+    var newarray = this.state.thumbsArray.slice(1);
+    console.log('newarray',newarray);
+    newarray.push(el);
+    console.log(newarray);
+    this.setState({thumbsArray:newarray});
+    var index = this.state.imageIndex+1;
+    this.setState({image:this.state.thumbsArray[0]});
   }
   moveDown(){
-    var newArray = this.state.thumbIndexArray;
-    newArray[0] = newArray[0]-1;
-    newArray[1] = newArray[1]-1;
-    if (newArray[1] > this.props.style.photos.length){
-      newArray[1] =  this.props.style.photos.length;
-      newArray[0] =  newArray[0] -1;
-    }
-    if (newArray[0] <= 0){
-      newArray[0] = 0;
-      newArray[1]+=1;
-    }
-    this.setState({thumbIndexArray:newArray});
+    var el = this.state.thumbsArray[this.state.thumbsArray.length-1];
+    var newarray = this.state.thumbsArray;
+    console.log('newarray',newarray);
+    newarray.pop();
+    console.log('el',el);
+    newarray.unshift(el);
+    console.log('newarray',newarray);
+    this.setState({thumbsArray:newarray});
+    this.setState({image:this.state.thumbsArray[0]});
   }
+
+
+
   ThumbModal(){
 
     var that = this;
     var array = [<div className="box thumbup" onClick={this.moveUp} key={0}> <svg  style={{transform:'rotate(180deg)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div> ];
-    var count = 0;
-    for (let i=this.state.thumbIndexArray[0]; i< this.state.thumbIndexArray[1]; i++ ){
-      var photo = this.props.style.photos[i];
-      count+=1;
-      array.push(<div className="box " key={count}>
-        <img onClick={function(){that.clickImage(i);}} className={that.state.clickedIndex === i ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
+    this.state.thumbsArray.map(function(photo,index){
+      array.push(<div className="box " key={index+1}>
+        <img onClick={function(){that.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
       </div>);
+    });
 
-    }
 
     array.push(<div className="box thumbdown" onClick={this.moveDown} key={array.length+1}> <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div> );
     return array;
@@ -87,7 +82,7 @@ class ImageHolder extends React.Component{
       <div className="image-holder">
         <div className="mainImage-ct">
           <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
-          <div className="img" style={{backgroundImage:"url("+this.props.style.photos[this.state.imageIndex].url+")", backgroundPosition:"center",backgroundSize:"contain",backgroundRepeat:"no-repeat"}}/>
+          <div className="img" style={{backgroundImage:"url("+this.state.image.url+")", backgroundPosition:"center",backgroundSize:"contain",backgroundRepeat:"no-repeat"}}/>
           <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
         </div>
         <div className="hoverModal"   style={{background:"transparent", position:"absolute"}}></div>
