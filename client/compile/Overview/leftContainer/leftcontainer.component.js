@@ -10,13 +10,13 @@ class LeftContainer extends React.Component{
   }
 
   static propTypes = {
-    model:PropTypes.any,
+    model:PropTypes.any
   }
 
   render (){
     return (
       <div className="leftCt">
-        <ImageHolder ThumbnailIndex={this.props.model.state.ThumbnailIndex} imageClick={this.props.model.imageClick} photos={this.props.model.product.styles[this.model.state.styleIndex].photos}/>
+        <ImageHolder style={this.props.style} ThumbnailIndex={this.props.ThumbnailIndex} imageClick={this.props.imageClick} />
       </div>);
   }
 }

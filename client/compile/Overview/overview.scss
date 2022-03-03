@@ -8,8 +8,28 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  .thumb-border{
+  .thumb-border {
     border:2px solid blue;
+  }
+    .thumbup{
+      &:hover{
+        background:orange!important;
+      }
+    }
+    .thumbdown{
+      &:hover{
+        background:orange!important;
+      }
+    }
+
+  .mainImage-ct{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+      svg{  position: absolute;}
   }
 .grid-ct{
   width: 100%;

@@ -20,6 +20,7 @@ class RightContainer extends React.Component{
       quantity:1
     };
     this.clickSku = this.clickSku.bind(this);
+
   }
 
   clickedReviews() {
@@ -40,8 +41,10 @@ class RightContainer extends React.Component{
     return array;
   }
 
+
   render (){
     var that = this;
+    console.log('propsstyle',this.props)
     function clickQty(){
       that.setState({quantity:this.qty});
     }
@@ -66,13 +69,13 @@ class RightContainer extends React.Component{
 
     return (<div className="rightCt" >
       <div className="main-content">
-        <div className="reviewWrapper"><a onClick={this.clickedReviews}>readall reviews</a></div>
+        <div className="reviewWrapper"><a onClick={this.clickedReviews}>readall reviews({this.props.reviews})</a></div>
         <span className="mediumText">Catagory:{this.props.productInfo.category}</span>
         <div className="title"> {this.props.productInfo.name}</div>
         <span className="price">$ {this.props.productInfo.original_price}</span>
       </div>
       <div className="style-selectors">
-        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles}> </StyleSelector>
+        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} styleIndex={this.props.styleIndex}> </StyleSelector>
       </div>
       <div className="option-selectors">
         <div className="selector">

@@ -15,6 +15,47 @@ app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
+app.get('/getDatav2',function(req, res){
+  function placeParams(params){
+    var url = options.APIURL+params['path']+'?';
+    Object.keys(params).forEach((queryparam,index)=>{
+      if (queryparam !== 'path'){
+        if (index >0){
+          url+=`&${queryparam}=${params[queryparam]}`;
+        } else {
+          url+=`${queryparam}=${params[queryparam]}`;
+        }
+      }
+    });
+    return url;
+  }
+  var params = req.query;
+  var url = placeParams(params);
+  var callback = function(err,data) {
+    if (err){
+      res.json({Error:err,data:null});
+    } else {
+      res.json({Error:null,data:data});
+    }
+  };
+  var axiosoptions = {
+    method:'get',
+    url:url,
+    headers:{'authorization':`${options.APIKEY}`,'Accept':'*'}
+  };
+  axios(axiosoptions).then(response=>{
+    if (response.status !== 200){
+      var error = new Error('response status is not 200');
+      callback({Error:response.status,err:error},null);
+    } else {
+      callback(null,response.data);
+    }
+  }).catch(err=>{
+    console.log(err);
+  });
+});
+
+
 app.get('/getData',function(request, response) {
   var url = options.APIURL;
   if (request.query.route1) {
