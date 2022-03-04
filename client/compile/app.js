@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ClickTracker from './Click_Tracker.jsx';
 
 //components
 import Overview from './Overview/overview.component.js';
@@ -31,12 +32,12 @@ class Main extends React.Component {
 
   render(){
     return (
-      <div className="main">
+      <ClickTracker>
         <Overview getProducts={model.getData} id={this.state.productID}/>
         <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
         <RatingsWidget getReviews={model.getData} product_id={64622}/>
-      </div>);
+      </ClickTracker>);
   }
 }
 
