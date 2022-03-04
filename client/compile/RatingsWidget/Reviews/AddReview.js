@@ -12,7 +12,7 @@ function AddReview (props) {
   if (props.reviewsCharacteristics) {
     characteristics =
     Object.keys(props.reviewsCharacteristics).map((characteristic) => {
-      return <ReviewCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
+      return <ReviewCharacteristics key={props.reviewsCharacteristics[characteristic].id} id={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
     });
   }
 
@@ -47,12 +47,20 @@ function AddReview (props) {
 
   const submitReview = (event) => {
     event.preventDefault();
+    let formContent = document.getElementById('add-review');
+    const formData= new FormData (formContent);
+    console.log(formData);
     const form = event.target;
     const applicableCharacteristics = props.reviewsCharacteristics;
-    submissionMessage = validateFields(form.elements, applicableCharacteristics, starRating);
+    submissionMessage = validateFields(formData, applicableCharacteristics, starRating);
     if (submissionMessage === 'Your review has been submitted.') {
-      const reviewData = formatReviewData(form.elements, applicableCharacteristics, starRating, props.product_id);
-      axios.post('/reviews', reviewData)
+      formData.append('product_id', props.product_id);
+      formData.append('rating', starRating);
+      axios.post('/reviews', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }}
+      )
         .then(() => {
           form.reset();
           updateStarRating(0);
@@ -71,7 +79,7 @@ function AddReview (props) {
 
   return (
     <div className="add-review modal-window">
-      <form className="modal-content" onSubmit={submitReview}>
+      <form id="add-review" className="modal-content" onSubmit={submitReview}>
         <div className="form-content">
           <h2>Write Your Review</h2>
           <h3>About the [Product Name]</h3>

@@ -33,7 +33,9 @@ class ReviewCharacteristics extends React.Component {
             value={value}
             characteristic={this.props.characteristic}
             showDescription={this.showDescription}
-            descriptionShown={descriptionShown}/>;
+            descriptionShown={descriptionShown}
+            id={this.props.id}/>;
+
         })}
       </div>
     );
@@ -41,7 +43,8 @@ class ReviewCharacteristics extends React.Component {
 }
 
 ReviewCharacteristics.propTypes = {
-  characteristic: PropTypes.any
+  characteristic: PropTypes.any,
+  id: PropTypes.any
 };
 
 export default ReviewCharacteristics;
