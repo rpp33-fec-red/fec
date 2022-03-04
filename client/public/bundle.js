@@ -1,5 +1,3 @@
-/* eslint-disable indent */
-/* eslint-disable no-unused-vars */
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
@@ -587,7 +585,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/esm/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/esm/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ \"./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/esm/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _ratings_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ratings.scss */ \"./client/compile/RatingsWidget/ratings.scss\");\n/* harmony import */ var _Reviews_Reviews_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Reviews/Reviews.js */ \"./client/compile/RatingsWidget/Reviews/Reviews.js\");\n/* harmony import */ var _Ratings_Ratings_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Ratings/Ratings.js */ \"./client/compile/RatingsWidget/Ratings/Ratings.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);\n\n\n\n\n\n\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this, result); }; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }\n\n\n\n\n\n\n\nvar RatingsWidget = /*#__PURE__*/function (_React$Component) {\n  (0,_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(RatingsWidget, _React$Component);\n\n  var _super = _createSuper(RatingsWidget);\n\n  function RatingsWidget(props) {\n    var _this;\n\n    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(this, RatingsWidget);\n\n    _this = _super.call(this, props);\n    _this.state = {\n      sortedBy: 'relevant',\n      filteredBy: {},\n      reviews: [],\n      reviewsMetadata: {},\n      recommendPercentage: 0,\n      ratingsMetrics: {}\n    };\n    _this.getReviews = _this.getReviews.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.updateSorting = _this.updateSorting.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.getReviewsMetadata = _this.getReviewsMetadata.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.getRecommendedPercentage = _this.getRecommendedPercentage.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.updateRatingFilter = _this.updateRatingFilter.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.removeRatingFilter = _this.removeRatingFilter.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    return _this;\n  }\n\n  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(RatingsWidget, [{\n    key: \"componentDidMount\",\n    value: function componentDidMount() {\n      this.getReviews();\n      this.getReviewsMetadata();\n    }\n  }, {\n    key: \"getReviews\",\n    value: function getReviews() {\n      var that = this;\n      var count = 10;\n      this.props.getReviews([\"reviews?product_id=\".concat(this.props.product_id, \"%26sort=\").concat(this.state.sortedBy, \"%26count=\").concat(count), \"\", ''], function (data) {\n        if (data.results) {\n          that.setState({\n            reviews: data.results.results\n          });\n        }\n      });\n    }\n  }, {\n    key: \"getReviewsMetadata\",\n    value: function getReviewsMetadata() {\n      var that = this;\n      this.props.getReviews([\"reviews/meta?product_id=\".concat(this.props.product_id), \"\", ''], function (data) {\n        if (data.results) {\n          var recommendedPercentage = that.getRecommendedPercentage(data.results.recommended);\n          that.setState({\n            reviewsMetadata: data.results,\n            recommendedPercentage: recommendedPercentage\n          });\n        }\n      });\n    }\n  }, {\n    key: \"getRecommendedPercentage\",\n    value: function getRecommendedPercentage(recommended) {\n      var sum = 0;\n\n      for (var value in recommended) {\n        sum += parseInt(recommended[value]);\n      }\n\n      var recommendedPercentage = Math.round(parseInt(recommended[true]) / sum * 100);\n      return recommendedPercentage;\n    }\n  }, {\n    key: \"updateSorting\",\n    value: function updateSorting(event) {\n      var _this2 = this;\n\n      event.preventDefault();\n      var sortedBy = event.target.value;\n      this.setState({\n        sortedBy: sortedBy\n      }, function () {\n        _this2.getReviews();\n      });\n    }\n  }, {\n    key: \"updateRatingFilter\",\n    value: function updateRatingFilter(event) {\n      var rating = parseInt(event.target.id);\n      var filteredBy = this.state.filteredBy;\n\n      if (filteredBy[rating]) {\n        delete filteredBy[rating];\n      } else {\n        filteredBy[rating] = true;\n      }\n\n      this.setState({\n        filteredBy: filteredBy\n      });\n    }\n  }, {\n    key: \"removeRatingFilter\",\n    value: function removeRatingFilter() {\n      this.setState({\n        filteredBy: {}\n      });\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var reviews = this.state.reviews;\n      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(\"div\", {\n        className: \"ratings-and-reviews\"\n      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Ratings_Ratings_js__WEBPACK_IMPORTED_MODULE_9__[\"default\"], {\n        reviewsMetadata: this.state.reviewsMetadata,\n        product_id: this.props.product_id,\n        recommendedPercentage: this.state.recommendedPercentage,\n        updateRatingFilter: this.updateRatingFilter,\n        filteredBy: this.state.filteredBy,\n        removeRatingFilter: this.removeRatingFilter\n      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Reviews_Reviews_js__WEBPACK_IMPORTED_MODULE_8__[\"default\"], {\n        product_id: this.props.product_id,\n        reviews: reviews,\n        updateSorting: this.updateSorting,\n        reviewsCharacteristics: this.state.reviewsMetadata.characteristics,\n        filteredBy: this.state.filteredBy\n      }));\n    }\n  }]);\n\n  return RatingsWidget;\n}(react__WEBPACK_IMPORTED_MODULE_6__.Component);\n\nRatingsWidget.propTypes = {\n  getReviews: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().any),\n  product_id: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().any)\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsWidget);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/RatingsWidget.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/esm/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/esm/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ \"./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/esm/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _ratings_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ratings.scss */ \"./client/compile/RatingsWidget/ratings.scss\");\n/* harmony import */ var _Reviews_Reviews_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Reviews/Reviews.js */ \"./client/compile/RatingsWidget/Reviews/Reviews.js\");\n/* harmony import */ var _Ratings_Ratings_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Ratings/Ratings.js */ \"./client/compile/RatingsWidget/Ratings/Ratings.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);\n\n\n\n\n\n\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this, result); }; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }\n\n\n\n\n\n\n\nvar RatingsWidget = /*#__PURE__*/function (_React$Component) {\n  (0,_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(RatingsWidget, _React$Component);\n\n  var _super = _createSuper(RatingsWidget);\n\n  function RatingsWidget(props) {\n    var _this;\n\n    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(this, RatingsWidget);\n\n    _this = _super.call(this, props);\n    _this.state = {\n      sortedBy: 'relevant',\n      filteredBy: {},\n      reviews: [],\n      reviewsMetadata: {},\n      recommendPercentage: 0,\n      ratingsMetrics: {}\n    };\n    _this.getReviews = _this.getReviews.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.updateSorting = _this.updateSorting.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.getReviewsMetadata = _this.getReviewsMetadata.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.getRecommendedPercentage = _this.getRecommendedPercentage.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.updateRatingFilter = _this.updateRatingFilter.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    _this.removeRatingFilter = _this.removeRatingFilter.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_this));\n    return _this;\n  }\n\n  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(RatingsWidget, [{\n    key: \"componentDidMount\",\n    value: function componentDidMount() {\n      this.getReviews();\n      this.getReviewsMetadata();\n    }\n  }, {\n    key: \"getReviews\",\n    value: function getReviews() {\n      var that = this;\n      var count = 50;\n      this.props.getReviews([\"reviews?product_id=\".concat(this.props.product_id, \"%26sort=\").concat(this.state.sortedBy, \"%26count=\").concat(count), \"\", ''], function (data) {\n        if (data.results) {\n          that.setState({\n            reviews: data.results.results\n          });\n        }\n      });\n    }\n  }, {\n    key: \"getReviewsMetadata\",\n    value: function getReviewsMetadata() {\n      var that = this;\n      this.props.getReviews([\"reviews/meta?product_id=\".concat(this.props.product_id), \"\", ''], function (data) {\n        if (data.results) {\n          var recommendedPercentage = that.getRecommendedPercentage(data.results.recommended);\n          that.setState({\n            reviewsMetadata: data.results,\n            recommendedPercentage: recommendedPercentage\n          });\n        }\n      });\n    }\n  }, {\n    key: \"getRecommendedPercentage\",\n    value: function getRecommendedPercentage(recommended) {\n      var sum = 0;\n\n      for (var value in recommended) {\n        sum += parseInt(recommended[value]);\n      }\n\n      var recommendedPercentage = Math.round(parseInt(recommended[true]) / sum * 100);\n      return recommendedPercentage;\n    }\n  }, {\n    key: \"updateSorting\",\n    value: function updateSorting(event) {\n      var _this2 = this;\n\n      event.preventDefault();\n      var sortedBy = event.target.value;\n      this.setState({\n        sortedBy: sortedBy\n      }, function () {\n        _this2.getReviews();\n      });\n    }\n  }, {\n    key: \"updateRatingFilter\",\n    value: function updateRatingFilter(event) {\n      var rating = parseInt(event.target.id);\n      var filteredBy = this.state.filteredBy;\n\n      if (filteredBy[rating]) {\n        delete filteredBy[rating];\n      } else {\n        filteredBy[rating] = true;\n      }\n\n      this.setState({\n        filteredBy: filteredBy\n      });\n    }\n  }, {\n    key: \"removeRatingFilter\",\n    value: function removeRatingFilter() {\n      this.setState({\n        filteredBy: {}\n      });\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var reviews = this.state.reviews;\n      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(\"div\", {\n        className: \"ratings-and-reviews\"\n      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Ratings_Ratings_js__WEBPACK_IMPORTED_MODULE_9__[\"default\"], {\n        reviewsMetadata: this.state.reviewsMetadata,\n        product_id: this.props.product_id,\n        recommendedPercentage: this.state.recommendedPercentage,\n        updateRatingFilter: this.updateRatingFilter,\n        filteredBy: this.state.filteredBy,\n        removeRatingFilter: this.removeRatingFilter\n      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Reviews_Reviews_js__WEBPACK_IMPORTED_MODULE_8__[\"default\"], {\n        product_id: this.props.product_id,\n        reviews: reviews,\n        updateSorting: this.updateSorting,\n        reviewsCharacteristics: this.state.reviewsMetadata.characteristics,\n        filteredBy: this.state.filteredBy\n      }));\n    }\n  }]);\n\n  return RatingsWidget;\n}(react__WEBPACK_IMPORTED_MODULE_6__.Component);\n\nRatingsWidget.propTypes = {\n  getReviews: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().any),\n  product_id: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().any)\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsWidget);\n\n//# sourceURL=webpack://fec/./client/compile/RatingsWidget/RatingsWidget.js?");
 
 /***/ }),
 
@@ -1516,7 +1514,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/
+/******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -1530,17 +1528,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/
+/******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+/******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
+/******/ 	
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -1553,7 +1551,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -1565,7 +1563,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -1577,12 +1575,12 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -1593,7 +1591,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
 /******/ 		var scriptUrl;
@@ -1613,39 +1611,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/
+/******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"main": 0
 /******/ 		};
-/******/
+/******/ 		
 /******/ 		// no chunk on demand loading
-/******/
+/******/ 		
 /******/ 		// no prefetching
-/******/
+/******/ 		
 /******/ 		// no preloaded
-/******/
+/******/ 		
 /******/ 		// no HMR
-/******/
+/******/ 		
 /******/ 		// no HMR manifest
-/******/
+/******/ 		
 /******/ 		// no on chunks loaded
-/******/
+/******/ 		
 /******/ 		// no jsonp function
 /******/ 	})();
-/******/
+/******/ 	
 /************************************************************************/
-/******/
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./client/compile/app.js");
-/******/
+/******/ 	
 /******/ })()
 ;
