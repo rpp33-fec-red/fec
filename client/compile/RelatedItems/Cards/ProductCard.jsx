@@ -42,7 +42,7 @@ class ProductCard extends React.Component {
 
   render () {
     return (
-      <a className={`productCard product_cardtitle ${this.props.product_id}`} onClick={this.props.handleClick} href={`/products/${this.props.product_id}`}>
+      <a className={`productCard ${this.props.product_id}`} onClick={this.props.handleClick} href={`/products/${this.props.product_id}`}>
         <button
           id = "compareButton"
           value = {this.props.product_id}
@@ -50,7 +50,7 @@ class ProductCard extends React.Component {
         >*</button>{''}
         <img src={this.state.photo} alt="Photo" className="productImage" />
         <p className="product_category" >{this.state.category}</p>
-        <b>{this.state.product_name}</b>
+        <p className='product_cardtitle'>{this.state.product_name}</p>
         <p className="product_default_price">
           { !this.state.sale_price
             ? (`$ ${this.state.default_price}`)
