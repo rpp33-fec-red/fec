@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+const multer = require('multer');
 var port = 8080;
 var path = require('path');
 var config = require('../config');
@@ -10,6 +11,7 @@ var bp = require('body-parser');
 app.use(bp.json());
 var cors = require('cors');
 app.use(cors());
+app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 
@@ -99,6 +101,19 @@ app.put('/putData', (req, res) => {
     });
 });
 
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, '../client/compile/Questions/photos'),
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + '.png');
+  }
+});
+
+const upload = multer({ storage: storage });
+
+app.post('/upload', upload.single('photoUpload'), (req, res) => {
+  res.send(req.file.path);
+});
+
 app.post('/reviews', (req, res) => {
   let reviewData = req.body;
   let url = options.APIURL + '/reviews';
@@ -117,10 +132,9 @@ app.post('/reviews', (req, res) => {
     }).catch((error) => {
       console.log('Error recieved when adding review:', error.response);
     });
-
 });
 
 app.listen(port,function(){
-  console.log('listenening on ',port);
+  console.log('listening on ',port);
 });
 
