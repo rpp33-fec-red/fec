@@ -18,8 +18,8 @@ const ClickTracker = (WrappedComponent, selectData) => {
       let request = {
         data: {
           widget: this.state.data.widget, //passed in as data to HOC
-          element: toString(event.target), //click handler as prop added to outermost div of widget
-          time: toString(Date.now()), //Unix time stamp
+          element: event.target.tagName, //selector of clicked element (P, DIV, A, etc)
+          time: (new Date()).toGMTString() //GMT Timestamp with date
         },
         endpoint: '/interactions',
         params: null
