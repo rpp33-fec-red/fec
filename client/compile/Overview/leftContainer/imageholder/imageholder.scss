@@ -1,16 +1,23 @@
 .iframeclass{
-  width: 100vw;
-  height: 900px;
+  width: 80vw;
+  height: 800px;
   position: absolute;
   z-index: 100;
   display: flex;
   justify-content: center;
+  right: 0px;
 }
 .show-thumbmodal{
   transform: rotate(270deg);
 }
 .hide-thumbmodal{
   transform: rotate(0deg);
+}
+.thumbs{
+  max-height: 437px;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .image-holder{
@@ -33,6 +40,7 @@
    }
    .hoverModal{
     background: transparent;
+    cursor:zoom-in;
     position: absolute;
     width: 90%;
     height: 100%;

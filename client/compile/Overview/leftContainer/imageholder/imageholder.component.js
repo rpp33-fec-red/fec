@@ -18,6 +18,8 @@ class ImageHolder extends React.Component{
     this.ThumbModal = this.ThumbModal.bind(this);
     this.moveDown = this.moveDown.bind(this);
     this.moveUp = this.moveUp.bind(this);
+    this.mainImageClick = this.mainImageClick.bind(this);
+    this.ModalBigImage = this.ModalBigImage.bind(this)
   }
   static propTypes = {
     ThumbnailIndex: PropTypes.number,
@@ -26,7 +28,7 @@ class ImageHolder extends React.Component{
   };
 
   ModalBigImage(){
-    return (<img className="iframeclass" src={this.props.style.photos[0].url} /> );
+    return (<img className="iframeclass" style={{top:"0px"}} src={this.state.image.url} /> );
   }
 
   expand(){
@@ -35,7 +37,8 @@ class ImageHolder extends React.Component{
   }
 
   clickImage(index){
-    this.setState({image:props.style.photos[index]});
+    console.log(index);
+    this.setState({image:this.props.style.photos[index]});
   }
 
   moveUp(){
@@ -45,7 +48,6 @@ class ImageHolder extends React.Component{
     newarray.push(el);
     console.log(newarray);
     this.setState({thumbsArray:newarray});
-    var index = this.state.imageIndex+1;
     this.setState({image:this.state.thumbsArray[0]});
   }
   moveDown(){
@@ -60,37 +62,46 @@ class ImageHolder extends React.Component{
     this.setState({image:this.state.thumbsArray[0]});
   }
 
-
+  mainImageClick(){
+    console.log('clickedon');
+    var that =  this;
+    console.log(!that.state.expandImageModal)
+    this.setState({expandImageModal:!that.state.expandImageModal});
+  }
 
   ThumbModal(){
 
     var that = this;
-    var array = [<div className="box thumbup" onClick={this.moveUp} key={0}> <svg  style={{transform:'rotate(180deg)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div> ];
+    var array = [];
     this.state.thumbsArray.map(function(photo,index){
-      array.push(<div className="box " key={index+1}>
+      array.push(<div className="box " key={index}>
         <img onClick={function(){that.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
       </div>);
     });
+    return (<React.Fragment>
+      <div className="box thumbup" onClick={this.moveUp} key={0}> <svg  style={{transform:'rotate(180deg)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
+      <div className="thumbs">{array}</div>
+      <div className="box thumbdown" onClick={this.moveDown} key={array.length+1}> <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
 
+    </React.Fragment>);
 
-    array.push(<div className="box thumbdown" onClick={this.moveDown} key={array.length+1}> <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div> );
-    return array;
   }
   render(){
     return (<React.Fragment>
-      { this.state.expandImageModal ? <this.ModalBigImage /> : null  }
-      <div className="image-holder">
-        <div className="mainImage-ct">
+      <div className="image-holder" >
+        <div className="mainImage-ct" >
           <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
-          <div className="img" style={{backgroundImage:"url("+this.state.image.url+")", backgroundPosition:"center",backgroundSize:"contain",backgroundRepeat:"no-repeat"}}/>
+          <div className="img"  style={{backgroundImage:"url("+this.state.image.url+")", backgroundPosition:"center",backgroundSize:"contain",backgroundRepeat:"no-repeat"}}/>
           <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
         </div>
-        <div className="hoverModal"   style={{background:"transparent", position:"absolute"}}></div>
+        <div className="hoverModal" onClick={this.mainImageClick}   style={{background:"transparent", position:"absolute"}}></div>
         <div className="imageSelector" >
-          <div className="box" > <svg  onClick={this.expand} className={"arrow"+ (this.state.expanded ? 'show-thumbmodal' : 'hide-thumbmodal')} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
+          <div className="box boxsvg" > <svg  onClick={this.expand} className={"arrow"+ (this.state.expanded ? 'show-thumbmodal' : 'hide-thumbmodal')} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
           { this.state.expandThumbModal ? <this.ThumbModal /> : null }
         </div>
       </div>
+      { this.state.expandImageModal ? <this.ModalBigImage /> : null  }
+
     </React.Fragment>);
   }
 

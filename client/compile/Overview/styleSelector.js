@@ -10,6 +10,9 @@ class StyleSelector extends React.Component {
   constructor(props){
     super(props);
     this.changeStyle = this.changeStyle.bind(this);
+    this.state = {
+      styleIndex:this.props.styleIndex
+    }
   }
 
 
@@ -18,6 +21,7 @@ class StyleSelector extends React.Component {
   changeStyle(index){
     console.log('index',index);
     this.props.changeStyle(index);
+    this.setState({styleIndex:index});
   }
 
   render(){

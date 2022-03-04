@@ -14,12 +14,12 @@ class Overview extends OverviewModel {
     this.Core = this.Core.bind(this);
   }
   componentDidMount(){
-    this.getProductData();
     this.getReviews();
   }
 
-  Core(props){
-    console.log(this.state.reviews)
+
+  Core(){
+    console.log(this.state.styleIndex);
     return (
       <React.Fragment>
         <div className="overview">
