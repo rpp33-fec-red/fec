@@ -2,7 +2,8 @@ import React from 'react';
 import ReviewImage from './ReviewImage.js';
 import ReviewImageWindow from './ReviewImageWindow.js';
 import ReviewResponse from './ReviewResponse.js';
-import createStarComponent from './StarRatings.js';
+import createStarComponent from '../StarRatings.js';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 
 class ReviewTile extends React.Component {
@@ -44,15 +45,20 @@ class ReviewTile extends React.Component {
 
   // increments helpfulness vote count if helpfulness has been voted for
   updateHelpfulnessVoteCount () {
-    if (this.state.helpfulnessVoted) {
-      this.setState({
-        helpfulnessVoteCount: this.state.helpfulnessVoteCount - 1,
-        helpfulnessVoted: false
-      });
-    } else {
+    if (!this.state.helpfulnessVoted) {
       this.setState({
         helpfulnessVoteCount: this.state.helpfulnessVoteCount + 1,
         helpfulnessVoted: true
+      }, () => {
+        const reviewData = {
+          review_id: this.props.review.review_id
+        };
+        axios.put('/reviews', reviewData)
+          .then(() => {
+            alert('Thank you for your feedback!');
+          }).catch(() => {
+            alert('An error occured when submitting your vote for helpfulness. Try again later.');
+          });
       });
     }
   }
