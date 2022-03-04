@@ -9,19 +9,18 @@ class RatingsWidget extends React.Component {
     super(props);
     this.state = {
       sortedBy: 'relevant',
-      filteredBy: {
-        oneStar: false,
-        twoStar: false,
-        threeStar: false,
-        fourStar: false,
-        fiveStar: false,
-      },
+      filteredBy: {},
       reviews: [],
-      reviewsMetadata: {}
+      reviewsMetadata: {},
+      recommendPercentage: 0,
+      ratingsMetrics: {}
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
     this.getReviewsMetadata = this.getReviewsMetadata.bind(this);
+    this.getRecommendedPercentage = this.getRecommendedPercentage.bind(this);
+    this.updateRatingFilter = this.updateRatingFilter.bind(this);
+    this.removeRatingFilter = this.removeRatingFilter.bind(this);
   }
 
   componentDidMount () {
@@ -42,17 +41,27 @@ class RatingsWidget extends React.Component {
     });
   }
 
-  getReviewsMetadata() {
+  getReviewsMetadata () {
     const that = this;
     this.props.getReviews([`reviews/meta?product_id=${this.props.product_id}`, ``, ''], function(data) {
       if (data.results){
+        const recommendedPercentage = that.getRecommendedPercentage(data.results.recommended);
         that.setState({
-          reviewsMetadata: data.results
+          reviewsMetadata: data.results,
+          recommendedPercentage: recommendedPercentage
         });
       }
     });
   }
 
+  getRecommendedPercentage (recommended) {
+    let sum = 0;
+    for (const value in recommended) {
+      sum += parseInt(recommended[value]);
+    }
+    const recommendedPercentage = Math.round((parseInt(recommended[true]) / sum) * 100);
+    return recommendedPercentage;
+  }
 
   updateSorting (event) {
     event.preventDefault();
@@ -64,13 +73,43 @@ class RatingsWidget extends React.Component {
     });
   }
 
+  updateRatingFilter (event) {
+    const rating = parseInt(event.target.id);
+    let filteredBy = this.state.filteredBy;
+    if (filteredBy[rating]) {
+      delete filteredBy[rating];
+    } else {
+      filteredBy[rating] = true;
+    }
+
+    this.setState({
+      filteredBy: filteredBy
+    });
+  }
+
+  removeRatingFilter () {
+    this.setState({
+      filteredBy: {}
+    });
+  }
 
   render () {
     const reviews = this.state.reviews;
     return (
       <div className="ratings-and-reviews">
-        <Ratings reviewsMetadata={this.state.reviewsMetadata} product_id={this.props.product_id}/>
-        <Reviews product_id={this.props.product_id} reviews={reviews} updateSorting={this.updateSorting} reviewsCharacteristics={this.state.reviewsMetadata.characteristics}/>
+        <Ratings
+          reviewsMetadata={this.state.reviewsMetadata}
+          product_id={this.props.product_id}
+          recommendedPercentage={this.state.recommendedPercentage}
+          updateRatingFilter={this.updateRatingFilter}
+          filteredBy={this.state.filteredBy}
+          removeRatingFilter={this.removeRatingFilter}/>
+        <Reviews
+          product_id={this.props.product_id}
+          reviews={reviews}
+          updateSorting={this.updateSorting}
+          reviewsCharacteristics={this.state.reviewsMetadata.characteristics}
+          filteredBy={this.state.filteredBy}/>
       </div>
     );
   }

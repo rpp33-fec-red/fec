@@ -1,11 +1,20 @@
 import React from 'react';
-// Going to refactor this component to be more modular. Will include in next pull request.
-function RatingsProductBreakdown() {
+import RatingsProductBreakdownBar from './RatingsProductBreakdownBar.js';
+import PropTypes from 'prop-types';
+
+function RatingsProductBreakdown (props) {
+  const characteristics = props.characteristics || {};
   return (
     <div className="ratings-product-breakdown">
-      Ratings Product Breakdown Placeholder
+      {Object.keys(characteristics).map((characteristic) => {
+        return <RatingsProductBreakdownBar characteristic={characteristic} key={characteristics[characteristic].id} value={characteristics[characteristic].value}/>;
+      })}
     </div>
   );
 }
+
+RatingsProductBreakdown.propTypes = {
+  characteristics: PropTypes.any
+};
 
 export default RatingsProductBreakdown;
