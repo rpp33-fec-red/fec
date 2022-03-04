@@ -19,7 +19,7 @@ class Main extends React.Component {
      cart:[{product_id:392932,sku:3838232}]
     };
   }
-
+  
   componentDidMount(){}
   renderStars(){}
 
@@ -27,7 +27,7 @@ class Main extends React.Component {
     return (
       <div className="main">
         <Overview getProducts={model.getData} id={this.state.productID}/>
-        <RelatedProducs getData={model.getData} />
+        <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
         <RatingsWidget getReviews={model.getData} product_id={64620}/>
       </div>);

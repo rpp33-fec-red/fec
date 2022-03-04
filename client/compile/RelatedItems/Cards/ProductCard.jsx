@@ -42,7 +42,7 @@ class ProductCard extends React.Component {
 
   render () {
     return (
-      <a className={`productCard ${this.props.product_id}`} onClick={this.props.handleClick} href={`/products/${this.props.product_id}`}>
+      <a className={`productCard ${this.props.product_id}`} href={`/?productid=${this.props.product_id}`}>
         <button
           id = "compareButton"
           value = {this.props.product_id}
