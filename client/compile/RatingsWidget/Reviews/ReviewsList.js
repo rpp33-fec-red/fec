@@ -8,26 +8,50 @@ class ReviewsList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      filteredReviews: [],
       reviewsDisplayed: [],
-      addReviewDisplayed: false
+      addReviewDisplayed: false,
+      searched: ''
     };
     this.updateReviewsDisplayed = this.updateReviewsDisplayed.bind(this);
     this.showAddReviewWindow = this.showAddReviewWindow.bind(this);
     this.closeAddReviewWindow = this.closeAddReviewWindow.bind(this);
+    this.updateSearched = this.updateSearched.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
-    const previousProps = JSON.stringify(prevProps.reviews);
-    const currentProps = JSON.stringify(this.props.reviews);
-    if (previousProps !== currentProps) {
-      if (this.props.reviews.length > 2) {
-        const reviews = this.props.reviews.slice(0, 2);
+  componentDidUpdate(prevProps, prevState) {
+
+    if (prevProps !== this.props || prevState.searched != this.state.searched) {
+      let updatedReviews = [];
+
+      if (Object.keys(this.props.filteredBy).length !== 0 || this.state.searched.length > 0) {
+        this.props.reviews.forEach((review) => {
+          const reviewSummary = review.summary.toLowerCase();
+          const reviewBody = review.body.toLowerCase();
+          if (reviewSummary.includes(this.state.searched) || reviewBody.includes(this.state.searched)) {
+            if (Object.keys(this.props.filteredBy).length > 0) {
+              if (this.props.filteredBy[review.rating]) {
+                updatedReviews.push(review);
+              }
+            } else {
+              updatedReviews.push(review);
+            }
+          }
+        });
+      } else {
+        updatedReviews = this.props.reviews;
+      }
+
+      if (updatedReviews.length > 2) {
+        const reviews = updatedReviews.slice(0, 2);
         this.setState({
-          reviewsDisplayed: reviews
+          reviewsDisplayed: reviews,
+          filteredReviews: updatedReviews
         });
       } else {
         this.setState({
-          reviewsDisplayed: this.props.reviews
+          reviewsDisplayed: updatedReviews,
+          filteredReviews: updatedReviews
         });
       }
     }
@@ -36,16 +60,29 @@ class ReviewsList extends React.Component {
   updateReviewsDisplayed () {
     const numberOfReviewsDisplayed = this.state.reviewsDisplayed.length;
 
-    if (numberOfReviewsDisplayed < this.props.reviews.length) {
-      const reviewsNotDisplayed = this.props.reviews.length - numberOfReviewsDisplayed;
+    if (numberOfReviewsDisplayed < this.state.filteredReviews.length) {
+      const reviewsNotDisplayed = this.state.filteredReviews.length - numberOfReviewsDisplayed;
       let updatedReviews;
       if (reviewsNotDisplayed === 1) {
-        updatedReviews = this.props.reviews;
+        updatedReviews = this.state.filteredReviews;
       } else {
-        updatedReviews = this.props.reviews.slice(0, numberOfReviewsDisplayed + 2);
+        updatedReviews = this.state.filteredReviews.slice(0, numberOfReviewsDisplayed + 2);
       }
       this.setState({
         reviewsDisplayed: updatedReviews
+      });
+    }
+  }
+
+  updateSearched (event) {
+
+    if (event.target.value.length < 3 && event.target.value !== 0) {
+      this.setState({
+        searched: ''
+      });
+    } else {
+      this.setState({
+        searched: event.target.value
       });
     }
   }
@@ -73,7 +110,7 @@ class ReviewsList extends React.Component {
 
     let moreReviewsButton;
     // shows more reviews button only when all reviews are not showing
-    if (this.state.reviewsDisplayed.length !== this.props.reviews.length) {
+    if (this.state.reviewsDisplayed.length !== this.state.filteredReviews.length) {
       moreReviewsButton = <button onClick={this.updateReviewsDisplayed}>MORE REVIEWS</button>;
     }
 
@@ -84,7 +121,8 @@ class ReviewsList extends React.Component {
 
     return (
       <>
-        <ReviewsSorting numOfReviews={this.props.reviews.length} updateSorting={this.props.updateSorting}/>
+        <input type="text" onChange={this.updateSearched}/>
+        <ReviewsSorting numOfReviews={this.state.reviewsDisplayed.length} updateSorting={this.props.updateSorting}/>
 
         <div className ="reviews-list">
           {reviews.map((review) => {
@@ -107,7 +145,8 @@ ReviewsList.propTypes = {
   reviews: PropTypes.any,
   updateSorting: PropTypes.any,
   reviewsCharacteristics: PropTypes.any,
-  product_id: PropTypes.any
+  product_id: PropTypes.any,
+  filteredBy: PropTypes.any
 };
 
 

@@ -1,15 +1,46 @@
 import React from 'react';
+import RatingsBreakdownBar from './RatingsBreakdownBar.js';
+import PropTypes from 'prop-types';
 
-function RatingsBreakdown() {
+function RatingsBreakdown (props) {
+  const values = [1, 2, 3, 4, 5];
+  const ratingsPercentage = props.ratingsPercentage;
+  const ratingsCount = props.ratings;
+
+  // Updates filter message to show what filters are being applied
+  // Adds remove filter message when filters are applied
+  let filterMessage;
+  let removeFilterMessage;
+  if (Object.keys(props.filteredBy).length !== 0) {
+    filterMessage = 'Filtered by:';
+    for (const rating in props.filteredBy) {
+      filterMessage += '' + rating + ' star ';
+    }
+    removeFilterMessage = 'Remove all filters';
+  }
+
   return (
     <div className="ratings-breakdown">
-      <div>5 stars ------------</div>
-      <div>4 stars ------------</div>
-      <div>3 stars ------------</div>
-      <div>2 stars ------------</div>
-      <div>1 stars ------------</div>
+      {values.map((value) => {
+        return <RatingsBreakdownBar
+          key={value}
+          value={value}
+          ratingPercentage={ratingsPercentage ? props.ratingsPercentage[value] : 0}
+          reviewNumber={ratingsCount ? props.ratings[value] : 0}
+          updateRatingFilter={props.updateRatingFilter} />;
+      })}
+      <div>{filterMessage}</div>
+      <a onClick={props.removeRatingFilter}>{removeFilterMessage}</a>
     </div>
   );
 }
+
+RatingsBreakdown.propTypes = {
+  ratingsPercentage: PropTypes.any,
+  ratings: PropTypes.any,
+  updateRatingFilter: PropTypes.any,
+  filteredBy: PropTypes.any,
+  removeRatingFilter: PropTypes.any
+};
 
 export default RatingsBreakdown;

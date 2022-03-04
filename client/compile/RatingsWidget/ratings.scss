@@ -95,4 +95,30 @@
   align-items: end;
 }
 
+.ratings-breakdown-bar {
+  display: flex;
+  flex-direction: row;
 
+}
+
+.ratings-breakdown-bar:hover {
+  background-color: red;
+}
+
+.star-label {
+  width: 20%;
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ratings-product-breakdown-bar {
+  margin: 10px;
+}
+
+#add-review-thumbnail {
+  max-width: 100px;
+  height: auto;
+}
