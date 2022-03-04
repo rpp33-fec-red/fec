@@ -37,7 +37,6 @@ class QuestionsWidget extends React.Component {
           const sorted = response.data.results.sort((a, b) => {
             return b.question_helpfulness - a.question_helpfulness;
           });
-          console.log('sorted', sorted);
           if (sorted.length < 3) {
             this.setState({
               allQuestionsDisplayed: true,

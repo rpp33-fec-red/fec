@@ -1,6 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import UploadPhotosModal from './uploadPhotos.jsx';
+
 
 class AddAnswerModal extends React.Component {
   constructor(props) {
@@ -30,12 +32,21 @@ class AddAnswerModal extends React.Component {
 
   handleSelectPhoto(event) {
     event.preventDefault();
+    let photoUploadForm = document.getElementsByClassName('upload-photos-form')[0];
+    const formData = new FormData(photoUploadForm);
     let photos = this.state.uploadedPhotos;
-    photos.push(event.target.photoUpload.value);
-    this.setState({
-      photoCount: this.state.photoCount + 1,
-      uploadedPhotos: photos
-    });
+    axios.post('/upload', formData)
+      .then((response) => {
+        let relativePath = '..' + response.data.split('photos')[1];
+        photos.push(relativePath);
+        this.setState({
+          photoCount: this.state.photoCount + 1,
+          uploadedPhotos: photos
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
@@ -66,9 +77,12 @@ class AddAnswerModal extends React.Component {
               }
             </div>
             {(this.state.photoCount > 0) &&
-              this.state.uploadedPhotos.map((photo) =>
-                <p key={photo}>{photo}</p>
-              )}
+              <div className="add-answer-modal-photos">
+                {this.state.uploadedPhotos.map((photo) =>
+                  <img className="answer-photos" key={photo} src={photo}></img>
+                )}
+              </div>
+            }
             <div className="modal-form">
               <input className="submit-modal" type="submit" value="SUBMIT ANSWER"/>
             </div>
@@ -85,7 +99,8 @@ class AddAnswerModal extends React.Component {
               product_name={this.props.product_name}
               close={this.closeModal}
               selectPhoto={this.handleSelectPhoto}
-              photos={this.state}
+              photoCount={this.state.photoCount}
+              uploadedPhotos={this.state.uploadedPhotos}
             />
           }
         </div>
