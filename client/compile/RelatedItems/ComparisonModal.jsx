@@ -40,9 +40,9 @@ const ComparisonModal = (props) => {
     <div className={showHideModel}>
       <section className='modal-main'>
         <div className='compare-row'>
-          <div className='rowTitle'>{currentName}</div>
+          <div className='rowTitle current-col'>{currentName}</div>
           <div className='rowTitle feature'>Features</div>
-          <div className='rowTitle'>{compareName}</div>
+          <div className='rowTitle compare-col'>{compareName}</div>
         </div>
         
         {totalfeatures.map((feature, i) => {
@@ -60,9 +60,9 @@ const ComparisonModal = (props) => {
           }
           return (
             <div className='compare-row' key={i}>
-              <div className='modal-row'>{currentRow}</div>
+              <div className='modal-row current-col'>{currentRow}</div>
               <div className='modal-row feature'>{feature}</div>
-              <div className='modal-row'>{compareRow}</div>
+              <div className='modal-row compare-col'>{compareRow}</div>
             </div>
 
           );

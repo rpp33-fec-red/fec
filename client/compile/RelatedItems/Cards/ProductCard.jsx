@@ -42,7 +42,7 @@ class ProductCard extends React.Component {
 
   render () {
     return (
-      <div className="productCard">
+      <div className={`productCard product_cardtitle ${this.props.product_id}`} onClick={this.props.handleClick}>
         <button
           id = "compareButton"
           value = {this.props.product_id}
@@ -51,8 +51,8 @@ class ProductCard extends React.Component {
         <img src={this.state.photo} alt="Photo" className="productImage" />
         <p className="product_category" >{this.state.category}</p>
         <h4
-          className={`product_cardtitle ${this.props.product_id}`}
-          onClick={this.props.handleClick}
+          // className={`product_cardtitle ${this.props.product_id}`}
+          // onClick={this.props.handleClick}
           // href={`/products/${this.props.product_id}`}
           //comment href out because page /products/:id doesn't exist yet
         ><b>{this.state.product_name}</b></h4>

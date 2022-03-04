@@ -44,7 +44,7 @@ class RelatedProducts extends React.Component {
   }
 
   handleClick (e) {
-    let id = e.currentTarget.className.split(' ')[1];
+    let id = e.currentTarget.className.split(' ')[2];
     this.props.getData (['products', id, 'related'], (data) => {
       const uniqueIds = this.removeDuplicate(data.results);
       this.setState({ relatedProducts: uniqueIds });
