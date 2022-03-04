@@ -16,11 +16,17 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-     cart:[{product_id:392932,sku:3838232}]
+      productID: window.location.search.split('=')[1] || '64621',
+      product: {},
+      cart:[{product_id:392932,sku:3838232}]
     };
   }
   
-  componentDidMount(){}
+  componentDidMount(){
+    model.getData(['products', this.state.productID, ''], (data) => {
+      this.setState({product: data.results});
+    });
+  }
   renderStars(){}
 
   render(){
