@@ -1,28 +1,364 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Overview component should render should have overview component in browser 1`] = `
-<div
-  className="overview"
->
+Array [
   <div
-    className="leftCt"
+    className="overview"
   >
     <div
-      className="image-holder"
+      className="leftCt"
     >
       <div
-        className="fixed-selector"
+        className="image-holder"
       >
-        <div
-          className="styleSelector"
+        <img
+          src="https://images.unsplash.com/photo-1561861422-a549073e547a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
         />
+        <div
+          className="hoverModal"
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "transparent",
+              "position": "absolute",
+            }
+          }
+        />
+        <div
+          className="imageSelector"
+        >
+          <div
+            className="box"
+            onClick={[Function]}
+          >
+             
+            <svg
+              className="arrow"
+              fill="#000000"
+              height="24px"
+              style={
+                Object {
+                  "transform": "rotate(0deg)",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    className="rightCt"
-  >
-     right container
-  </div>
-</div>
+    <div
+      className="rightCt"
+    >
+      <div
+        className="main-content"
+      >
+        <div
+          className="reviewWrapper"
+        >
+          <a
+            onClick={[Function]}
+          >
+            readall reviews
+          </a>
+        </div>
+        <span
+          className="mediumText"
+        >
+          Catagory:
+          Jackets
+        </span>
+        <div
+          className="title"
+        >
+           
+          Camo Onesie
+        </div>
+        <span
+          className="price"
+        >
+          $ 
+          120.00
+        </span>
+      </div>
+      <div
+        className="style-selectors"
+      >
+        <div
+          className="grid-ct"
+        >
+          <div
+            className="style"
+            onClick={[Function]}
+            style={
+              Object {
+                "border": "2px solid red",
+                "borderRadius": "55px",
+              }
+            }
+          >
+             
+            <svg
+              fill="#000000"
+              height="30px"
+              style={
+                Object {
+                  "position": "absolute",
+                  "right": "-5px",
+                  "top": "-5px",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="30px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"
+              />
+            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1561861422-a549073e547a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </div>
+          <div
+            className="style"
+            onClick={[Function]}
+            style={
+              Object {
+                "border": "2px solid transparent",
+              }
+            }
+          >
+             
+            <img
+              src="https://images.unsplash.com/uploads/1412198532414025532c0/6a31309c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </div>
+          <div
+            className="style"
+            onClick={[Function]}
+            style={
+              Object {
+                "border": "2px solid transparent",
+              }
+            }
+          >
+             
+            <img
+              src="https://images.unsplash.com/photo-1465124982537-9f918f1e1aaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+            />
+          </div>
+          <div
+            className="style"
+            onClick={[Function]}
+            style={
+              Object {
+                "border": "2px solid transparent",
+              }
+            }
+          >
+             
+            <img
+              src="https://images.unsplash.com/photo-1454177643390-7f100d1bbeec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </div>
+          <div
+            className="style"
+            onClick={[Function]}
+            style={
+              Object {
+                "border": "2px solid transparent",
+              }
+            }
+          >
+             
+            <img
+              src="https://images.unsplash.com/photo-1499013819532-e4ff41b00669?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="option-selectors"
+      >
+        <div
+          className="selector"
+        >
+          <label
+            htmlFor="styles"
+          >
+            Choose a style_id:
+          </label>
+          <select
+            className="drop-down sku-dropdown"
+            id="styles"
+            name="styles"
+          >
+            <option>
+              Select size
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              7
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              7.5
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              8
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              8.5
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              9
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              9.5
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              10
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              10.5
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              11
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              11.5
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              12
+            </option>
+          </select>
+          <select
+            className="drop-down"
+            id="qty"
+            name="qty"
+          >
+            <option
+              onClick={[Function]}
+            >
+              1
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              2
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              3
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              4
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              5
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              6
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              7
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              8
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              9
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              10
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              11
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              12
+            </option>
+            <option
+              onClick={[Function]}
+            >
+              13
+            </option>
+          </select>
+        </div>
+        <div
+          className="selector"
+        >
+          <button
+            className="addToCart"
+          >
+            Add to Cart
+          </button>
+          <button
+            className="addFavorite"
+          >
+            star
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <p>
+    The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.
+  </p>,
+  <ul />,
+]
 `;

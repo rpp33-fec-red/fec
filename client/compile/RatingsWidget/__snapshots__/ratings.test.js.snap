@@ -1,54 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Ratings component renders correctly 1`] = `
-<div
-  className="ratings"
->
-  <h4>
-    Ratings & Reviews
-  </h4>
-  <div
-    className="ratings-summary"
-  >
-    <h2>
-      3.5
-    </h2>
-    <div
-      className="starComponent"
-    >
-      <div />
-    </div>
-    <p>
-      100% of the reviews recommend this product
-    </p>
-  </div>
-  <div
-    className="ratings-breakdown"
-  >
-    <div>
-      5 stars ------------
-    </div>
-    <div>
-      4 stars ------------
-    </div>
-    <div>
-      3 stars ------------
-    </div>
-    <div>
-      2 stars ------------
-    </div>
-    <div>
-      1 stars ------------
-    </div>
-  </div>
-  <div
-    className="ratings-product-breakdown"
-  >
-    Ratings Product Breakdown Placeholder
-  </div>
-</div>
-`;
-
 exports[`RatingsWidget component renders correctly 1`] = `
 <div
   className="ratings-and-reviews"
@@ -63,45 +14,410 @@ exports[`RatingsWidget component renders correctly 1`] = `
       className="ratings-summary"
     >
       <h2>
-        3.5
+        NaN
       </h2>
       <div
         className="starComponent"
       >
-        <div />
+        <div>
+          <div
+            className="star-rating-input"
+          >
+            <div
+              className="starContainer"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "inline-flex",
+                  "paddingLeft": "0.5rem",
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                className="starBase"
+                style={
+                  Object {
+                    "display": "flex",
+                    "width": "100%",
+                  }
+                }
+              >
+                <svg
+                  className="star"
+                  enableBackground="new 0 0 24 24"
+                  fill="#f8d448"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <rect
+                      fill="none"
+                      height="24"
+                      width="24"
+                      x="0"
+                    />
+                    <polygon
+                      id={1}
+                      onClick={[Function]}
+                      points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                      stroke="#646464"
+                    />
+                  </g>
+                </svg>
+                <svg
+                  className="star"
+                  enableBackground="new 0 0 24 24"
+                  fill="#f8d448"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <rect
+                      fill="none"
+                      height="24"
+                      width="24"
+                      x="0"
+                    />
+                    <polygon
+                      id={2}
+                      onClick={[Function]}
+                      points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                      stroke="#646464"
+                    />
+                  </g>
+                </svg>
+                <svg
+                  className="star"
+                  enableBackground="new 0 0 24 24"
+                  fill="#f8d448"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <rect
+                      fill="none"
+                      height="24"
+                      width="24"
+                      x="0"
+                    />
+                    <polygon
+                      id={3}
+                      onClick={[Function]}
+                      points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                      stroke="#646464"
+                    />
+                  </g>
+                </svg>
+                <svg
+                  className="star"
+                  enableBackground="new 0 0 24 24"
+                  fill="#f8d448"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <rect
+                      fill="none"
+                      height="24"
+                      width="24"
+                      x="0"
+                    />
+                    <polygon
+                      id={4}
+                      onClick={[Function]}
+                      points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                      stroke="#646464"
+                    />
+                  </g>
+                </svg>
+                <svg
+                  className="star"
+                  enableBackground="new 0 0 24 24"
+                  fill="#f8d448"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <rect
+                      fill="none"
+                      height="24"
+                      width="24"
+                      x="0"
+                    />
+                    <polygon
+                      id={5}
+                      onClick={[Function]}
+                      points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+                      stroke="#646464"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div
+                className="starOverlay"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "bottom": "0",
+                    "mixBlendMode": "color",
+                    "opacity": "unset",
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "right": "0",
+                    "top": "0",
+                    "width": "NaN%",
+                    "zIndex": "1",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <p>
-        100% of the reviews recommend this product
+        % of the reviews recommend this product
       </p>
     </div>
     <div
       className="ratings-breakdown"
     >
-      <div>
-        5 stars ------------
+      <div
+        className="ratings-breakdown-bar"
+        id={1}
+        onClick={[Function]}
+      >
+        <div
+          className="star-label"
+        >
+          1 stars
+        </div>
+        <svg
+          style={
+            Object {
+              "fill": "grey",
+              "pointerEvents": "none",
+            }
+          }
+          viewBox="0 0 100 5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="5"
+            width="100%"
+          />
+          <rect
+            height="5"
+            style={
+              Object {
+                "fill": "green",
+                "pointerEvents": "none",
+                "zIndex": "1",
+              }
+            }
+            width="0%"
+          />
+        </svg>
+        <div
+          className="review-number-label"
+        >
+          0
+        </div>
       </div>
-      <div>
-        4 stars ------------
+      <div
+        className="ratings-breakdown-bar"
+        id={2}
+        onClick={[Function]}
+      >
+        <div
+          className="star-label"
+        >
+          2 stars
+        </div>
+        <svg
+          style={
+            Object {
+              "fill": "grey",
+              "pointerEvents": "none",
+            }
+          }
+          viewBox="0 0 100 5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="5"
+            width="100%"
+          />
+          <rect
+            height="5"
+            style={
+              Object {
+                "fill": "green",
+                "pointerEvents": "none",
+                "zIndex": "1",
+              }
+            }
+            width="0%"
+          />
+        </svg>
+        <div
+          className="review-number-label"
+        >
+          0
+        </div>
       </div>
-      <div>
-        3 stars ------------
+      <div
+        className="ratings-breakdown-bar"
+        id={3}
+        onClick={[Function]}
+      >
+        <div
+          className="star-label"
+        >
+          3 stars
+        </div>
+        <svg
+          style={
+            Object {
+              "fill": "grey",
+              "pointerEvents": "none",
+            }
+          }
+          viewBox="0 0 100 5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="5"
+            width="100%"
+          />
+          <rect
+            height="5"
+            style={
+              Object {
+                "fill": "green",
+                "pointerEvents": "none",
+                "zIndex": "1",
+              }
+            }
+            width="0%"
+          />
+        </svg>
+        <div
+          className="review-number-label"
+        >
+          0
+        </div>
       </div>
-      <div>
-        2 stars ------------
+      <div
+        className="ratings-breakdown-bar"
+        id={4}
+        onClick={[Function]}
+      >
+        <div
+          className="star-label"
+        >
+          4 stars
+        </div>
+        <svg
+          style={
+            Object {
+              "fill": "grey",
+              "pointerEvents": "none",
+            }
+          }
+          viewBox="0 0 100 5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="5"
+            width="100%"
+          />
+          <rect
+            height="5"
+            style={
+              Object {
+                "fill": "green",
+                "pointerEvents": "none",
+                "zIndex": "1",
+              }
+            }
+            width="0%"
+          />
+        </svg>
+        <div
+          className="review-number-label"
+        >
+          0
+        </div>
       </div>
-      <div>
-        1 stars ------------
+      <div
+        className="ratings-breakdown-bar"
+        id={5}
+        onClick={[Function]}
+      >
+        <div
+          className="star-label"
+        >
+          5 stars
+        </div>
+        <svg
+          style={
+            Object {
+              "fill": "grey",
+              "pointerEvents": "none",
+            }
+          }
+          viewBox="0 0 100 5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="5"
+            width="100%"
+          />
+          <rect
+            height="5"
+            style={
+              Object {
+                "fill": "green",
+                "pointerEvents": "none",
+                "zIndex": "1",
+              }
+            }
+            width="0%"
+          />
+        </svg>
+        <div
+          className="review-number-label"
+        >
+          0
+        </div>
       </div>
+      <div />
+      <a
+        onClick={[Function]}
+      />
     </div>
     <div
       className="ratings-product-breakdown"
-    >
-      Ratings Product Breakdown Placeholder
-    </div>
+    />
   </div>
   <div
     className="reviews"
   >
+    <input
+      onChange={[Function]}
+      type="text"
+    />
     <div
       className="reviews-sorting"
     >
@@ -109,7 +425,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
         htmlFor="sorting-option"
       >
         0
-         reviews, sorted by
+         reviews, sorted by 
       </label>
       <select
         name="sorting-option"
@@ -141,7 +457,7 @@ exports[`RatingsWidget component renders correctly 1`] = `
       <button
         onClick={[Function]}
       >
-        ADD A REVIEW +
+        ADD A REVIEW + 
       </button>
     </div>
   </div>
@@ -376,7 +692,7 @@ exports[`ReviewTile component renders correctly 1`] = `
       className="review-helpfulness-voting"
     >
       <p>
-        Helpful?
+        Helpful? 
         <a
           onClick={[Function]}
         >
@@ -395,14 +711,18 @@ exports[`Reviews component renders correctly 1`] = `
 <div
   className="reviews"
 >
+  <input
+    onChange={[Function]}
+    type="text"
+  />
   <div
     className="reviews-sorting"
   >
     <label
       htmlFor="sorting-option"
     >
-      5
-       reviews, sorted by
+      0
+       reviews, sorted by 
     </label>
     <select
       name="sorting-option"
@@ -433,12 +753,7 @@ exports[`Reviews component renders correctly 1`] = `
     <button
       onClick={[Function]}
     >
-      MORE REVIEWS
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      ADD A REVIEW +
+      ADD A REVIEW + 
     </button>
   </div>
 </div>
@@ -446,14 +761,18 @@ exports[`Reviews component renders correctly 1`] = `
 
 exports[`ReviewsList component renders correctly 1`] = `
 Array [
+  <input
+    onChange={[Function]}
+    type="text"
+  />,
   <div
     className="reviews-sorting"
   >
     <label
       htmlFor="sorting-option"
     >
-      5
-       reviews, sorted by
+      0
+       reviews, sorted by 
     </label>
     <select
       name="sorting-option"
@@ -484,12 +803,7 @@ Array [
     <button
       onClick={[Function]}
     >
-      MORE REVIEWS
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      ADD A REVIEW +
+      ADD A REVIEW + 
     </button>
   </div>,
 ]
@@ -502,7 +816,7 @@ exports[`ReviewsSorting component renders correctly 1`] = `
   <label
     htmlFor="sorting-option"
   >
-     reviews, sorted by
+     reviews, sorted by 
   </label>
   <select
     name="sorting-option"

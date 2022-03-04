@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
-import {validateFields, formatReviewData} from './AddReview/helpers.js';
-import createStarComponent from './StarRatings.js';
+import {validateFields, formatReviewData} from '../helpers.js';
+import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 
 function AddReview (props) {
@@ -29,6 +29,19 @@ function AddReview (props) {
     bodyCharacterCountMessage = <p>Minimum required characters left: {50 - bodyCharacterCount}</p> :
     bodyCharacterCountMessage = <p>Minimum reached</p>;
 
+  const [filePreview, updateFilePreviewed] = useState('');
+
+  const showFileThumbnail = (event) => {
+    const reader = new FileReader();
+    const files = event.target.files;
+    if (files.length > 5) {
+      alert('You can only upload up to 5 photos!');
+    }
+    reader.onload = () => {
+      updateFilePreviewed(reader.result);
+    };
+    reader.readAsDataURL(files[0]);
+  };
 
   let submissionMessage;
 
@@ -101,7 +114,8 @@ function AddReview (props) {
 
           <div>
             <label htmlFor="photos">Upload photos: </label>
-            <input name="photos" type="file"/>
+            <input name="photos" type="file" onChange={showFileThumbnail} multiple/>
+            <img id="add-review-thumbnail"src={filePreview} ></img>
           </div>
 
           <div>
