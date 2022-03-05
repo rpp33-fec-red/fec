@@ -29,7 +29,7 @@ function Ratings (props) {
 }
 
 Ratings.propTypes = {
-  product_id: PropTypes.number,
+  product_id: PropTypes.any,
   reviewsMetadata: PropTypes.any,
   recommendedPercentage: PropTypes.any,
   updateRatingFilter: PropTypes.any,

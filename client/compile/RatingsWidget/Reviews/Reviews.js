@@ -7,7 +7,13 @@ function Reviews (props) {
   const reviews = props.reviews;
   return (
     <div className ="reviews">
-      <ReviewsList filteredBy={props.filteredBy} reviews={reviews} updateSorting={props.updateSorting} reviewsCharacteristics={props.reviewsCharacteristics} product_id={props.product_id} />
+      <ReviewsList
+        filteredBy={props.filteredBy}
+        reviews={reviews}
+        updateSorting={props.updateSorting}
+        reviewsCharacteristics={props.reviewsCharacteristics}
+        product_id={props.product_id}
+        product_name={props.product_name}/>
     </div>
   );
 }
@@ -17,7 +23,8 @@ Reviews.propTypes = {
   updateSorting: PropTypes.any,
   reviewsCharacteristics: PropTypes.any,
   product_id: PropTypes.any,
-  filteredBy: PropTypes.any
+  filteredBy: PropTypes.any,
+  product_name: PropTypes.any
 };
 
 
