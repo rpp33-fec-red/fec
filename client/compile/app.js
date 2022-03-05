@@ -22,7 +22,7 @@ class Main extends React.Component {
       cart:[{product_id:392932,sku:3838232}]
     };
   }
-  
+
   componentDidMount(){
     model.getData(['products', this.state.productID, ''], (data) => {
       this.setState({product: data.results});
@@ -36,7 +36,7 @@ class Main extends React.Component {
         <Overview getProducts={model.getData} id={this.state.productID}/>
         <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
-        <RatingsWidget getReviews={model.getData} product_id={64622}/>
+        <RatingsWidget getReviews={model.getData} product_id={this.state.productID} product_name={this.state.product.name}/>
       </ClickTracker>);
   }
 }

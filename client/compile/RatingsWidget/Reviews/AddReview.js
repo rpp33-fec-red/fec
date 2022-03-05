@@ -74,7 +74,7 @@ function AddReview (props) {
       <form className="modal-content" onSubmit={submitReview}>
         <div className="form-content">
           <h2>Write Your Review</h2>
-          <h3>About the [Product Name]</h3>
+          <h3>About the {props.product_name}</h3>
           <button onClick={props.closeAddReviewWindow}>Close</button>
           <div>
             <label htmlFor="rating">Overall Rating: </label>
@@ -140,7 +140,8 @@ AddReview.propTypes = {
   reviewsCharacteristics: PropTypes.any,
   closeAddReviewWindow: PropTypes.func,
   getReviews: PropTypes.any,
-  product_id: PropTypes.any
+  product_id: PropTypes.any,
+  product_name: PropTypes.any
 };
 
 export default AddReview;
