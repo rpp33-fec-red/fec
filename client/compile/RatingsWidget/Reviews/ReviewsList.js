@@ -116,7 +116,11 @@ class ReviewsList extends React.Component {
 
     let addReviewsWindow;
     if(this.state.addReviewDisplayed) {
-      return <AddReview reviewsCharacteristics={this.props.reviewsCharacteristics} closeAddReviewWindow={this.closeAddReviewWindow} product_id={this.props.product_id}/>;
+      return <AddReview
+        reviewsCharacteristics={this.props.reviewsCharacteristics}
+        closeAddReviewWindow={this.closeAddReviewWindow}
+        product_id={this.props.product_id}
+        product_name={this.props.product_name}/>;
     }
 
     return (
@@ -146,7 +150,8 @@ ReviewsList.propTypes = {
   updateSorting: PropTypes.any,
   reviewsCharacteristics: PropTypes.any,
   product_id: PropTypes.any,
-  filteredBy: PropTypes.any
+  filteredBy: PropTypes.any,
+  product_name: PropTypes.any
 };
 
 
