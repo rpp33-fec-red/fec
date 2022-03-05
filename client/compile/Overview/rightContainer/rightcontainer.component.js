@@ -2,28 +2,29 @@ import React from 'react';
 import './rightcontainer.scss';
 import StyleSelector from '../styleSelector.js';
 import PropTypes from 'prop-types';
-
 class RightContainer extends React.Component{
 
   static propTypes = {
     productInfo:PropTypes.object,
     styles:PropTypes.array,
-    changeStyle:PropTypes.func
+    changeStyle:PropTypes.func,
+    reviews:PropTypes.number
   }
 
   constructor(props){
     super(props);
-    console.log(props.productInfo);
     this.state = {
       sku:null,
       maxquantity:1,
       quantity:1
     };
     this.clickSku = this.clickSku.bind(this);
+
   }
 
   clickedReviews() {
-    console.log('read all reviews clicked');
+    // console.log('read all reviews clicked');
+    window.scrollTo(0,2800)
   }
 
   clickSku(){
@@ -40,8 +41,31 @@ class RightContainer extends React.Component{
     return array;
   }
 
+
   render (){
+
+    var ratings =this.props.ratings;
+    function ShowStars(){
+
+      var percent = parseInt(ratings/5 *100)*10;
+      return (<div className="starCt">
+        <div className="stars">
+          {[0,1,2,3,4].map(function(index){
+            return <svg key={index} className="star" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill='#f8d448' ><g><rect fill="none" height="24" width="24" x="0"><polygon points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" stroke='#646464'/></rect></g></svg>;
+          })}
+        </div>
+        <div className="starOverlay" style={{ width: `${ratings}%` ,position:'absolute'}}> </div>
+
+      </div>);
+
+
+
+    }
+
+
+
     var that = this;
+    // console.log('propsstyle',this.props);
     function clickQty(){
       that.setState({quantity:this.qty});
     }
@@ -66,13 +90,13 @@ class RightContainer extends React.Component{
 
     return (<div className="rightCt" >
       <div className="main-content">
-        <div className="reviewWrapper"><a onClick={this.clickedReviews}>readall reviews</a></div>
+        <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars></ShowStars>readall reviews({this.props.reviews})</a></div>
         <span className="mediumText">Catagory:{this.props.productInfo.category}</span>
         <div className="title"> {this.props.productInfo.name}</div>
         <span className="price">$ {this.props.productInfo.original_price}</span>
       </div>
       <div className="style-selectors">
-        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles}> </StyleSelector>
+        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} > </StyleSelector>
       </div>
       <div className="option-selectors">
         <div className="selector">

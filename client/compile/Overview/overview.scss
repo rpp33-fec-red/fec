@@ -3,13 +3,32 @@
   height:800px;
   display:flex;
   flex-wrap:nowrap;
-  background-image:url('./beach.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  .thumb-border{
+  .thumb-border {
     border:2px solid blue;
+  }
+    .thumbup{
+      &:hover{
+        background:orange!important;
+      }
+    }
+    .thumbdown{
+      &:hover{
+        background:orange!important;
+      }
+    }
+
+  .mainImage-ct{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+      svg{  position: absolute;}
   }
 .grid-ct{
   width: 100%;
@@ -68,7 +87,7 @@
     height: 80%;
   }
 }
-.box:nth-child(1){
+.boxsvg{
       background:black;
       color:white;
       border-radius: 90px;

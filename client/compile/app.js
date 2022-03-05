@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ClickTracker from './Click_Tracker.jsx';
@@ -17,12 +16,11 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productID: window.location.search.split('=')[1] || '64621',
-      product: {},
-      cart:[{product_id:392932,sku:3838232}]
+      productID: window.location.search.split('=')[1] || 64621,
+      product: {}
     };
   }
-  
+
   componentDidMount(){
     model.getData(['products', this.state.productID, ''], (data) => {
       this.setState({product: data.results});
@@ -33,7 +31,7 @@ class Main extends React.Component {
   render(){
     return (
       <ClickTracker>
-        <Overview getProducts={model.getData} id={this.state.productID}/>
+        <Overview getProducts={model.getData} product={{}} productId={this.state.productID}/>
         <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
         <RatingsWidget getReviews={model.getData} product_id={64622}/>
