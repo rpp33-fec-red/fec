@@ -31,7 +31,6 @@ class Main extends React.Component {
   renderStars(){}
 
   render(){
-    console.log('state.product', this.state.product);
     return (
       <ClickTracker>
         <Overview getProducts={model.getData} id={this.state.productID}/>
