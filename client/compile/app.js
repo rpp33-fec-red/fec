@@ -35,7 +35,7 @@ class Main extends React.Component {
       <ClickTracker>
         <Overview getProducts={model.getData} id={this.state.productID}/>
         <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
-        <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
+        <QuestionsWidget product_id={this.state.productID} product_name={this.state.product.name}/>
         <RatingsWidget getReviews={model.getData} product_id={this.state.productID} product_name={this.state.product.name}/>
       </ClickTracker>);
   }

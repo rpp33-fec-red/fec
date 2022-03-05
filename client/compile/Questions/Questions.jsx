@@ -28,7 +28,7 @@ class QuestionsWidget extends React.Component {
       params: {
         product_id: this.props.product_id,
         page: 1,
-        count: 5
+        count: 50
       }
     };
     axios.post('/getQuestions', request)
