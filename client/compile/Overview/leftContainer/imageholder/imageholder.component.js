@@ -53,7 +53,6 @@ class ImageHolder extends React.Component{
 
   }
   render(){
-    console.log('in image',this.props);
     var that = this;
     return (<React.Fragment>
       <div className="image-holder" >
