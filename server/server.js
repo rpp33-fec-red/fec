@@ -14,12 +14,14 @@ app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
+console.log(options.APIKEY);
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
 app.get('/getDatav2',function(req, res){
   function placeParams(params){
     var url = options.APIURL+params['path']+'?';
+    console.log(options.APIURL)
     Object.keys(params).forEach((queryparam,index)=>{
       if (queryparam !== 'path'){
         if (index >0){
