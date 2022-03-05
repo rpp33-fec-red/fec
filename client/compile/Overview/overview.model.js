@@ -17,7 +17,6 @@ class OverviewModel extends React.Component {
       image:this.props.ProductData.styles[0].photos[0].url,
       imageIndex: 0
     };
-    console.log('modelstate',this.state);
     this.config = {
       'serverURL':'/',
       "testURL":'http://localhost:8080/'
@@ -52,14 +51,12 @@ class OverviewModel extends React.Component {
     //fix reviews set product id
     Get.getData({path:'/reviews',params:{product_id:id}}, function(data) {
       var reviews = data.data.results;
-      console.log(reviews);
       that.setState({reviews:reviews});
       that.getRatings();
 
     });
   }
   clickImage(index){
-    console.log(index);
     this.setState({image:this.state.thumbArray[index].url});
   }
   moveUp(){
@@ -67,23 +64,19 @@ class OverviewModel extends React.Component {
     var newarray = this.state.thumbArray.slice(1);
     console.log('newarray',newarray);
     newarray.push(el);
-    console.log(newarray);
     this.setState({thumbArray:newarray});
     this.setState({image:this.state.thumbArray[0].url});
   }
   moveDown(){
     var el = this.state.thumbArray[this.state.thumbArray.length-1];
     var newarray = this.state.thumbArray;
-    console.log('newarray',newarray);
     newarray.pop();
     newarray.unshift(el);
-    console.log('newarray',newarray);
     this.setState({thumbArray:newarray});
     this.setState({image:this.state.thumbArray[0]});
   }
 
   changeStyle(index){
-    console.log('state in this position',this.state);
     this.setState({thumbArray:this.state.product.styles[index].photos});
     this.setState({image:this.state.product.styles[index].photos[0].url});
   }

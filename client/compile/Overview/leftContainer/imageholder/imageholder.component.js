@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 class ImageHolder extends React.Component{
   constructor(props){
-    console.log('checking',props);
 
     super(props);
     this.state= {
@@ -33,9 +32,7 @@ class ImageHolder extends React.Component{
   }
 
   mainImageClick(){
-    console.log('clickedon');
     var that =  this;
-    console.log(!that.state.expandImageModal);
     this.setState({expandImageModal:!that.state.expandImageModal});
   }
 

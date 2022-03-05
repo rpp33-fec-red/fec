@@ -35,7 +35,6 @@ class Overview extends OverviewModel {
     );
   }
   render(){
-    console.log('rerender',this.state.styleIndex)
     return this.getComponent(this.Core);
   }
 }
