@@ -6,17 +6,20 @@ class LeftContainer extends React.Component{
 
   constructor(props){
     super(props);
-
   }
 
   static propTypes = {
-    model:PropTypes.any
+    style:PropTypes.any,
+    ThumbnailIndex:PropTypes.any,
+    imageClick:PropTypes.func
   }
 
   render (){
+    console.log('props in left ct ', this.props);
+
     return (
       <div className="leftCt">
-        <ImageHolder style={this.props.style} ThumbnailIndex={this.props.ThumbnailIndex} imageClick={this.props.imageClick} />
+        <ImageHolder image={this.props.image} thumbArray={this.props.thumbArray} clickImage={this.props.clickImage}  ThumbnailIndex={this.props.ThumbnailIndex} imageClick={this.props.imageClick}  moveUp={this.props.moveUp} moveDown={this.props.moveDown}/>
       </div>);
   }
 }

@@ -6,6 +6,7 @@ class GetRequests {
       'serverURL':'/',
       "testURL":'http://localhost:8080/'
     };
+    this.getProductData = this.getProductData.bind(this)
   }
   checkURL(data) {
     var errorcheck = null;
@@ -69,10 +70,12 @@ class GetRequests {
 
   }
 
-  getProductData(id,cb) {
+  getProductData(id, cb) {
     var that = this;
+    console.log('is here', id);
     this.getData({path:'/products/'+id}, function(data) {
       var product = data.data;
+      console.log('success', product)
       that.getData({path:'/products/'+id+'/styles'}, function(data) {
         cb({product: Object.assign(product,{styles:data.data.results})});
       });

@@ -23,7 +23,7 @@ class RightContainer extends React.Component{
   }
 
   clickedReviews() {
-    console.log('read all reviews clicked');
+    // console.log('read all reviews clicked');
     window.scrollTo(0,2800)
   }
 
@@ -65,7 +65,7 @@ class RightContainer extends React.Component{
 
 
     var that = this;
-    console.log('propsstyle',this.props);
+    // console.log('propsstyle',this.props);
     function clickQty(){
       that.setState({quantity:this.qty});
     }
@@ -96,7 +96,7 @@ class RightContainer extends React.Component{
         <span className="price">$ {this.props.productInfo.original_price}</span>
       </div>
       <div className="style-selectors">
-        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} styleIndex={this.props.styleIndex}> </StyleSelector>
+        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} > </StyleSelector>
       </div>
       <div className="option-selectors">
         <div className="selector">

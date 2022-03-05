@@ -7,15 +7,17 @@ var Get = new GetRequests();
 class OverviewModel extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       product:this.props.ProductData,
       productId: 64620,
-      styleIndex:0,
       ThumbnailIndex:0,
       reviews:[],
-      ratings:5
+      ratings:5,
+      thumbArray:this.props.ProductData.styles[0].photos,
+      image:this.props.ProductData.styles[0].photos[0].url,
+      imageIndex: 0
     };
+    console.log('modelstate',this.state);
     this.config = {
       'serverURL':'/',
       "testURL":'http://localhost:8080/'
@@ -23,6 +25,9 @@ class OverviewModel extends React.Component {
     this.changeStyle = this.changeStyle.bind(this);
     this.getReviews = this.getReviews.bind(this);
     this.getRatings = this.getRatings.bind(this);
+    this.moveUp = this.moveUp.bind(this);
+    this.moveDown = this.moveDown.bind(this);
+    this.clickImage = this.clickImage.bind(this);
   }
 
   getRatings(){
@@ -44,6 +49,7 @@ class OverviewModel extends React.Component {
   getReviews(){
     var that = this;
     var id = this.state.productId;
+    //fix reviews set product id
     Get.getData({path:'/reviews',params:{product_id:id}}, function(data) {
       var reviews = data.data.results;
       console.log(reviews);
@@ -52,9 +58,34 @@ class OverviewModel extends React.Component {
 
     });
   }
+  clickImage(index){
+    console.log(index);
+    this.setState({image:this.state.thumbArray[index].url});
+  }
+  moveUp(){
+    var el = this.state.thumbArray[0];
+    var newarray = this.state.thumbArray.slice(1);
+    console.log('newarray',newarray);
+    newarray.push(el);
+    console.log(newarray);
+    this.setState({thumbArray:newarray});
+    this.setState({image:this.state.thumbArray[0].url});
+  }
+  moveDown(){
+    var el = this.state.thumbArray[this.state.thumbArray.length-1];
+    var newarray = this.state.thumbArray;
+    console.log('newarray',newarray);
+    newarray.pop();
+    newarray.unshift(el);
+    console.log('newarray',newarray);
+    this.setState({thumbArray:newarray});
+    this.setState({image:this.state.thumbArray[0]});
+  }
 
   changeStyle(index){
-    this.setState({styleIndex:index});
+    console.log('state in this position',this.state);
+    this.setState({thumbArray:this.state.product.styles[index].photos});
+    this.setState({image:this.state.product.styles[index].photos[0].url});
   }
 
   imageClick(index){
@@ -70,7 +101,7 @@ class OverviewModel extends React.Component {
   }
 
   getComponent(Component) {
-    return <Component model={this} ></Component>;
+    return <Component ></Component>;
   }
 
 

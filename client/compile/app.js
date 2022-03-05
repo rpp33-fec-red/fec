@@ -10,7 +10,7 @@ import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
 import Model from './model.js';
 var model = new Model(false);
 import GetRequests from './getRequests.js';
-var Get = new GetRequests();
+
 import './style.scss';
 import testData from './Overview/testProducts.js';
 
@@ -18,16 +18,19 @@ class Main extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      productId: window.location.search.split('=')[1],
+      productId: window.location.search.split('=')[1] || 64620,
       Product:testData
     };
+    this.Get = new GetRequests();
   }
 
+
   componentDidMount(){
-    Get.getProductData(this.state.productId,function(data){
-      this.setState({Product:data});
+    var id = this.state.productId;
+    var that = this;
+    this.Get.getProductData(id, function(data) {
+      that.setState({Product:data});
     });
   }
   renderStars(){}
@@ -36,7 +39,7 @@ class Main extends React.Component {
   render(){
     return (
       <div className="main">
-        <Overview ProductData={this.state.Product} id={this.state.productID}/>
+        <Overview ProductData={this.state.Product} id={this.state.productId}/>
         <RelatedProducs getData={model.getData} />
         <QuestionsWidget getQuestions={model.getData} product_id="64620" product_name="Camo Onesie"/>
         <RatingsWidget getReviews={model.getData} product_id={64622}/>

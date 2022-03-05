@@ -13,18 +13,19 @@ class Overview extends OverviewModel {
     super(props);
     this.Core = this.Core.bind(this);
   }
+
   componentDidMount(){
     this.getReviews();
+
   }
 
-
   Core(){
-    console.log(this.state.styleIndex);
+
     return (
       <React.Fragment>
-        <div className="overview">
-          <LeftContainer style={this.state.product.styles[this.state.styleIndex]} ThumbnailIndex={this.state.ThumbnailIndex} imageClick={this.imageClick}/>
-          <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styles={this.state.product.styles} productInfo={this.state.product.styles[0]} styleIndex={this.state.styleIndex} />
+        <div className="overview" style={{ backgroundImage:'url(./beach.jpeg)' }}>
+          <LeftContainer clickImage={this.clickImage} moveUp={this.moveUp} moveDown={this.moveDown} image={ this.state.image} ThumbnailIndex={this.state.ThumbnailIndex} thumbArray={this.state.thumbArray} imageClick={this.imageClick}/>
+          <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styles={this.state.product.styles} productInfo={this.state.product.styles[0]}  />
         </div>
         <p>{this.state.product.description}</p>
         <ul>
@@ -34,6 +35,7 @@ class Overview extends OverviewModel {
     );
   }
   render(){
+    console.log('rerender',this.state.styleIndex)
     return this.getComponent(this.Core);
   }
 }
