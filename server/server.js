@@ -75,7 +75,7 @@ app.post('/postData', (req, res) => {
   axios.post(url, data, config)
     .then(function() {
       console.log('Status 201 CREATED');
-      res.send();
+      res.sendStatus(201);
     })
     .catch(function(error) {
       console.log(error);
