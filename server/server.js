@@ -154,7 +154,7 @@ app.put('/reviews', (req, res) => {
 
 });
 
-app.listen(port,'172.31.82.216',function(){
+app.listen(port,'0.0.0.0',function(){
   console.log('listening on ',port);
 });
 
