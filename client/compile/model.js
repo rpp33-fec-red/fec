@@ -1,6 +1,6 @@
 var config = {
   'serverURL':'/',
-  "testURL":'http://44.202.18.57/:8080/'
+  "testURL":'http://54.210.93.182/:8080/'
 };
 import $ from 'jquery';
 class Model {
