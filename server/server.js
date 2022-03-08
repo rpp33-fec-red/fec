@@ -1,5 +1,7 @@
+require('dotenv').config();
 var express = require('express');
 var app = express();
+const multer = require('multer');
 var port = 8080;
 var path = require('path');
 var config = require('../config');
@@ -10,10 +12,9 @@ var bp = require('body-parser');
 app.use(bp.json());
 var cors = require('cors');
 app.use(cors());
+app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
-const multer  = require('multer');
-const upload = multer();
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 //ajuna beats;
@@ -76,7 +77,7 @@ app.post('/postData', (req, res) => {
   axios.post(url, data, config)
     .then(function() {
       console.log('Status 201 CREATED');
-      res.send();
+      res.sendStatus(201);
     })
     .catch(function(error) {
       console.log(error);
@@ -102,14 +103,28 @@ app.put('/putData', (req, res) => {
     });
 });
 
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, '../client/compile/Questions/photos'),
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + '.png');
+  }
+});
 
+const upload = multer({ storage: storage });
 
-app.post('/reviews', upload.array('photos', 5), async (req, res) => {
+app.post('/upload', upload.single('photoUpload'), (req, res) => {
+  res.send(req.file.path);
+});
+
+const uploadReviews = multer();
+
+app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
   const files = req.files;
   const s3Instance = new S3Client({
     region: 'us-east-1' ,
     credentials: {
-
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
     }
   });
   let photos = [];
@@ -121,7 +136,7 @@ app.post('/reviews', upload.array('photos', 5), async (req, res) => {
       Body: files[file].buffer
     };
     const command = new PutObjectCommand(params);
-    const fileUploadReponse = await s3Instance.send(command);
+    const fileUploadResponse = await s3Instance.send(command);
     const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
     photos.push(url);
   }
@@ -146,7 +161,7 @@ app.post('/reviews', upload.array('photos', 5), async (req, res) => {
 //   //     console.log('Error recieved when adding review:', error.response);
 //   //   });
 //   res.send();
-// });
+});
 
 // app.put('/reviews', (req, res) => {
 //   let url = options.APIURL + `/reviews/${req.body.review_id}/helpful`;
@@ -165,9 +180,9 @@ app.post('/reviews', upload.array('photos', 5), async (req, res) => {
 //       console.log('Error recieved when voting helpfulness:', error.response);
 //     });
 
-});
+// });
 
 app.listen(port,function(){
-  console.log('listenening on ',port);
+  console.log('listening on ',port);
 });
 

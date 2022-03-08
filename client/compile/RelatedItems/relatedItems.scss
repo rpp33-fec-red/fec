@@ -15,6 +15,8 @@
     height: 30rem;
     margin-right: 1rem;
     padding: 1.5rem;
+    text-decoration: none;
+    color: black;
 }
 .productImage { 
     display: block; 
@@ -34,6 +36,8 @@
 }
 .product_cardtitle {
     padding-left: 1rem;
+    font-weight: bold;
+    font-size: large;
 }
 .product_default_price {
     padding-left: 1rem;
@@ -65,16 +69,20 @@
     left:50%;
     padding: 3rem;
     transform: translate(-50%,-50%);
+    overflow: auto;
 }
 
 .compare-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     // align-items: flex-start center;
     column-gap: 10rem;
     row-gap: 2rem;
     border-bottom: 1px solid #dcdcdc;
+    font-size: medium;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
 }
 
 .display-block {
@@ -87,10 +95,25 @@
 
 .rowTitle {
     font-weight: bold;
+    font-size: large;
+    padding-bottom: 0.5rem;
 }
 
 .feature {
+    position: relative;
     font-weight: bold;
+    text-align: center;
+}
+
+.current-col {
+    position: relative;
+    text-align: left;
+}
+
+.compare-col {
+   position: relative;
+   margin-right: 4rem;
+   text-align: right;
 }
 
 #compareButton {

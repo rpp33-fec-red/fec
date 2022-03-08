@@ -26,12 +26,12 @@ class RelatedProducts extends React.Component {
 
   //all 64621 needs to be change to props.productId once params.id is passed to component
   componentDidMount () {
-    this.props.getData(['products','64621', 'related'], (data) => {
+    this.props.getData(['products', this.props.product_id, 'related'], (data) => {
       const uniqueIds = this.removeDuplicate(data.results);
       this.setState({ relatedProducts: uniqueIds });
     });
 
-    this.props.getData(['products','64621', ''], (data) => {
+    this.props.getData(['products',this.props.product_id, ''], (data) => {
       this.setState ({ current: data.results });
     });
 
@@ -44,7 +44,7 @@ class RelatedProducts extends React.Component {
   }
 
   handleClick (e) {
-    let id = e.currentTarget.className.split(' ')[1];
+    let id = e.currentTarget.className.split(' ')[2];
     this.props.getData (['products', id, 'related'], (data) => {
       const uniqueIds = this.removeDuplicate(data.results);
       this.setState({ relatedProducts: uniqueIds });
@@ -136,7 +136,7 @@ class RelatedProducts extends React.Component {
 
 RelatedProducts.propTypes = {
   getData: PropTypes.any,
-  productID: PropTypes.any
+  product_id: PropTypes.any
 };
 
 export default RelatedProducts;

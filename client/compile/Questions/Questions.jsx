@@ -28,7 +28,7 @@ class QuestionsWidget extends React.Component {
       params: {
         product_id: this.props.product_id,
         page: 1,
-        count: 5
+        count: 50
       }
     };
     axios.post('/getQuestions', request)
@@ -37,7 +37,6 @@ class QuestionsWidget extends React.Component {
           const sorted = response.data.results.sort((a, b) => {
             return b.question_helpfulness - a.question_helpfulness;
           });
-          console.log('sorted', sorted);
           if (sorted.length < 3) {
             this.setState({
               allQuestionsDisplayed: true,

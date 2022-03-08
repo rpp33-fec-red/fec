@@ -8,13 +8,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {render, fireEvent} from '@testing-library/react';
 import RatingsWidget from './RatingsWidget.js';
-import Ratings from './Ratings/Ratings.js';
+// import Ratings from './Ratings/Ratings.js';
 import Reviews from './Reviews/Reviews.js';
 import ReviewTile from './Reviews/ReviewTile.js';
 import ReviewsList from './Reviews/ReviewsList.js';
 import ReviewsSorting from './Reviews/ReviewsSorting.js';
 // import AddReview from './Reviews/AddReview.js';
-import {reviewsData, metaData} from './sample_data.js';
+import {reviewsData} from './sample_data.js';
 import Model from '../model.js';
 var model = new Model(false);
 import '@testing-library/jest-dom';
@@ -40,18 +40,6 @@ describe('Reviews component', () => {
   });
 
 });
-
-
-// describe('Ratings component', () => {
-
-//   test('renders correctly', () => {
-//     const tree = renderer
-//       .create(<Ratings reviewsMetadata={metaData}/>)
-//       .toJSON();
-//     expect(tree).toMatchSnapshot();
-//   });
-
-// });
 
 
 describe('ReviewTile component', () => {

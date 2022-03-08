@@ -31,7 +31,7 @@ class RatingsWidget extends React.Component {
 
   getReviews() {
     const that = this;
-    const count = 10;
+    const count = 50;
     this.props.getReviews([`reviews?product_id=${this.props.product_id}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
       if (data.results){
         that.setState({
@@ -109,7 +109,8 @@ class RatingsWidget extends React.Component {
           reviews={reviews}
           updateSorting={this.updateSorting}
           reviewsCharacteristics={this.state.reviewsMetadata.characteristics}
-          filteredBy={this.state.filteredBy}/>
+          filteredBy={this.state.filteredBy}
+          product_name={this.props.product_name}/>
       </div>
     );
   }
@@ -117,7 +118,8 @@ class RatingsWidget extends React.Component {
 
 RatingsWidget.propTypes = {
   getReviews: PropTypes.any,
-  product_id: PropTypes.any
+  product_id: PropTypes.any,
+  product_name: PropTypes.any
 };
 
 export default RatingsWidget;
