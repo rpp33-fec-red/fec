@@ -118,7 +118,7 @@ app.post('/reviews', (req, res) => {
   //   }).catch((error) => {
   //     console.log('Error recieved when adding review:', error.response);
   //   });
-
+  res.send();
 });
 
 app.put('/reviews', (req, res) => {

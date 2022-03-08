@@ -63,19 +63,18 @@ function AddReview (props) {
       for (const [key, value] of formData.entries()) {
         console.log(key, value);
       }
-      axios.post('/reviews', formData, {
+      axios.post('/reviews', JSON.stringify(formData), {
         headers: {
           'Content-Type': 'multipart/form-data'
         }}
-      )
-        .then(() => {
-          form.reset();
-          updateStarRating(0);
-          // alerts the user when review responses are successfully submitted to server
-          alert(submissionMessage);
-        }).catch(() => {
-          alert('An error occured when submitting your review. Try again later.');
-        });
+      ).then(() => {
+        event.target.reset();
+        updateStarRating(0);
+        // alerts the user when review responses are successfully submitted to server
+        alert(submissionMessage);
+      }).catch(() => {
+        alert('An error occured when submitting your review. Try again later.');
+      });
     } else {
       // alerts the user when invalid responses are submitted
       alert(submissionMessage);
