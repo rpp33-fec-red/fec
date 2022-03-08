@@ -101,6 +101,7 @@ app.put('/putData', (req, res) => {
 
 app.post('/reviews', (req, res) => {
   let reviewData = req.body;
+  console.log(reviewData);
   let url = options.APIURL + '/reviews';
   const config = {
     method: 'POST',
@@ -110,13 +111,13 @@ app.post('/reviews', (req, res) => {
     },
     data: reviewData
   };
-  axios(config)
-    .then(() => {
-      console.log('Status 201 CREATED');
-      res.sendStatus(201);
-    }).catch((error) => {
-      console.log('Error recieved when adding review:', error.response);
-    });
+  // axios(config)
+  //   .then(() => {
+  //     console.log('Status 201 CREATED');
+  //     res.sendStatus(201);
+  //   }).catch((error) => {
+  //     console.log('Error recieved when adding review:', error.response);
+  //   });
 
 });
 

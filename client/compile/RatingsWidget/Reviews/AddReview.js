@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
-import {validateFields, formatReviewData} from '../helpers.js';
+import {validateFields} from '../helpers.js';
 import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 
@@ -48,14 +48,21 @@ function AddReview (props) {
   const submitReview = (event) => {
     event.preventDefault();
     let formContent = document.getElementById('add-review');
-    const formData= new FormData (formContent);
-    console.log(formData);
-    const form = event.target;
+    const formData = new FormData (formContent);
+    const files = event.target.photos.files;
     const applicableCharacteristics = props.reviewsCharacteristics;
-    submissionMessage = validateFields(formData, applicableCharacteristics, starRating);
+    submissionMessage = validateFields(formData, applicableCharacteristics, starRating, files);
     if (submissionMessage === 'Your review has been submitted.') {
       formData.append('product_id', props.product_id);
       formData.append('rating', starRating);
+      const photos = [];
+      for (var i = 0; i < files.length; i++) {
+        photos.push(files[i]);
+      }
+      formData.append('photos', photos);
+      for (const [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
       axios.post('/reviews', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'

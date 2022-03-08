@@ -1,13 +1,11 @@
-const validateFields = (fields, applicableCharacteristics, rating) => {
+const validateFields = (formData, applicableCharacteristics, rating, files) => {
   let success = true;
+  let formFields = {};
+  const mandatoryFields = ['body', 'summary', 'email', 'nickname'];
 
-  const mandatoryFields = {
-    recommend: fields.recommend.value,
-    summary: fields.summary.value,
-    body: fields.body.value,
-    name: fields.nickname.value,
-    email: fields.email.value
-  };
+  for (const [key, value] of formData.entries()) {
+    formFields[key] = value;
+  }
 
   let errorMessage = 'You must enter the following:';
 
@@ -24,39 +22,42 @@ const validateFields = (fields, applicableCharacteristics, rating) => {
   };
 
   // checks if all mandatory fields (expect for characteristics) are filled out and compiles error message
-  for (const field in mandatoryFields) {
-    if (!mandatoryFields[field] && field !== 'characteristics') {
+  for (const field in formFields) {
+
+    if (mandatoryFields.indexOf(field) !== -1 && formFields[field].length === 0) {
       addToErrorMessage(field);
     }
   }
 
   // checks if all characteristic fields are filled out and compiles error message
   for (var characteristic in applicableCharacteristics) {
-    const characteristicRating = fields[characteristic].value;
-    if (!characteristicRating) {
-      addToErrorMessage(characteristic);
+    const characteristicId = applicableCharacteristics[characteristic].id;
+    if (!formFields[characteristicId]) {
+      addToErrorMessage(characteristic.toLowerCase());
     }
   }
 
   // checks if review body is less than 50 characters
-  if (mandatoryFields.body.length < 50 && errorMessage.indexOf('body') === -1) {
+  if (formFields.body.length < 50 && errorMessage.indexOf('body') === -1) {
     const characterCountError = 'more than 50 characters in your review body';
     addToErrorMessage(characterCountError);
   }
 
   // checks if email address is valid
-  if (!mandatoryFields.email.includes('@') && !mandatoryFields.email.includes('.com') && errorMessage.indexOf('email') === -1) {
+  if (!formFields.email.includes('@') && !formFields.email.includes('.com') && errorMessage.indexOf('email') === -1) {
     const characterCountError = 'valid email address';
     addToErrorMessage(characterCountError);
   }
 
   // if no star rating provided
   if (rating === 0) {
-    addToErrorMessage(rating);
+    addToErrorMessage('rating');
   }
 
-  // adding image validatation [in-progress]
-
+  // image count validatation [in-progress]
+  if (files.length > 5) {
+    addToErrorMessage('5 or less photos');
+  }
 
   if (success) {
     const successMessage = 'Your review has been submitted.';
