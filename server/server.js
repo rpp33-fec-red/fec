@@ -14,6 +14,8 @@ app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 const multer  = require('multer');
 const upload = multer();
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
+
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
 app.get('/getData',function(request, response) {
@@ -100,44 +102,68 @@ app.put('/putData', (req, res) => {
     });
 });
 
-app.post('/reviews', upload.array('photos', 5), (req, res) => {
-  let reviewData = req.body;
-  console.log('here is the review data', req.files);
-  let url = options.APIURL + '/reviews';
-  const config = {
-    method: 'POST',
-    url: url,
-    headers: {
-      'authorization':`${options.APIKEY}`
-    },
-    data: reviewData
-  };
-  // axios(config)
-  //   .then(() => {
-  //     console.log('Status 201 CREATED');
-  //     res.sendStatus(201);
-  //   }).catch((error) => {
-  //     console.log('Error recieved when adding review:', error.response);
-  //   });
-  res.send();
-});
 
-app.put('/reviews', (req, res) => {
-  let url = options.APIURL + `/reviews/${req.body.review_id}/helpful`;
-  const config = {
-    method: 'PUT',
-    url: url,
-    headers: {
-      'authorization':`${options.APIKEY}`
+
+app.post('/reviews', upload.array('photos', 5), async (req, res) => {
+  const files = req.files;
+  const s3Instance = new S3Client({
+    region: 'us-east-1' ,
+    credentials: {
+
     }
-  };
-  axios(config)
-    .then(() => {
-      console.log('Status: 204 NO CONTENT');
-      res.sendStatus(204);
-    }).catch((error) => {
-      console.log('Error recieved when voting helpfulness:', error.response);
-    });
+  });
+  let photos = [];
+  for (const file in files) {
+    console.log(files);
+    var params = {
+      Key: files[file].originalname,
+      Bucket: 'fec-project-rpp33',
+      Body: files[file].buffer
+    };
+    const command = new PutObjectCommand(params);
+    const fileUploadReponse = await s3Instance.send(command);
+    const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
+    photos.push(url);
+  }
+  console.log(photos);
+  res.send();
+//   let reviewData = req.body;
+//   console.log('here is the review data', req.files);
+//   let url = options.APIURL + '/reviews';
+//   const config = {
+//     method: 'POST',
+//     url: url,
+//     headers: {
+//       'authorization':`${options.APIKEY}`
+//     },
+//     data: reviewData
+//   };
+//   // axios(config)
+//   //   .then(() => {
+//   //     console.log('Status 201 CREATED');
+//   //     res.sendStatus(201);
+//   //   }).catch((error) => {
+//   //     console.log('Error recieved when adding review:', error.response);
+//   //   });
+//   res.send();
+// });
+
+// app.put('/reviews', (req, res) => {
+//   let url = options.APIURL + `/reviews/${req.body.review_id}/helpful`;
+//   const config = {
+//     method: 'PUT',
+//     url: url,
+//     headers: {
+//       'authorization':`${options.APIKEY}`
+//     }
+//   };
+//   axios(config)
+//     .then(() => {
+//       console.log('Status: 204 NO CONTENT');
+//       res.sendStatus(204);
+//     }).catch((error) => {
+//       console.log('Error recieved when voting helpfulness:', error.response);
+//     });
 
 });
 
