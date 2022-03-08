@@ -63,10 +63,7 @@ function AddReview (props) {
       for (const [key, value] of formData.entries()) {
         console.log(key, value);
       }
-      axios.post('/reviews', JSON.stringify(formData), {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }}
+      axios.post('/reviews', formData
       ).then(() => {
         event.target.reset();
         updateStarRating(0);
@@ -85,7 +82,7 @@ function AddReview (props) {
 
   return (
     <div className="add-review modal-window">
-      <form id="add-review" className="modal-content" onSubmit={submitReview}>
+      <form id="add-review" className="modal-content" onSubmit={submitReview} encType='multipart/form-data'>
         <div className="form-content">
           <h2>Write Your Review</h2>
           <h3>About the [Product Name]</h3>

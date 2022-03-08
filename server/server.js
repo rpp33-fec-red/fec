@@ -12,7 +12,8 @@ var cors = require('cors');
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
-
+const multer  = require('multer');
+const upload = multer();
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
 app.get('/getData',function(request, response) {
@@ -99,9 +100,9 @@ app.put('/putData', (req, res) => {
     });
 });
 
-app.post('/reviews', (req, res) => {
+app.post('/reviews', upload.array('photos', 5), (req, res) => {
   let reviewData = req.body;
-  console.log(reviewData);
+  console.log('here is the review data', req.files);
   let url = options.APIURL + '/reviews';
   const config = {
     method: 'POST',
