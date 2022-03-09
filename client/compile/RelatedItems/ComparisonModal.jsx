@@ -51,7 +51,7 @@ const ComparisonModal = (props) => {
           if (current && current.hasOwnProperty(feature)) {
             currentRow = current[feature];
           } else {
-            currentRow = 'n/a';
+            currentRow = '-';
           }
           if (compare && compare.hasOwnProperty(feature)) {
             compareRow = compare[feature];

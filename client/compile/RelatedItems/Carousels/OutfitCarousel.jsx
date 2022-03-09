@@ -1,7 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import OutfitCard from '../Cards/OutfitCard.jsx';
 import '../relatedItems.scss';
+
+const useWindowSize = () => {
+  const isWindow = typeof window === 'object';
+  const [windowSize, setWindowSize] = useState (isWindow ? window.innerWidth : undefined);
+  useEffect(() => {
+    const setSize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    if (isWindow) {
+      window.addEventListener("resize", setSize);
+      return () => window.removeEventListener("resize", setSize);
+    }
+  }, [isWindow, setWindowSize]);
+  return windowSize;
+};
 
 const chunkArray = (array, chunkSize) => {
   let sets = [];
@@ -14,7 +29,7 @@ const chunkArray = (array, chunkSize) => {
 
 const OutfitCarousel = (props) => {
   let outfit_Ids = props.outfit_Ids;
-  let sets = chunkArray(outfit_Ids, Math.floor(window.innerWidth/400));
+  let sets = chunkArray(outfit_Ids, Math.floor(useWindowSize()/400));
   let numberOfSets = sets.length;
   let [current, setCurrent] = useState(0);
   const handleLeft = () => {return current === 0 ? setCurrent(numberOfSets - 1) : setCurrent(current - 1);};
