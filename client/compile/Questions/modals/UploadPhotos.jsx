@@ -24,11 +24,13 @@ class UploadPhotosModal extends React.Component {
               </div>
             </form>
           }
-          <div className="selected-photos">
-            {this.props.uploadedPhotos.map((photo) =>
-              <img className="answer-photos" key={photo} src={photo}></img>
-            )}
-          </div>
+          {this.props.uploadedPhotos &&
+            <div className="selected-photos">
+              {this.props.uploadedPhotos.map((photo) =>
+                <img className="answer-photos" key={photo} src={photo}></img>
+              )}
+            </div>
+          }
           {(this.props.photoCount > 0) &&
             <button className="submit-modal" onClick={this.props.close}>DONE</button>
           }

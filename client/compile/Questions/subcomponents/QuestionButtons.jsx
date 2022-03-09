@@ -46,7 +46,10 @@ class QuestionButtons extends React.Component {
       this.setState({
         showAddQuestionModal: false
       }, () => {
-        axios.post('/postData', request);
+        axios.post('/postData', request)
+          .catch((err) => {
+            console.log(err);
+          });
       });
     } else {
       let missingFields = '';
