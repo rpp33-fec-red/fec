@@ -1,16 +1,8 @@
-var config = {
-  'serverURL':'/',
-  "testURL":'http://54.210.93.182/:8080/'
-};
 import $ from 'jquery';
 class Model {
 
-  constructor(deploy) {
-    this.deploy = deploy;
-    this.url = config.serverURL;
-    if (!deploy) {
-      this.url = config.testURL;
-    }
+  constructor() {
+    this.url = '/';
     this.getData = this.getData.bind(this);
   }
 

@@ -75,7 +75,7 @@
 .compare-row {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
+    justify-content: space-between;
     // align-items: flex-start center;
     column-gap: 10rem;
     row-gap: 2rem;
@@ -119,8 +119,7 @@
 #compareButton {
     float: right;
     color: black;
-    background-color: white;
-    border: 1px solid black;
+    border: none;
 }
 
 .closeCompareModal {

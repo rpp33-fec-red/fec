@@ -9,7 +9,7 @@ import RatingsWidget from './RatingsWidget/RatingsWidget.js';
 import QuestionsWidget from './Questions/Questions.jsx';
 import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
 import Model from './model.js';
-var model = new Model(true);
+var model = new Model();
 import './style.scss';
 
 class Main extends React.Component {
