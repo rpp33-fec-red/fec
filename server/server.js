@@ -119,6 +119,8 @@ app.post('/upload', upload.single('photoUpload'), (req, res) => {
 const uploadReviews = multer();
 
 app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
+
+  // save photos to AWS S3
   const files = req.files;
   const s3Instance = new S3Client({
     region: 'us-east-1' ,
@@ -129,7 +131,6 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
   });
   let photos = [];
   for (const file in files) {
-    console.log(files);
     var params = {
       Key: files[file].originalname,
       Bucket: 'fec-project-rpp33',
@@ -141,19 +142,8 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
     const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
     photos.push(url);
   }
-  let reviewData = req.body;
-  reviewData.photos = photos;
-  let url = options.APIURL + '/reviews';
-  const config = {
-    method: 'POST',
-    url: url,
-    headers: {
-      'authorization':`${options.APIKEY}`
-    },
-    data: reviewData
-  };
 
-  // convert form data for API since form data sends values as string
+  // convert form data for API as form data sends values as string
   if (reviewData.recommend === 'true') {
     reviewData.recommend = true;
   } else {
@@ -166,6 +156,21 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
     reviewData.characteristics[key.substring(1, key.length - 1)] = parseInt(reviewData.characteristics[key]);
     delete reviewData.characteristics[key];
   }
+
+
+  let reviewData = req.body;
+  reviewData.photos = photos;
+  let url = options.APIURL + '/reviews';
+  const config = {
+    method: 'POST',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    },
+    data: reviewData
+  };
+
+
   axios(config)
     .then(() => {
       console.log('Status 201 CREATED');
