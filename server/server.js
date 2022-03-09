@@ -1,7 +1,9 @@
 require('dotenv').config();
+var aws = require('aws-sdk');
 var express = require('express');
 var app = express();
 const multer = require('multer');
+var multerS3 = require('multer-s3');
 var port = 8080;
 var path = require('path');
 var config = require('../config');
@@ -109,7 +111,18 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage: storage });
+var s3 = new aws.S3();
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'fec-project-rpp33',
+    key: function(req, file, callback) {
+      callback(null, Dat.now() + '.png');
+    }
+
+  })
+});
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
   res.send(req.file.path);

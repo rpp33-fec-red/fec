@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import PropTypes from 'prop-types';
 import Question from './Question.jsx';
 

@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import axios from 'axios';
 import PropTypes from 'prop-types';
 

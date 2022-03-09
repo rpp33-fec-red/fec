@@ -4,7 +4,6 @@
 
 /* eslint-disable no-undef */
 
-import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import {render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
