@@ -136,6 +136,7 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
       Body: files[file].buffer
     };
     const command = new PutObjectCommand(params);
+    // eslint-disable-next-line no-unused-vars
     const fileUploadResponse = await s3Instance.send(command);
     const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
     photos.push(url);
@@ -165,7 +166,6 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
     reviewData.characteristics[key.substring(1, key.length - 1)] = parseInt(reviewData.characteristics[key]);
     delete reviewData.characteristics[key];
   }
-  console.log(reviewData)
   axios(config)
     .then(() => {
       console.log('Status 201 CREATED');
