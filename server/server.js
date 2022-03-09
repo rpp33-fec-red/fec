@@ -2,7 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 const multer = require('multer');
-var port = 8080;
+var port = 3000;
 var path = require('path');
 var config = require('../config');
 var options = new config(false);

@@ -60,7 +60,7 @@ class OverviewModel extends React.Component {
     });
   }
   clickImage(index){
-    this.setState({image:this.state.thumbArray[index].url});
+    this.setState({image:this.state.thumbArray[index].url,ThumbnailIndex:index});
   }
   moveUp(){
     var el = this.state.thumbArray[0];
@@ -90,7 +90,7 @@ class OverviewModel extends React.Component {
 
   changeStyle(index){
     this.setState({thumbArray:this.state.product.styles[index].photos});
-    this.setState({image:this.state.product.styles[index].photos[0].url});
+    this.setState({image:this.state.product.styles[index].photos[this.state.ThumbnailIndex].url});
 
   }
 

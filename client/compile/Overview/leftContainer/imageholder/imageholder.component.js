@@ -41,9 +41,16 @@ class ImageHolder extends React.Component{
     var that = this;
     var array = [];
     this.props.thumbArray.map(function(photo,index){
-      array.push(<div className="box " key={index}>
+      if (that.props.ThumbnailIndex === index){
+        array.push(<div className="box " style={{border:'2px solid red'}} key={index}>
         <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
       </div>);
+      } else {
+        array.push(<div className="box " key={index}>
+        <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
+      </div>);
+      }
+
     });
     return (<React.Fragment>
       <div className="box thumbup" onClick={this.props.moveUp} key={0}> <svg  style={{transform:'rotate(180deg)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
