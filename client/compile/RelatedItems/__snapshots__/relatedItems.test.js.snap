@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="relatedProducts"
+>
+  <br />
+  <h2>
+    Related Products
+  </h2>
+  <div />
+  <div
+    className="relatedProductCarouselContainer"
+  >
+    <div
+      className="productCarousel"
+    />
+  </div>
+  <br />
+  <h2>
+    Your Outfit
+  </h2>
+  <div
+    className="outfitCarouselContainer"
+  >
+    <div
+      className="productCarousel"
+    >
+      <div
+        className="productCard"
+      >
+        <button
+          id="addButton"
+          onClick={[Function]}
+          varian="outline-primary"
+        >
+           + 
+        </button>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+`;
