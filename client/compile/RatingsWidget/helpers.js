@@ -68,37 +68,6 @@ const validateFields = (formData, applicableCharacteristics, rating, files) => {
 
 };
 
-const formatReviewData = (fields, applicableCharacteristics, starRating, product_id) => {
-
-  // Converts characteristic rating details into format that works with the API ("rating_id": rating - ex: {"14": 5, "15": 5 //...})
-  let reviewCharRating = {};
-  for (var characteristic in applicableCharacteristics) {
-    const characteristicRating_id = applicableCharacteristics[characteristic].id;
-    const characteristicRating = event.target.elements[characteristic].value;
-    reviewCharRating[characteristicRating_id] = parseInt(characteristicRating);
-  }
-
-  const recommend = fields.recommend.value === 'true' ? true : false;
-  const summary = fields.summary.value;
-  const body = fields.body.value;
-  const name = fields.nickname.value;
-  const email = fields.email.value;
-
-  const reviewData = {
-    product_id: product_id,
-    rating: starRating,
-    summary: summary,
-    body: body,
-    recommend: recommend,
-    name: name,
-    email: email,
-    photos: [''],
-    characteristics: reviewCharRating
-  };
-
-  return reviewData;
-};
-
 const getCharacteristicsDescriptions = (characteristic) => {
   let valueDescriptions;
   switch(characteristic){
@@ -184,4 +153,4 @@ const calculateRatingMetrics = (ratings) => {
   return ratingsMetrics;
 };
 
-export {validateFields, formatReviewData, getCharacteristicsDescriptions, calculateRatingMetrics};
+export {validateFields, getCharacteristicsDescriptions, calculateRatingMetrics};

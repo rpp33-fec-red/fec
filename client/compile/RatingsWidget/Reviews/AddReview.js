@@ -47,22 +47,31 @@ function AddReview (props) {
 
   const submitReview = (event) => {
     event.preventDefault();
+
     let formContent = document.getElementById('add-review');
     const formData = new FormData (formContent);
     const files = event.target.photos.files;
     const applicableCharacteristics = props.reviewsCharacteristics;
+
     submissionMessage = validateFields(formData, applicableCharacteristics, starRating, files);
     if (submissionMessage === 'Your review has been submitted.') {
+      // re-formatting review characteristic data for the API
+      for (const key in applicableCharacteristics) {
+        const characteristicData = applicableCharacteristics[key];
+        if (formData.has(characteristicData.id)) {
+          formData.delete(characteristicData.id);
+          formData.append(`characteristics['${characteristicData.id}']`, characteristicData.value);
+        }
+      }
       formData.append('product_id', props.product_id);
       formData.append('rating', starRating);
+
       const photos = [];
       for (var i = 0; i < files.length; i++) {
         photos.push(files[i]);
       }
       formData.append('photos', photos);
-      for (const [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
+
       axios.post('/reviews', formData
       ).then(() => {
         event.target.reset();
@@ -130,8 +139,8 @@ function AddReview (props) {
           </div>
 
           <div>
-            <label htmlFor="nickname">Nickname: </label>
-            <input name="nickname" type="text" maxLength="60"/>
+            <label htmlFor="name">Nickname: </label>
+            <input name="name" type="text" maxLength="60"/>
             <p>For privacy reasons, do not use your full name or email address</p>
           </div>
 

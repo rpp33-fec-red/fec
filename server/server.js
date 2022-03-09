@@ -140,47 +140,58 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
     const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
     photos.push(url);
   }
-  console.log(photos);
-  res.send();
-//   let reviewData = req.body;
-//   console.log('here is the review data', req.files);
-//   let url = options.APIURL + '/reviews';
-//   const config = {
-//     method: 'POST',
-//     url: url,
-//     headers: {
-//       'authorization':`${options.APIKEY}`
-//     },
-//     data: reviewData
-//   };
-//   // axios(config)
-//   //   .then(() => {
-//   //     console.log('Status 201 CREATED');
-//   //     res.sendStatus(201);
-//   //   }).catch((error) => {
-//   //     console.log('Error recieved when adding review:', error.response);
-//   //   });
-//   res.send();
+  let reviewData = req.body;
+  reviewData.photos = photos;
+  let url = options.APIURL + '/reviews';
+  const config = {
+    method: 'POST',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    },
+    data: reviewData
+  };
+
+  // convert form data for API since form data sends values as string
+  if (reviewData.recommend === 'true') {
+    reviewData.recommend = true;
+  } else {
+    reviewData.recommend = false;
+  }
+
+  reviewData.rating = parseInt(reviewData.rating);
+  reviewData.product_id = parseInt(reviewData.product_id);
+  for (const key in reviewData.characteristics) {
+    reviewData.characteristics[key.substring(1, key.length - 1)] = parseInt(reviewData.characteristics[key]);
+    delete reviewData.characteristics[key];
+  }
+  console.log(reviewData)
+  axios(config)
+    .then(() => {
+      console.log('Status 201 CREATED');
+      res.sendStatus(201);
+    }).catch((error) => {
+      console.log('Error recieved when adding review:', error.response);
+    });
 });
 
-// app.put('/reviews', (req, res) => {
-//   let url = options.APIURL + `/reviews/${req.body.review_id}/helpful`;
-//   const config = {
-//     method: 'PUT',
-//     url: url,
-//     headers: {
-//       'authorization':`${options.APIKEY}`
-//     }
-//   };
-//   axios(config)
-//     .then(() => {
-//       console.log('Status: 204 NO CONTENT');
-//       res.sendStatus(204);
-//     }).catch((error) => {
-//       console.log('Error recieved when voting helpfulness:', error.response);
-//     });
-
-// });
+app.put('/reviews', (req, res) => {
+  let url = options.APIURL + `/reviews/${req.body.review_id}/helpful`;
+  const config = {
+    method: 'PUT',
+    url: url,
+    headers: {
+      'authorization':`${options.APIKEY}`
+    }
+  };
+  axios(config)
+    .then(() => {
+      console.log('Status: 204 NO CONTENT');
+      res.sendStatus(204);
+    }).catch((error) => {
+      console.log('Error recieved when voting helpfulness:', error.response);
+    });
+});
 
 app.listen(port,function(){
   console.log('listening on ',port);
