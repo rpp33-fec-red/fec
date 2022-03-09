@@ -104,13 +104,6 @@ app.put('/putData', (req, res) => {
     });
 });
 
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, '../client/compile/Questions/photos'),
-  filename: function(req, file, callback) {
-    callback(null, Date.now() + '.png');
-  }
-});
-
 var s3 = new aws.S3();
 
 const upload = multer({
@@ -118,7 +111,7 @@ const upload = multer({
     s3: s3,
     bucket: 'fec-project-rpp33',
     key: function(req, file, callback) {
-      callback(null, Dat.now() + '.png');
+      callback(null, Date.now() + '.png');
     }
 
   })
