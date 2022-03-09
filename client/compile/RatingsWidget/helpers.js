@@ -54,7 +54,7 @@ const validateFields = (formData, applicableCharacteristics, rating, files) => {
     addToErrorMessage('rating');
   }
 
-  // image count validatation [in-progress]
+  // image count validatation
   if (files.length > 5) {
     addToErrorMessage('5 or less photos');
   }
