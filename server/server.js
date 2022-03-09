@@ -142,7 +142,7 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
     const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
     photos.push(url);
   }
-
+  let reviewData = req.body;
   // convert form data for API as form data sends values as string
   if (reviewData.recommend === 'true') {
     reviewData.recommend = true;
@@ -158,7 +158,6 @@ app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
   }
 
 
-  let reviewData = req.body;
   reviewData.photos = photos;
   let url = options.APIURL + '/reviews';
   const config = {
