@@ -27,18 +27,23 @@ The Related Product presents the users with a set of products that are similar t
 
 This section shows a list of product cards that sit on a horizontally scrolling carousel. The amount of cards showed depends on the current screen width. If there is more cards to show, right arrow will appear to let user click on it. When reaching the end of the list, left arrow will appear to let user going back to the previous set. 
 
+![products-carousel](https://user-images.githubusercontent.com/88979402/157744146-2a1eace6-4ba9-4b8c-95e1-7e8edc680a18.gif)
 
 
 Each product card displays the essential information for a single product such as category, name, price, photo and ratings. The card is clickable. Clicking the card will navigate to the detail page for that product. Consequently, a new set of products relating to the clicked product will now be displayed. 
 
+![products click](https://user-images.githubusercontent.com/88979402/157744177-c32a0ab7-19ea-4a77-9f2b-7beeecda76ee.gif)
+
 
 Each product card has a star icon in the upper righthand corner, that allows user to compare the current product with the clicked related product. A modal will pop up and display a table with the features line up for both products. 
 
-
+![compare modal](https://user-images.githubusercontent.com/88979402/157744208-22dbc2b8-c5d8-4b2e-826f-6046f0c87e97.gif)
 
 Your Outfit provides users a way to select and group products together as an outfit. This list has the same format as the related products section. If users want to add the current product to their outfit, they can select the "+" button. To remove an outfit item, users can simply click the X on the outfit card. Product can only be add to Outfit list once. 
 
 Each customer will have their own outfit list. The list will remain the same regardless of which product detail page they are viewing. The list is also persistent, allowing user to exit and return to the same list at later time. 
+
+![outfit](https://user-images.githubusercontent.com/88979402/157744240-4f56a882-276c-4e04-9c85-c179db11dda0.gif)
 
 
 ### Questions & Answers
