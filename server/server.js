@@ -109,7 +109,7 @@ var s3 = new aws.S3();
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'fec-project-rpp33',
+    bucket: 'fec33red',
     key: function(req, file, callback) {
       callback(null, Date.now() + '.png');
     }
@@ -118,7 +118,8 @@ const upload = multer({
 });
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
-  res.send(req.file.path);
+  console.log(req.file);
+  res.send('s3://fec33red/answerPhotos/' + req.file.filename);
 });
 
 app.post('/reviews', (req, res) => {
