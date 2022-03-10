@@ -6,7 +6,7 @@ function RatingsProductBreakdownBar (props) {
   const valueDescriptions = getCharacteristicsDescriptions(props.characteristic);
   return (
     <div className="ratings-product-breakdown-bar">
-      <p>{props.characteristic}</p>
+      <p id="characteristic-title">{props.characteristic}</p>
       <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" style={{"fill": "rgb(235,235,235)", "pointerEvents": "none" }}>
         <rect width="100%" height="3"/>
         <polygon points="0,0 5,0 2.5,5" transform={`translate(${props.value * 20}, 0)`} style={{"fill": "black", "pointerEvents": "none", "zIndex": "1"}} />

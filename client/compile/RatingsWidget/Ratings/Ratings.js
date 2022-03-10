@@ -18,7 +18,7 @@ function Ratings (props) {
         averageRating={averageRating}
         recommendedPercentage={props.recommendedPercentage}/>
       <RatingsBreakdown ratingsPercentage={ratingsPercentage}
-        ratings={props.reviewsMetadata.ratings}
+        ratings={props.ratingsCount}
         updateRatingFilter={props.updateRatingFilter}
         filteredBy={props.filteredBy}
         removeRatingFilter={props.removeRatingFilter}/>
@@ -34,7 +34,8 @@ Ratings.propTypes = {
   recommendedPercentage: PropTypes.any,
   updateRatingFilter: PropTypes.any,
   filteredBy: PropTypes.any,
-  removeRatingFilter: PropTypes.any
+  removeRatingFilter: PropTypes.any,
+  ratingsCount: PropTypes.any
 };
 
 export default Ratings;

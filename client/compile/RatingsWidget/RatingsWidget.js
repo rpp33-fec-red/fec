@@ -13,7 +13,8 @@ class RatingsWidget extends React.Component {
       reviews: [],
       reviewsMetadata: {},
       recommendPercentage: 0,
-      ratingsMetrics: {}
+      ratingsMetrics: {},
+      ratingsCount: {}
     };
     this.getReviews = this.getReviews.bind(this);
     this.updateSorting = this.updateSorting.bind(this);
@@ -34,8 +35,18 @@ class RatingsWidget extends React.Component {
     const count = 50;
     this.props.getReviews([`reviews?product_id=${this.props.product_id}%26sort=${this.state.sortedBy}%26count=${count}`, ``, ''], function(data) {
       if (data.results){
+        const results = data.results.results;
+        let ratingsCount = {};
+        for (let i = 0; i < results.length; i++) {
+          if (!ratingsCount[results[i].rating]) {
+            ratingsCount[results[i].rating] = 1;
+          } else {
+            ratingsCount[results[i].rating]++;
+          }
+        }
         that.setState({
-          reviews: data.results.results
+          reviews: data.results.results,
+          ratingsCount: ratingsCount
         });
       }
     });
@@ -109,7 +120,8 @@ class RatingsWidget extends React.Component {
           recommendedPercentage={this.state.recommendedPercentage}
           updateRatingFilter={this.updateRatingFilter}
           filteredBy={this.state.filteredBy}
-          removeRatingFilter={this.removeRatingFilter}/>
+          removeRatingFilter={this.removeRatingFilter}
+          ratingsCount={this.state.ratingsCount}/>
         <Reviews
           product_id={this.props.product_id}
           reviews={reviews}
