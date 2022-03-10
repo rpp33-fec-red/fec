@@ -1,10 +1,10 @@
 # RED ATELIER 
 
 ## Table of Contents
-- [Overview] (#overview)
-- [Description] (#description)
-- [Getting Started] (#getting-started)
-- [File Structure] (#file-structure)
+- [Overview](#overview)
+- [Description](#description)
+- [Getting Started](#getting-started)
+- [File Structure](#file-structure)
 
 ## Overview
 Red Atelier is a front end redesign of an retail application, built with React. 
@@ -12,8 +12,8 @@ Red Atelier is a front end redesign of an retail application, built with React.
 ## Description
 Red Atelier 
 
-- [Product Overview] (#product-overview)
-- [Related Products & My Outfit] (#related-products)
+- [Product Overview](#product-overview)
+- [Related Products & My Outfit](#related-products-&-your-outfit)
 - [Questions & Answers] (#questions-&-answers)
 - [Ratings & Reviews] (#ratings-&-reviews)
 
