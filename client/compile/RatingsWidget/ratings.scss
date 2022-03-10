@@ -7,15 +7,17 @@
 
   .reviews {
     flex: 1;
-
+    margin-left: 10px;
     .reviews-list {
+      display: flex;
       max-height: 80vh;
       overflow: auto;
+      align-items: align-items;
+      flex-direction: column;
       .review-tile {
-
-        margin: 30px;
+        padding: 25px;
+        margin-left: 2%;
         border-bottom: 1px solid;
-
         .review-header {
           display: flex;
           flex-direction: row;
