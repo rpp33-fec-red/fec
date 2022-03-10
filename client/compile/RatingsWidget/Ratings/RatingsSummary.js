@@ -8,7 +8,7 @@ function RatingsSummary(props) {
   return (
     <div>
       <div className="ratings-summary">
-        <h1>{averageRating}</h1>
+        <div id="average-rating">{averageRating}</div>
         <AverageStarRating/>
       </div>
       <p id="percentage">{props.recommendedPercentage}% of the reviews recommend this product</p>

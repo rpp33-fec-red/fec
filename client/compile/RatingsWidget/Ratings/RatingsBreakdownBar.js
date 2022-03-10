@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function RatingsBreakdownBar (props) {
-  console.log(props.reviewNumber,props.value);
   return (
     <div className="ratings-breakdown-bar" onClick={props.updateRatingFilter} id={props.value}>
       <p className="star-label">{props.value + ' stars'}</p>

@@ -73,9 +73,6 @@
       align-items: end;
     }
 
-
-
-
     #add-review-thumbnail {
       max-width: 100px;
       height: auto;
@@ -111,9 +108,10 @@
 
     .ratings-summary {
       display: flex;
-      justify-content: space-between;
-      h1 {
+      align-self: flex-start;
+      #average-rating {
         font-size: 4vw;
+        font-weight: bold;
       }
     }
 
@@ -125,7 +123,6 @@
 
     #percentage {
       font-size: 1vw;
-      margin-top: -20px;
     }
   }
 
