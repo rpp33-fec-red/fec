@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function RatingsBreakdownBar (props) {
+  console.log(props.reviewNumber,props.value);
   return (
     <div className="ratings-breakdown-bar" onClick={props.updateRatingFilter} id={props.value}>
-      <div className="star-label">{props.value + ' stars'}</div>
+      <p className="star-label">{props.value + ' stars'}</p>
       <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" style={{"fill": "grey", "pointerEvents": "none" }}>
         <rect width="100%" height="5"/>
         <rect width={props.ratingPercentage || 0 + '%'} height="5" style={{"fill": "green", "zIndex": "1", "pointerEvents": "none" }} />
       </svg>
-      <div className="review-number-label">{props.reviewNumber}</div>
+      <div className="review-number-label">{props.reviewNumber || 0}</div>
     </div>
   );
 }

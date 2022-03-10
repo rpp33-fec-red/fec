@@ -5,7 +5,6 @@
   font-size:small;
   color: rgb(80,80, 80);
 
-
   .reviews {
     flex: 1;
 
@@ -15,7 +14,7 @@
       .review-tile {
 
         margin: 30px;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid;
 
         .review-header {
           display: flex;
@@ -43,7 +42,7 @@
           }
         }
         .review-response {
-          background-color:rgb(206, 206, 206);
+          background-color: rgb(206, 206, 206);
           padding: 10px;
 
           p,h4 {
@@ -74,9 +73,7 @@
       align-items: end;
     }
 
-    .star-label {
-      width: 20%;
-    }
+
 
 
     #add-review-thumbnail {
@@ -102,23 +99,32 @@
 
     .ratings-breakdown-bar {
       display: flex;
-      flex-direction: row;
-
+      justify-content: space-between;
+      * {
+        margin: 2px;
+      }
     }
 
     .ratings-breakdown-bar:hover {
-      background-color: red;
+      background-color: lightgray;
     }
 
     .ratings-summary {
       display: flex;
+      justify-content: space-between;
       h1 {
         font-size: 4vw;
       }
     }
 
+    .star-label {
+      font-size: 0.8vw;
+      width: 15%;
+      text-decoration: underline;
+    }
+
     #percentage {
-      font-size: 1.1vw;
+      font-size: 1vw;
       margin-top: -20px;
     }
   }
