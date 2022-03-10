@@ -43,7 +43,7 @@ Your Outfit provides users a way to select and group products together as an out
 
 Each customer will have their own outfit list. The list will remain the same regardless of which product detail page they are viewing. The list is also persistent, allowing user to exit and return to the same list at later time. 
 
-![outfit](https://user-images.githubusercontent.com/88979402/157744240-4f56a882-276c-4e04-9c85-c179db11dda0.gif)
+![outfit list](https://user-images.githubusercontent.com/88979402/157753274-7b09df39-971a-488c-959d-0f166b00d66d.gif)
 
 
 ### Questions & Answers
