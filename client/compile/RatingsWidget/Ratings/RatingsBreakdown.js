@@ -3,7 +3,7 @@ import RatingsBreakdownBar from './RatingsBreakdownBar.js';
 import PropTypes from 'prop-types';
 
 function RatingsBreakdown (props) {
-  const values = [1, 2, 3, 4, 5];
+  const values = [5, 4, 3, 2, 1];
   const ratingsPercentage = props.ratingsPercentage;
   const ratingsCount = props.ratings;
 

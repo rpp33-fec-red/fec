@@ -42,7 +42,7 @@
           }
         }
         .review-response {
-          background-color: rgb(206, 206, 206);
+          background-color: rgb(235,235,235);
           padding: 10px;
 
           p,h4 {
@@ -101,7 +101,7 @@
       display: flex;
       justify-content: space-between;
       * {
-        margin: 2px;
+        margin: 5px 2px;
       }
     }
 
@@ -118,8 +118,8 @@
     }
 
     .star-label {
-      font-size: 0.8vw;
-      width: 15%;
+      font-size: 1vw;
+      width: 21%;
       text-decoration: underline;
     }
 
