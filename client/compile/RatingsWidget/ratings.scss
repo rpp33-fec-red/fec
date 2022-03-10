@@ -88,6 +88,9 @@
   .ratings {
     width: 25%;
 
+    h4 {
+      font-weight: normal;
+    }
     .rating-labels {
       display: flex;
       justify-content: space-between;
