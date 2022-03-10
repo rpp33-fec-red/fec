@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import { render, screen, fireEvent, getByRole } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-environment-jsdom';
 import TestRenderer from 'react-test-renderer';
