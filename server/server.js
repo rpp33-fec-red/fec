@@ -119,6 +119,7 @@ const upload = multer({
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
   console.log(req.file);
+  console.log('s3://fec33red/answerPhotos/' + req.file.key);
   res.send('s3://fec33red/answerPhotos/' + req.file.key);
 });
 
