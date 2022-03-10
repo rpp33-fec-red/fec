@@ -111,16 +111,14 @@ const upload = multer({
     s3: s3,
     bucket: 'fec33red',
     key: function(req, file, callback) {
-      callback(null, Date.now() + '.png');
+      callback(null, 'answerPhotos/' +Date.now() + '.png');
     }
 
   })
 });
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
-  console.log(req.file);
-  console.log('s3://fec33red/answerPhotos/' + req.file.key);
-  res.send('s3://fec33red/answerPhotos/' + req.file.key);
+  res.send('https://fec33red.s3.amazonaws.com/' + req.file.key);
 });
 
 app.post('/reviews', (req, res) => {
