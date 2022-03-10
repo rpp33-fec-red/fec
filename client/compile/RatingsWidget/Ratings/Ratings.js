@@ -12,7 +12,7 @@ function Ratings (props) {
 
   return (
     <div className="ratings">
-      <h4>Ratings &#38; Reviews</h4>
+      <h4>RATINGS &#38; REVIEWS</h4>
       <RatingsSummary
         product_id={props.product_id}
         averageRating={averageRating}

@@ -6,10 +6,12 @@ function RatingsSummary(props) {
   const averageRating = props.averageRating;
   const AverageStarRating = createStarComponent(averageRating);
   return (
-    <div className="ratings-summary">
-      <h2>{averageRating}</h2>
-      <AverageStarRating/>
-      <p>{props.recommendedPercentage}% of the reviews recommend this product</p>
+    <div>
+      <div className="ratings-summary">
+        <h1>{averageRating}</h1>
+        <AverageStarRating/>
+      </div>
+      <p id="percentage">{props.recommendedPercentage}% of the reviews recommend this product</p>
     </div>
   );
 }
