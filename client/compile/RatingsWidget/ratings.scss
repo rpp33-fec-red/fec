@@ -88,10 +88,20 @@
     .rating-labels {
       display: flex;
       justify-content: space-between;
+      p {
+        font-size: 0.75vw;
+      }
     }
 
     .ratings-product-breakdown-bar {
-      margin: 10px;
+      margin-top: 14px;
+      * {
+        margin: 1px;
+      }
+
+      #characteristic-title {
+        font-size: 1vw;
+      }
     }
 
     .ratings-breakdown-bar {
@@ -104,6 +114,7 @@
 
     .ratings-breakdown-bar:hover {
       background-color: lightgray;
+
     }
 
     .ratings-summary {
