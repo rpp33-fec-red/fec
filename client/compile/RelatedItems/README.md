@@ -14,8 +14,8 @@ Red Atelier
 
 - [Product Overview](#product-overview)
 - [Related Products & My Outfit](#related-products-&-your-outfit)
-- [Questions & Answers] (#questions-&-answers)
-- [Ratings & Reviews] (#ratings-&-reviews)
+- [Questions & Answers](#questions-&-answers)
+- [Ratings & Reviews](#ratings-&-reviews)
 
 ### Product Overview
 _Developed by Grant Mitchell_
