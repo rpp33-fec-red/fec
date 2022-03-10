@@ -118,7 +118,7 @@ const upload = multer({
 });
 
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
-  res.send('https://fec33red.s3.amazonaws.com/' + req.file.key);
+  res.send(req.file.key);
 });
 
 app.post('/reviews', (req, res) => {

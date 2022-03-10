@@ -38,7 +38,7 @@ class AddAnswerModal extends React.Component {
     let photos = this.state.uploadedPhotos;
     axios.post('/upload', formData)
       .then((response) => {
-        photos.push(response.data);
+        photos.push('https://fec33red.s3.amazonaws.com/' + encodeURIComponent(response.data));
         this.setState({
           photoCount: this.state.photoCount + 1,
           uploadedPhotos: photos
