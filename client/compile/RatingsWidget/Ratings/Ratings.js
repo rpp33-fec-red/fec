@@ -6,7 +6,7 @@ import {calculateRatingMetrics} from '../helpers.js';
 import PropTypes from 'prop-types';
 
 function Ratings (props) {
-  const ratingsMetrics = calculateRatingMetrics(props.reviewsMetadata.ratings);
+  const ratingsMetrics = calculateRatingMetrics(props.ratingsCount);
   const averageRating = ratingsMetrics.averageRating;
   const ratingsPercentage = ratingsMetrics.ratingsPercentage;
 
