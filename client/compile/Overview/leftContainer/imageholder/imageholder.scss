@@ -1,28 +1,34 @@
-.iframeclass{
-  width: 100vw;
-  height: 900px;
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
+
+.show-thumbmodal{
+  transform: rotate(270deg);
 }
+.hide-thumbmodal{
+  transform: rotate(0deg);
+}
+.thumbs{
+  max-height: 437px;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .image-holder{
 
-  width:90%;
-   height: 600px;
-  //  background:aqua;
-   margin:0 auto;
-   top:50px;
-   position:relative;
-   min-width:400px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  top: 50px;
+  position: relative;
+  min-width: 400px;
   display: flex;
   align-items: center;
-   justify-content: center;
-   align-items: flex-start;
-   overflow: visible;
-   img{
-     max-height:100%;
-     width:auto;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+   .img{
+     width: inherit;
+     height: 100%;
+     cursor: zoom-in;
 
    }
    .hoverModal{
@@ -34,9 +40,20 @@
    }
    .bigImage{
      position: absolute;
+
      right:-50px;
-     img{
+     .img{
       z-index: 2002;
+      cursor: zoom-in;
      }
    }
+   .img{
+     position: relative;
+   .expand-arrow{
+    right: 30px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+   }
+  }
 }
