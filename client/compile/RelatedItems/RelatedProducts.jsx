@@ -1,9 +1,9 @@
-import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
 import ProductCarousel from './Carousels/ProductCarousel.jsx';
 import OutfitCarousel from './Carousels/OutfitCarousel.jsx';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line no-undef
 class RelatedProducts extends React.Component {
   constructor (props) {
     super (props);

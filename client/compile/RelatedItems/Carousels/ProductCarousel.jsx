@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+/* eslint-disable no-undef */
+import {useState, useEffect} from 'react';
 import ProductCard from '../Cards/ProductCard.jsx';
 import PropTypes from 'prop-types';
 import '../relatedItems.scss';

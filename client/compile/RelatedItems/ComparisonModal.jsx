@@ -1,7 +1,5 @@
-
-   
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-prototype-builtins */
-import React from 'react';
 import './relatedItems.scss';
 import PropTypes from 'prop-types';
 

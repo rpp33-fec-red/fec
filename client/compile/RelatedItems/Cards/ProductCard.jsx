@@ -1,4 +1,3 @@
-import React from 'react';
 import StarsComponent from '../../showStars';
 import '../relatedItems.scss';
 import PropTypes from 'prop-types';
