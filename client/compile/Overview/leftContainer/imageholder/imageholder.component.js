@@ -8,12 +8,13 @@ class ImageHolder extends React.Component{
     super(props);
     this.state= {
       expandThumbModal:false,
-      expandImageModal:false,
+      expandImage:false,
+      zoomFeature: {size: "contain", position: "center center"}
     };
     this.expand = this.expand.bind(this);
     this.ThumbModal = this.ThumbModal.bind(this);
-    this.mainImageClick = this.mainImageClick.bind(this);
-    this.ModalBigImage = this.ModalBigImage.bind(this);
+    this.expandImage = this.expandImage.bind(this);
+    this.backgroundPosition = this.backgroundPosition.bind(this)
   }
   static propTypes = {
     ThumbnailIndex: PropTypes.number,
@@ -22,18 +23,18 @@ class ImageHolder extends React.Component{
     thumbArray: PropTypes.any
   };
 
-  ModalBigImage(){
-    return (<img className="iframeclass" style={{top:"0px"}} src={this.state.image} /> );
-  }
+
 
   expand(){
     var newexpanded = !this.state.expandThumbModal;
     this.setState({expandThumbModal:newexpanded});
   }
 
-  mainImageClick(){
-    var that =  this;
-    this.setState({expandImageModal:!that.state.expandImageModal});
+
+  expandImage(){
+    this.setState({expandImage:!this.state.expandImage},function(){
+      this.props.expandImage(this.state.expandImage);
+    })
   }
 
 
@@ -43,12 +44,12 @@ class ImageHolder extends React.Component{
     this.props.thumbArray.map(function(photo,index){
       if (that.props.ThumbnailIndex === index){
         array.push(<div className="box " style={{border:'2px solid red'}} key={index}>
-        <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
-      </div>);
+          <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
+        </div>);
       } else {
         array.push(<div className="box " key={index}>
-        <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
-      </div>);
+          <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
+        </div>);
       }
 
     });
@@ -59,22 +60,45 @@ class ImageHolder extends React.Component{
     </React.Fragment>);
 
   }
+
+
+  backgroundPosition(e){
+    // background-size: 200%;
+    // background-repeat: no-repeat;
+    // background-position: 1px 1px;
+    // screenX: 440
+    // screenY: 308
+    console.log(e);
+    //     offsetHeight: 600
+    // offsetLeft: 322
+    // offsetParent: div.image-holder
+    // offsetTop: 0
+    console.log(e.screenX,e.screenY);
+    var Left =  parseInt(e.target.offsetLeft) - parseInt(screenX) ;
+    var Top =  parseInt(e.target.offsetHeight) - parseInt(screenY);
+    console.log('Left',Left,'Top',Top);
+    console.log(Left.toString()+"px "+ Top.toString()+"px");
+    if (this.state.expandImage){
+      this.setState({zoomFeature:{size:"cover", position: Left.toString()+"px "+ Top.toString()+"px"}});
+    }
+  }
+
   render(){
     var that = this;
+
     return (<React.Fragment>
       <div className="image-holder" >
         <div className="mainImage-ct" >
-          <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
-          <div className="img"  style={{backgroundImage:"url("+this.props.image+")", backgroundPosition:"center",backgroundSize:"contain",backgroundRepeat:"no-repeat"}}/>
-          <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          <svg style={{ transform: 'rotate(90deg)'}} onClick={that.props.moveUp} xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 0 24 24" width="44px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+
+          <div  onMouseMove={that.backgroundPosition} className="img"  style={{backgroundImage:"url("+this.props.image+")", backgroundPosition:this.state.zoomFeature.position,backgroundSize:this.state.zoomFeature.size,backgroundRepeat:"no-repeat",maxWidth:"90%"}}><svg  onClick={that.expandImage} className="expand-arrow" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><polygon points="21,11 21,3 13,3 16.29,6.29 6.29,16.29 3,13 3,21 11,21 7.71,17.71 17.71,7.71"/></svg></div>
+          <svg  style={{ transform: 'rotate(270deg)'}}  onClick={that.props.moveDown}  xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 0 24 24" width="44px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
         </div>
-        <div className="hoverModal" onClick={this.mainImageClick}   style={{background:"transparent", position:"absolute"}}></div>
         <div className="imageSelector" >
           <div className="box boxsvg" > <svg  onClick={this.expand} className={"arrow"+ (this.state.expanded ? 'show-thumbmodal' : 'hide-thumbmodal')} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
           { this.state.expandThumbModal ? <this.ThumbModal /> : null }
         </div>
       </div>
-      { this.state.expandImageModal ? <this.ModalBigImage /> : null  }
 
     </React.Fragment>);
   }

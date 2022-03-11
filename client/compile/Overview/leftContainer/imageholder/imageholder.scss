@@ -1,12 +1,4 @@
-.iframeclass{
-  width: 80vw;
-  height: 800px;
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  right: 0px;
-}
+
 .show-thumbmodal{
   transform: rotate(270deg);
 }
@@ -36,11 +28,11 @@
    .img{
      width: inherit;
      height: 100%;
+     cursor: zoom-in;
 
    }
    .hoverModal{
     background: transparent;
-    cursor:zoom-in;
     position: absolute;
     width: 90%;
     height: 100%;
@@ -48,9 +40,20 @@
    }
    .bigImage{
      position: absolute;
+
      right:-50px;
      .img{
       z-index: 2002;
+      cursor: zoom-in;
      }
    }
+   .img{
+     position: relative;
+   .expand-arrow{
+    right: 30px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+   }
+  }
 }

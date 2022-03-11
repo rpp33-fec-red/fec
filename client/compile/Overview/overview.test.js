@@ -27,7 +27,7 @@ describe('Overview component should render',function(){
 describe('should have correct data',function() {
   var getData = function () {
     return model.getData;
-  };
+  }
   var mainTree = renderer.create(<Overview getProducts={getData}/>);
   var instance =mainTree.getInstance();
   console.log(instance)

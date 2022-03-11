@@ -10,18 +10,10 @@ class StyleSelector extends React.Component {
   constructor(props){
     super(props);
     this.changeStyle = this.changeStyle.bind(this);
-    this.state = {
-      styleIndex:this.props.styleIndex
-    }
   }
 
-
-
-
   changeStyle(index){
-    console.log('index',index);
     this.props.changeStyle(index);
-    this.setState({styleIndex:index});
   }
 
   render(){
@@ -33,7 +25,6 @@ class StyleSelector extends React.Component {
             return <div className="style" style={{border:"2px solid red", borderRadius:"55px"}} onClick={function(){that.changeStyle(index);}} key={style.style_id}> <Checkmark ></Checkmark><img src={style.photos[0].thumbnail_url}></img></div>;
           } else {
             return <div className="style" style={{border:"2px solid transparent"}} onClick={function(){that.changeStyle(index);}} key={style.style_id}> <img src={style.photos[0].thumbnail_url}></img></div>;
-
           }
         })
         }

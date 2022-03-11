@@ -23,8 +23,8 @@ class Overview extends OverviewModel {
     return (
       <React.Fragment>
         <div className="overview" style={{ backgroundImage:'url(./beach.jpeg)' }}>
-          <LeftContainer clickImage={this.clickImage} moveUp={this.moveUp} moveDown={this.moveDown} image={ this.state.image} ThumbnailIndex={this.state.ThumbnailIndex} thumbArray={this.state.thumbArray} imageClick={this.imageClick}/>
-          <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styles={this.state.product.styles} productInfo={this.state.product.styles[0]}  />
+          <LeftContainer  clickImage={this.clickImage} moveUp={this.moveUp} moveDown={this.moveDown} image={ this.state.image} ThumbnailIndex={this.state.ThumbnailIndex} thumbArray={this.state.thumbArray} expandImage={this.expandImage}/>
+          <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styleIndex={this.state.styleIndex} styles={this.state.styles} productInfo={this.state.product.styles[this.state.styleIndex]}  />
         </div>
         <p>{this.state.product.description}</p>
         <ul>

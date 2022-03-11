@@ -58,8 +58,6 @@ class RightContainer extends React.Component{
 
       </div>);
 
-
-
     }
 
 
@@ -96,7 +94,7 @@ class RightContainer extends React.Component{
         <span className="price">$ {this.props.productInfo.original_price}</span>
       </div>
       <div className="style-selectors">
-        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} > </StyleSelector>
+        <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} styleIndex={this.props.styleIndex} > </StyleSelector>
       </div>
       <div className="option-selectors">
         <div className="selector">
