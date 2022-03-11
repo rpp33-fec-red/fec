@@ -54,27 +54,26 @@ _Developed by Alysha Gilliard_
 
 The Ratings and Reviews widget allows users to view and add new reviews to the selected product.
 
-This widgets has the following features:
+This widget has the following features:
 
 * Reviews List:
 
-This feature allows users to view all reviews for the selected product. The reviews ist is comprised of review tiles, which contain functionalities such as displaying review photo thumbnails, opening of modal window when review photos are clicked, stars that represent the product rating, and a voting feature for users to vote if they found a review helpful.
+The reviews list allows users to view all reviews for the selected product. The reviews list is comprised of individual review tiles that include components such as review photo thumbnails, modal window when review photos are clicked, stars that represent the product rating, and a voting feature for users to vote if they found a review helpful.
 ![Review List Demo](https://i.imgur.com/pKSST6y.gif)
 
 * Write new review:
 
-This feature allows users to submit new reviews for selected products. The user can rate the product and its characteristics, write about their reasoning for the rating and can optionally add up to 5 photos to their submission.
+This feature allows users to submit a new review for the selected product. The user can rate the product and its characteristics, write about their reasoning for the rating and can optionally add up to 5 photos to their submission.
 ![Add Review Demo](https://i.imgur.com/zundmvC.gif)
-
 
 * Sorting:
 
-Reviews can be sorted by relevancy, helpfulness or newest.
+The sorting feature allows reviews to be sorted by relevancy, helpfulness or newest.
 ![Sorting Demo](https://i.imgur.com/UhLBNCL.gif)
 
 * Rating Breakdown:
 
-The ratings breakdown displays the average rating for the product as well as the percentage of reviews where the reviewer recommended the product. Additionally, this feature includes bars that breaks down the rating distribution of the reviews. These bars also act as a filter where if a bar is clicked, the reviews will be filtered with only those ratings. A remove all filters link will also appear to remove all filters from the reviews.
+The ratings breakdown displays the average rating for the product as well as the percentage of reviews that recommended the product. This feature also includes bars that break down the distribution of the review ratings. These rating bars also act as a filter. If a rating bar is clicked, the reviews will be filtered with only those ratings. A "remove all filters" link will also appear when reviews list is filtered.
 ![Sorting Demo](https://i.imgur.com/6JnhWYD.gif)
 
 
