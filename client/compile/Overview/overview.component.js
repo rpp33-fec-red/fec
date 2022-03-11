@@ -5,6 +5,22 @@ import './overview.scss';
 import PropTypes from 'prop-types';
 import OverviewModel from './overview.model.js';
 import Features from './features.component.js';
+import $ from 'jquery';
+// import { PutObjectCommand, CreateBucketCommand } from "@aws-sdk/client-s3";
+
+// import { S3Client } from "@aws-sdk/client-s3";
+// // Set the AWS Region.
+// const REGION = "us-east-1"; //e.g. "us-east-1"
+// // Create an Amazon S3 service client object.
+// const s3Client = new S3Client({ region: REGION });
+
+// // var data =
+// // const params = {
+// //   Bucket: "fecbucket13", // The name of the bucket. For example, 'sample_bucket_101'.
+// //   Key: "beach.png", // The name of the object. For example, 'sample_upload.txt'.
+// //   Body: data, // The content of the object. For example, 'Hello world!".
+// // };
+
 
 
 class Overview extends OverviewModel {
@@ -17,12 +33,23 @@ class Overview extends OverviewModel {
   componentDidMount(){
     this.getReviews();
     this.getProductData();
+    $('<img/>').attr('src', './beach.avif').on('load', function(a) {
+      this.setState({backgroundImage:'./beach.avif'});
+
+      $(this).remove(); // prevent memory leaks as @benweet suggested
+    }).on("error",()=>{
+      this.setState({backgroundImage:'./beach.jpeg'});
+    });
+    console.log(this.state.backgroundImage);
   }
 
+
   Core(){
+    console.log(this.state.backgroundImage);
+
     return (
       <React.Fragment>
-        <div className="overview" style={{ backgroundImage:'url(./beach.jpeg)' }}>
+        <div className="overview" style={{ backgroundImage:'url('+this.state.backgroundImage+')'}}>
           <LeftContainer  clickImage={this.clickImage} moveUp={this.moveUp} moveDown={this.moveDown} image={ this.state.image} ThumbnailIndex={this.state.ThumbnailIndex} thumbArray={this.state.thumbArray} expandImage={this.expandImage}/>
           <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styleIndex={this.state.styleIndex} styles={this.state.styles} productInfo={this.state.product}  />
         </div>
@@ -32,6 +59,7 @@ class Overview extends OverviewModel {
         </ul>
       </React.Fragment>
     );
+
   }
   render(){
     return this.getComponent(this.Core);

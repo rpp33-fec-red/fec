@@ -2,6 +2,8 @@ import React from 'react';
 import './rightcontainer.scss';
 import StyleSelector from '../styleSelector.js';
 import PropTypes from 'prop-types';
+
+
 class RightContainer extends React.Component{
 
   static propTypes = {
