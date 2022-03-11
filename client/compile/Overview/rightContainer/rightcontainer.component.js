@@ -82,7 +82,7 @@ class RightContainer extends React.Component{
         <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars></ShowStars>readall reviews({this.props.reviews})</a></div>
         <span className="mediumText">Category:{this.props.productInfo.category}</span>
         <div className="title"> {this.props.productInfo.name}</div>
-        <span className="price">$ {this.props.productInfo.original_price}</span>
+        <span className="price">$ {that.props.styles[that.props.styleIndex].original_price}</span>
       </div>
       <div className="style-selectors">
         <StyleSelector changeStyle={this.props.changeStyle} showStyles={true} styles={this.props.styles} styleIndex={this.props.styleIndex} > </StyleSelector>
