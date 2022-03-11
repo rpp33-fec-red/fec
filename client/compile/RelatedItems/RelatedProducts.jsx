@@ -76,7 +76,7 @@ class RelatedProducts extends React.Component {
 
   handleAddToOutfit () {
     let currentOutfit = this.state.outfitIds.slice();
-    console.log('currentOutfit', currentOutfit);
+
     if (currentOutfit.indexOf(this.state.current.id) === -1 && this.state.current.id !== null) {
       this.setState({ outfitLoaded: false }, () => {
         currentOutfit.unshift(this.state.current.id);
