@@ -20,7 +20,6 @@ class LeftContainer extends React.Component{
 
   expandImage(boolean){
     this.setState({expandImage:boolean},function(){
-      console.log('expanding image',this.state);
     });
   }
 

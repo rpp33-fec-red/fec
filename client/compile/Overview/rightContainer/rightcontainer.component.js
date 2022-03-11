@@ -23,14 +23,12 @@ class RightContainer extends React.Component{
   }
 
   clickedReviews() {
-    // console.log('read all reviews clicked');
     window.scrollTo(0,2800)
   }
 
   clickSku(){
     var sku = this.data;
     this.setState({maxquantity:sku.quantity});
-    console.log(this.state);
   }
 
 
@@ -63,7 +61,6 @@ class RightContainer extends React.Component{
 
 
     var that = this;
-    // console.log('propsstyle',this.props);
     function clickQty(){
       that.setState({quantity:this.qty});
     }

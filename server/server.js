@@ -22,7 +22,6 @@ console.log(options.APIKEY);
 app.get('/getDatav2',function(req, res){
   function placeParams(params){
     var url = options.APIURL+params['path']+'?';
-    console.log(options.APIURL)
     Object.keys(params).forEach((queryparam,index)=>{
       if (queryparam !== 'path'){
         if (index >0){

@@ -23,20 +23,16 @@ class ImageHolder extends React.Component{
     thumbArray: PropTypes.any
   };
 
-
-
   expand(){
     var newexpanded = !this.state.expandThumbModal;
     this.setState({expandThumbModal:newexpanded});
   }
-
 
   expandImage(){
     this.setState({expandImage:!this.state.expandImage},function(){
       this.props.expandImage(this.state.expandImage);
     })
   }
-
 
   ThumbModal(){
     var that = this;
@@ -51,14 +47,12 @@ class ImageHolder extends React.Component{
           <img onClick={function(){that.props.clickImage(index);}} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
         </div>);
       }
-
     });
     return (<React.Fragment>
       <div className="box thumbup" onClick={this.props.moveUp} key={0}> <svg  style={{transform:'rotate(180deg)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
       <div className="thumbs">{array}</div>
       <div className="box thumbdown" onClick={this.props.moveDown} key={array.length+1}> <svg   xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
     </React.Fragment>);
-
   }
 
 
@@ -68,16 +62,13 @@ class ImageHolder extends React.Component{
     // background-position: 1px 1px;
     // screenX: 440
     // screenY: 308
-    console.log(e);
+    // console.log(e);
     //     offsetHeight: 600
     // offsetLeft: 322
     // offsetParent: div.image-holder
     // offsetTop: 0
-    console.log(e.screenX,e.screenY);
     var Left =  parseInt(e.target.offsetLeft) - parseInt(screenX) ;
     var Top =  parseInt(e.target.offsetHeight) - parseInt(screenY);
-    console.log('Left',Left,'Top',Top);
-    console.log(Left.toString()+"px "+ Top.toString()+"px");
     if (this.state.expandImage){
       this.setState({zoomFeature:{size:"cover", position: Left.toString()+"px "+ Top.toString()+"px"}});
     }
