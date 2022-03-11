@@ -111,6 +111,15 @@
     .recommend {
       margin-bottom: 10px;
     }
+
+    input[type=submit] {
+      all: unset;
+      font-size: 1vw;
+      border: solid 1px rgb(80,80, 80);
+      padding: 17px;
+      margin: 10px;
+      font-weight: bold;
+    }
   }
 
   .ratings {
@@ -188,6 +197,18 @@
     display: block;
     margin: auto;
     max-width: 60%
+  }
+
+  .form-content {
+    * {
+      margin: 3px;
+    }
+    .review-body {
+      width: 100%;
+    }
+    .review-summary {
+      width: 100%;
+    }
   }
 
 }
