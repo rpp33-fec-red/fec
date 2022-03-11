@@ -40,7 +40,6 @@ class RightContainer extends React.Component{
   }
 
   render (){
-    console.log(this.props.productInfo);
     var ratings =this.props.ratings;
     function ShowStars(){
       // var percent = parseInt(ratings/5 *100)*10;
