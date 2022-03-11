@@ -1,7 +1,9 @@
+/* eslint-disable react/react-in-jsx-scope */
 import StarsComponent from '../../showStars';
 import '../relatedItems.scss';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line no-undef
 class ProductCard extends React.Component {
   constructor (props) {
     super (props);

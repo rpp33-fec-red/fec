@@ -77,14 +77,27 @@
 .compare-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    // align-items: flex-start center;
-    column-gap: 10rem;
-    row-gap: 2rem;
     border-bottom: 1px solid #dcdcdc;
     font-size: medium;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
     padding-top: 0.5rem;
+}
+
+.compare-row :first-child {
+    position: absolute;
+    text-align: left;
+}
+
+.compare-row :nth-child(2) {
+    position: absolute;
+    left: 45%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.compare-row :nth-child(3) {
+    position: absolute;
+    right: 10%;
 }
 
 .display-block {
@@ -98,26 +111,11 @@
 .rowTitle {
     font-weight: bold;
     font-size: large;
-    padding-bottom: 0.5rem;
 }
 
-.feature {
-    position: relative;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.current-col {
-    position: relative;
-    text-align: left;
-}
-
-.compare-col {
-   position: relative;
-   margin-right: 4rem;
-   text-align: right;
-}
+// .title-row {
+//     background-color: #dcdcdc;
+// }
 
 #compareButton {
     float: right;

@@ -1,7 +1,9 @@
+/* eslint-disable react/react-in-jsx-scope */
 import PropTypes from 'prop-types';
 import StarsComponent from '../../showStars';
 import '../relatedItems.scss';
 
+// eslint-disable-next-line no-undef
 class OutfitCard extends React.Component {
   constructor (props) {
     super (props);

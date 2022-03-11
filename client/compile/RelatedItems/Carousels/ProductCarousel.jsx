@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-undef */
 import {useState, useEffect} from 'react';
 import ProductCard from '../Cards/ProductCard.jsx';

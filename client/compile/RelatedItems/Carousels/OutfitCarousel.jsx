@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import OutfitCard from '../Cards/OutfitCard.jsx';
