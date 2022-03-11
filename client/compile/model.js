@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+var config = {
+  'serverURL':'/',
+  "testURL":'/'
+};
+>>>>>>> f5cae723b5c5b24f82f6dc6946bedb9a4f91fa84
 import $ from 'jquery';
 class Model {
 

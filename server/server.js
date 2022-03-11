@@ -15,6 +15,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback
@@ -115,8 +116,49 @@ app.post('/upload', upload.single('photoUpload'), (req, res) => {
   res.send(req.file.path);
 });
 
-app.post('/reviews', (req, res) => {
+const uploadReviews = multer();
+
+app.post('/reviews', uploadReviews.array('photos', 5), async (req, res) => {
+
+  // save photos to AWS S3
+  const files = req.files;
+  const s3Instance = new S3Client({
+    region: 'us-east-1' ,
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+    }
+  });
+  let photos = [];
+  for (const file in files) {
+    var params = {
+      Key: files[file].originalname,
+      Bucket: 'fec-project-rpp33',
+      Body: files[file].buffer
+    };
+    const command = new PutObjectCommand(params);
+    // eslint-disable-next-line no-unused-vars
+    const fileUploadResponse = await s3Instance.send(command);
+    const url = `https://fec-project-rpp33.s3.amazonaws.com/${files[file].originalname}`;
+    photos.push(url);
+  }
   let reviewData = req.body;
+  // convert form data for API as form data sends values as string
+  if (reviewData.recommend === 'true') {
+    reviewData.recommend = true;
+  } else {
+    reviewData.recommend = false;
+  }
+
+  reviewData.rating = parseInt(reviewData.rating);
+  reviewData.product_id = parseInt(reviewData.product_id);
+  for (const key in reviewData.characteristics) {
+    reviewData.characteristics[key.substring(1, key.length - 1)] = parseInt(reviewData.characteristics[key]);
+    delete reviewData.characteristics[key];
+  }
+
+
+  reviewData.photos = photos;
   let url = options.APIURL + '/reviews';
   const config = {
     method: 'POST',
@@ -126,6 +168,8 @@ app.post('/reviews', (req, res) => {
     },
     data: reviewData
   };
+
+
   axios(config)
     .then(() => {
       console.log('Status 201 CREATED');
@@ -151,7 +195,6 @@ app.put('/reviews', (req, res) => {
     }).catch((error) => {
       console.log('Error recieved when voting helpfulness:', error.response);
     });
-
 });
 
 app.listen(port,function(){
