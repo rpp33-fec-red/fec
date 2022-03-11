@@ -88,7 +88,6 @@ class OverviewModel extends React.Component {
     var that = this;
     Get.getProductData(id, function(data) {
       that.setState({product:data.product,styles:data.product.styles, image:data.product.styles[0].photos[0].url,ThumbnailIndex:0,thumbArray:data.product.styles[0].photos,imageIndex:0,ratings:5},function(){
-        console.log('stateafrer product',that.state);
       });
       that.getReviews();
     });

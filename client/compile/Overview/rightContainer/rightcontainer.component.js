@@ -40,6 +40,7 @@ class RightContainer extends React.Component{
   }
 
   render (){
+    console.log(this.props.productInfo);
     var ratings =this.props.ratings;
     function ShowStars(){
       // var percent = parseInt(ratings/5 *100)*10;
@@ -60,8 +61,8 @@ class RightContainer extends React.Component{
 
     function returnSkus(){
       var arrayOfOptions=[<option key={0}>Select size</option>];
-      Object.keys(that.props.productInfo.skus).map((key,index)=>{
-        var sku = that.props.productInfo.skus[key];
+      Object.keys(that.props.styles[that.props.styleIndex].skus).map((key,index)=>{
+        var sku = that.props.styles[that.props.styleIndex].skus[key];
         if (index === 0){
           that.state.maxquantity=sku.quantity;
         }
@@ -79,7 +80,7 @@ class RightContainer extends React.Component{
     return (<div className="rightCt" >
       <div className="main-content">
         <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars></ShowStars>readall reviews({this.props.reviews})</a></div>
-        <span className="mediumText">Catagory:{this.props.productInfo.catagory}</span>
+        <span className="mediumText">Category:{this.props.productInfo.category}</span>
         <div className="title"> {this.props.productInfo.name}</div>
         <span className="price">$ {this.props.productInfo.original_price}</span>
       </div>
