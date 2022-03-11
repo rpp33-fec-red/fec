@@ -51,15 +51,26 @@ _Developed by Nick Gerrard_
 
 ### Ratings & Reviews
 _Developed by Alysha Gilliard_
+
 The Ratings and Reviews widget allows users to view and add new reviews to the selected product.
 
 This widgets has the following features:
 
-Write new review
-Reviews List
-Sorting
-Rating Breakdown
-Product Breakdown
+* Reviews List
+This feature allows users to view all reviews for the selected product. The reviews ist is comprised of review tiles, which contain functionalities such as displaying review photo thumbnails, opening of modal window when review photos are clicked, stars that represent the product rating, and a voting feature for users to vote if they found a review helpful.
+
+![Review List Demo](https://i.imgur.com/pKSST6y.gif)
+
+* Write new review
+This feature allows users to submit new reviews for selected products. The user can rate the product and its characteristics, write about their reasoning for the rating and can optionally add up to 5 photos to their submission.
+
+
+
+* Sorting
+
+* Rating Breakdown
+
+* Product Breakdown
 
 
 
