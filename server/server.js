@@ -11,9 +11,10 @@ var axios = require('axios');
 var bp = require('body-parser');
 app.use(bp.json());
 var cors = require('cors');
+var gzipStatic = require('connect-gzip-static');
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
-app.use(express.static(path.join(__dirname,'../client/public')));
+app.use(gzipStatic(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
