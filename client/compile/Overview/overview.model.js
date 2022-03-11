@@ -2,6 +2,8 @@ import React from 'react';
 import testData from './testProducts.js';
 import $ from 'jquery';
 import GetRequests from '../getRequests.js';
+import PropTypes from 'prop-types';
+
 var Get = new GetRequests();
 
 class OverviewModel extends React.Component {
@@ -33,7 +35,9 @@ class OverviewModel extends React.Component {
     this.getProductData = this.getProductData.bind(this);
   }
 
-
+  static propTypes = {
+    productId:PropTypes.number
+  }
 
   getRatings(){
     var count =0;
@@ -82,7 +86,7 @@ class OverviewModel extends React.Component {
   getProductData(){
     var id = this.state.productId;
     var that = this;
-    Get.getProductData(id, function(data){
+    Get.getProductData(id, function(data) {
       that.setState({product:data.product,styles:data.product.styles, image:data.product.styles[0].photos[0].url,ThumbnailIndex:0,thumbArray:data.product.styles[0].photos,imageIndex:0,ratings:5},function(){
         console.log('stateafrer product',that.state);
       });

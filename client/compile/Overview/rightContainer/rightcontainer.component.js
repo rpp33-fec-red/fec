@@ -8,7 +8,9 @@ class RightContainer extends React.Component{
     productInfo:PropTypes.object,
     styles:PropTypes.array,
     changeStyle:PropTypes.func,
-    reviews:PropTypes.number
+    reviews:PropTypes.number,
+    styleIndex: PropTypes.number,
+    ratings: PropTypes.number
   }
 
   constructor(props){
@@ -19,18 +21,16 @@ class RightContainer extends React.Component{
       quantity:1
     };
     this.clickSku = this.clickSku.bind(this);
-
   }
 
   clickedReviews() {
-    window.scrollTo(0,2800)
+    window.scrollTo(0,2800);
   }
 
   clickSku(){
     var sku = this.data;
     this.setState({maxquantity:sku.quantity});
   }
-
 
   range(qty){
     var array=[];
@@ -39,13 +39,10 @@ class RightContainer extends React.Component{
     return array;
   }
 
-
   render (){
-
     var ratings =this.props.ratings;
     function ShowStars(){
-
-      var percent = parseInt(ratings/5 *100)*10;
+      // var percent = parseInt(ratings/5 *100)*10;
       return (<div className="starCt">
         <div className="stars">
           {[0,1,2,3,4].map(function(index){
@@ -53,12 +50,8 @@ class RightContainer extends React.Component{
           })}
         </div>
         <div className="starOverlay" style={{ width: `${ratings}%` ,position:'absolute'}}> </div>
-
       </div>);
-
     }
-
-
 
     var that = this;
     function clickQty(){
@@ -86,7 +79,7 @@ class RightContainer extends React.Component{
     return (<div className="rightCt" >
       <div className="main-content">
         <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars></ShowStars>readall reviews({this.props.reviews})</a></div>
-        <span className="mediumText">Catagory:{this.props.productInfo.category}</span>
+        <span className="mediumText">Catagory:{this.props.productInfo.catagory}</span>
         <div className="title"> {this.props.productInfo.name}</div>
         <span className="price">$ {this.props.productInfo.original_price}</span>
       </div>
@@ -107,7 +100,6 @@ class RightContainer extends React.Component{
             }
           </select>
         </div>
-
         <div className="selector">
           { this.state.quantity > 0 ? <button className="addToCart">Add to Cart</button> : null }
           <button className="addFavorite">star</button>
