@@ -9,78 +9,26 @@ class StyleSelector extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      expanded:false,
-      expandedStyles:{'transform':'rotate(0deg)'},
-      clickedIndex:0
-    };
-    this.expand = this.expand.bind(this);
-    this.showStyles = this.showStyles.bind(this);
+    this.changeStyle = this.changeStyle.bind(this);
   }
 
-  showStyles(){
-    var that = this;
-    function clickchangeStyle(e){
-      that.setState({clickedIndex:this.index});
-      that.props.changeStyle(that.state.clickedIndex);
-    }
+  changeStyle(index){
+    this.props.changeStyle(index);
+  }
 
+  render(){
+    var that = this;
     return (
       <div className="grid-ct">
-        { this.props.styles.map(function(style,index){
-          if (that.state.clickedIndex === index){
-            return <div className="style" style={{border:"2px solid red", borderRadius:"55px"}} onClick={clickchangeStyle.bind({index:index})} key={style.style_id}> <Checkmark ></Checkmark><img src={style.photos[0].thumbnail_url}></img></div>;
+        { that.props.styles.map(function(style,index){
+          if (that.props.styleIndex === index){
+            return <div className="style" style={{border:"2px solid red", borderRadius:"55px"}} onClick={function(){that.changeStyle(index);}} key={style.style_id}> <Checkmark ></Checkmark><img src={style.photos[0].thumbnail_url}></img></div>;
           } else {
-            return <div className="style" style={{border:"2px solid transparent"}} onClick={clickchangeStyle.bind({index:index})} key={style.style_id}> <img src={style.photos[0].thumbnail_url}></img></div>;
-
+            return <div className="style" style={{border:"2px solid transparent"}} onClick={function(){that.changeStyle(index);}} key={style.style_id}> <img src={style.photos[0].thumbnail_url}></img></div>;
           }
         })
         }
       </div>);
-  }
-
-  expand(){
-    var newexpanded = !this.state.expanded;
-    this.setState({expanded:newexpanded}, () => {
-      var transform;
-      if (this.state.expanded){
-        transform = {'transform':'rotate(270deg)'};
-      } else {
-        transform = {'transform':'rotate(0deg)'};
-      }
-      this.setState({expandedStyles: transform },()=>{
-      });
-    });
-  }
-
-  showImages() {
-    var that = this;
-    function click(){
-      that.props.imageClick(this.index);
-    }
-    function Modal(){
-      return that.props.photos.map((photo, index)=>{
-          return (<div className="box" key={index}>
-            <img onClick={click.bind({index:index})} className={that.state.clickedIndex === index ? "thumb-border" : ""}  src={photo.thumbnail_url} ></img>
-          </div>);
-
-
-      });
-    }
-    return (
-      <div className="imageSelector">
-        <div className="box" onClick={this.expand}> <svg className="arrow" style={this.state.expandedStyles} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
-        { this.state.expanded ? <Modal /> : null }
-      </div>);
-  }
-
-  render(){
-    if (this.props.showImages !== undefined){
-      return this.showImages();
-    }
-    if (this.props.showStyles !== undefined){
-      return this.showStyles();
-    }
   }
 
 
@@ -88,7 +36,7 @@ class StyleSelector extends React.Component {
 }
 
 StyleSelector.propTypes = {
-  url: PropTypes.any,
+  changeStyle: PropTypes.any,
 };
 
 export default StyleSelector;

@@ -1,10 +1,10 @@
 /* eslint-disable no-empty */
+var dot = require('dotenv').config();
 var campusCode ='hr-rpp';
-
 var options = {
   APIURL:`https://app-hrsei-api.herokuapp.com/api/fec2/${campusCode}`,
   database: null,
-  APIKEY: process.env.APIKEY
+  APIKEY:process.env.APIKEY
 };
 
 
