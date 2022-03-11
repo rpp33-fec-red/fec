@@ -16,7 +16,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productID: window.location.search.split('=')[1] || '64621',
+      productID: window.location.search.split('=')[1] || '64620',
       product: {}
     };
   }
