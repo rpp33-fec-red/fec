@@ -56,23 +56,32 @@ The Ratings and Reviews widget allows users to view and add new reviews to the s
 
 This widgets has the following features:
 
-* Reviews List
-This feature allows users to view all reviews for the selected product. The reviews ist is comprised of review tiles, which contain functionalities such as displaying review photo thumbnails, opening of modal window when review photos are clicked, stars that represent the product rating, and a voting feature for users to vote if they found a review helpful.
+* Reviews List:
 
+This feature allows users to view all reviews for the selected product. The reviews ist is comprised of review tiles, which contain functionalities such as displaying review photo thumbnails, opening of modal window when review photos are clicked, stars that represent the product rating, and a voting feature for users to vote if they found a review helpful.
 ![Review List Demo](https://i.imgur.com/pKSST6y.gif)
 
-* Write new review
+* Write new review:
+
 This feature allows users to submit new reviews for selected products. The user can rate the product and its characteristics, write about their reasoning for the rating and can optionally add up to 5 photos to their submission.
+![Add Review Demo](https://i.imgur.com/zundmvC.gif)
 
 
+* Sorting:
 
-* Sorting
+Reviews can be sorted by relevancy, helpfulness or newest.
+![Sorting Demo](https://i.imgur.com/UhLBNCL.gif)
 
-* Rating Breakdown
+* Rating Breakdown:
 
-* Product Breakdown
+The ratings breakdown displays the average rating for the product as well as the percentage of reviews where the reviewer recommended the product. Additionally, this feature includes bars that breaks down the rating distribution of the reviews. These bars also act as a filter where if a bar is clicked, the reviews will be filtered with only those ratings. A remove all filters link will also appear to remove all filters from the reviews.
+![Sorting Demo](https://i.imgur.com/6JnhWYD.gif)
 
 
+* Product Breakdown:
+
+The product breakdown displays the average feedback recieved for each applicable product characteristic (shown below in red).
+![Product Breakdown](https://i.imgur.com/sR6e1zD.png)
 
 ## Getting Started
 This project can be run by executing the following steps:
