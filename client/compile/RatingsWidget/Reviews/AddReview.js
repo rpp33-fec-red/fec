@@ -115,14 +115,15 @@ function AddReview (props) {
           </div>
 
           <div>
-            <label htmlFor="summary">Review Summary: </label>
-            <input name="summary" type="text" placeholder="Example: Best purchase ever!" maxLength="60"/>
+            <label  htmlFor="summary">Review Summary: </label>
+            <input className="review-summary" name="summary" type="text" placeholder="Example: Best purchase ever!" maxLength="60"/>
           </div>
 
           <div>
             <label htmlFor="body">Review Body: </label>
             <input
               name="body"
+              className="review-body"
               type="text"
               maxLength="1000"
               placeholder="Why did you like the product or not?"

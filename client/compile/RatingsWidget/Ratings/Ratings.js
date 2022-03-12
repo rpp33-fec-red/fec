@@ -6,19 +6,19 @@ import {calculateRatingMetrics} from '../helpers.js';
 import PropTypes from 'prop-types';
 
 function Ratings (props) {
-  const ratingsMetrics = calculateRatingMetrics(props.reviewsMetadata.ratings);
+  const ratingsMetrics = calculateRatingMetrics(props.ratingsCount);
   const averageRating = ratingsMetrics.averageRating;
   const ratingsPercentage = ratingsMetrics.ratingsPercentage;
 
   return (
     <div className="ratings">
-      <h4>Ratings &#38; Reviews</h4>
+      <h4>RATINGS &#38; REVIEWS</h4>
       <RatingsSummary
         product_id={props.product_id}
         averageRating={averageRating}
         recommendedPercentage={props.recommendedPercentage}/>
       <RatingsBreakdown ratingsPercentage={ratingsPercentage}
-        ratings={props.reviewsMetadata.ratings}
+        ratings={props.ratingsCount}
         updateRatingFilter={props.updateRatingFilter}
         filteredBy={props.filteredBy}
         removeRatingFilter={props.removeRatingFilter}/>
@@ -34,7 +34,8 @@ Ratings.propTypes = {
   recommendedPercentage: PropTypes.any,
   updateRatingFilter: PropTypes.any,
   filteredBy: PropTypes.any,
-  removeRatingFilter: PropTypes.any
+  removeRatingFilter: PropTypes.any,
+  ratingsCount: PropTypes.any
 };
 
 export default Ratings;

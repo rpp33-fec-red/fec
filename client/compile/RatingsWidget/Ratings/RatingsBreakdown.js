@@ -3,7 +3,7 @@ import RatingsBreakdownBar from './RatingsBreakdownBar.js';
 import PropTypes from 'prop-types';
 
 function RatingsBreakdown (props) {
-  const values = [1, 2, 3, 4, 5];
+  const values = [5, 4, 3, 2, 1];
   const ratingsPercentage = props.ratingsPercentage;
   const ratingsCount = props.ratings;
 
@@ -12,7 +12,7 @@ function RatingsBreakdown (props) {
   let filterMessage;
   let removeFilterMessage;
   if (Object.keys(props.filteredBy).length !== 0) {
-    filterMessage = 'Filtered by:';
+    filterMessage = 'Filtered by: ';
     for (const rating in props.filteredBy) {
       filterMessage += '' + rating + ' star ';
     }
@@ -25,8 +25,8 @@ function RatingsBreakdown (props) {
         return <RatingsBreakdownBar
           key={value}
           value={value}
-          ratingPercentage={ratingsPercentage ? props.ratingsPercentage[value] : 0}
-          reviewNumber={ratingsCount ? props.ratings[value] : 0}
+          ratingPercentage={ratingsPercentage ? props.ratingsPercentage[value] : '0'}
+          reviewNumber={ratingsCount ? props.ratings[value] : '0'}
           updateRatingFilter={props.updateRatingFilter} />;
       })}
       <div>{filterMessage}</div>

@@ -133,17 +133,31 @@ const calculateRatingMetrics = (ratings) => {
   let weightedSum = 0;
   let count = 0;
   let ratingsPercentage = {};
+  let averageRating;
 
-  for (let val in ratings) {
-    weightedSum += val * ratings[val];
-    count += parseInt(ratings[val]);
+  if (!ratings || Object.keys(ratings).length !== 0) {
+    for (let val in ratings) {
+      weightedSum += val * ratings[val];
+      count += parseInt(ratings[val]);
+    }
+
+    for (let val in ratings) {
+      ratingsPercentage[val] = (parseInt(ratings[val]) / count) * 100;
+    }
+
+    averageRating = Math.round((weightedSum/count) * 4) / 4;
+
+    if (averageRating % 1 === 0 || averageRating % 1 === 0.5) {
+      averageRating = averageRating.toFixed(1);
+    } else {
+      averageRating = averageRating.toFixed(2);
+    }
+  } else {
+    averageRating = 0;
+    ratingsPercentage = 0;
   }
 
-  for (let val in ratings) {
-    ratingsPercentage[val] = (parseInt(ratings[val]) / count) * 100;
-  }
 
-  const averageRating = (Math.round((weightedSum/count) * 4) / 4).toFixed(2);
 
   const ratingsMetrics = {
     averageRating: averageRating,
