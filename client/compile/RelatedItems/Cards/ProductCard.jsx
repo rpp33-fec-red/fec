@@ -49,7 +49,7 @@ class ProductCard extends React.Component {
           value = {this.props.product_id}
           onClick = {this.props.handleCompare}
         >*</button>
-        <a href={`/?productid=${this.props.product_id}`} style={{"text-decoration":"none", "color":"black"}}>
+        <a href={`/?productid=${this.props.product_id}`} style={{"textDecoration":"none", "color":"black"}}>
           <img src={this.state.photo} alt="Photo" className="productImage" />
           <p className="product_category" >{this.state.category}</p>
           <p className='product_cardtitle'>{this.state.product_name}</p>
