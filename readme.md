@@ -74,7 +74,7 @@ Write new review:
 This feature allows users to submit a new review for the selected product. The user can rate the product and its characteristics, write about their reasoning for the rating and can optionally add up to 5 photos to their submission.
 ![Add Review Demo](https://i.imgur.com/zundmvC.gif)
 
-* Sorting:
+Sorting:
 
 The sorting feature allows reviews to be sorted by relevancy, helpfulness or newest.
 ![Sorting Demo](https://i.imgur.com/UhLBNCL.gif)
