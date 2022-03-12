@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import ComparisonModal from './ComparisonModal.jsx';
 import ProductCarousel from './Carousels/ProductCarousel.jsx';
 import OutfitCarousel from './Carousels/OutfitCarousel.jsx';
