@@ -67,6 +67,9 @@ class Overview extends OverviewModel {
   render(){
     return this.getComponent(this.Core);
   }
+  render(){
+    return this.getComponent(this.Core);
+  }
 }
 
 Overview.propTypes = {
