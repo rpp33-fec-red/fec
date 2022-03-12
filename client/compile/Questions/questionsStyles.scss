@@ -91,6 +91,7 @@ MODAL WINDOW
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .questions-modals-content {
@@ -101,7 +102,9 @@ MODAL WINDOW
   flex-direction: column;
   justify-content: center;
   padding: 5% 5%;
+  position: absolute;
   width: 500px;
+  z-index: 3;
 }
 
 .submit-modal {
