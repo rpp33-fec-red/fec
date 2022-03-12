@@ -8,5 +8,7 @@
   "collectCoverage":true,
    "moduleNameMapper": {
     "^.+\\.(css|scss)$": "babel-jest"
-  }
+  },
+  "testEnvironment": "jsdom"
 }
+

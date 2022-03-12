@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReviewCharacteristics from './AddReview/ReviewCharacteristics.js';
 import axios from 'axios';
-import {validateFields, formatReviewData} from '../helpers.js';
+import {validateFields} from '../helpers.js';
 import createStarComponent from '../StarRatings.js';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ function AddReview (props) {
   if (props.reviewsCharacteristics) {
     characteristics =
     Object.keys(props.reviewsCharacteristics).map((characteristic) => {
-      return <ReviewCharacteristics key={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
+      return <ReviewCharacteristics key={props.reviewsCharacteristics[characteristic].id} id={props.reviewsCharacteristics[characteristic].id} characteristic={characteristic}/>;
     });
   }
 
@@ -47,20 +47,40 @@ function AddReview (props) {
 
   const submitReview = (event) => {
     event.preventDefault();
-    const form = event.target;
+
+    let formContent = document.getElementById('add-review');
+    const formData = new FormData (formContent);
+    const files = event.target.photos.files;
     const applicableCharacteristics = props.reviewsCharacteristics;
-    submissionMessage = validateFields(form.elements, applicableCharacteristics, starRating);
+
+    submissionMessage = validateFields(formData, applicableCharacteristics, starRating, files);
     if (submissionMessage === 'Your review has been submitted.') {
-      const reviewData = formatReviewData(form.elements, applicableCharacteristics, starRating, props.product_id);
-      axios.post('/reviews', reviewData)
-        .then(() => {
-          form.reset();
-          updateStarRating(0);
-          // alerts the user when review responses are successfully submitted to server
-          alert(submissionMessage);
-        }).catch(() => {
-          alert('An error occured when submitting your review. Try again later.');
-        });
+      // re-formatting review characteristic data for the API
+      for (const key in applicableCharacteristics) {
+        const characteristicData = applicableCharacteristics[key];
+        if (formData.has(characteristicData.id)) {
+          formData.delete(characteristicData.id);
+          formData.append(`characteristics['${characteristicData.id}']`, characteristicData.value);
+        }
+      }
+      formData.append('product_id', props.product_id);
+      formData.append('rating', starRating);
+
+      const photos = [];
+      for (var i = 0; i < files.length; i++) {
+        photos.push(files[i]);
+      }
+      formData.append('photos', photos);
+
+      axios.post('/reviews', formData
+      ).then(() => {
+        event.target.reset();
+        updateStarRating(0);
+        // alerts the user when review responses are successfully submitted to server
+        alert(submissionMessage);
+      }).catch(() => {
+        alert('An error occured when submitting your review. Try again later.');
+      });
     } else {
       // alerts the user when invalid responses are submitted
       alert(submissionMessage);
@@ -71,7 +91,7 @@ function AddReview (props) {
 
   return (
     <div className="add-review modal-window">
-      <form className="modal-content" onSubmit={submitReview}>
+      <form id="add-review" className="modal-content" onSubmit={submitReview} encType='multipart/form-data'>
         <div className="form-content">
           <h2>Write Your Review</h2>
           <h3>About the {props.product_name}</h3>
@@ -95,14 +115,15 @@ function AddReview (props) {
           </div>
 
           <div>
-            <label htmlFor="summary">Review Summary: </label>
-            <input name="summary" type="text" placeholder="Example: Best purchase ever!" maxLength="60"/>
+            <label  htmlFor="summary">Review Summary: </label>
+            <input className="review-summary" name="summary" type="text" placeholder="Example: Best purchase ever!" maxLength="60"/>
           </div>
 
           <div>
             <label htmlFor="body">Review Body: </label>
             <input
               name="body"
+              className="review-body"
               type="text"
               maxLength="1000"
               placeholder="Why did you like the product or not?"
@@ -119,8 +140,8 @@ function AddReview (props) {
           </div>
 
           <div>
-            <label htmlFor="nickname">Nickname: </label>
-            <input name="nickname" type="text" maxLength="60"/>
+            <label htmlFor="name">Nickname: </label>
+            <input name="name" type="text" maxLength="60"/>
             <p>For privacy reasons, do not use your full name or email address</p>
           </div>
 

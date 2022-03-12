@@ -32,7 +32,7 @@ class ReviewTile extends React.Component {
   // formats date from API into Month DD, YYYY
   convertDate (date) {
     let dateObject = new Date (date);
-    const options = { dateStyle: 'long'};
+    const options = { dateStyle: 'long', timeZone: 'UTC'};
     const formattedDate = new Intl.DateTimeFormat('en-US', options).format(dateObject);
     return formattedDate;
   }
@@ -125,7 +125,7 @@ class ReviewTile extends React.Component {
     // shows "I recommend this product" if product is recommended by reviewer
     let recommend;
     if (this.props.review.recommend) {
-      recommend = <div className="recommend">☑ I recommend this product</div>;
+      recommend = <div className="recommend">✓ I recommend this product</div>;
     }
 
 

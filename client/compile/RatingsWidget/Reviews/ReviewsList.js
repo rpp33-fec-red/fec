@@ -125,8 +125,8 @@ class ReviewsList extends React.Component {
 
     return (
       <>
-        <input type="text" onChange={this.updateSearched}/>
-        <ReviewsSorting numOfReviews={this.state.reviewsDisplayed.length} updateSorting={this.props.updateSorting}/>
+        <input id="search" type="text" placeholder="SEARCH REVIEWS BY KEYWORD..." onChange={this.updateSearched}/>
+        <ReviewsSorting numOfReviews={this.state.filteredReviews.length} updateSorting={this.props.updateSorting}/>
 
         <div className ="reviews-list">
           {reviews.map((review) => {

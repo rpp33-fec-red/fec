@@ -1,8 +1,9 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 import StarsComponent from '../../showStars';
 import '../relatedItems.scss';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line no-undef
 class ProductCard extends React.Component {
   constructor (props) {
     super (props);
@@ -42,22 +43,24 @@ class ProductCard extends React.Component {
 
   render () {
     return (
-      <a className={`productCard ${this.props.product_id}`} href={`/?productid=${this.props.product_id}`}>
+      <div className={`productCard ${this.props.product_id}`}>
         <button
           id = "compareButton"
           value = {this.props.product_id}
           onClick = {this.props.handleCompare}
-        >*</button>{''}
-        <img src={this.state.photo} alt="Photo" className="productImage" />
-        <p className="product_category" >{this.state.category}</p>
-        <p className='product_cardtitle'>{this.state.product_name}</p>
-        <p className="product_default_price">
-          { !this.state.sale_price
-            ? (`$ ${this.state.default_price}`)
-            : (<span><span className='product_original_price'>$ {this.state.original_price}</span><b><span className='product_sale_price'>  $ {this.state.sale_price}</span></b></span>)
-          }</p>
-        <StarsComponent product_id={this.props.product_id} />
-      </a>
+        >*</button>
+        <a href={`/?productid=${this.props.product_id}`} style={{"textDecoration":"none", "color":"black"}}>
+          <img src={this.state.photo} alt="Photo" className="productImage" />
+          <p className="product_category" >{this.state.category}</p>
+          <p className='product_cardtitle'>{this.state.product_name}</p>
+          <p className="product_default_price">
+            { !this.state.sale_price
+              ? (`$ ${this.state.default_price}`)
+              : (<span><span className='product_original_price'>$ {this.state.original_price}</span><b><span className='product_sale_price'>  $ {this.state.sale_price}</span></b></span>)
+            }</p>
+          <StarsComponent product_id={this.props.product_id} />
+        </a>
+      </div>
     );
   }
 }

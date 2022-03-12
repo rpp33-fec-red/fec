@@ -1,9 +1,9 @@
-import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
 import ProductCarousel from './Carousels/ProductCarousel.jsx';
 import OutfitCarousel from './Carousels/OutfitCarousel.jsx';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line no-undef
 class RelatedProducts extends React.Component {
   constructor (props) {
     super (props);
@@ -76,6 +76,7 @@ class RelatedProducts extends React.Component {
 
   handleAddToOutfit () {
     let currentOutfit = this.state.outfitIds.slice();
+
     if (currentOutfit.indexOf(this.state.current.id) === -1 && this.state.current.id !== null) {
       this.setState({ outfitLoaded: false }, () => {
         currentOutfit.unshift(this.state.current.id);
