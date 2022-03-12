@@ -6,9 +6,9 @@ import ClickTracker from './Click_Tracker.jsx';
 import Overview from './Overview/overview.component.js';
 import RatingsWidget from './RatingsWidget/RatingsWidget.js';
 import QuestionsWidget from './Questions/Questions.jsx';
-import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
+import RelatedProducts from './RelatedItems/RelatedProducts.jsx';
 import Model from './model.js';
-var model = new Model(false);
+var model = new Model();
 import './style.scss';
 
 class Main extends React.Component {
@@ -31,7 +31,7 @@ class Main extends React.Component {
     return (
       <ClickTracker>
         <Overview getProducts={model.getData}  productId={this.state.productID}/>
-        <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
+        <RelatedProducts getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget product_id={this.state.productID} product_name={this.state.product.name}/>
         <RatingsWidget getReviews={model.getData} product_id={this.state.productID} product_name={this.state.product.name}/>
       </ClickTracker>);

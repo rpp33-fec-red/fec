@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './client/compile/app.js',
-  mode:'development',
+  mode:'production',
   output: {
     path: path.resolve(__dirname, 'client/public'),
     filename: 'bundle.js',
