@@ -33,19 +33,17 @@ class Overview extends OverviewModel {
   componentDidMount(){
     this.getReviews();
     this.getProductData();
-    $('<img/>').attr('src', './beach.avif').on('load', function(a) {
-      this.setState({backgroundImage:'./beach.avif'});
-
-      $(this).remove(); // prevent memory leaks as @benweet suggested
+    var that = this;
+    $('<img/>').attr('src', './beach.avif').on('load', function() {
+      that.setState({backgroundImage:'./beach.avif'});
+      $(this).remove();
     }).on("error",()=>{
-      this.setState({backgroundImage:'./beach.jpeg'});
+      that.setState({backgroundImage:'./beach.jpeg'});
     });
-    console.log(this.state.backgroundImage);
   }
 
 
   Core(){
-    console.log(this.state.backgroundImage);
 
     return (
       <React.Fragment>
@@ -64,9 +62,7 @@ class Overview extends OverviewModel {
     );
 
   }
-  render(){
-    return this.getComponent(this.Core);
-  }
+
   render(){
     return this.getComponent(this.Core);
   }

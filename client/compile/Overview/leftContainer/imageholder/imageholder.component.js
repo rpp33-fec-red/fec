@@ -60,16 +60,14 @@ class ImageHolder extends React.Component{
   }
 
   backgroundPosition(e){
-    var Left =  parseInt(e.target.offsetLeft) - parseInt(e.screenX);
-
-    var that = this
+    var that = this;
     this.setState({scale:!this.state.scale},function(){
-      var cursor = "-webkit-zoom-in"
+      var cursor = "-webkit-zoom-in";
       if (that.state.expandImage){
-        var scale = 1
+        var scale = 1;
         if (that.state.scale){
-          scale = 2
-          cursor = "-webkit-zoom-out"
+          scale = 2;
+          cursor = "-webkit-zoom-out";
         }
         that.setState({zoomFeature:{size:"cover", cursor:cursor, scale:"scale("+scale.toString()+")", position: "top center"}});
       }
