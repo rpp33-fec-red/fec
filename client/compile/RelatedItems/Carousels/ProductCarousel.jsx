@@ -31,7 +31,7 @@ const chunkArray = (array, chunkSize) => {
 
 const ProductCarousel = (props) => {
   let relatedProducts = props.relatedProducts;
-  let sets = chunkArray(relatedProducts, Math.floor(useWindowSize()/300));
+  let sets = chunkArray(relatedProducts, Math.floor(useWindowSize()/400));
   let numberOfSets = sets.length;
   let [current, setCurrent] = useState(0);
   const handleLeft = () => {return current === 0 ? setCurrent(numberOfSets - 1) : setCurrent(current - 1);};
