@@ -1,7 +1,9 @@
 require('dotenv').config();
+var aws = require('aws-sdk');
 var express = require('express');
 var app = express();
 const multer = require('multer');
+var multerS3 = require('multer-s3');
 var port = 8080;
 var path = require('path');
 var config = require('../config');
@@ -144,17 +146,21 @@ app.put('/putData', (req, res) => {
     });
 });
 
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, '../client/compile/Questions/photos'),
-  filename: function(req, file, callback) {
-    callback(null, Date.now() + '.png');
-  }
+var s3 = new aws.S3();
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'fec33red',
+    key: function(req, file, callback) {
+      callback(null, 'answerPhotos/' +Date.now() + '.png');
+    }
+
+  })
 });
 
-const upload = multer({ storage: storage });
-
 app.post('/upload', upload.single('photoUpload'), (req, res) => {
-  res.send(req.file.path);
+  res.send(req.file.key);
 });
 
 const uploadReviews = multer();
