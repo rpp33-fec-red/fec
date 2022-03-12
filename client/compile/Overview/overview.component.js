@@ -6,20 +6,6 @@ import PropTypes from 'prop-types';
 import OverviewModel from './overview.model.js';
 import Features from './features.component.js';
 import $ from 'jquery';
-// import { PutObjectCommand, CreateBucketCommand } from "@aws-sdk/client-s3";
-
-// import { S3Client } from "@aws-sdk/client-s3";
-// // Set the AWS Region.
-// const REGION = "us-east-1"; //e.g. "us-east-1"
-// // Create an Amazon S3 service client object.
-// const s3Client = new S3Client({ region: REGION });
-
-// // var data =
-// // const params = {
-// //   Bucket: "fecbucket13", // The name of the bucket. For example, 'sample_bucket_101'.
-// //   Key: "beach.png", // The name of the object. For example, 'sample_upload.txt'.
-// //   Body: data, // The content of the object. For example, 'Hello world!".
-// // };
 
 
 
