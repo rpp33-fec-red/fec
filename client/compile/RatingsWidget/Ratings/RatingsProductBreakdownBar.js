@@ -6,14 +6,14 @@ function RatingsProductBreakdownBar (props) {
   const valueDescriptions = getCharacteristicsDescriptions(props.characteristic);
   return (
     <div className="ratings-product-breakdown-bar">
-      <div>{props.characteristic}</div>
-      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" style={{"fill": "grey", "pointerEvents": "none" }}>
+      <p id="characteristic-title">{props.characteristic}</p>
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" style={{"fill": "rgb(235,235,235)", "pointerEvents": "none" }}>
         <rect width="100%" height="3"/>
         <polygon points="0,0 5,0 2.5,5" transform={`translate(${props.value * 20}, 0)`} style={{"fill": "black", "pointerEvents": "none", "zIndex": "1"}} />
       </svg>
       <div className="rating-labels">
-        <div>{valueDescriptions[1]}</div>
-        <div>{valueDescriptions[5]}</div>
+        <p>{valueDescriptions[1]}</p>
+        <p>{valueDescriptions[5]}</p>
       </div>
     </div>
   );

@@ -10,12 +10,11 @@ function ReviewCharacteristicRadioButton (props) {
 
   // Sets the description based on the characteristic and the rating selected
   const valueDescription = <div>{valueDescriptions[props.value]}</div>;
-
   return (
     <div>
       {props.descriptionShown ? valueDescription : <div></div>}
-      <label htmlFor={props.characteristic}>{props.value}</label>
-      <input name={props.characteristic} type="radio" value={props.value} onClick={props.showDescription} />
+      <label htmlFor={props.id}>{props.value}</label>
+      <input name={props.id} type="radio" value={props.value} onClick={props.showDescription} />
     </div>
   );
 }
@@ -24,7 +23,8 @@ ReviewCharacteristicRadioButton.propTypes = {
   characteristic: PropTypes.any,
   value: PropTypes.any,
   showDescription: PropTypes.any,
-  descriptionShown: PropTypes.any
+  descriptionShown: PropTypes.any,
+  id: PropTypes.any
 };
 
 export default ReviewCharacteristicRadioButton;

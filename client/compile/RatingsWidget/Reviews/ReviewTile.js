@@ -125,7 +125,7 @@ class ReviewTile extends React.Component {
     // shows "I recommend this product" if product is recommended by reviewer
     let recommend;
     if (this.props.review.recommend) {
-      recommend = <div className="recommend">☑ I recommend this product</div>;
+      recommend = <div className="recommend">✓ I recommend this product</div>;
     }
 
 
