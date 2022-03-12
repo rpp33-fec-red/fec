@@ -4,7 +4,7 @@ class GetRequests {
   constructor(){
     this.config = {
       'serverURL':'/',
-      "testURL":'http://localhost:8080/'
+      "testURL":'/'
     };
     this.getProductData = this.getProductData.bind(this);
   }
