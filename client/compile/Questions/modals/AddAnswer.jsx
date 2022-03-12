@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import UploadPhotosModal from './UploadPhotos.jsx';
@@ -37,8 +38,7 @@ class AddAnswerModal extends React.Component {
     let photos = this.state.uploadedPhotos;
     axios.post('/upload', formData)
       .then((response) => {
-        let relativePath = '..' + response.data.split('photos')[1];
-        photos.push(relativePath);
+        photos.push('https://fec33red.s3.amazonaws.com/' + encodeURIComponent(response.data));
         this.setState({
           photoCount: this.state.photoCount + 1,
           uploadedPhotos: photos

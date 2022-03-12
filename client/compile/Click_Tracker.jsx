@@ -19,7 +19,7 @@ class ClickTracker extends React.Component {
       time: new Date(),
       element: event.target.tagName
     };
-    console.log('clickObject', clickObject);
+
     axios.post('/postData', {
       data: clickObject,
       endpoint: '/interactions',

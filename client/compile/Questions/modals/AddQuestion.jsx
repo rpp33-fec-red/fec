@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import PropTypes from 'prop-types';
 
 class AddQuestionModal extends React.Component {
@@ -15,17 +16,17 @@ class AddQuestionModal extends React.Component {
           <h4 className="modal-subtitle">About the {this.props.product_name}</h4>
           <form className="add-question-form" onSubmit={this.props.submit} >
             <div className="modal-form">
-              <label>Your Question*</label>
+              <label htmlFor="new-question-field">Your Question*</label>
               <textarea type="text" maxLength="1000" id="new-question-field" name="question"></textarea>
             </div>
             <div className="modal-form">
-              <label>What is your nickname*</label>
-              <input type="text" maxLength="60" placeholder="Example: jackson11!" name="nickname"></input>
+              <label htmlFor="question-nickname">What is your nickname*</label>
+              <input type="text" maxLength="60" id="question-nickname" placeholder="Example: jackson11!" name="nickname"></input>
               <p className="modal-warning">For privacy reasons, do not use your full name or email address</p>
             </div>
             <div className="modal-form">
-              <label>Your email*</label>
-              <input type="email" maxLength="60" placeholder="Why did you like the product or not?" name="email"></input>
+              <label htmlFor="question-email">Your email*</label>
+              <input type="email" maxLength="60" id="question-email" placeholder="Why did you like the product or not?" name="email"></input>
               <p className="modal-warning">For authentication reasons, you will not be emailed</p>
             </div>
             <div className="modal-form">

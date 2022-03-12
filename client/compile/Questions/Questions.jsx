@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import SearchBar from './subcomponents/SearchBar.jsx';
@@ -28,7 +29,7 @@ class QuestionsWidget extends React.Component {
       params: {
         product_id: this.props.product_id,
         page: 1,
-        count: 50
+        count: 20
       }
     };
     axios.post('/getQuestions', request)
@@ -58,8 +59,8 @@ class QuestionsWidget extends React.Component {
           });
         }
       })
-      .catch(function(error) {
-        console.log(error);
+      .catch((err) => {
+        throw err;
       });
   }
 
@@ -108,7 +109,7 @@ class QuestionsWidget extends React.Component {
   render() {
     return (
       <div className="questions-widget">
-        <h4 className="questions-title">QUESTIONS &amp; ANSWERS</h4>
+        <p className="questions-title">QUESTIONS &amp; ANSWERS</p>
         <SearchBar search={this.handleSearch}/>
         <QuestionsList
           questions={this.state.queriedQuestions}

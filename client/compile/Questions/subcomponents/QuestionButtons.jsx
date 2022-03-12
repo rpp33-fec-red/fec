@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import AddQuestionModal from '../modals/AddQuestion.jsx';
@@ -46,7 +47,10 @@ class QuestionButtons extends React.Component {
       this.setState({
         showAddQuestionModal: false
       }, () => {
-        axios.post('/postData', request);
+        axios.post('/postData', request)
+          .catch((err) => {
+            console.log(err);
+          });
       });
     } else {
       let missingFields = '';

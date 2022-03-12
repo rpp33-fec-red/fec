@@ -1,7 +1,5 @@
-
-   
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-prototype-builtins */
-import React from 'react';
 import './relatedItems.scss';
 import PropTypes from 'prop-types';
 
@@ -39,10 +37,10 @@ const ComparisonModal = (props) => {
   return (
     <div className={showHideModel}>
       <section className='modal-main'>
-        <div className='compare-row'>
-          <div className='rowTitle current-col'>{currentName}</div>
-          <div className='rowTitle feature'>Features</div>
-          <div className='rowTitle compare-col'>{compareName}</div>
+        <div className='compare-row title-row'>
+          <div className='rowTitle'>{currentName}</div>
+          <div className='rowTitle'>Features</div>
+          <div className='rowTitle'>{compareName}</div>
         </div>
         
         {totalfeatures.map((feature, i) => {
@@ -51,18 +49,18 @@ const ComparisonModal = (props) => {
           if (current && current.hasOwnProperty(feature)) {
             currentRow = current[feature];
           } else {
-            currentRow = 'n/a';
+            currentRow = '-';
           }
           if (compare && compare.hasOwnProperty(feature)) {
             compareRow = compare[feature];
           } else {
-            compareRow = 'n/a';
+            compareRow = '-';
           }
           return (
             <div className='compare-row' key={i}>
-              <div className='modal-row current-col'>{currentRow}</div>
-              <div className='modal-row feature'>{feature}</div>
-              <div className='modal-row compare-col'>{compareRow}</div>
+              <div className='modal-row'>{currentRow}</div>
+              <div className='modal-row'>{feature}</div>
+              <div className='modal-row'>{compareRow}</div>
             </div>
 
           );

@@ -1,4 +1,5 @@
-import React from 'react';
+/*global React */
+/*eslint no-undef: "error"*/
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -12,6 +13,7 @@ class Answer extends React.Component {
     };
     this.handleHelpfulnessVote = this.handleHelpfulnessVote.bind(this);
     this.handleReport = this.handleReport.bind(this);
+    this.convertDate = this.convertDate.bind(this);
   }
 
   handleHelpfulnessVote(event) {
@@ -32,7 +34,6 @@ class Answer extends React.Component {
         axios.put('/putData', request);
       });
     }
-    this.convertDate = this.convertDate.bind(this);
   }
 
   handleReport(event) {

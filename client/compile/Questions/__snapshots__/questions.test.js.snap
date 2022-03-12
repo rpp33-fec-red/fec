@@ -129,7 +129,9 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
       <div
         className="modal-form"
       >
-        <label>
+        <label
+          htmlFor="new-question-field"
+        >
           Your Question*
         </label>
         <textarea
@@ -142,10 +144,13 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
       <div
         className="modal-form"
       >
-        <label>
+        <label
+          htmlFor="question-nickname"
+        >
           What is your nickname*
         </label>
         <input
+          id="question-nickname"
           maxLength="60"
           name="nickname"
           placeholder="Example: jackson11!"
@@ -160,10 +165,13 @@ exports[`AddQuestionModal component loads and displays Answer component 1`] = `
       <div
         className="modal-form"
       >
-        <label>
+        <label
+          htmlFor="question-email"
+        >
           Your email*
         </label>
         <input
+          id="question-email"
           maxLength="60"
           name="email"
           placeholder="Why did you like the product or not?"
@@ -317,7 +325,9 @@ exports[`Question component loads and displays Question component 1`] = `
           Yes
         </a>
          (
-        4
+        <span>
+          4
+        </span>
         ) | 
         <a
           className="question-link"
@@ -450,7 +460,9 @@ exports[`Questions widget component loads and displays questions widget componen
               Yes
             </a>
              (
-            4
+            <span>
+              4
+            </span>
             ) | 
             <a
               className="question-link"
@@ -541,7 +553,9 @@ exports[`Questions widget component loads and displays questions widget componen
               Yes
             </a>
              (
-            2
+            <span>
+              2
+            </span>
             ) | 
             <a
               className="question-link"
@@ -563,6 +577,48 @@ exports[`Questions widget component loads and displays questions widget componen
         <div
           className="answer-list"
         >
+          <div
+            className="answer"
+          >
+            <p
+              className="answer-title"
+            >
+              9 lives
+            </p>
+            <div
+              className="answer-links"
+            >
+              <p
+                className="answerer-details"
+              >
+                by
+                <span
+                  className="answerer-seller"
+                >
+                   
+                  Seller
+                </span>
+                , 
+                November, 11, 2019
+                  |  Helpful? 
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Yes
+                </a>
+                 (
+                31
+                )  |  
+                <a
+                  className="answer-link"
+                  onClick={[Function]}
+                >
+                  Report
+                </a>
+              </p>
+            </div>
+          </div>
           <div
             className="answer"
           >
@@ -605,48 +661,12 @@ exports[`Questions widget component loads and displays questions widget componen
               </p>
             </div>
           </div>
-          <div
-            className="answer"
+          <a
+            className="load-more-answers"
+            onClick={[Function]}
           >
-            <p
-              className="answer-title"
-            >
-              Some of the seams started splitting the first time I wore it!
-            </p>
-            <div
-              className="answer-links"
-            >
-              <p
-                className="answerer-details"
-              >
-                by
-                <span
-                  className="answerer-other"
-                >
-                   
-                  sillyguy
-                </span>
-                , 
-                November, 27, 2019
-                  |  Helpful? 
-                <a
-                  className="answer-link"
-                  onClick={[Function]}
-                >
-                  Yes
-                </a>
-                 (
-                6
-                )  |  
-                <a
-                  className="answer-link"
-                  onClick={[Function]}
-                >
-                  Report
-                </a>
-              </p>
-            </div>
-          </div>
+            SEE MORE ANSWERS
+          </a>
         </div>
       </div>
     </div>
@@ -704,6 +724,8 @@ exports[`UploadPhotosModal component loads and displays Answer component 1`] = `
     </h4>
     <form
       className="upload-photos-form"
+      encType="multipart/form-data"
+      id="photo-upload-form"
     >
       <div
         className="modal-form"

@@ -63,7 +63,7 @@ class StarsComponent extends React.Component{
 
     return (
       <div className="starContainer" style={{"display": "inline-flex", "alignItems": "center", "position": "relative", "paddingLeft": "0.5rem"}}>
-        <div className="starBase" style={{ "display": "flex", "width": "100%"}}>{array}</div>
+        <div className="starBase" style={{ "display": "flex", "width": "100%", "zIndex":"1"}}>{array}</div>
         <div className="starOverlay" style={{ "width": `${100-this.state.percentage}%`, "backgroundColor": "white", "mixBlendMode": "color", "opacity": "unset", "position": "absolute", "top": "0", "right": "0", "bottom": "0", "zIndex": "1" }}></div>
       </div>
     );
