@@ -1,18 +1,23 @@
 .ratings-and-reviews {
   display: flex;
-  margin: 30px;
+  margin: 5% 10%;
+  font-family: sans-serif;
+  font-size:small;
+  color: rgb(80,80, 80);
 
   .reviews {
     flex: 1;
-
+    margin-left: 10px;
     .reviews-list {
-      max-height: 80vh;
+      display: flex;
+      max-height: 75vh;
       overflow: auto;
+      align-items: align-items;
+      flex-direction: column;
       .review-tile {
-
-        margin: 30px;
-        border-bottom: 1px solid black;
-
+        padding: 25px;
+        margin-left: 2%;
+        border-bottom: 1px solid;
         .review-header {
           display: flex;
           flex-direction: row;
@@ -39,7 +44,7 @@
           }
         }
         .review-response {
-          background-color:rgb(206, 206, 206);
+          background-color: rgb(235,235,235);
           padding: 10px;
 
           p,h4 {
@@ -48,77 +53,171 @@
         }
       }
     }
+
+
+    button {
+      all: unset;
+      font-size: 1vw;
+      border: solid 1px rgb(80,80, 80);
+      padding: 17px;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+
+    .form-content {
+      display: flex;
+      .div {
+        justify-content: center;
+      }
+      flex-direction: column;
+      padding: 50px;
+    }
+
+    .star-rating-input {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .radio-buttons {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: 50px;
+      gap: 10px;
+      align-items: end;
+    }
+
+    #add-review-thumbnail {
+      max-width: 100px;
+      height: auto;
+    }
+
+    #search {
+      width: 100%;
+      height: 7%;
+      margin-bottom: 10px;
+    }
+
+    .reviews-sorting {
+      font-weight: bold;
+      font-size: 1.2vw;
+      select {
+        border-style: unset;
+        font: unset;
+        color: rgb(80,80, 80);
+        border-bottom: 1px solid black;
+      }
+    }
+
+    .recommend {
+      margin-bottom: 10px;
+    }
+
+    input[type=submit] {
+      all: unset;
+      font-size: 1vw;
+      border: solid 1px rgb(80,80, 80);
+      padding: 17px;
+      margin: 10px;
+      font-weight: bold;
+    }
   }
 
   .ratings {
     width: 25%;
+
+    h4 {
+      font-weight: normal;
+    }
+    .rating-labels {
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 0.75vw;
+      }
+    }
+
+    .ratings-product-breakdown-bar {
+      margin-top: 14px;
+      * {
+        margin: 1px;
+      }
+
+      #characteristic-title {
+        font-size: 1vw;
+      }
+    }
+
+    .ratings-breakdown-bar {
+      display: flex;
+      justify-content: space-between;
+      * {
+        margin: 5px 2px;
+      }
+    }
+
+    .ratings-breakdown-bar:hover {
+      background-color: lightgray;
+
+    }
+
+    .ratings-summary {
+      display: flex;
+      align-self: flex-start;
+      #average-rating {
+        font-size: 4vw;
+        font-weight: bold;
+      }
+    }
+
+    .star-label {
+      font-size: 1vw;
+      width: 21%;
+      text-decoration: underline;
+    }
+
+    #percentage {
+      font-size: 1vw;
+    }
   }
-}
 
-.modal-window {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  padding-top: 5vh;
-  overflow: auto;
-}
-
-.modal-content {
-  background-color: white;
-  display: block;
-  margin: auto;
-  max-width: 60%
-}
-
-.form-content {
-  display: flex;
-  .div {
-    justify-content: center;
+  .modal-window {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 5vh;
+    overflow: auto;
   }
-  flex-direction: column;
-  padding: 50px;
+
+  .modal-content {
+    background-color: white;
+    display: block;
+    margin: auto;
+    max-width: 60%
+  }
+
+  .form-content {
+    * {
+      margin: 3px;
+    }
+    .review-body {
+      width: 100%;
+    }
+    .review-summary {
+      width: 100%;
+    }
+  }
+
 }
 
-.star-rating-input {
-  display: flex;
-  flex-direction: row;
-}
 
-.radio-buttons {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 10px;
-  align-items: end;
-}
 
-.ratings-breakdown-bar {
-  display: flex;
-  flex-direction: row;
 
-}
 
-.ratings-breakdown-bar:hover {
-  background-color: red;
-}
 
-.star-label {
-  width: 20%;
-}
 
-.rating-labels {
-  display: flex;
-  justify-content: space-between;
-}
 
-.ratings-product-breakdown-bar {
-  margin: 10px;
-}
-
-#add-review-thumbnail {
-  max-width: 100px;
-  height: auto;
-}
