@@ -72,10 +72,8 @@ class GetRequests {
 
   getProductData(id, cb) {
     var that = this;
-    console.log('is here', id);
     this.getData({path:'/products/'+id}, function(data) {
       var product = data.data;
-      console.log('success', product)
       that.getData({path:'/products/'+id+'/styles'}, function(data) {
         cb({product: Object.assign(product,{styles:data.data.results})});
       });

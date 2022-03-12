@@ -20,7 +20,8 @@ class OverviewModel extends React.Component {
       thumbArray:testData.styles[0].photos,
       image:testData.styles[0].photos[0].url,
       imageIndex: 0,
-      expandImage:false
+      expandImage:false,
+      backgroundImage:'./beach.avif'
     };
     this.config = {
       'serverURL':'/',

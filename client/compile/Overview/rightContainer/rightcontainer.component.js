@@ -2,6 +2,8 @@ import React from 'react';
 import './rightcontainer.scss';
 import StyleSelector from '../styleSelector.js';
 import PropTypes from 'prop-types';
+
+
 class RightContainer extends React.Component{
 
   static propTypes = {
@@ -43,12 +45,10 @@ class RightContainer extends React.Component{
     var ratings =this.props.ratings;
     function ShowStars(){
       // var percent = parseInt(ratings/5 *100)*10;
-      return (<div className="starCt">
-        <div className="stars">
-          {[0,1,2,3,4].map(function(index){
-            return <svg key={index} className="star" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill='#f8d448' ><g><rect fill="none" height="24" width="24" x="0"><polygon points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" stroke='#646464'/></rect></g></svg>;
-          })}
-        </div>
+      return (<div className="rate">
+        {[0,1,2,3,4].map(function(index){
+          return <span key={index} className="star" >☆</span>;
+        })}
         <div className="starOverlay" style={{ width: `${ratings}%` ,position:'absolute'}}> </div>
       </div>);
     }

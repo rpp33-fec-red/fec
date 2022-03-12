@@ -15,7 +15,6 @@ app.use(cors());
 app.use(express.static(path.join(__dirname,'../client/compile/Questions/photos')));
 app.use(express.static(path.join(__dirname,'../client/public')));
 app.use('/coverage', express.static(path.join(__dirname,'../coverage')) );
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 //ajuna beats;
 //changed this file to accept an array of routes in order and removed query params. you must have an array and a callback

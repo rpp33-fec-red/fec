@@ -10,7 +10,7 @@ import RelatedProducs from './RelatedItems/RelatedProducts.jsx';
 import Model from './model.js';
 var model = new Model(false);
 import './style.scss';
-
+import Header from './header.js'
 class Main extends React.Component {
 
   constructor(props) {
@@ -30,6 +30,7 @@ class Main extends React.Component {
   render(){
     return (
       <ClickTracker>
+        <Header></Header>
         <Overview getProducts={model.getData}  productId={this.state.productID}/>
         <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget product_id={this.state.productID} product_name={this.state.product.name}/>
