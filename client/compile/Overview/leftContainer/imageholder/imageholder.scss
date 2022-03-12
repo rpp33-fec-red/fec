@@ -24,11 +24,10 @@
   align-items: center;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  // overflow: hidden;
    .img{
      width: inherit;
      height: 100%;
-     cursor: zoom-in;
 
    }
    .hoverModal{
@@ -38,15 +37,7 @@
     height: 100%;
     right: 0px;
    }
-   .bigImage{
-     position: absolute;
 
-     right:-50px;
-     .img{
-      z-index: 2002;
-      cursor: zoom-in;
-     }
-   }
    .img{
      position: relative;
    .expand-arrow{

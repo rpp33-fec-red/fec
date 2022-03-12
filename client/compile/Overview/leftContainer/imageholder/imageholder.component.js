@@ -9,7 +9,7 @@ class ImageHolder extends React.Component{
       expandThumbModal:false,
       expandImage:false,
       scale:false,
-      zoomFeature: {size: "contain", scale:"scale(1)" ,position: "center center"}
+      zoomFeature: {size: "contain", scale:"scale(1)" , cursor:"crosshair",position: "center center"}
     };
     this.expand = this.expand.bind(this);
     this.ThumbModal = this.ThumbModal.bind(this);
@@ -61,11 +61,20 @@ class ImageHolder extends React.Component{
 
   backgroundPosition(e){
     var Left =  parseInt(e.target.offsetLeft) - parseInt(e.screenX);
-    console.log(Left);
-    console.log(e);
-    if (this.state.expandImage){
-      this.setState({zoomFeature:{size:"cover", scale:"scale(2)",position: "top center"}});
-    }
+
+    var that = this
+    this.setState({scale:!this.state.scale},function(){
+      var cursor = "-webkit-zoom-in"
+      if (that.state.expandImage){
+        var scale = 1
+        if (that.state.scale){
+          scale = 2
+          cursor = "-webkit-zoom-out"
+        }
+        that.setState({zoomFeature:{size:"cover", cursor:cursor, scale:"scale("+scale.toString()+")", position: "top center"}});
+      }
+    })
+
   }
 
   render(){
@@ -74,7 +83,7 @@ class ImageHolder extends React.Component{
       <div className="image-holder" >
         <div className="mainImage-ct" >
           <svg style={{ transform: 'rotate(90deg)'}} onClick={that.props.moveUp} xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 0 24 24" width="44px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
-          <div  onClick={that.backgroundPosition} className="img"  style={{backgroundImage:"url("+this.props.image+")",transform:this.state.zoomFeature.scale, backgroundPosition:this.state.zoomFeature.position, backgroundSize:this.state.zoomFeature.size, backgroundRepeat:"no-repeat",maxWidth:"90%"}}><svg  onClick={that.expandImage} className="expand-arrow" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><polygon points="21,11 21,3 13,3 16.29,6.29 6.29,16.29 3,13 3,21 11,21 7.71,17.71 17.71,7.71"/></svg></div>
+          <div  onClick={that.backgroundPosition} className="img"  style={{backgroundImage:"url("+this.props.image+")",transform:this.state.zoomFeature.scale, cursor:this.state.zoomFeature.cursor, backgroundPosition:this.state.zoomFeature.position, backgroundSize:this.state.zoomFeature.size, backgroundRepeat:"no-repeat",maxWidth:"90%"}}><svg  onClick={that.expandImage} className="expand-arrow" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><polygon points="21,11 21,3 13,3 16.29,6.29 6.29,16.29 3,13 3,21 11,21 7.71,17.71 17.71,7.71"/></svg></div>
           <svg  style={{ transform: 'rotate(270deg)'}}  onClick={that.props.moveDown}  xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 0 24 24" width="44px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
         </div>
         <div className="imageSelector" >

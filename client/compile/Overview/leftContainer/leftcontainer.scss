@@ -7,11 +7,11 @@
 }
 .expandImage{
        width: 100%!important;
+       overflow: hidden;
        .mainImage-ct{
         transform: scale(1)!important;
        }
   .img{
-    cursor:crosshair!important;
     background-size: cover!important;
     width: 500px!important;
   }

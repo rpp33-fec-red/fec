@@ -21,12 +21,16 @@ class StyleSelector extends React.Component {
     return (
       <div className="grid-ct">
         { that.props.styles.map(function(style,index){
-          var name = style.photos[0].url.split('=')[2]
+          if (style.photos[0].url){
+            var name = style.photos[0].url.split('=')[2];
           if (that.props.styleIndex === index){
             return <div className="style" style={{border:"2px solid red", borderRadius:"55px"}} onClick={function(){that.changeStyle(index);}} key={style.style_id}> <Checkmark ></Checkmark><img alt={name} src={style.photos[0].thumbnail_url}></img></div>;
           } else {
             return <div className="style" style={{border:"2px solid transparent"}} onClick={function(){that.changeStyle(index);}} key={style.style_id}> <img alt={name} src={style.photos[0].thumbnail_url}></img></div>;
           }
+        } else {
+          return <span>no image</span>
+        }
         })
         }
       </div>);
