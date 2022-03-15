@@ -3,7 +3,7 @@ import './rightcontainer.scss';
 import StyleSelector from '../styleSelector.js';
 import PropTypes from 'prop-types';
 
-
+import ShowStars from '../../showStars.js';
 class RightContainer extends React.Component{
 
   static propTypes = {
@@ -42,16 +42,16 @@ class RightContainer extends React.Component{
   }
 
   render (){
-    var ratings =this.props.ratings;
-    function ShowStars(){
-      // var percent = parseInt(ratings/5 *100)*10;
-      return (<div className="rate">
-        {[0,1,2,3,4].map(function(index){
-          return <span key={index} className="star" >☆</span>;
-        })}
-        <div className="starOverlay" style={{ width: `${ratings}%` ,position:'absolute'}}> </div>
-      </div>);
-    }
+    // var ratings =this.props.ratings;
+    // function ShowStars(){
+    //   // var percent = parseInt(ratings/5 *100)*10;
+    //   return (<div className="rate">
+    //     {[0,1,2,3,4].map(function(index){
+    //       return <span key={index} className="star" >☆</span>;
+    //     })}
+    //     <div className="starOverlay" style={{ width: `${ratings}%` ,position:'absolute'}}> </div>
+    //   </div>);
+    // }
 
     var that = this;
     function clickQty(){
@@ -75,10 +75,9 @@ class RightContainer extends React.Component{
         return <option>OUT OF STOCk</option>;
       }
     }
-
     return (<div className="rightCt" >
       <div className="main-content">
-        <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars></ShowStars>readall reviews({this.props.reviews})</a></div>
+        <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars product_id={this.props.productInfo.id}></ShowStars>readall reviews ({this.props.reviews})</a></div>
         <span className="mediumText">Category:{this.props.productInfo.category}</span>
         <div className="title"> {this.props.productInfo.name}</div>
         <span className="price">$ {that.props.styles[that.props.styleIndex].original_price}</span>

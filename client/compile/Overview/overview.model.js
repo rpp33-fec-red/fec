@@ -20,9 +20,8 @@ class OverviewModel extends React.Component {
       thumbArray:testData.styles[0].photos,
       image:testData.styles[0].photos[0].url,
       imageIndex: 0,
-      expandImage:false,
-      backgroundImage:'./beach.avif'
-    };
+      expandImage:false
+        };
     this.config = {
       'serverURL':'/',
       "testURL":'http://localhost:8080/'
@@ -41,6 +40,7 @@ class OverviewModel extends React.Component {
   }
 
   getRatings(){
+    //get rid of later
     var count =0;
     if (this.state.reviews.length >0){
       this.state.reviews.forEach((review,index)=>{
@@ -66,7 +66,10 @@ class OverviewModel extends React.Component {
     });
   }
 
+  addToCart(sku,qty){
 
+
+  }
 
   clickImage(index){
     this.setState({image:this.state.thumbArray[index].url,ThumbnailIndex:index});
@@ -106,10 +109,6 @@ class OverviewModel extends React.Component {
 
   scrollToReviews(){
 
-  }
-
-  addToCart() {
-    // look through styles of product and find sku get info and put in apu
   }
 
   getComponent(Component) {

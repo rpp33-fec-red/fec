@@ -19,13 +19,6 @@ class Overview extends OverviewModel {
   componentDidMount(){
     this.getReviews();
     this.getProductData();
-    var that = this;
-    $('<img/>').attr('src', './beach.avif').on('load', function() {
-      that.setState({backgroundImage:'./beach.avif'});
-      $(this).remove();
-    }).on("error",()=>{
-      that.setState({backgroundImage:'./beach.jpeg'});
-    });
   }
 
 
@@ -33,7 +26,7 @@ class Overview extends OverviewModel {
 
     return (
       <React.Fragment>
-        <div className="overview" style={{ backgroundImage:'url('+this.state.backgroundImage+')'}}>
+        <div className="overview" >
           <LeftContainer  clickImage={this.clickImage} moveUp={this.moveUp} moveDown={this.moveDown} image={ this.state.image} ThumbnailIndex={this.state.ThumbnailIndex} thumbArray={this.state.thumbArray} expandImage={this.expandImage}/>
           <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styleIndex={this.state.styleIndex} styles={this.state.styles} productInfo={this.state.product}  />
         </div>

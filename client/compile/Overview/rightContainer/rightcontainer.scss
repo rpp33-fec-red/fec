@@ -1,5 +1,14 @@
 .rightCt{
   position: relative;
+
+  .starComponent{
+    display: inline-block;
+  }
+  .starContainer{
+    display:inline-block!important;
+    padding: 0px!important;
+  }
+
   .starCt{
     position: relative;
     display: block;
@@ -8,7 +17,6 @@
     width: 190px;
     height: 35px;
     top:0px;
-
   }
   .starOverlay{
     // background-color: white;
@@ -37,7 +45,6 @@
     height: 35px;
     color: #f8d448;
     position: relative;
-    z-index: 5;
     column-fill: red;
     mix-blend-mode: overlay;
     // background: white;
@@ -47,7 +54,6 @@
     display: block;
     text-align:center;
   }
-  background:rgba(0,0,0,.3);
 
   width:50%;
   height:100%;
@@ -84,6 +90,8 @@
     width:100%;
     height:30%;
     // border:3px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 
   }
   .option-selectors{
@@ -105,7 +113,7 @@
   }
   .title {
     font-size:35px;
-    color:white;
+    color:black;
     font-weight:800;
 
   }
