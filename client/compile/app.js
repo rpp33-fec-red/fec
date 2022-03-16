@@ -17,8 +17,12 @@ class Main extends React.Component {
     super(props);
     this.state = {
       productID: window.location.search.split('=')[1] || '64620',
-      product: {}
+      product: {},
+      cart:[{sku:2933939}]
     };
+    this.updateCart = this.updateCart.bind(this);
+    this.addToCart = this.addToCart.bind(this);
+
   }
 
   componentDidMount(){
@@ -26,12 +30,20 @@ class Main extends React.Component {
       this.setState({product: data.results});
     });
   }
+  updateCart(cartdata){
+    this.setState({cart:cartdata});
+  }
+  addToCart(data){
+    this.state.cart.push(data);
+    this.setState({cart:this.state.cart});
+    //grab post req from old model and done.
+  }
 
   render(){
     return (
       <ClickTracker>
-        <Header></Header>
-        <Overview getProducts={model.getData}  productId={this.state.productID}/>
+        <Header cartlength={this.state.cart.length}></Header>
+        <Overview addToCart={this.addToCart} updateCart={this.updateCart} getProducts={model.getData}  productId={this.state.productID}/>
         <RelatedProducs getData={model.getData} product_id={this.state.productID}/>
         <QuestionsWidget product_id={this.state.productID} product_name={this.state.product.name}/>
         <RatingsWidget getReviews={model.getData} product_id={this.state.productID} product_name={this.state.product.name}/>

@@ -23,12 +23,11 @@ class Overview extends OverviewModel {
 
 
   Core(){
-
     return (
       <React.Fragment>
         <div className="overview" >
           <LeftContainer  clickImage={this.clickImage} moveUp={this.moveUp} moveDown={this.moveDown} image={ this.state.image} ThumbnailIndex={this.state.ThumbnailIndex} thumbArray={this.state.thumbArray} expandImage={this.expandImage}/>
-          <RightContainer ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styleIndex={this.state.styleIndex} styles={this.state.styles} productInfo={this.state.product}  />
+          <RightContainer addToCart={this.addToCart} ratings={this.state.ratings} reviews={this.state.reviews.length} changeStyle={this.changeStyle} styleIndex={this.state.styleIndex} styles={this.state.styles} productInfo={this.state.product}  />
         </div>
         <p>{this.state.product.slogan}</p>
 

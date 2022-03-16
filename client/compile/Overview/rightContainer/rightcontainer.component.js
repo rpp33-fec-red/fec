@@ -12,7 +12,8 @@ class RightContainer extends React.Component{
     changeStyle:PropTypes.func,
     reviews:PropTypes.number,
     styleIndex: PropTypes.number,
-    ratings: PropTypes.number
+    ratings: PropTypes.number,
+    addToCart: PropTypes.func
   }
 
   constructor(props){
@@ -31,7 +32,7 @@ class RightContainer extends React.Component{
 
   clickSku(){
     var sku = this.data;
-    this.setState({maxquantity:sku.quantity});
+    this.setState({maxquantity:sku.quantity,sku:sku});
   }
 
   range(qty){
@@ -42,21 +43,12 @@ class RightContainer extends React.Component{
   }
 
   render (){
-    // var ratings =this.props.ratings;
-    // function ShowStars(){
-    //   // var percent = parseInt(ratings/5 *100)*10;
-    //   return (<div className="rate">
-    //     {[0,1,2,3,4].map(function(index){
-    //       return <span key={index} className="star" >☆</span>;
-    //     })}
-    //     <div className="starOverlay" style={{ width: `${ratings}%` ,position:'absolute'}}> </div>
-    //   </div>);
-    // }
 
     var that = this;
     function clickQty(){
       that.setState({quantity:this.qty});
     }
+    var addToCart = this.props.addToCart;
 
     function returnSkus(){
       var arrayOfOptions=[<option key={0}>Select size</option>];
@@ -75,6 +67,8 @@ class RightContainer extends React.Component{
         return <option>OUT OF STOCk</option>;
       }
     }
+
+
     return (<div className="rightCt" >
       <div className="main-content">
         <div className="reviewWrapper"><a onClick={this.clickedReviews}><ShowStars product_id={this.props.productInfo.id}></ShowStars>readall reviews ({this.props.reviews})</a></div>
@@ -100,7 +94,7 @@ class RightContainer extends React.Component{
           </select>
         </div>
         <div className="selector">
-          { this.state.quantity > 0 ? <button className="addToCart">Add to Cart</button> : null }
+          { this.state.quantity > 0 ? <button className="addToCart" onClick={function(){ if (that.state.sku !== null && that.state.sku !== undefined){addToCart(that.props.styles[that.props.styleIndex].style_id,that.state.quantity)}}}>Add to Cart</button> : null }
           <button className="addFavorite">star</button>
         </div>
       </div>

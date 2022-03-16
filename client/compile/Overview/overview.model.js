@@ -21,7 +21,7 @@ class OverviewModel extends React.Component {
       image:testData.styles[0].photos[0].url,
       imageIndex: 0,
       expandImage:false
-        };
+    };
     this.config = {
       'serverURL':'/',
       "testURL":'http://localhost:8080/'
@@ -33,10 +33,13 @@ class OverviewModel extends React.Component {
     this.moveDown = this.moveDown.bind(this);
     this.clickImage = this.clickImage.bind(this);
     this.getProductData = this.getProductData.bind(this);
+    this.updateCart = this.updateCart.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   static propTypes = {
-    productId:PropTypes.number
+    productId:PropTypes.number,
+    addToCart: PropTypes.any
   }
 
   getRatings(){
@@ -66,9 +69,22 @@ class OverviewModel extends React.Component {
     });
   }
 
-  addToCart(sku,qty){
+  updateCart(){
+    var that = this;
+    Get.getData({path:'/cart',params:{}}, function(data) {
+      console.llog(data);
+      that.props.updateCart(data);
+    });
+  }
 
-
+  addToCart(sku, qty){
+    console.log(sku,qty);
+    if (qty === undefined){
+      qty =1;
+    }
+    for (let i=0; i < qty; i++){
+      this.props.addToCart(sku);
+    }
   }
 
   clickImage(index){
