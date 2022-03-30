@@ -36,7 +36,6 @@ class Main extends React.Component {
   addToCart(data){
     this.state.cart.push(data);
     this.setState({cart:this.state.cart});
-    //grab post req from old model and done.
   }
 
   render(){

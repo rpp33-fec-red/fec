@@ -11,7 +11,6 @@ class OverviewModel extends React.Component {
     super(props);
     this.state = {
       product:testData,
-      productId: this.props.productId,
       ThumbnailIndex:0,
       reviews:[],
       ratings:5,
@@ -43,7 +42,6 @@ class OverviewModel extends React.Component {
   }
 
   getRatings(){
-    //get rid of later
     var count =0;
     if (this.state.reviews.length >0){
       this.state.reviews.forEach((review,index)=>{
@@ -57,34 +55,30 @@ class OverviewModel extends React.Component {
     }
   }
 
-
-
   getReviews(){
-    var that = this;
-    var id = this.state.productId;
-    Get.getData({path:'/reviews',params:{product_id:id}}, function(data) {
+    var id =this.props.productId;
+    Get.getData({path:'/reviews',params:{product_id:id}}, (data)=> {
       var reviews = data.data.results;
-      that.setState({reviews:reviews});
-      that.getRatings();
+      this.setState({reviews:reviews});
+      this.getRatings();
     });
   }
 
   updateCart(){
-    var that = this;
-    Get.getData({path:'/cart',params:{}}, function(data) {
-      console.llog(data);
-      that.props.updateCart(data);
+    Get.getData({path:'/cart',params:{}}, (data)=> {
+      this.props.updateCart(data);
     });
   }
 
   addToCart(sku, qty){
     console.log(sku,qty);
-    if (qty === undefined){
-      qty =1;
-    }
-    for (let i=0; i < qty; i++){
-      this.props.addToCart(sku);
-    }
+    // console.log(sku,qty);
+    // if (qty === undefined){
+    //   qty =1;
+    // }
+    // for (let i=0; i < qty; i++){
+    //   this.props.addToCart(sku);
+    // }
   }
 
   clickImage(index){
@@ -104,12 +98,11 @@ class OverviewModel extends React.Component {
     this.setState({thumbArray:newarray,image: newarray[0].url});
   }
   getProductData(){
-    var id = this.state.productId;
-    var that = this;
-    Get.getProductData(id, function(data) {
-      that.setState({product:data.product,styles:data.product.styles, image:data.product.styles[0].photos[0].url,ThumbnailIndex:0,thumbArray:data.product.styles[0].photos,imageIndex:0,ratings:5},function(){
+    var id = this.props.productId;
+    Get.getProductData(id, (data)=> {
+      this.setState({product:data.product,styles:data.product.styles, image:data.product.styles[0].photos[0].url,ThumbnailIndex:0,thumbArray:data.product.styles[0].photos,imageIndex:0,ratings:5},()=>{
       });
-      that.getReviews();
+      this.getReviews();
     });
   }
 
@@ -123,9 +116,7 @@ class OverviewModel extends React.Component {
     this.setState({ThumbnailIndex:index});
   }
 
-  scrollToReviews(){
 
-  }
 
   getComponent(Component) {
     return <Component ></Component>;

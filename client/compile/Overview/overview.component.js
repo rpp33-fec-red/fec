@@ -23,6 +23,7 @@ class Overview extends OverviewModel {
 
 
   Core(){
+    console.log('render core ')
     return (
       <React.Fragment>
         <div className="overview" >
